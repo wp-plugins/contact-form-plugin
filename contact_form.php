@@ -8,11 +8,11 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for portfolio.
 Author: BestWebSoft
-Version: 1.0
+Version: 1.01
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
-/*  Copyright 2011  BestWebSoft  ( admin@bestwebsoft.com )
+/*  Copyright 2011  BestWebSoft  ( plugin@bestwebsoft.com )
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -99,12 +99,12 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 		<div class="error" <?php if( "" == $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
 		<form method="post" action="options-general.php?page=contact-form-plugin/contact_form.php">
 			<span style="border-bottom:1px dashed;margin-bottom:15px;">
-				<p>If you would like to add a Contact Form to your website, just copy and put this shortcode onto your post: [contact_form]</p>
+				<p>If you would like to add a Contact Form to your website, just copy and put this shortcode onto your post or page: [contact_form]</p>
 				If information in the below fields are empty then the message will be send to an address which was specified during registration.
 			</span>
 			<table class="form-table">
 				<tr valign="top">
-					<th scope="row" style="width:150px;">Use an email of user: </th>
+					<th scope="row" style="width:150px;">Use email of wordpress user: </th>
 					<td>
 						<input type="radio" name="cntctfrm_select_email" value="user" <?php if($cntctfrm_options['cntctfrm_select_email'] == 'user') echo "checked=\"checked\" "; ?>/>
 					</td>
@@ -114,7 +114,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row" style="width:150px;">Use an this email: </th>
+					<th scope="row" style="width:150px;">Use this email: </th>
 					<td>
 						<input type="radio" name="cntctfrm_select_email" value="custom" <?php if($cntctfrm_options['cntctfrm_select_email'] == 'custom') echo "checked=\"checked\" "; ?>/>
 					</td>
@@ -139,6 +139,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 if( ! function_exists( 'cntctfrm_display_form' ) ) {
 	function cntctfrm_display_form() {
 		global $error_message;
+		$content = "";
 
 		$result = "";	
 		// If contact form submited
@@ -153,7 +154,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 		}
 		// If it is good
 		if( true === $result ) {
-			_e( "Thank you for contact.", "cmntfrm" );
+			$content .= __( "Thank you for contact.", "cmntfrm" );
 		}
 		else if( false === $result )
 		{
@@ -162,58 +163,57 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 		}
 		else { 
 			// Output form
-			?>
-			<form method="post" id="cntctfrm_contact_form" action="" enctype="multipart/form-data">
-			<?php if( isset( $error_message['error_form'] ) ) { ?>
-				<div style="text-align: left; color: red;"><?php echo $error_message['error_form']; ?></div>
-				<?php } ?>
-				<div style="text-align: left; padding-top: 5px;">
+			$content .= '<form method="post" id="cntctfrm_contact_form" action="" enctype="multipart/form-data">';
+			if( isset( $error_message['error_form'] ) ) { 
+				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_form'].'</div>';
+				}
+				$content .= '<div style="text-align: left; padding-top: 5px;">
 					<label for="cntctfrm_contact_name">Name:<span class="required"> *</span></label>
-				</div>
-			<?php if( isset( $error_message['error_name'] ) ) { ?>
-				<div style="text-align: left; color: red;"><?php echo $error_message['error_name']; ?></div>
-			<?php } ?>
-				<div style="text-align: left;">
-					<input class="text" type="text" size="40" value="<?php echo $name; ?>" name="cntctfrm_contact_name" id="cntctfrm_contact_name" style="text-align: left; margin: 0;">
+				</div>';
+			if( isset( $error_message['error_name'] ) ) {
+				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_name'].'</div>';
+			}
+				$content .= '<div style="text-align: left;">
+					<input class="text" type="text" size="40" value="'.$name.'" name="cntctfrm_contact_name" id="cntctfrm_contact_name" style="text-align: left; margin: 0;">
 				</div>
 
 				<div style="text-align: left;">
 					<label for="cntctfrm_contact_email">E-Mail Address:<span class="required"> *</span></label>
-				</div>
-			<?php if( isset( $error_message['error_email'] ) ) { ?>
-				<div style="text-align: left; color: red;"><?php echo $error_message['error_email']; ?></div>
-				<?php } ?>
-				<div style="text-align: left;">
-					<input class="text" type="text" size="40" value="<?php echo $email; ?>" name="cntctfrm_contact_emai" id="cntctfrm_contact_email" style="text-align: left; margin: 0;">
+				</div>';
+			if( isset( $error_message['error_email'] ) ) {
+				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_email'].'</div>';
+				}
+				$content .= '<div style="text-align: left;">
+					<input class="text" type="text" size="40" value="'.$email.'" name="cntctfrm_contact_emai" id="cntctfrm_contact_email" style="text-align: left; margin: 0;">
 				</div>
 
 				<div style="text-align: left;">
 					<label for="cntctfrm_contact_subject1">Subject:<span class="required"> *</span></label>
-				</div>
-			<?php if( isset( $error_message['error_subject'] ) ) { ?>
-				<div style="text-align: left; color: red;"><?php echo $error_message['error_subject']; ?></div>
-			<?php } ?>
-				<div style="text-align: left;">
-					<input class="text" type="text" size="40" value="<?php echo $subject; ?>" name="cntctfrm_contact_subject" id="cntctfrm_contact_subject" style="text-align: left; margin: 0;">
+				</div>';
+			if( isset( $error_message['error_subject'] ) ) {
+				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_subject'].'</div>';
+			}
+				$content .= '<div style="text-align: left;">
+					<input class="text" type="text" size="40" value="'.$subject.'" name="cntctfrm_contact_subject" id="cntctfrm_contact_subject" style="text-align: left; margin: 0;">
 				</div>
 
 				<div style="text-align: left;">
 					<label for="cntctfrm_contact_message">Message:<span class="required"> *</span></label>
-				</div>
-			<?php if( isset( $error_message['error_message'] ) ) { ?>
-				<div style="text-align: left; color: red;"><?php echo $error_message['error_message']; ?></div>
-			<?php } ?>
-				<div style="text-align: left;">
-					<textarea rows="10" cols="30" name="cntctfrm_contact_message" id="cntctfrm_contact_message1"><?php echo $message; ?></textarea>
-				</div>
-			<?php apply_filters( 'cntctfrm_display_captcha' , $error_message ); ?>
+				</div>';
+			if( isset( $error_message['error_message'] ) ) {
+				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_message'].'</div>';
+			}
+				$content .= '<div style="text-align: left;">
+					<textarea rows="10" cols="30" name="cntctfrm_contact_message" id="cntctfrm_contact_message1">'.$message.'</textarea>
+				</div>';
+			$content .= apply_filters( 'cntctfrm_display_captcha' , $error_message );
 				
-				<div style="text-align: left; padding-top: 8px;">
+				$content .= '<div style="text-align: left; padding-top: 8px;">
 					<input type="hidden" value="send" name="cntctfrm_contact_action">
 					<input type="submit" value="Submit" style="cursor: pointer; margin: 0pt; text-align: center;margin-bottom:10px;"> 
 				</div>
-				</form>
-		<?php
+				</form>';
+				return $content ;
 		}
 	}
 }
