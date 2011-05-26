@@ -54,4 +54,3 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 
 = 1.00 =
 Upgrade immediately.
-
