@@ -104,7 +104,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 			</span>
 			<table class="form-table">
 				<tr valign="top">
-					<th scope="row" style="width:150px;">Use email of wordpress user: </th>
+					<th scope="row" style="width:195px;">Use email of wordpress user: </th>
 					<td>
 						<input type="radio" name="cntctfrm_select_email" value="user" <?php if($cntctfrm_options['cntctfrm_select_email'] == 'user') echo "checked=\"checked\" "; ?>/>
 					</td>
@@ -114,7 +114,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row" style="width:150px;">Use this email: </th>
+					<th scope="row" style="width:195px;">Use this email: </th>
 					<td>
 						<input type="radio" name="cntctfrm_select_email" value="custom" <?php if($cntctfrm_options['cntctfrm_select_email'] == 'custom') echo "checked=\"checked\" "; ?>/>
 					</td>
