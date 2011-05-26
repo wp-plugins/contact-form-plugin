@@ -5,7 +5,7 @@ Donate link: http://bestwebsoft.com/
 Tags: Contact Form, text, contact, form
 Requires at least: 2.9
 Tested up to: 3.1.3
-Stable tag: 2011.05.26
+Stable tag: 2011.05.27
 
 Add Contact Form to your WordPress website.
 
@@ -47,10 +47,16 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 
 == Changelog ==
 
+= 1.01 =
+*Contact form position bug is fixed.
+
 = 1.00 =
 *Ability to add Contact Form into a post. Ability to display form via shortcode.
 
 == Upgrade Notice ==
+
+= 1.01 =
+Contact form position bug is fixed. Upgrade immediately.
 
 = 1.00 =
 Upgrade immediately.
