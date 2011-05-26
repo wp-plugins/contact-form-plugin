@@ -1,10 +1,10 @@
 <?php
 /**
- * @package Contact Form
+ * @package Contact Form Plugin
  * @version 1
  */
 /*
-Plugin Name: Contact Form
+Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for portfolio.
 Author: BestWebSoft
@@ -27,7 +27,7 @@ License: GPLv2 or later
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-wp_enqueue_style( 'cntctfrmStylesheet', WP_PLUGIN_URL .'/contact-form/contact_form_style.css' );
+wp_enqueue_style( 'cntctfrmStylesheet', WP_PLUGIN_URL .'/contact-form-plugin/contact_form_style.css' );
 
 // Add option page in admin menu
 if( ! function_exists( 'cntctfrm_admin_menu' ) ) {
@@ -97,7 +97,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 		<h2>Contact Form Options</h2>
 		<div class="updated fade" <?php if( ! isset( $_REQUEST['cntctfrm_form_submit'] ) || $error != "" ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
 		<div class="error" <?php if( "" == $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
-		<form method="post" action="options-general.php?page=contact-form/contact_form.php">
+		<form method="post" action="options-general.php?page=contact-form-plugin/contact_form.php">
 			<span style="border-bottom:1px dashed;margin-bottom:15px;">
 				<p>If you would like to add a Contact Form to your website, just copy and put this shortcode onto your post: [contact_form]</p>
 				If information in the below fields are empty then the message will be send to an address which was specified during registration.
@@ -314,7 +314,7 @@ if( ! function_exists( contact_settings ) ) {
 	function contact_settings( $links, $file ) {
 		$base = plugin_basename( __FILE__ );
 		if ( $file == $base ) {
-			$links[] = '<a href="options-general.php?page=contact-form/contact_form.php">' . __( 'Settings', 'Settings' ) . '</a>';
+			$links[] = '<a href="options-general.php?page=contact-form-plugin/contact_form.php">' . __( 'Settings', 'Settings' ) . '</a>';
 		}
 		return $links;
 	}
