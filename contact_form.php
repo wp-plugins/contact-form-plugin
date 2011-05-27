@@ -8,7 +8,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for portfolio.
 Author: BestWebSoft
-Version: 1.01
+Version: 1.02
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -106,20 +106,20 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				<tr valign="top">
 					<th scope="row" style="width:195px;">Use email of wordpress user: </th>
 					<td>
-						<input type="radio" name="cntctfrm_select_email" value="user" <?php if($cntctfrm_options['cntctfrm_select_email'] == 'user') echo "checked=\"checked\" "; ?>/>
+						<input type="radio" id="cntctfrm_select_email_user" name="cntctfrm_select_email" value="user" <?php if($cntctfrm_options['cntctfrm_select_email'] == 'user') echo "checked=\"checked\" "; ?>/>
 					</td>
 					<td>
-						<input type="text" name="cntctfrm_user_email" value="<?php echo $cntctfrm_options['cntctfrm_user_email']; ?>" />
+						<input type="text" name="cntctfrm_user_email" value="<?php echo $cntctfrm_options['cntctfrm_user_email']; ?>" onfocus="document.getElementById('cntctfrm_select_email_user').checked = true;" />
 						<span style="color: rgb(136, 136, 136); font-size: 10px;clear:both;">Set a name of user wo will get messages from a contact form.</span>
 					</td>
 				</tr>
 				<tr valign="top">
 					<th scope="row" style="width:195px;">Use this email: </th>
 					<td>
-						<input type="radio" name="cntctfrm_select_email" value="custom" <?php if($cntctfrm_options['cntctfrm_select_email'] == 'custom') echo "checked=\"checked\" "; ?>/>
+						<input type="radio"  id="cntctfrm_select_email_custom" name="cntctfrm_select_email" value="custom" <?php if($cntctfrm_options['cntctfrm_select_email'] == 'custom') echo "checked=\"checked\" "; ?>/>
 					</td>
 					<td>
-						<input type="text" name="cntctfrm_custom_email" value="<?php echo $cntctfrm_options['cntctfrm_custom_email']; ?>" />
+						<input type="text" name="cntctfrm_custom_email" value="<?php echo $cntctfrm_options['cntctfrm_custom_email']; ?>" onfocus="document.getElementById('cntctfrm_select_email_custom').checked = true;" />
 						<span style="color: rgb(136, 136, 136); font-size: 10px;clear:both;">Set an email address which will be used for messages receiving.</span>
 					</td>
 				</tr>
@@ -213,8 +213,8 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 					<input type="submit" value="Submit" style="cursor: pointer; margin: 0pt; text-align: center;margin-bottom:10px;"> 
 				</div>
 				</form>';
-				return $content ;
 		}
+		return $content ;
 	}
 }
 
