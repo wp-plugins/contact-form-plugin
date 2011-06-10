@@ -2,7 +2,7 @@
 Contributors: bestwebsoft
 Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/
-Tags: Contact Form, text, contact, form
+Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin
 Requires at least: 2.9
 Tested up to: 3.1.3
 Stable tag: 2011.05.28
@@ -48,7 +48,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 == Changelog ==
 
 = 1.02 =
-*Display "thanks" message bug is fixed.
+*Display "thanks" message bug is fixed. Radio buttons automatic switching added (for settings page) after setting mouse cursor (clicking) into a text field.
 
 = 1.01 =
 *Contact form position bug is fixed.
@@ -59,7 +59,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 == Upgrade Notice ==
 
 = 1.02 =
-Display "thanks" message bug is fixed. Upgrade immediately.
+Display "thanks" message bug is fixed. Radio buttons automatic switching added (for settings page) after setting mouse cursor (clicking) into a text field. Upgrade immediately.
 
 = 1.01 =
 Contact form position bug is fixed. Upgrade immediately.
