@@ -8,7 +8,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for portfolio.
 Author: BestWebSoft
-Version: 1.02
+Version: 1.03
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -81,7 +81,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				}
 			}
 			else {
-				if( $cntctfrm_options_submit['cntctfrm_custom_email']  != "" && preg_match( "/^(?:[a-z0-9]+(?:[-_\.]?[a-z0-9]+)?@[a-z0-9]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_email'] ) ) ) {
+				if( $cntctfrm_options_submit['cntctfrm_custom_email']  != "" && preg_match( "/^(?:[a-z0-9]+(?:[-_\.]?[a-z0-9]+)?@[a-z0-9]+(?:[-\.]?[a-z0-9]+)?\.[a-z]{2,5})$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_email'] ) ) ) {
 					update_option( 'cntctfrm_options', $cntctfrm_options, '', 'yes' );
 					$message = "Options saved.";
 				}
@@ -116,7 +116,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				<tr valign="top">
 					<th scope="row" style="width:195px;">Use this email: </th>
 					<td>
-						<input type="radio"  id="cntctfrm_select_email_custom" name="cntctfrm_select_email" value="custom" <?php if($cntctfrm_options['cntctfrm_select_email'] == 'custom') echo "checked=\"checked\" "; ?>/>
+						<input type="radio" id="cntctfrm_select_email_custom" name="cntctfrm_select_email" value="custom" <?php if($cntctfrm_options['cntctfrm_select_email'] == 'custom') echo "checked=\"checked\" "; ?>/>
 					</td>
 					<td>
 						<input type="text" name="cntctfrm_custom_email" value="<?php echo $cntctfrm_options['cntctfrm_custom_email']; ?>" onfocus="document.getElementById('cntctfrm_select_email_custom').checked = true;" />
@@ -233,7 +233,7 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 		// Check information wich was input in fields
 		if( "" != $_REQUEST['cntctfrm_contact_name'] )
 			unset( $error_message['error_name'] );
-		if( "" != $_REQUEST['cntctfrm_contact_emai'] && preg_match( "/^(?:[a-z0-9]+(?:[-_\.]?[a-z0-9]+)?@[a-z0-9]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i", trim( $_REQUEST['cntctfrm_contact_emai'] ) ) )
+		if( "" != $_REQUEST['cntctfrm_contact_emai'] && preg_match( "/^(?:[a-z0-9]+(?:[-_\.]?[a-z0-9]+)?@[a-z0-9]+(?:[-\.]?[a-z0-9]+)?\.[a-z]{2,5})$/i", trim( $_REQUEST['cntctfrm_contact_emai'] ) ) )
 			unset( $error_message['error_email'] );
 		if( "" != $_REQUEST['cntctfrm_contact_subject'] )
 			unset( $error_message['error_subject'] );
