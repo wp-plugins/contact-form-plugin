@@ -6,7 +6,7 @@
 /*
 Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
-Description: Plugin for portfolio.
+Description: Plugin for Contact Form.
 Author: BestWebSoft
 Version: 1.03
 Author URI: http://bestwebsoft.com/
