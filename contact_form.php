@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for portfolio.
 Author: BestWebSoft
-Version: 2.01
+Version: 2.02
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -72,7 +72,7 @@ if( ! function_exists( 'cntctfrm_admin_menu' ) ) {
 	function cntctfrm_admin_menu() {
 		//add_options_page( "Contact Form Options", "Contact Form", 'manage_options',  __FILE__, 'cntctfrm_settings_page' );
 	add_menu_page(__('BWS Plugins'), __('BWS Plugins'), 'edit_themes', 'my_new_menu', 'bws_add_menu_render', " ", 90); 
-		add_submenu_page('my_new_menu', 'Contact Form Options', 'Contact Form', 'edit_themes', __FILE__, 'cntctfrm_settings_page');
+		add_submenu_page('my_new_menu', 'Contact Form Options', 'Contact Form', 'edit_themes', "contact_form.php", 'cntctfrm_settings_page');
 
 		//call register settings function
 		add_action( 'admin_init', 'cntctfrm_settings' );
@@ -137,7 +137,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 		<h2>Contact Form Options</h2>
 		<div class="updated fade" <?php if( ! isset( $_REQUEST['cntctfrm_form_submit'] ) || $error != "" ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
 		<div class="error" <?php if( "" == $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
-		<form method="post" action="options-general.php?page=contact-form-plugin/contact_form.php">
+		<form method="post" action="admin.php?page=contact_form.php">
 			<span style="margin-bottom:15px;">
 				<p>If you would like to add a Contact Form to your website, just copy and put this shortcode onto your post or page: [contact_form]</p>
 				If information in the below fields are empty then the message will be send to an address which was specified during registration.
@@ -355,7 +355,7 @@ function cntctfrm_plugin_action_links( $links, $file ) {
 	if ( ! $this_plugin ) $this_plugin = plugin_basename(__FILE__);
 
 	if ( $file == $this_plugin ){
-			 $settings_link = '<a href="admin.php?page=contact-form-plugin/contact_form.php">' . __('Settings', 'cntctfrm_plugin') . '</a>';
+			 $settings_link = '<a href="admin.php?page=contact_form.php">' . __('Settings', 'cntctfrm_plugin') . '</a>';
 			 array_unshift( $links, $settings_link );
 		}
 	return $links;
@@ -364,7 +364,7 @@ function cntctfrm_plugin_action_links( $links, $file ) {
 function cntctfrm_register_plugin_links($links, $file) {
 	$base = plugin_basename(__FILE__);
 	if ($file == $base) {
-		$links[] = '<a href="admin.php?page=contact-form-plugin/contact_form.php">' . __('Settings','cntctfrm_plugin') . '</a>';
+		$links[] = '<a href="admin.php?page=contact_form.php">' . __('Settings','cntctfrm_plugin') . '</a>';
 		$links[] = '<a href="http://wordpress.org/extend/plugins/contact-form-plugin/faq/" target="_blank">' . __('FAQ','cntctfrm_plugin') . '</a>';
 		$links[] = '<a href="Mailto:plugin@bestwebsoft.com">' . __('Support','cntctfrm_plugin') . '</a>';
 	}
