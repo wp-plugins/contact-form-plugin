@@ -48,7 +48,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 == Changelog ==
 
 = 2.02 =
-*The bug of the setting page link is fixed in this version. Please upgrade the Captcha plugin immediately. Thank you
+*The bug of the setting page link is fixed in this version. Please upgrade the plugin immediately. Thank you
 
 = 2.01 =
 *Usability at the settings page of plugin was improved.
@@ -68,7 +68,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 == Upgrade Notice ==
 
 = 2.02 =
-The bug of the setting page link is fixed in this version. Please upgrade the Captcha plugin immediately. Thank you
+The bug of the setting page link is fixed in this version. Please upgrade the plugin immediately. Thank you
 
 = 2.01 =
 Usability at the settings page of plugin was improved.
