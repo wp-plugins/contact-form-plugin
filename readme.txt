@@ -5,7 +5,7 @@ Donate link: http://bestwebsoft.com/
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin
 Requires at least: 2.9
 Tested up to: 3.1.3
-Stable tag: 2011.1.03
+Stable tag: 2011.2.01
 
 Add Contact Form to your WordPress website.
 
@@ -47,6 +47,9 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 
 == Changelog ==
 
+= 2.01 =
+*Usability at the settings page of plugin was improved.
+
 = 1.03 =
 *Contact form email adress bug is fixed.
 
@@ -61,8 +64,11 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 
 == Upgrade Notice ==
 
+= 2.01 =
+Usability at the settings page of plugin was improved.
+
 = 1.03 =
-*Contact form email adress bug is fixed. Upgrade immediately.
+Contact form email adress bug is fixed. Upgrade immediately.
 
 = 1.02 =
 Display "thanks" message bug is fixed. Radio buttons automatic switching added (for settings page) after setting mouse cursor (clicking) into a text field. Upgrade immediately.

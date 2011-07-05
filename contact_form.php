@@ -1,14 +1,10 @@
 <?php
-/**
- * @package Contact Form Plugin
- * @version 1
- */
 /*
 Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
-Description: Plugin for Contact Form.
+Description: Plugin for portfolio.
 Author: BestWebSoft
-Version: 1.03
+Version: 2.01
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -29,10 +25,54 @@ License: GPLv2 or later
 */
 wp_enqueue_style( 'cntctfrmStylesheet', WP_PLUGIN_URL .'/contact-form-plugin/contact_form_style.css' );
 
+if( ! function_exists( 'bws_plugin_header' ) ) {
+	function bws_plugin_header() {
+		global $post_type;
+		?>
+		<style>
+		#adminmenu #toplevel_page_my_new_menu div.wp-menu-image
+		{
+			background: url("<?php echo get_bloginfo('url');?>/wp-content/plugins/contact-form-plugin/images/icon_16.png") no-repeat scroll center center transparent;
+		}
+		#adminmenu #toplevel_page_my_new_menu:hover div.wp-menu-image,#adminmenu #toplevel_page_my_new_menu.wp-has-current-submenu div.wp-menu-image
+		{
+			background: url("<?php echo get_bloginfo('url');?>/wp-content/plugins/contact-form-plugin/images/icon_16_c.png") no-repeat scroll center center transparent;
+		}	
+		.wrap #icon-options-general.icon32-bws
+		{
+			background: url("<?php echo get_bloginfo('url');?>/wp-content/plugins/contact-form-plugin/images/icon_36.png") no-repeat scroll left top transparent;
+		}
+		</style>
+		<?php
+	}
+}
+
+add_action('admin_head', 'bws_plugin_header');
+
+if( ! function_exists( 'bws_add_menu_render' ) ) {
+	function bws_add_menu_render() {
+		global $title;
+		?>
+		<div class="wrap">
+			<div class="icon32 icon32-bws" id="icon-options-general"></div>
+			<h2><?php echo $title;?></h2>
+			<p><a href="http://wordpress.org/extend/plugins/captcha/">Captcha</a></p>
+			<p><a href="http://wordpress.org/extend/plugins/contact-form-plugin/">Contact Form</a></p>
+			<p><a href="http://wordpress.org/extend/plugins/facebook-button-plugin/">Facebook Like Button Plugin</a></p>
+			<p><a href="http://wordpress.org/extend/plugins/twitter-plugin/">Twitter Plugin</a></p>
+			<p><a href="http://wordpress.org/extend/plugins/portfolio/">Portfolio</a></p>
+			<span style="color: rgb(136, 136, 136); font-size: 10px;">If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site <a href="http://bestwebsoft.com/contact/">http://bestwebsoft.com/contact/</a></span>
+		</div>
+		<?php
+	}
+}
+
 // Add option page in admin menu
 if( ! function_exists( 'cntctfrm_admin_menu' ) ) {
 	function cntctfrm_admin_menu() {
-		add_options_page( "Contact Form Options", "Contact Form", 'manage_options',  __FILE__, 'cntctfrm_settings_page' );
+		//add_options_page( "Contact Form Options", "Contact Form", 'manage_options',  __FILE__, 'cntctfrm_settings_page' );
+	add_menu_page(__('BWS Plugins'), __('BWS Plugins'), 'edit_themes', 'my_new_menu', 'bws_add_menu_render', " ", 90); 
+		add_submenu_page('my_new_menu', 'Contact Form Options', 'Contact Form', 'edit_themes', __FILE__, 'cntctfrm_settings_page');
 
 		//call register settings function
 		add_action( 'admin_init', 'cntctfrm_settings' );
@@ -93,12 +133,12 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 		// Display form on the setting page
 	?>
 	<div class="wrap">
-		<div class="icon32" id="icon-options-general"><br></div>
+		<div class="icon32 icon32-bws" id="icon-options-general"></div>
 		<h2>Contact Form Options</h2>
 		<div class="updated fade" <?php if( ! isset( $_REQUEST['cntctfrm_form_submit'] ) || $error != "" ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
 		<div class="error" <?php if( "" == $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
 		<form method="post" action="options-general.php?page=contact-form-plugin/contact_form.php">
-			<span style="border-bottom:1px dashed;margin-bottom:15px;">
+			<span style="margin-bottom:15px;">
 				<p>If you would like to add a Contact Form to your website, just copy and put this shortcode onto your post or page: [contact_form]</p>
 				If information in the below fields are empty then the message will be send to an address which was specified during registration.
 			</span>
@@ -309,18 +349,34 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 	}
 }
 
-// Add the link on setting page in the plugin activation page
-if( ! function_exists( contact_settings ) ) {
-	function contact_settings( $links, $file ) {
-		$base = plugin_basename( __FILE__ );
-		if ( $file == $base ) {
-			$links[] = '<a href="options-general.php?page=contact-form-plugin/contact_form.php">' . __( 'Settings', 'Settings' ) . '</a>';
+function cntctfrm_plugin_action_links( $links, $file ) {
+		//Static so we don't call plugin_basename on every plugin row.
+	static $this_plugin;
+	if ( ! $this_plugin ) $this_plugin = plugin_basename(__FILE__);
+
+	if ( $file == $this_plugin ){
+			 $settings_link = '<a href="admin.php?page=contact-form-plugin/contact_form.php">' . __('Settings', 'cntctfrm_plugin') . '</a>';
+			 array_unshift( $links, $settings_link );
 		}
-		return $links;
+	return $links;
+} // end function cntctfrm_plugin_action_links
+
+function cntctfrm_register_plugin_links($links, $file) {
+	$base = plugin_basename(__FILE__);
+	if ($file == $base) {
+		$links[] = '<a href="admin.php?page=contact-form-plugin/contact_form.php">' . __('Settings','cntctfrm_plugin') . '</a>';
+		$links[] = '<a href="http://wordpress.org/extend/plugins/contact-form-plugin/faq/" target="_blank">' . __('FAQ','cntctfrm_plugin') . '</a>';
+		$links[] = '<a href="Mailto:plugin@bestwebsoft.com">' . __('Support','cntctfrm_plugin') . '</a>';
 	}
+	return $links;
 }
 
-add_filter( 'plugin_row_meta', 'contact_settings', 10, 2 );
+// adds "Settings" link to the plugin action page
+add_filter( 'plugin_action_links', 'cntctfrm_plugin_action_links',10,2);
+
+//Additional links on the plugin page
+add_filter( 'plugin_row_meta', 'cntctfrm_register_plugin_links',10,2);
+
 add_shortcode( 'contact_form', 'cntctfrm_display_form' );
 add_action( 'admin_menu', 'cntctfrm_admin_menu' );
 
