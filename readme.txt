@@ -1,6 +1,5 @@
 ﻿=== Contact Form ===
 Contributors: bestwebsoft
-Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin
 Requires at least: 2.9
