@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for portfolio.
 Author: BestWebSoft
-Version: 2.02
+Version: 2.03
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -179,6 +179,8 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 if( ! function_exists( 'cntctfrm_display_form' ) ) {
 	function cntctfrm_display_form() {
 		global $error_message;
+		global $cntctfrm_options;
+		$cntctfrm_options = get_option( 'cntctfrm_options' );
 		$content = "";
 
 		$result = "";	
