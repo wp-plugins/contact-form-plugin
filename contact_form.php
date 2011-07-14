@@ -113,7 +113,7 @@ if( ! function_exists( 'bws_add_menu_render' ) ) {
 // Add option page in admin menu
 if( ! function_exists( 'cntctfrm_admin_menu' ) ) {
 	function cntctfrm_admin_menu() {
-		add_menu_page(__('BWS Plugins'), __('BWS Plugins'), 'edit_themes', 'my_new_menu', 'bws_add_menu_render', WP_CONTENT_URL."/plugins/twitter-plugin/images/px.png", 100); 
+		add_menu_page(__('BWS Plugins'), __('BWS Plugins'), 'edit_themes', 'my_new_menu', 'bws_add_menu_render', WP_CONTENT_URL."/plugins/contact-form-plugin/images/px.png", 100); 
 		add_submenu_page('my_new_menu', 'Contact Form Options', 'Contact Form', 'edit_themes', "contact_form.php", 'cntctfrm_settings_page');
 
 		//call register settings function
