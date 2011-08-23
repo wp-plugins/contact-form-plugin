@@ -4,7 +4,7 @@ Donate link: http://bestwebsoft.com/
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin
 Requires at least: 2.9
 Tested up to: 3.2
-Stable tag: 2011.2.05
+Stable tag: 2011.2.06
 
 Add Contact Form to your WordPress website.
 
