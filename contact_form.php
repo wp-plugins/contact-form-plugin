@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for portfolio.
 Author: BestWebSoft
-Version: 2.05
+Version: 2.06
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -336,7 +336,7 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 		// Check information wich was input in fields
 		if( "" != $_REQUEST['cntctfrm_contact_name'] )
 			unset( $error_message['error_name'] );
-		if( "" != $_REQUEST['cntctfrm_contact_emai'] && preg_match( "/^(?:[a-z0-9]+(?:[-_\.]?[a-z0-9]+)?@[a-z0-9]+(?:[-\.]?[a-z0-9]+)?\.[a-z]{2,5})$/i", trim( $_REQUEST['cntctfrm_contact_emai'] ) ) )
+		if( "" != $_REQUEST['cntctfrm_contact_emai'] && preg_match( "/^(?:[a-z0-9]+(?:[a-z0-9\-_\.]+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})$/i", trim( $_REQUEST['cntctfrm_contact_emai'] ) ) )
 			unset( $error_message['error_email'] );
 		if( "" != $_REQUEST['cntctfrm_contact_subject'] )
 			unset( $error_message['error_subject'] );

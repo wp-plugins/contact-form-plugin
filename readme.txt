@@ -46,6 +46,9 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 
 == Changelog ==
 
+= 2.06 =
+*We fixed the bug of complex email validation when filling in the contact form.
+
 = 2.05 =
 *BWS Plugins sections was fixed and right now it is consisted with 3 parts: activated, installed and recommended plugins. The bug of position in the admin menu is fixed. Translation ommissions are corrected. Now there is a link to see the site where the email comes from.
 
@@ -74,6 +77,9 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 *Ability to add Contact Form into a post. Ability to display form via shortcode.
 
 == Upgrade Notice ==
+
+= 2.06 =
+We fixed the bug of complex email validation when filling in the contact form.
 
 = 2.05 =
 BWS Plugins sections was fixed and right now it is consisted with 3 parts: activated, installed and recommended plugins. The bug of position in the admin menu is fixed. Translation ommissions are corrected. Now there is a link to see the site where the email comes from.
