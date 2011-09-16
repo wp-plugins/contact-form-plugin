@@ -247,7 +247,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 		$result = "";	
 		// If contact form submited
 		$name = isset( $_REQUEST['cntctfrm_contact_name'] ) ? $_REQUEST['cntctfrm_contact_name'] : "";
-		$email = isset( $_REQUEST['cntctfrm_contact_emai'] ) ? $_REQUEST['cntctfrm_contact_emai'] : "";
+		$email = isset( $_REQUEST['cntctfrm_contact_email'] ) ? $_REQUEST['cntctfrm_contact_email'] : "";
 		$subject = isset( $_REQUEST['cntctfrm_contact_subject'] ) ? $_REQUEST['cntctfrm_contact_subject'] : "";
 		$message = isset( $_REQUEST['cntctfrm_contact_message'] ) ? $_REQUEST['cntctfrm_contact_message'] : "";
 		if( isset( $_REQUEST['cntctfrm_contact_action'] ) )
@@ -287,7 +287,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_email'].'</div>';
 				}
 				$content .= '<div style="text-align: left;">
-					<input class="text" type="text" size="40" value="'.$email.'" name="cntctfrm_contact_emai" id="cntctfrm_contact_email" style="text-align: left; margin: 0;">
+					<input class="text" type="text" size="40" value="'.$email.'" name="cntctfrm_contact_email" id="cntctfrm_contact_email" style="text-align: left; margin: 0;">
 				</div>
 
 				<div style="text-align: left;">
@@ -307,7 +307,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_message'].'</div>';
 			}
 				$content .= '<div style="text-align: left;">
-					<textarea rows="10" cols="30" name="cntctfrm_contact_message" id="cntctfrm_contact_message1">'.$message.'</textarea>
+					<textarea rows="10" cols="30" name="cntctfrm_contact_message" id="cntctfrm_contact_message">'.$message.'</textarea>
 				</div>';
 			$content .= apply_filters( 'cntctfrm_display_captcha' , $error_message );
 				
@@ -336,7 +336,7 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 		// Check information wich was input in fields
 		if( "" != $_REQUEST['cntctfrm_contact_name'] )
 			unset( $error_message['error_name'] );
-		if( "" != $_REQUEST['cntctfrm_contact_emai'] && preg_match( "/^(?:[a-z0-9]+(?:[a-z0-9\-_\.]+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})$/i", trim( $_REQUEST['cntctfrm_contact_emai'] ) ) )
+		if( "" != $_REQUEST['cntctfrm_contact_email'] && preg_match( "/^(?:[a-z0-9]+(?:[a-z0-9\-_\.]+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})$/i", trim( $_REQUEST['cntctfrm_contact_email'] ) ) )
 			unset( $error_message['error_email'] );
 		if( "" != $_REQUEST['cntctfrm_contact_subject'] )
 			unset( $error_message['error_subject'] );
@@ -385,7 +385,7 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 						<td width="160">Name</td><td>'.$_REQUEST['cntctfrm_contact_name'].'</td>
 					</tr>
 					<tr>
-						<td>Email</td><td>'.$_REQUEST['cntctfrm_contact_emai'].'</td>
+						<td>Email</td><td>'.$_REQUEST['cntctfrm_contact_email'].'</td>
 					</tr>
 					<tr>
 						<td>Subject</td><td>'.$_REQUEST['cntctfrm_contact_subject'].'</td>
@@ -409,7 +409,7 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 			$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 
 			// Additional headers
-			$headers .= 'From: '.$_REQUEST['cntctfrm_contact_emai']. "\r\n";
+			$headers .= 'From: '.$_REQUEST['cntctfrm_contact_email']. "\r\n";
 
 			// Mail it
 			return @mail($to, $subject, $message, $headers);
