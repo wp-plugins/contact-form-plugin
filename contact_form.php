@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 2.06
+Version: 2.07
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -270,13 +270,13 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 			if( isset( $error_message['error_form'] ) ) { 
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_form'].'</div>';
 				}
-				$content .= '<div style="text-align: left; padding-top: 5px;">
+			$content .= '<div style="text-align: left; padding-top: 5px;">
 					<label for="cntctfrm_contact_name">Name:<span class="required"> *</span></label>
 				</div>';
 			if( isset( $error_message['error_name'] ) ) {
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_name'].'</div>';
 			}
-				$content .= '<div style="text-align: left;">
+			$content .= '<div style="text-align: left;">
 					<input class="text" type="text" size="40" value="'.$name.'" name="cntctfrm_contact_name" id="cntctfrm_contact_name" style="text-align: left; margin: 0;">
 				</div>
 
@@ -286,7 +286,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 			if( isset( $error_message['error_email'] ) ) {
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_email'].'</div>';
 				}
-				$content .= '<div style="text-align: left;">
+			$content .= '<div style="text-align: left;">
 					<input class="text" type="text" size="40" value="'.$email.'" name="cntctfrm_contact_email" id="cntctfrm_contact_email" style="text-align: left; margin: 0;">
 				</div>
 
@@ -296,7 +296,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 			if( isset( $error_message['error_subject'] ) ) {
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_subject'].'</div>';
 			}
-				$content .= '<div style="text-align: left;">
+			$content .= '<div style="text-align: left;">
 					<input class="text" type="text" size="40" value="'.$subject.'" name="cntctfrm_contact_subject" id="cntctfrm_contact_subject" style="text-align: left; margin: 0;">
 				</div>
 
@@ -306,12 +306,15 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 			if( isset( $error_message['error_message'] ) ) {
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_message'].'</div>';
 			}
-				$content .= '<div style="text-align: left;">
+			$content .= '<div style="text-align: left;">
 					<textarea rows="10" cols="30" name="cntctfrm_contact_message" id="cntctfrm_contact_message">'.$message.'</textarea>
 				</div>';
-			$content .= apply_filters( 'cntctfrm_display_captcha' , $error_message );
+
+			if(has_filter('cntctfrm_display_captcha')) {
+				$content .= apply_filters( 'cntctfrm_display_captcha' , $error_message );
+			}
 				
-				$content .= '<div style="text-align: left; padding-top: 8px;">
+			$content .= '<div style="text-align: left; padding-top: 8px;">
 					<input type="hidden" value="send" name="cntctfrm_contact_action">
 					<input type="submit" value="Submit" style="cursor: pointer; margin: 0pt; text-align: center;margin-bottom:10px;"> 
 				</div>
