@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 2.07
+Version: 2.08
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -257,12 +257,12 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 		}
 		// If it is good
 		if( true === $result ) {
-			$content .= __( "Thank you for contacting us.", "cmntfrm" );
+			$content .= __( "Thank you for contacting us.", "cntfrm" );
 		}
 		else if( false === $result )
 		{
 			// If email not be delivered
-			$error_message['error_form'] = __( "Sorry, your e-mail could not be delivered.", "cmntfrm" );
+			$error_message['error_form'] = __( "Sorry, your e-mail could not be delivered.", "cntfrm" );
 		}
 		else { 
 			// Output form
@@ -331,11 +331,11 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 		$result = "";
 		// Error messages array
 		$error_message = array();
-		$error_message['error_name'] = __( "Your name is required.", "cmntfrm" );
-		$error_message['error_email'] = __( "A proper e-mail address is required.", "cmntfrm" );
-		$error_message['error_subject'] = __( "Subject text is required.", "cmntfrm" );
-		$error_message['error_message'] = __( "Message text is required.", "cmntfrm" );
-		$error_message['error_form'] = __( "Please make corrections below and try again.", "cmntfrm" );
+		$error_message['error_name'] = __( "Your name is required.", "cntfrm" );
+		$error_message['error_email'] = __( "A proper e-mail address is required.", "cntfrm" );
+		$error_message['error_subject'] = __( "Subject text is required.", "cntfrm" );
+		$error_message['error_message'] = __( "Message text is required.", "cntfrm" );
+		$error_message['error_form'] = __( "Please make corrections below and try again.", "cntfrm" );
 		// Check information wich was input in fields
 		if( "" != $_REQUEST['cntctfrm_contact_name'] )
 			unset( $error_message['error_name'] );
@@ -347,7 +347,7 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 			unset( $error_message['error_message'] );
 		// If captcha plugin exists
 		if( ! apply_filters( 'cntctfrm_check_form', $_REQUEST ) )
-			$error_message['error_captcha'] = __( "Please complete the CAPTCHA.", "cmntfrm" );
+			$error_message['error_captcha'] = __( "Please complete the CAPTCHA.", "cntfrm" );
 		if( 1 == count( $error_message ) ) {
 			unset( $error_message['error_form'] );
 			// If all is good - send mail
@@ -376,6 +376,20 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 		if( "" != $to ) {
 			// subject
 			$subject = $_REQUEST['cntctfrm_contact_subject'];
+			$user_info_string = '';
+			$userdomain = '';
+			$form_action_url = '';
+			if ( getenv('HTTPS') == 'on' ) {
+				$form_action_url = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+			} else {
+				$form_action_url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+			}
+
+			$userdomain = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+			$user_info_string .= __('Sent from (ip address)', 'cntfrm').': '.$_SERVER['REMOTE_ADDR']." ( ". $userdomain ." )";
+			$user_info_string .= __('Date/Time', 'cntfrm').': '.date_i18n( get_option( 'date_format' ).' '.get_option( 'time_format' ), time() );
+			$user_info_string .= __('Coming from (referer)', 'cntfrm').': '.$form_action_url;
+			$user_info_string .= __('Using (user agent)', 'cntfrm').': '.cntctfrm_clean_input($_SERVER['HTTP_USER_AGENT']);
 			// message
 			$message = '
 			<html>
@@ -397,15 +411,31 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 						<td>Message</td><td>'.$_REQUEST['cntctfrm_contact_message'].'</td>
 					</tr>
 					<tr>
-						<td></td><td></td>
+						<td>Site</td><td>'.get_bloginfo("url").'</td>
 					</tr>
 					<tr>
-						<td>Site</td><td>'.get_bloginfo("url").'</td>
+						<td><br /></td><td><br /></td>
+					</tr>
+					<tr>
+						<td><br /></td><td><br /></td>
+					</tr>
+					<tr>
+						<td>'.__('Sent from (ip address)', 'cntfrm').': </td><td>'.$_SERVER['REMOTE_ADDR']." ( ". $userdomain ." )".'</td>
+					</tr>
+					<tr>
+						<td>'.__('Date/Time', 'cntfrm').': </td><td>'.date_i18n( get_option( 'date_format' ).' '.get_option( 'time_format' ), time() ).'</td>
+					</tr>
+					<tr>
+						<td>'.__('Coming from (referer)', 'cntfrm').': </td><td>'.$form_action_url.'</td>
+					</tr>
+					<tr>
+						<td>'.__('Using (user agent)', 'cntfrm').': </td><td>'.cntctfrm_clean_input($_SERVER['HTTP_USER_AGENT']).'</td>
 					</tr>
 				</table>
 			</body>
 			</html>
 			';
+
 
 			// To send HTML mail, the Content-type header must be set
 			$headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -415,7 +445,7 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 			$headers .= 'From: '.$_REQUEST['cntctfrm_contact_email']. "\r\n";
 
 			// Mail it
-			return @mail($to, $subject, $message, $headers);
+			return @mail($to, stripslashes($subject), stripslashes($message), $headers);
 		}
 		return false;
 	}
@@ -441,6 +471,33 @@ function cntctfrm_register_plugin_links($links, $file) {
 		$links[] = '<a href="Mailto:plugin@bestwebsoft.com">' . __('Support','cntctfrm_plugin') . '</a>';
 	}
 	return $links;
+}
+
+function cntctfrm_clean_input($string, $preserve_space = 0) {
+	if ( is_string( $string ) ) {
+		if($preserve_space) {
+			return cntctfrm_sanitize_string( strip_tags( stripslashes( $string ) ), $preserve_space );
+		}
+		return trim( cntctfrm_sanitize_string( strip_tags( stripslashes( $string ) ) ) );
+	} 
+	else if ( is_array( $string ) ) {
+		reset( $string );
+		while ( list($key, $value ) = each( $string ) ) {
+			$string[$key] = cntctfrm_clean_input($value,$preserve_space);
+		}
+		return $string;
+	} 
+	else {
+		return $string;
+	}
+} // end function ctf_clean_input
+
+// functions for protecting and validating form vars
+function cntctfrm_sanitize_string($string, $preserve_space = 0 ) {
+	if( ! $preserve_space )
+		$string = preg_replace("/ +/", ' ', trim( $string ) );
+
+	return preg_replace( "/[<>]/", '_', $string );
 }
 
 // adds "Settings" link to the plugin action page
