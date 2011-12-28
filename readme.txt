@@ -1,10 +1,10 @@
 ﻿=== Contact Form ===
 Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/
-Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin
+Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
-Tested up to: 3.2
-Stable tag: 2011.2.08
+Tested up to: 3.3
+Stable tag: 2011.3.01
 
 Add Contact Form to your WordPress website.
 
@@ -40,11 +40,14 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 == Screenshots ==
 
 1. Contact Form dislaying.
-
 2. Plugin settings in the WordPress admin panel.
-
+3. Contact Form dislaying with additional fields.
+4. Plugin settings in the WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= 3.01 =
+*We added the 'Attachment' and 'Send me a copy' block in the contact form. Added language files for plugin.
 
 = 2.08 =
 *We fixed the slashes bug in email and added server info to email.
@@ -83,6 +86,9 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 *Ability to add Contact Form into a post. Ability to display form via shortcode.
 
 == Upgrade Notice ==
+
+= 3.01 =
+*We added the 'Attachment' and 'Send me a copy' block in the contact form. Added language files for plugin.
 
 = 2.08 =
 We fixed the slashes bug in email and added server info to email.
