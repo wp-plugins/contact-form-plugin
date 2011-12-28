@@ -1,0 +1,39 @@
+#cntctfrm_contact_form input.text {
+	width:320px;
+}
+#cntctfrm_contact_form textarea {
+	width:320px;
+}
+#cntctfrm_contact_message {
+	width:320px
+} 
+#cntctfrm_contact_name {
+	width:320px
+} 
+#cntctfrm_contact_email {
+	width:320px
+} 
+#cntctfrm_contact_subject {
+	width:320px
+}
+
+#adminmenu #toplevel_page_bws_plugins div.wp-menu-image
+{
+	background: url("../images/icon_16.png") no-repeat scroll center center transparent;
+}
+#adminmenu #toplevel_page_bws_plugins:hover div.wp-menu-image,#adminmenu #toplevel_page_bws_plugins.wp-has-current-submenu div.wp-menu-image
+{
+	background: url("../images/icon_16_c.png") no-repeat scroll center center transparent;
+}	
+.wrap #icon-options-general.icon32-bws
+{
+	background: url("../images/icon_36.png") no-repeat scroll left top transparent;
+}
+#toplevel_page_bws_plugins .wp-submenu .wp-first-item
+{
+	display:none;
+}
+
+.cntctfrm_hidden {
+	display:none;
+}
