@@ -4,13 +4,28 @@ Donate link: http://bestwebsoft.com/
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.3
-Stable tag: 2011.3.01
+Stable tag: 3.02
 
 Add Contact Form to your WordPress website.
 
 == Description ==
 
 Contact Form allows you to add a feedback form easilly and simply to a post or a page.
+
+<a href="http://wordpress.org/extend/plugins/contact-form-plugin/faq/" target="_blank">FAQ</a>
+<a href="http://bestwebsoft.com/plugin/contact-form/" target="_blank">Support</a>
+
+= Features =
+
+* Actions: There is ability to choose to send email messages - any site user email or any other email.
+* Actions: Ability to add a field to attach a file in the contact form.
+* Actions: Ability to add a field to send a copy of the letter to the user who fills out a contact form to email, specified by filling the contact form.
+* Label: There is a possibility to change the label when display fields on the form.
+
+= Translate =
+
+* Italian (it_IT)
+* Russian (ru_RU)
 
 == Installation ==
 
@@ -33,9 +48,9 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 
 1. You need to put a [contact_form] shortcode into your page or some post.
 
-= After user choosen via plugin settings page I got this error: "Such user is not exist. Settings are not saved." =
+= After user choosen via plugin settings page I got this error: "Please input correct email. Settings are not saved." =
 
-1. It means that such user is not exist or you have made a syntactical error.
+1. It means that you have made a syntactical error.
 
 == Screenshots ==
 
@@ -46,82 +61,91 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 
 == Changelog ==
 
-= 3.01 =
-*We added the 'Attachment' and 'Send me a copy' block in the contact form. Added language files for plugin.
+= V3.02 - 02.01.2012 =
+* NEW : Added Italian language files for plugin.
+* NEW : Added possibility to change the label when display fields on the form.
+* Changed : Display the names of the files types that user can attach to the mail.
 
-= 2.08 =
+= V3.01 - 28.12.2011 =
+* NEW : We added the 'Attachment' and 'Send me a copy' block in the contact form. 
+* NEW : Added language files for plugin.
+
+= V2.08 - 12.11.2011 =
 *We fixed the slashes bug in email and added server info to email.
 
-= 2.07 =
+= V2.07 - 10.11.2011 =
 *We fixed the bug of complex form validation when captcha not used in the contact form. Upgrade immediately.
 
-= 2.06 =
+= V2.06 - 16.09.2011 =
 *We fixed the bug of complex email validation when filling in the contact form.
 
-= 2.05 =
+= V2.05 - 23.08.2011 =
 *BWS Plugins sections was fixed and right now it is consisted with 3 parts: activated, installed and recommended plugins. The bug of position in the admin menu is fixed. Translation ommissions are corrected. Now there is a link to see the site where the email comes from.
 
-= 2.04 =
+= V2.04 - 14.07.2011 =
 *BWS Plugins sections was fixed and right now it is consisted with 2 parts: installed and recommended plugins. Icons displaying is fixed.
 
-= 2.03 =
+= V2.03 - 13.07.2011 =
 *The bug of the use custom email is fixed in this version. Please upgrade the plugin immediately. Thank you
 
-= 2.02 =
+= V2.02 =
 *The bug of the setting page link is fixed in this version. Please upgrade the plugin immediately. Thank you
 
-= 2.01 =
+= V2.01 =
 *Usability at the settings page of plugin was improved.
 
-= 1.03 =
+= V1.03 =
 *Contact form email adress bug is fixed.
 
-= 1.02 =
+= V1.02 =
 *Display "thanks" message bug is fixed. Radio buttons automatic switching added (for settings page) after setting mouse cursor (clicking) into a text field.
 
-= 1.01 =
+= V1.01 =
 *Contact form position bug is fixed.
 
-= 1.00 =
+= V1.00 =
 *Ability to add Contact Form into a post. Ability to display form via shortcode.
 
 == Upgrade Notice ==
 
-= 3.01 =
-*We added the 'Attachment' and 'Send me a copy' block in the contact form. Added language files for plugin.
+= V3.02 =
+Added Italian language files for plugin. Added possibility to change the label when display fields on the form. Display the names of the files types that user can attach to the mail.
 
-= 2.08 =
+= V3.01 =
+We added the 'Attachment' and 'Send me a copy' block in the contact form. Added language files for plugin.
+
+= V2.08 =
 We fixed the slashes bug in email and added server info to email.
 
-= 2.07 =
+= v2.07 =
 We fixed the bug of complex form validation when captcha not used in the contact form. Upgrade immediately.
 
-= 2.06 =
+= V2.06 =
 We fixed the bug of complex email validation when filling in the contact form.
 
-= 2.05 =
+= V2.05 =
 BWS Plugins sections was fixed and right now it is consisted with 3 parts: activated, installed and recommended plugins. The bug of position in the admin menu is fixed. Translation ommissions are corrected. Now there is a link to see the site where the email comes from.
 
-= 2.04 =
+= V2.04 =
 BWS Plugins sections was fixed and right now it is consisted with 2 parts: installed and recommended plugins. Icons displaying is fixed.
 
-= 2.03 = 
+= V2.03 = 
 The bug of the use custom email is fixed in this version. Please upgrade the plugin immediately. Thank you
 
-= 2.02 =
+= V2.02 =
 The bug of the setting page link is fixed in this version. Please upgrade the plugin immediately. Thank you
 
-= 2.01 =
+= V2.01 =
 Usability at the settings page of plugin was improved.
 
-= 1.03 =
+= V1.03 =
 Contact form email adress bug is fixed. Upgrade immediately.
 
-= 1.02 =
+= V1.02 =
 Display "thanks" message bug is fixed. Radio buttons automatic switching added (for settings page) after setting mouse cursor (clicking) into a text field. Upgrade immediately.
 
-= 1.01 =
+= V1.01 =
 Contact form position bug is fixed. Upgrade immediately.
 
-= 1.00 =
+= V1.00 =
 Upgrade immediately.

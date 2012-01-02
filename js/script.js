@@ -5,4 +5,10 @@ jQuery(document).ready(function(){
 		else
 			jQuery('.cntctfrm_additions_block').addClass('cntctfrm_hidden');
 	});
+	jQuery('#cntctfrm_change_label').change( function() {
+		if(jQuery(this).is(':checked') )
+			jQuery('.cntctfrm_change_label_block').removeClass('cntctfrm_hidden');
+		else
+			jQuery('.cntctfrm_change_label_block').addClass('cntctfrm_hidden');
+	});
 });

@@ -11,256 +11,256 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-Language: Russian\n"
-"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: contact_form.php:78
 msgid "Activated plugins"
-msgstr "Активированные плагины"
+msgstr "Plugin attivati"
 
 #: contact_form.php:80
 #: contact_form.php:88
 #: contact_form.php:96
 msgid "Read more"
-msgstr "Читать далее"
+msgstr "Leggi"
 
 #: contact_form.php:80
 #: contact_form.php:616
 #: contact_form.php:625
 msgid "Settings"
-msgstr "Настройки"
+msgstr "Settaggi"
 
 #: contact_form.php:86
 msgid "Installed plugins"
-msgstr "Установленные плагины"
+msgstr "Plugin installati"
 
 #: contact_form.php:94
 msgid "Recommended plugins"
-msgstr "Рекомендованные к установке плагины"
+msgstr "Plugin raccomandati"
 
 #: contact_form.php:96
 msgid "Download"
-msgstr "Скачать"
+msgstr "Download"
 
 #: contact_form.php:96
 #, php-format
 msgid "Install %s"
-msgstr "Установлено %s"
+msgstr "Installa %s"
 
 #: contact_form.php:96
 msgid "Install now from wordpress.org"
-msgstr "Установить с wordpress.org"
+msgstr ""
 
 #: contact_form.php:98
 msgid "If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site"
-msgstr "Если у вас есть какие-то впросы, обращайтесь на plugin@bestwebsoft.com или заполните контактную форму на нашем сайте"
+msgstr "Se hai domande, per favore contattaci a plugin@bestwebsoft.com o compila il modulo \"contact form\" sul nostro sito"
 
 #: contact_form.php:110
 #: contact_form.php:213
 msgid "Contact Form Options"
-msgstr "Настройки Контактной Формы"
+msgstr "Opzioni Contact Form"
 
 #: contact_form.php:110
 msgid "Contact Form"
-msgstr "Контактная Форма"
+msgstr "Contact Form"
 
 #: contact_form.php:130
 #: contact_form.php:164
 #: contact_form.php:181
 #: contact_form.php:271
 msgid "Name:"
-msgstr "Имя:"
+msgstr "Nome:"
 
 #: contact_form.php:131
 #: contact_form.php:165
 #: contact_form.php:182
 #: contact_form.php:272
 msgid "E-Mail Address:"
-msgstr "E-mail адрес:"
+msgstr "Indirizzo e-mail:"
 
 #: contact_form.php:132
 #: contact_form.php:166
 #: contact_form.php:183
 #: contact_form.php:273
 msgid "Subject:"
-msgstr "Тема:"
+msgstr "Oggetto:"
 
 #: contact_form.php:133
 #: contact_form.php:167
 #: contact_form.php:184
 #: contact_form.php:274
 msgid "Message:"
-msgstr "Сообщение:"
+msgstr "Messaggio:"
 
 #: contact_form.php:134
 #: contact_form.php:168
 #: contact_form.php:185
 #: contact_form.php:275
 msgid "Attachment:"
-msgstr "Прикрепить файл:"
+msgstr "Attachment:"
 
 #: contact_form.php:193
 #: contact_form.php:202
 msgid "Options saved."
-msgstr "Опции сохранены"
+msgstr "Opzioni salvate."
 
 #: contact_form.php:196
 msgid "Such user is not exist. Settings are not saved."
-msgstr "Данный пользователь не найден. Настройки не сохранены"
+msgstr "L'utente indicato non esiste. Le opzioni non sono state salvate."
 
 #: contact_form.php:205
 msgid "Please input correct email. Settings are not saved."
-msgstr "Пожалуйста, введите корректный email. Настройки не сохранены."
+msgstr "Perfavore inserisci una e-mail corretta. Opzioni non salvate."
 
 #: contact_form.php:218
 msgid "If you would like to add a Contact Form to your website, just copy and put this shortcode onto your post or page:"
-msgstr "Если вы хотите добавить Контактную Форму на свой сайт, вам надо только скопировать и вставить шорткод в контент страницы или поста:"
+msgstr "Se vuoi aggiungere un Contact Form al tuo sito, copia e incolla questo shortcode nei tuoi post o nelle tue pagine:"
 
 #: contact_form.php:219
 msgid "If information in the below fields are empty then the message will be send to an address which was specified during registration."
-msgstr "Если информация в полях ниже отсутствует, соощения будут оправлены на email адрес, который был указан при регистрации сайта."
+msgstr "Se le informazioni nei campi sottostanti sono vuote allora il messaggio sarà inviato ad un indirizzo che è stato specificato durante la fase di registrazione. "
 
 #: contact_form.php:223
 msgid "Use email of wordpress user:"
-msgstr "Email пользователя сайта:"
+msgstr "Utilizza l'e-mail dell'utente wordpress:"
 
 #: contact_form.php:229
 msgid "Select user name"
-msgstr "Выберите имя пользователя"
+msgstr ""
 
 #: contact_form.php:234
 msgid "Set a name of user wo will get messages from a contact form."
-msgstr "Укажите логин пользователя, который будет получать сообщения контактной формы"
+msgstr "Imposta il nome dell'utente che riceverà i messaggi da un contact form."
 
 #: contact_form.php:238
 msgid "Use this email:"
-msgstr "Использовать этот email:"
+msgstr "Utilizza questa e-mail:"
 
 #: contact_form.php:244
 msgid "Set an email address which will be used for messages receiving."
-msgstr "Укажите email адрес, на который будут отправляться сообщения."
+msgstr "Imposta una e-mail che verrà utilizzata per ricevere i messaggi."
 
 #: contact_form.php:248
 msgid "Additional options"
-msgstr "Дополнительные настройки"
+msgstr "Impostazioni aggiuntive"
 
 #: contact_form.php:251
 msgid "Display Attachment block"
-msgstr "Отобразить блок Прикрепить файл"
+msgstr "Visualizza l'attachment"
 
 #: contact_form.php:256
 msgid "Users can attach files of the following types"
-msgstr "Пользователи могут прикрепить файлы таких типов"
+msgstr ""
 
 #: contact_form.php:260
 msgid "Display Send me a copy block"
-msgstr "Отобразить блок Отправить мне копию"
+msgstr "Visualizza il blocco \"Inviami una copia\" "
 
 #: contact_form.php:266
 msgid "Change label for fields of the contact form"
-msgstr "Изменить названия полей  контактной формы"
+msgstr ""
 
 #: contact_form.php:281
 msgid "Save Changes"
-msgstr "Save Changes"
+msgstr "Salva le modifiche"
 
 #: contact_form.php:311
 msgid "Thank you for contacting us."
-msgstr "Спасибо за контакт с нами."
+msgstr "Grazie per averci contattato."
 
 #: contact_form.php:316
 msgid "Sorry, your e-mail could not be delivered."
-msgstr "Извините, ваш email не может быть отправлен."
+msgstr "Spiacenti, la tua e-mail non può essere consegnata al momento."
 
 #: contact_form.php:372
 msgid "You can attach files of the following types"
-msgstr "Пользователи могут прикрепить файлы таких типов"
+msgstr ""
 
 #: contact_form.php:378
 msgid "Send me a copy"
-msgstr "Отправить мне копию"
+msgstr "Inviami una copia"
 
 #: contact_form.php:388
 msgid "Submit"
-msgstr "Отправить"
+msgstr "Invia"
 
 #: contact_form.php:404
 msgid "Your name is required."
-msgstr "Ваше имя - это обязательное поле."
+msgstr "Il nome è obbligatorio"
 
 #: contact_form.php:405
 msgid "A proper e-mail address is required."
-msgstr "Поле e-mail адреса - обязательное для заполнения."
+msgstr "È richiesto un indirizzo e-mail corretto"
 
 #: contact_form.php:406
 msgid "Subject text is required."
-msgstr "Поле Тема - обязательное поле."
+msgstr "L'oggetto è obbligatorio"
 
 #: contact_form.php:407
 msgid "Message text is required."
-msgstr "Поле Сообщение - обязательное поле."
+msgstr "Il campo messaggio è obbligatorio"
 
 #: contact_form.php:408
 msgid "Please make corrections below and try again."
-msgstr "Пожалуйста, сделайте исправления в отмеченных полях ниже и повторите попытку."
+msgstr "Controlla i dati del modulo e riprova!"
 
 #: contact_form.php:437
 msgid "Attachment is broken."
-msgstr "Прикрепленный тип файла не поддерживается"
+msgstr "L'attachment non è corretto"
 
 #: contact_form.php:450
 msgid "Please complete the CAPTCHA."
-msgstr "Пожалуйста, заполните КАПЧУ."
+msgstr "Completa il CAPTCHA"
 
 #: contact_form.php:505
 #: contact_form.php:539
 msgid "Sent from (ip address)"
-msgstr "Отправлено от (ip адрес)"
+msgstr "Inviato da (indirizzi IP)"
 
 #: contact_form.php:506
 #: contact_form.php:542
 msgid "Date/Time"
-msgstr "Дата/Время"
+msgstr "Data/Ora"
 
 #: contact_form.php:507
 #: contact_form.php:545
 msgid "Coming from (referer)"
-msgstr "Пришло из (реферер)"
+msgstr "Da (referente)"
 
 #: contact_form.php:508
 #: contact_form.php:548
 msgid "Using (user agent)"
-msgstr "Используя (user agent)"
+msgstr "Utilizza (user agent)"
 
 #: contact_form.php:513
 msgid "Contact from"
-msgstr "Контактная Форма"
+msgstr "Contact from"
 
 #: contact_form.php:518
 msgid "Name"
-msgstr "Имя"
+msgstr "Nome"
 
 #: contact_form.php:521
 msgid "Email"
-msgstr "Email"
+msgstr "e-mail"
 
 #: contact_form.php:524
 msgid "Subject"
-msgstr "Тема"
+msgstr "Oggetto"
 
 #: contact_form.php:527
 msgid "Message"
-msgstr "Сообщение"
+msgstr "Messaggio"
 
 #: contact_form.php:530
 msgid "Site"
-msgstr "Сайт"
+msgstr "Sito"
 
 #: contact_form.php:571
 msgid "If you can see this MIME than your client doesn't accept MIME types!"
-msgstr "Если вы можете видеть этот MIME значит ваш почтовый клиент не поддерживает MIME тип!"
+msgstr "Se puoi visualizzare questo MIME il tuo client non supporta i MIME types!"
 
 #: contact_form.php:626
 msgid "FAQ"
@@ -268,13 +268,13 @@ msgstr "FAQ"
 
 #: contact_form.php:627
 msgid "Support"
-msgstr "Поддержка"
+msgstr "Supporto"
 
 #~ msgid "E-Mail Addresse:"
-#~ msgstr "E-mail адрес:"
+#~ msgstr "Indirizzo e-mail:"
 
 #~ msgid "Install Now"
-#~ msgstr "Установить сейчас"
+#~ msgstr "Installa Ora"
 
 #~ msgid "BWS Plugins"
-#~ msgstr "Плагины BWS"
+#~ msgstr "BWS Plugins"
