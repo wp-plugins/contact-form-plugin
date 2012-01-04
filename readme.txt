@@ -4,7 +4,7 @@ Donate link: http://bestwebsoft.com/
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.3
-Stable tag: 3.02
+Stable tag: 3.03
 
 Add Contact Form to your WordPress website.
 
@@ -24,8 +24,11 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 
 = Translate =
 
-* Italian (it_IT)
+* German (de_DE) (thanks Hartung Thomas)
+* Italian (it_IT) (thanks <a href="mailto:ilian@ultra-violet.it">Ilian Gagliardi</a>)
 * Russian (ru_RU)
+
+If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
 == Installation ==
 
@@ -60,6 +63,10 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 4. Plugin settings in the WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.03 - 04.01.2012 =
+* NEW : Added German language files for plugin.
+* Bugfix : The bug which is related with the resending of the email when updating of the page was fixed.
 
 = V3.02 - 02.01.2012 =
 * NEW : Added Italian language files for plugin.
@@ -107,6 +114,9 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 *Ability to add Contact Form into a post. Ability to display form via shortcode.
 
 == Upgrade Notice ==
+
+= V3.03 =
+Added German language files for plugin. The bug which is related with the resending of the email when updating of the page was fixed. Upgrade immediately.
 
 = V3.02 =
 Added Italian language files for plugin. Added possibility to change the label when display fields on the form. Display the names of the files types that user can attach to the mail.

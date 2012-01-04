@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.02
+Version: 3.03
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -308,6 +308,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 		}
 		// If it is good
 		if( true === $result ) {
+			$_SESSION['cntctfrm_send_mail'] = true;
 			$content .= __( "Thank you for contacting us.", 'contact_form' );
 		}
 		else if( false === $result )
@@ -316,6 +317,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 			$error_message['error_form'] = __( "Sorry, your e-mail could not be delivered.", 'contact_form' );
 		}
 		else { 
+			$_SESSION['cntctfrm_send_mail'] = false;
 			// Output form
 			$content .= '<form method="post" id="cntctfrm_contact_form" action="" enctype="multipart/form-data">';
 			if( isset( $error_message['error_form'] ) ) { 
@@ -478,6 +480,8 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 	function cntctfrm_send_mail() {
 		global $cntctfrm_options;
 		$to = "";
+		if( isset( $_SESSION['cntctfrm_send_mail'] ) && $_SESSION['cntctfrm_send_mail'] == true )
+			return true;
 		if($cntctfrm_options['cntctfrm_select_email'] == 'user') {
 			if( false !== $user = get_userdatabylogin($cntctfrm_options_submit['cntctfrm_user_email'] ) )
 				$to = $user['user_email'];
@@ -659,6 +663,8 @@ function cntctfrm_sanitize_string($string, $preserve_space = 0 ) {
 //Function '_plugin_init' are using to add language files.
 if ( ! function_exists ( 'cntctfrm_plugin_init' ) ) {
 	function cntctfrm_plugin_init() {
+		if ( ! session_id() )
+			session_start();
 		load_plugin_textdomain( 'contact_form', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
 	}
 } // end function cntctfrm_plugin_init
