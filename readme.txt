@@ -4,7 +4,7 @@ Donate link: http://bestwebsoft.com/
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.3
-Stable tag: 3.03
+Stable tag: 3.04
 
 Add Contact Form to your WordPress website.
 
@@ -24,9 +24,11 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 
 = Translate =
 
+* Brazilian Portuguese (pt_BR) (thanks Breno Jacinto)
 * German (de_DE) (thanks Hartung Thomas)
 * Italian (it_IT) (thanks <a href="mailto:ilian@ultra-violet.it">Ilian Gagliardi</a>)
 * Russian (ru_RU)
+* Turkish (tr_TR) (thanks <a herf="mailto:d-bulent@hotmail.com ">Devrim Bulent Ibis</a>, www.devrimhoca.com)
 
 If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
@@ -55,6 +57,20 @@ If you create your own language pack or update the existing one, you can send <a
 
 1. It means that you have made a syntactical error.
 
+= How to use the other language files with the Contact Form? = 
+
+Here is an example for German language files.
+
+1. In order to use another language for WordPress it is necessary to set the WP version on the required language and in the configurational wp file - `wp-config.php` in the line `define('WPLANG', '');` write `define('WPLANG', 'de_DE');`. If everything is done properly the admin panel will be in German.
+
+2. Make sure that there are files `de_DE.po` and `de_DE.mo` in the plugin (the folder languages in the root of the plugin).
+
+3. If there are no these files it will be necessary to copy other files from this folder (for example, for Russian or Italian language) and rename them (you should write `de_DE` instead of `ru_RU` in the both files).
+
+4. The files are edited with the help of the program Poedit - http://www.poedit.net/download.php - please load this program, install it, open the file with the help of this program (the required language file) and for each line in English you should write the translation in German.
+
+5. If everything is done properly all lines will be in German in the admin panel and on frontend.
+
 == Screenshots ==
 
 1. Contact Form dislaying.
@@ -63,6 +79,9 @@ If you create your own language pack or update the existing one, you can send <a
 4. Plugin settings in the WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.04 - 05.01.2012 =
+* NEW : Added Brazilian Portuguese and Turkish language files for plugin.
 
 = V3.03 - 04.01.2012 =
 * NEW : Added German language files for plugin.
@@ -114,6 +133,9 @@ If you create your own language pack or update the existing one, you can send <a
 *Ability to add Contact Form into a post. Ability to display form via shortcode.
 
 == Upgrade Notice ==
+
+= V3.04 =
+Added Brazilian Portuguese and Turkish language files for plugin.
 
 = V3.03 =
 Added German language files for plugin. The bug which is related with the resending of the email when updating of the page was fixed. Upgrade immediately.
