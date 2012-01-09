@@ -24,7 +24,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 
 = Translate =
 
-* Brazilian Portuguese (pt_BR) (thanks Breno Jacinto)
+* Brazilian Portuguese (pt_BR) (thanks <a href="mailto:brenojac@gmail.com">Breno Jacinto, www.iconis.org.br)
 * German (de_DE) (thanks Hartung Thomas)
 * Italian (it_IT) (thanks <a href="mailto:ilian@ultra-violet.it">Ilian Gagliardi</a>)
 * Russian (ru_RU)
