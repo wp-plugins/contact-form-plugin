@@ -4,7 +4,7 @@ Donate link: http://bestwebsoft.com/
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.3
-Stable tag: 3.04
+Stable tag: 3.05
 
 Add Contact Form to your WordPress website.
 
@@ -80,6 +80,10 @@ Here is an example for German language files.
 
 == Changelog ==
 
+= V3.05 - 09.01.2012 =
+* Bugfix : The bug sends email to admin user even if different user is specified when setting plugin to use "use email of wordpress user" was fixed.
+* Bugfix : The bug with sending a blank attachment field of the form was fixed.
+
 = V3.04 - 05.01.2012 =
 * NEW : Added Brazilian Portuguese and Turkish language files for plugin.
 
@@ -133,6 +137,9 @@ Here is an example for German language files.
 *Ability to add Contact Form into a post. Ability to display form via shortcode.
 
 == Upgrade Notice ==
+
+= V3.05 =
+The bug sends email to admin user even if different user is specified when setting plugin to use "use email of wordpress user" was fixed. The bug with sending a blank attachment field of the form was fixed. Upgrade immediately.
 
 = V3.04 =
 Added Brazilian Portuguese and Turkish language files for plugin.
