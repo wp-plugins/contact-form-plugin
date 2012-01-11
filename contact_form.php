@@ -138,8 +138,8 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 			add_option( 'cntctfrm_options', $cntctfrm_option_defaults, '', 'yes' );
 
 		$cntctfrm_options = get_option( 'cntctfrm_options' );
-
 		$cntctfrm_options = array_merge( $cntctfrm_option_defaults, $cntctfrm_options );
+		update_option( 'cntctfrm_options', $cntctfrm_options );
 	}
 }
 
