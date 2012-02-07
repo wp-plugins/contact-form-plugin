@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.05
+Version: 3.06
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -231,7 +231,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 								<option value="<?php echo $value; ?>" <?php if( $cntctfrm_options['cntctfrm_user_email'] == $value ) echo "selected=\"selected\" "; ?>><?php echo $value; ?></option>
 							<?php } ?>
 						</select>
-						<span class="cntctfrm_info"><?php _e( "Set a name of user wo will get messages from a contact form.", 'contact_form' ); ?></span>
+						<span class="cntctfrm_info"><?php _e( "Set a name of user who will get messages from a contact form.", 'contact_form' ); ?></span>
 					</td>
 				</tr>
 				<tr valign="top">

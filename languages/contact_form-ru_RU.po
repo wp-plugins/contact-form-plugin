@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-05 15:30+0200\n"
-"PO-Revision-Date: 2012-01-05 15:30+0200\n"
+"POT-Creation-Date: 2012-02-07 19:19+0200\n"
+"PO-Revision-Date: 2012-02-07 19:19+0200\n"
 "Last-Translator: BWS <zos@bestwebsoft.com>\n"
 "Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "MIME-Version: 1.0\n"
@@ -131,8 +131,8 @@ msgid "Select user name"
 msgstr "Выберите имя пользователя"
 
 #: contact_form.php:234
-msgid "Set a name of user wo will get messages from a contact form."
-msgstr "Укажите логин пользователя, который будет получать сообщения контактной формы"
+msgid "Set a name of user who will get messages from a contact form."
+msgstr "Укажите логин пользователя, который будет получать сообщения контактной формы."
 
 #: contact_form.php:238
 msgid "Use this email:"
