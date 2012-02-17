@@ -4,7 +4,7 @@ Donate link: http://bestwebsoft.com/
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.3
-Stable tag: 3.06
+Stable tag: 3.07
 
 Add Contact Form to your WordPress website.
 
@@ -28,6 +28,8 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 * Dutch (nl_NL) (thanks <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>, Jan Boeijink )
 * German (de_DE) (thanks Hartung Thomas)
 * Italian (it_IT) (thanks <a href="mailto:ilian@ultra-violet.it">Ilian Gagliardi</a>)
+* Norwegian (nb_NO)	(thanks Tore Hjartland)
+* Polish (pl_PL) (thanks Jarek Spirydowicz)
 * Russian (ru_RU)
 * Turkish (tr_TR) (thanks <a herf="mailto:d-bulent@hotmail.com ">Devrim Bulent Ibis</a>, www.devrimhoca.com)
 
@@ -80,6 +82,10 @@ Here is an example for German language files.
 4. Plugin settings in the WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.07 - 17.02.2012 =
+* NEW : Added Norwegian language file for plugin.
+* NEW : Added Polish language file for plugin.
 
 = V3.06 - 07.02.2012 =
 * NEW : Added Dutch language file for plugin.
@@ -141,6 +147,9 @@ Here is an example for German language files.
 *Ability to add Contact Form into a post. Ability to display form via shortcode.
 
 == Upgrade Notice ==
+
+= V3.07 =
+Added Norwegian and Polish language files for plugin.
 
 = V3.06 =
 Added Dutch language file for plugin.
