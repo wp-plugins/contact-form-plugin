@@ -603,9 +603,9 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 				// Mail it
 			}
 			if( $_REQUEST['cntctfrm_contact_send_copy'] == 1 )
-				@mail($_REQUEST['cntctfrm_contact_email'], stripslashes($subject), stripslashes($message), $headers);
+				wp_mail($_REQUEST['cntctfrm_contact_email'], stripslashes($subject), stripslashes($message), $headers);
 
-			return @mail($to, stripslashes($subject), stripslashes($message), $headers);
+			return wp_mail($to, stripslashes($subject), stripslashes($message), $headers);
 		}
 		return false;
 	}
