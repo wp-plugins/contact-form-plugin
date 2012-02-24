@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.08
+Version: 3.09
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -28,10 +28,10 @@ if( ! function_exists( 'bws_add_menu_render' ) ) {
 	function bws_add_menu_render() {
 		global $title;
 		$active_plugins = get_option('active_plugins');
-		$all_plugins = get_plugins();
+		$all_plugins		= get_plugins();
 
 		$array_activate = array();
-		$array_install = array();
+		$array_install	= array();
 		$array_recomend = array();
 		$count_activate = $count_install = $count_recomend = 0;
 		$array_plugins	= array(
@@ -41,27 +41,24 @@ if( ! function_exists( 'bws_add_menu_render' ) ) {
 			array( 'twitter-plugin\/twitter.php', 'Twitter Plugin', 'http://wordpress.org/extend/plugins/twitter-plugin/', 'http://bestwebsoft.com/plugin/twitter-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Twitter+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=twitter.php' ), 
 			array( 'portfolio\/portfolio.php', 'Portfolio', 'http://wordpress.org/extend/plugins/portfolio/', 'http://bestwebsoft.com/plugin/portfolio-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Portfolio+bestwebsoft&plugin-search-input=Search+Plugins', '' ),
 			array( 'gallery-plugin\/gallery-plugin.php', 'Gallery', 'http://wordpress.org/extend/plugins/gallery-plugin/', 'http://bestwebsoft.com/plugin/gallery-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Gallery+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', '' ),
-			array( 'adsense-plugin\/adsense-plugin.php', 'Google AdSense Plugin', 'http://wordpress.org/extend/plugins/adsense-plugin/', 'http://bestwebsoft.com/plugin/google-adsense-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Adsense+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=adsense-plugin.php' )
+			array( 'adsense-plugin\/adsense-plugin.php', 'Google AdSense Plugin', 'http://wordpress.org/extend/plugins/adsense-plugin/', 'http://bestwebsoft.com/plugin/google-adsense-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Adsense+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=adsense-plugin.php' ),
+			array( 'custom-search-plugin\/custom-search-plugin.php', 'Custom Search Plugin', 'http://wordpress.org/extend/plugins/custom-search-plugin/', 'http://bestwebsoft.com/plugin/custom-search-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Custom+Search+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=custom_search.php' )
 		);
-		foreach($array_plugins as $plugins)
-		{
-			if( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) )
-			{
+		foreach($array_plugins as $plugins) {
+			if( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
 				$array_activate[$count_activate]['title'] = $plugins[1];
 				$array_activate[$count_activate]['link']	= $plugins[2];
 				$array_activate[$count_activate]['href']	= $plugins[3];
 				$array_activate[$count_activate]['url']	= $plugins[5];
 				$count_activate++;
 			}
-			else if( array_key_exists(str_replace("\\", "", $plugins[0]), $all_plugins) )
-			{
+			else if( array_key_exists(str_replace("\\", "", $plugins[0]), $all_plugins) ) {
 				$array_install[$count_install]['title'] = $plugins[1];
 				$array_install[$count_install]['link']	= $plugins[2];
 				$array_install[$count_install]['href']	= $plugins[3];
 				$count_install++;
 			}
-			else
-			{
+			else {
 				$array_recomend[$count_recomend]['title'] = $plugins[1];
 				$array_recomend[$count_recomend]['link']	= $plugins[2];
 				$array_recomend[$count_recomend]['href']	= $plugins[3];
@@ -93,7 +90,7 @@ if( ! function_exists( 'bws_add_menu_render' ) ) {
 			<div>
 				<h3><?php _e( 'Recommended plugins', 'contact_form' ); ?></h3>
 				<?php foreach( $array_recomend as $recomend_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $recomend_plugin['title']; ?></div> <p><a href="<?php echo $recomend_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'contact_form'); ?></a> <a href="<?php echo $recomend_plugin['href']; ?>" target="_blank"><?php echo __( "Download", 'contact_form'); ?></a> <a class="install-now" href="<?php echo get_bloginfo( "url" ) . $recomend_plugin['slug']; ?>" title="<?php esc_attr( sprintf( __( 'Install %s' ), $recomend_plugin['title'] ) ) ?>"><?php echo __( 'Install now from wordpress.org', 'contact_form' ) ?></a></p>
+				<div style="float:left; width:200px;"><?php echo $recomend_plugin['title']; ?></div> <p><a href="<?php echo $recomend_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'contact_form'); ?></a> <a href="<?php echo $recomend_plugin['href']; ?>" target="_blank"><?php echo __( "Download", 'contact_form'); ?></a> <a class="install-now" href="<?php echo get_bloginfo( "url" ) . $recomend_plugin['slug']; ?>" title="<?php esc_attr( sprintf( __( 'Install %s' ), $recomend_plugin['title'] ) ) ?>" target="_blank"><?php echo __( 'Install now from wordpress.org', 'contact_form' ) ?></a></p>
 				<?php } ?>
 				<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site', 'contact_form' ); ?> <a href="http://bestwebsoft.com/contact/">http://bestwebsoft.com/contact/</a></span>
 			</div>
@@ -197,7 +194,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				}
 			}
 			else {
-				if( $cntctfrm_options_submit['cntctfrm_custom_email']  != "" && preg_match( "/^(?:[a-z0-9]+(?:[-_\.]?[a-z0-9]+)?@[a-z0-9]+(?:[-\.]?[a-z0-9]+)?\.[a-z]{2,5})$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_email'] ) ) ) {
+				if( $cntctfrm_options_submit['cntctfrm_custom_email']  != "" && preg_match( "/^(?:[a-z0-9]+(?:[a-z0-9\-_\.]+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_email'] ) ) ) {
 					update_option( 'cntctfrm_options', $cntctfrm_options, '', 'yes' );
 					$message = __( "Options saved.", 'contact_form' );
 				}
