@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=13
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
-Tested up to: 3.3
-Stable tag: 3.09
+Tested up to: 3.3.1
+Stable tag: 3.10
 
 Add Contact Form to your WordPress website.
 
@@ -24,6 +24,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 
 = Translate =
 
+* Bulgarian (bg_BG) (thanks Martin Jekov)
 * Brazilian Portuguese (pt_BR) (thanks <a href="mailto:brenojac@gmail.com">Breno Jacinto</a>, www.iconis.org.br)
 * Dutch (nl_NL) (thanks <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>, Jan Boeijink )
 * German (de_DE) (thanks Hartung Thomas)
@@ -84,6 +85,9 @@ Here is an example for German language files.
 4. Plugin settings in the WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.10 - 02.03.2012 =
+* NEW : Added Bulgarian language file for plugin.
 
 = V3.09 - 24.02.2012 =
 * NEW : Added Spanish language file for plugin.
@@ -157,6 +161,9 @@ Here is an example for German language files.
 *Ability to add Contact Form into a post. Ability to display form via shortcode.
 
 == Upgrade Notice ==
+
+= V3.10 =
+Added Bulgarian language file for plugin.
 
 = V3.09 =
 Added Spanish language file for plugin. Changed code to include styles and scripts in a plug for the correct SSL verification. The bug validate email address in admin section was fixed. Upgrade immediately.
