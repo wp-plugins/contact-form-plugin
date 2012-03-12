@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.11
+Version: 3.12
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -251,7 +251,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 						<input type="checkbox" id="cntctfrm_attachment" name="cntctfrm_attachment" value="1" <?php if($cntctfrm_options['cntctfrm_attachment'] == '1') echo "checked=\"checked\" "; ?>/>
 					</td>
 					<td>
-						<span  class="cntctfrm_info"><?php echo __( "Users can attach files of the following types", 'contact_form' ) . ": html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, zip, rar, ppt"; ?></span>
+						<span  class="cntctfrm_info"><?php echo __( "Users can attach files of the following types", 'contact_form' ) . ": html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, zip, rar, wav, mp3, ppt"; ?></span>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
@@ -369,7 +369,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 				}
 				$content .= '<div style="text-align: left;">
 						<input type="file" name="cntctfrm_contact_attachment" id="cntctfrm_contact_attachment"'.(isset( $error_message['error_attachment'] ) ? "class='error'": "").' />
-						<label style="font-size:10px;"><br />'. __( "You can attach files of the following types", 'contact_form' ) . ': html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, zip, rar, ppt</label>
+						<label style="font-size:10px;"><br />'. __( "You can attach files of the following types", 'contact_form' ) . ': html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, zip, rar, wav, mp3, ppt</label>
 					</div>';
 			}
 			if($cntctfrm_options['cntctfrm_send_copy'] == 1 ) {
@@ -433,6 +433,8 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 				'docx'=>'application/mswor',
 				'zip'=>'application/zip',
 				'rar'=>'application/rar',
+				'wav'=>'audio/wav',
+				'mp3'=>'audio/mp3',
 				'ppt'=>'application/vnd.ms-powerpoint');
 			$error_message['error_attachment'] = __( "Attachment is broken.", "contact_form" );
 		}

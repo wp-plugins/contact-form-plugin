@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-12 19:26+0200\n"
-"PO-Revision-Date: 2012-03-12 19:26+0200\n"
+"POT-Creation-Date: 2012-03-12 20:36+0200\n"
+"PO-Revision-Date: 2012-03-12 20:36+0200\n"
 "Last-Translator: BWS <zos@bestwebsoft.com>\n"
 "Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "MIME-Version: 1.0\n"
@@ -27,8 +27,8 @@ msgid "Read more"
 msgstr "Lea mas"
 
 #: contact_form.php:78
-#: contact_form.php:601
-#: contact_form.php:610
+#: contact_form.php:603
+#: contact_form.php:612
 msgid "Settings"
 msgstr "Configuración"
 
@@ -206,63 +206,63 @@ msgstr "El mensaje es obligatorio."
 msgid "Please make corrections below and try again."
 msgstr "Por favor, corrija los datos y pruebe de nuevo."
 
-#: contact_form.php:437
+#: contact_form.php:439
 msgid "Attachment is broken."
 msgstr "El adjunto es incorrecto."
 
-#: contact_form.php:450
+#: contact_form.php:452
 msgid "Please complete the CAPTCHA."
 msgstr "Por favor completa el CAPTCHA"
 
-#: contact_form.php:526
-#: contact_form.php:560
+#: contact_form.php:528
+#: contact_form.php:562
 msgid "Sent from (ip address)"
 msgstr "Enviado desde  (dirección IP)"
 
-#: contact_form.php:527
-#: contact_form.php:563
+#: contact_form.php:529
+#: contact_form.php:565
 msgid "Date/Time"
 msgstr "Fecha/hora"
 
-#: contact_form.php:528
-#: contact_form.php:566
+#: contact_form.php:530
+#: contact_form.php:568
 msgid "Coming from (referer)"
 msgstr "De (referente)"
 
-#: contact_form.php:529
-#: contact_form.php:569
+#: contact_form.php:531
+#: contact_form.php:571
 msgid "Using (user agent)"
 msgstr "Usando (user agent)"
 
-#: contact_form.php:534
+#: contact_form.php:536
 msgid "Contact from"
 msgstr "Contact from"
 
-#: contact_form.php:539
+#: contact_form.php:541
 msgid "Name"
 msgstr "Nombre"
 
-#: contact_form.php:542
+#: contact_form.php:544
 msgid "Email"
 msgstr "E-mail"
 
-#: contact_form.php:545
+#: contact_form.php:547
 msgid "Subject"
 msgstr "Asunto"
 
-#: contact_form.php:548
+#: contact_form.php:550
 msgid "Message"
 msgstr "Mensaje"
 
-#: contact_form.php:551
+#: contact_form.php:553
 msgid "Site"
 msgstr "Sitio"
 
-#: contact_form.php:611
+#: contact_form.php:613
 msgid "FAQ"
 msgstr "FAQ"
 
-#: contact_form.php:612
+#: contact_form.php:614
 msgid "Support"
 msgstr "Soporte"
 

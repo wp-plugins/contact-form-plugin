@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-12 19:26+0200\n"
-"PO-Revision-Date: 2012-03-12 19:26+0200\n"
+"POT-Creation-Date: 2012-03-12 20:36+0200\n"
+"PO-Revision-Date: 2012-03-12 20:36+0200\n"
 "Last-Translator: BWS <zos@bestwebsoft.com>\n"
 "Language-Team: Thomas Hartung <thartung@adipositas-mm.de>\n"
 "MIME-Version: 1.0\n"
@@ -27,8 +27,8 @@ msgid "Read more"
 msgstr "Lees verder"
 
 #: contact_form.php:78
-#: contact_form.php:601
-#: contact_form.php:610
+#: contact_form.php:603
+#: contact_form.php:612
 msgid "Settings"
 msgstr "Instellingen"
 
@@ -206,63 +206,63 @@ msgstr "U bent vergeten een bericht op te geven"
 msgid "Please make corrections below and try again."
 msgstr "Vul alle vereiste informatie in en probeer het opnieuw."
 
-#: contact_form.php:437
+#: contact_form.php:439
 msgid "Attachment is broken."
 msgstr "Bijlage is beschadigd."
 
-#: contact_form.php:450
+#: contact_form.php:452
 msgid "Please complete the CAPTCHA."
 msgstr "Vul de CAPTCHA in."
 
-#: contact_form.php:526
-#: contact_form.php:560
+#: contact_form.php:528
+#: contact_form.php:562
 msgid "Sent from (ip address)"
 msgstr "Verstuurd van (IP-adres)"
 
-#: contact_form.php:527
-#: contact_form.php:563
+#: contact_form.php:529
+#: contact_form.php:565
 msgid "Date/Time"
 msgstr "Datum/Tijd"
 
-#: contact_form.php:528
-#: contact_form.php:566
+#: contact_form.php:530
+#: contact_form.php:568
 msgid "Coming from (referer)"
 msgstr "Verstuurd vanaf (referer)"
 
-#: contact_form.php:529
-#: contact_form.php:569
+#: contact_form.php:531
+#: contact_form.php:571
 msgid "Using (user agent)"
 msgstr "Met  (user agent)"
 
-#: contact_form.php:534
+#: contact_form.php:536
 msgid "Contact from"
 msgstr "Contact van"
 
-#: contact_form.php:539
+#: contact_form.php:541
 msgid "Name"
 msgstr "Naam"
 
-#: contact_form.php:542
+#: contact_form.php:544
 msgid "Email"
 msgstr "Email"
 
-#: contact_form.php:545
+#: contact_form.php:547
 msgid "Subject"
 msgstr "Onderwerp"
 
-#: contact_form.php:548
+#: contact_form.php:550
 msgid "Message"
 msgstr "Bericht"
 
-#: contact_form.php:551
+#: contact_form.php:553
 msgid "Site"
 msgstr "Website"
 
-#: contact_form.php:611
+#: contact_form.php:613
 msgid "FAQ"
 msgstr "Veel gestelde vragen (FAQ)"
 
-#: contact_form.php:612
+#: contact_form.php:614
 msgid "Support"
 msgstr "Support"
 

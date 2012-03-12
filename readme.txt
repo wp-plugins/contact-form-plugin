@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.3.1
-Stable tag: 3.11
+Stable tag: 3.12
 
 Add Contact Form to your WordPress website.
 
@@ -88,6 +88,9 @@ Here is an example for German language files.
 
 == Changelog ==
 
+= V3.12 - 12.03.2012 =
+* NEW : Added ability to upload wav and mp3 files.
+
 = V3.11 - 12.03.2012 =
 * NEW : French language file is added to the plugin.
 * NEW : Added ability to use the contact form shortcode as widget in the sidebars.
@@ -170,6 +173,9 @@ Here is an example for German language files.
 *Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.12 =
+Added ability to upload wav and mp3 files.
 
 = V3.11 =
 The changes have been made to functionality of email sending - now it is using only wordpress functionality. French language file is added to the plugin.

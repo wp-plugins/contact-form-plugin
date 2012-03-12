@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-12 19:26+0200\n"
-"PO-Revision-Date: 2012-03-12 19:26+0200\n"
+"POT-Creation-Date: 2012-03-12 20:36+0200\n"
+"PO-Revision-Date: 2012-03-12 20:36+0200\n"
 "Last-Translator: BWS <zos@bestwebsoft.com>\n"
 "Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "MIME-Version: 1.0\n"
@@ -27,8 +27,8 @@ msgid "Read more"
 msgstr "Läs mer"
 
 #: contact_form.php:78
-#: contact_form.php:601
-#: contact_form.php:610
+#: contact_form.php:603
+#: contact_form.php:612
 msgid "Settings"
 msgstr "Inställningar"
 
@@ -206,63 +206,63 @@ msgstr "Meddelandetext krävs."
 msgid "Please make corrections below and try again."
 msgstr "Var vänlig och gör ändringarna nedan och försök igen."
 
-#: contact_form.php:437
+#: contact_form.php:439
 msgid "Attachment is broken."
 msgstr "Fel vid bilaga"
 
-#: contact_form.php:450
+#: contact_form.php:452
 msgid "Please complete the CAPTCHA."
 msgstr "Var vänlig och fyll i CAPTCHA."
 
-#: contact_form.php:526
-#: contact_form.php:560
+#: contact_form.php:528
+#: contact_form.php:562
 msgid "Sent from (ip address)"
 msgstr "Skickat från (IP-adress)"
 
-#: contact_form.php:527
-#: contact_form.php:563
+#: contact_form.php:529
+#: contact_form.php:565
 msgid "Date/Time"
 msgstr "Dag/tid"
 
-#: contact_form.php:528
-#: contact_form.php:566
+#: contact_form.php:530
+#: contact_form.php:568
 msgid "Coming from (referer)"
 msgstr "Skickat från (referent)"
 
-#: contact_form.php:529
-#: contact_form.php:569
+#: contact_form.php:531
+#: contact_form.php:571
 msgid "Using (user agent)"
 msgstr "med  (user agent)"
 
-#: contact_form.php:534
+#: contact_form.php:536
 msgid "Contact from"
 msgstr "Kontakformulär"
 
-#: contact_form.php:539
+#: contact_form.php:541
 msgid "Name"
 msgstr "Namn"
 
-#: contact_form.php:542
+#: contact_form.php:544
 msgid "Email"
 msgstr "Epost"
 
-#: contact_form.php:545
+#: contact_form.php:547
 msgid "Subject"
 msgstr "Rubrik"
 
-#: contact_form.php:548
+#: contact_form.php:550
 msgid "Message"
 msgstr "Meddelande"
 
-#: contact_form.php:551
+#: contact_form.php:553
 msgid "Site"
 msgstr "www"
 
-#: contact_form.php:611
+#: contact_form.php:613
 msgid "FAQ"
 msgstr "Vanliga frågor"
 
-#: contact_form.php:612
+#: contact_form.php:614
 msgid "Support"
 msgstr "Support"
 
