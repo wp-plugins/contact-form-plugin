@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.10
+Version: 3.11
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -42,7 +42,8 @@ if( ! function_exists( 'bws_add_menu_render' ) ) {
 			array( 'portfolio\/portfolio.php', 'Portfolio', 'http://wordpress.org/extend/plugins/portfolio/', 'http://bestwebsoft.com/plugin/portfolio-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Portfolio+bestwebsoft&plugin-search-input=Search+Plugins', '' ),
 			array( 'gallery-plugin\/gallery-plugin.php', 'Gallery', 'http://wordpress.org/extend/plugins/gallery-plugin/', 'http://bestwebsoft.com/plugin/gallery-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Gallery+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', '' ),
 			array( 'adsense-plugin\/adsense-plugin.php', 'Google AdSense Plugin', 'http://wordpress.org/extend/plugins/adsense-plugin/', 'http://bestwebsoft.com/plugin/google-adsense-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Adsense+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=adsense-plugin.php' ),
-			array( 'custom-search-plugin\/custom-search-plugin.php', 'Custom Search Plugin', 'http://wordpress.org/extend/plugins/custom-search-plugin/', 'http://bestwebsoft.com/plugin/custom-search-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Custom+Search+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=custom_search.php' )
+			array( 'custom-search-plugin\/custom-search-plugin.php', 'Custom Search Plugin', 'http://wordpress.org/extend/plugins/custom-search-plugin/', 'http://bestwebsoft.com/plugin/custom-search-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Custom+Search+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=custom_search.php' ),
+			array( 'quotes_and_tips\/quotes-and-tips.php', 'Quotes and Tips', 'http://wordpress.org/extend/plugins/quotes-and-tips/', 'http://bestwebsoft.com/plugin/quotes-and-tips/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Quotes+and+Tips+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=quotes-and-tips.php' )
 		);
 		foreach($array_plugins as $plugins) {
 			if( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
@@ -212,7 +213,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 		<div class="error" <?php if( "" == $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
 		<form method="post" action="admin.php?page=contact_form.php">
 			<span style="margin-bottom:15px;">
-				<p><?php _e( "If you would like to add a Contact Form to your website, just copy and put this shortcode onto your post or page:", 'contact_form' ); ?> [contact_form]</p>
+				<p><?php _e( "If you would like to add a Contact Form to your website, just copy and put this shortcode onto your post or page or widget:", 'contact_form' ); ?> [contact_form]</p>
 				<?php _e( "If information in the below fields are empty then the message will be send to an address which was specified during registration.", 'contact_form' ); ?>
 			</span>
 			<table class="form-table">
@@ -357,7 +358,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_message'].'</div>';
 			}
 			$content .= '<div style="text-align: left;">
-					<textarea rows="10" cols="30" name="cntctfrm_contact_message" id="cntctfrm_contact_message">'.$message.'</textarea>
+					<textarea rows="5" cols="30" name="cntctfrm_contact_message" id="cntctfrm_contact_message">'.$message.'</textarea>
 				</div>';
 			if($cntctfrm_options['cntctfrm_attachment'] == 1 ) {
 				$content .= '<div style="text-align: left;">
@@ -383,7 +384,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 			}
 				
 			$content .= '<div style="text-align: left; padding-top: 8px;">
-					<input type="hidden" value="send" name="cntctfrm_contact_action"><input type="hidden" value="Version: 3.08">
+					<input type="hidden" value="send" name="cntctfrm_contact_action"><input type="hidden" value="Version: 3.11">
 					<input type="submit" value="'. __( "Submit", 'contact_form' ). '" style="cursor: pointer; margin: 0pt; text-align: center;margin-bottom:10px;"> 
 				</div>
 				</form>';
@@ -419,7 +420,7 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 				'jpg'=>'image/jpeg',
 				'JPG'=>'image/jpeg',
 				'jpe'=>'image/jpeg',
-				'TIFF'=>'image/tifff',
+				'TIFF'=>'image/tiff',
 				'tiff'=>'image/tiff',
 				'tif'=>'image/tiff',
 				'bmp'=>'image/x-ms-bmp',
@@ -448,8 +449,24 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 		if( ! apply_filters( 'cntctfrm_check_form', $_REQUEST ) )
 			$error_message['error_captcha'] = __( "Please complete the CAPTCHA.", 'contact_form' );
 		if( isset($_FILES["cntctfrm_contact_attachment"]["tmp_name"]) && $_FILES["cntctfrm_contact_attachment"]["tmp_name"] != "") {
-			$uploads = wp_upload_dir();
-			$path_of_uploaded_file = $uploads['path'] ."/". $_FILES["cntctfrm_contact_attachment"]["name"];
+			if( is_multisite() ){
+				if( defined('UPLOADS') ) {
+					if( ! is_dir( ABSPATH . UPLOADS ) ) {
+						wp_mkdir_p( ABSPATH . UPLOADS );
+					}
+					$path_of_uploaded_file = ABSPATH . UPLOADS. $_FILES["cntctfrm_contact_attachment"]["name"];
+				}
+				else if ( defined( 'BLOGUPLOADDIR' ) ) {
+					if( ! is_dir( BLOGUPLOADDIR ) ) {
+						wp_mkdir_p( BLOGUPLOADDIR );
+					}
+					$path_of_uploaded_file = BLOGUPLOADDIR. $_FILES["cntctfrm_contact_attachment"]["name"];
+				}
+			}
+			else {
+				$uploads = wp_upload_dir();
+				$path_of_uploaded_file = $uploads['path'] ."/". $_FILES["cntctfrm_contact_attachment"]["name"];
+			}
 			$tmp_path = $_FILES["cntctfrm_contact_attachment"]["tmp_name"];
 			$path_info = pathinfo( $path_of_uploaded_file );
 
@@ -475,7 +492,7 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 // Send mail function
 if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 	function cntctfrm_send_mail() {
-		global $cntctfrm_options;
+		global $cntctfrm_options, $path_of_uploaded_file;
 		$to = "";
 		if( isset( $_SESSION['cntctfrm_send_mail'] ) && $_SESSION['cntctfrm_send_mail'] == true )
 			return true;
@@ -496,6 +513,9 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 			$user_info_string = '';
 			$userdomain = '';
 			$form_action_url = '';
+			$attachments = array();
+			$headers  = "";
+
 			if ( getenv('HTTPS') == 'on' ) {
 				$form_action_url = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 			} else {
@@ -552,57 +572,21 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 			</body>
 			</html>
 			';
+			// To send HTML mail, the Content-type header must be set
+			$headers  = 'MIME-Version: 1.0' . "\r\n";
+			$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+
+			// Additional headers
+			$headers .= 'From: '.$_REQUEST['cntctfrm_contact_email']. "\r\n";
 			if( $cntctfrm_options['cntctfrm_attachment'] == 1 && isset($_FILES["cntctfrm_contact_attachment"]["tmp_name"]) && $_FILES["cntctfrm_contact_attachment"]["tmp_name"] != "") {
-				global $path_of_uploaded_file;
-				$headers  = "";
-				$message_block = $message;
-
-				// Additional headers
-				$headers .= 'From: '.$_REQUEST['cntctfrm_contact_email']. "\r\n";
-
-				$bound_text = 	"jimmyP123";
-	 
-				$bound = 	"--".$bound_text."\r\n";
-
-				$bound_last = 	"--".$bound_text."--\r\n";
-
-				$headers .= "MIME-Version: 1.0\r\n"
-					."Content-Type: multipart/mixed; boundary=\"$bound_text\"";
-
-				$message = 	__( "If you can see this MIME than your client doesn't accept MIME types!", "contact_form" ) . "\r\n"
-					.$bound;
-
-	 
-				$message .= 	"Content-Type: text/html; charset=\"utf-8\"\r\n"
-						."Content-Transfer-Encoding: 7bit\r\n\r\n"
-					."".$message_block."\r\n"
-					.$value
-					.$bound;
-	 
-				$file = 	file_get_contents($path_of_uploaded_file);
-				$path_info = pathinfo( $path_of_uploaded_file );
-				 
-				$message .= 	"Content-Type: ".$path_info['extension']."; name=\"".basename($path_of_uploaded_file)."\"\r\n"
-						."Content-Transfer-Encoding: base64\r\n"
-						."Content-disposition: attachment; file=\"".basename($path_of_uploaded_file)."\"\r\n"
-						."\r\n"
-						.chunk_split( base64_encode( $file ) )
-						.$bound_last;
+				$attachments = array( $path_of_uploaded_file );
 			}
-			else {
-				// To send HTML mail, the Content-type header must be set
-				$headers  = 'MIME-Version: 1.0' . "\r\n";
-				$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 
-				// Additional headers
-				$headers .= 'From: '.$_REQUEST['cntctfrm_contact_email']. "\r\n";
+			if( isset( $_REQUEST['cntctfrm_contact_send_copy'] ) && $_REQUEST['cntctfrm_contact_send_copy'] == 1 )
+				wp_mail($_REQUEST['cntctfrm_contact_email'], stripslashes($subject), stripslashes($message), $headers, $attachments);
 
-				// Mail it
-			}
-			if( $_REQUEST['cntctfrm_contact_send_copy'] == 1 )
-				wp_mail($_REQUEST['cntctfrm_contact_email'], stripslashes($subject), stripslashes($message), $headers);
-
-			return wp_mail($to, stripslashes($subject), stripslashes($message), $headers);
+			// Mail it
+			return wp_mail($to, stripslashes($subject), stripslashes($message), $headers, $attachments);
 		}
 		return false;
 	}
@@ -674,9 +658,17 @@ if ( ! function_exists ( 'cntctfrm_admin_head' ) ) {
 	}
 }
 
+if ( ! function_exists ( 'cntctfrm_wp_head' ) ) {
+	function cntctfrm_wp_head() {
+		wp_enqueue_style( 'cntctfrmStylesheet', plugins_url( 'css/style.css', __FILE__ ) );
+	}
+}
+
 add_action( 'init', 'cntctfrm_plugin_init' );
 
-add_action( 'init', 'cntctfrm_admin_head' );
+add_action( 'admin_enqueue_scripts', 'cntctfrm_admin_head' );
+
+add_action( 'wp_enqueue_scripts', 'cntctfrm_wp_head' );
 
 // adds "Settings" link to the plugin action page
 add_filter( 'plugin_action_links', 'cntctfrm_plugin_action_links',10,2);
@@ -685,6 +677,8 @@ add_filter( 'plugin_action_links', 'cntctfrm_plugin_action_links',10,2);
 add_filter( 'plugin_row_meta', 'cntctfrm_register_plugin_links',10,2);
 
 add_shortcode( 'contact_form', 'cntctfrm_display_form' );
+
 add_action( 'admin_menu', 'cntctfrm_admin_menu' );
 
+add_filter( 'widget_text', 'do_shortcode' );
 ?>

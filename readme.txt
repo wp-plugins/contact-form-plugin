@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.3.1
-Stable tag: 3.10
+Stable tag: 3.11
 
 Add Contact Form to your WordPress website.
 
@@ -17,26 +17,27 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 
 = Features =
 
-* Actions: There is ability to choose to send email messages - any site user email or any other email.
-* Actions: Ability to add a field to attach a file in the contact form.
-* Actions: Ability to add a field to send a copy of the letter to the user who fills out a contact form to email, specified by filling the contact form.
-* Label: There is a possibility to change the label when display fields on the form.
+* Actions: There is a possibility of choosing where to send email messages. This can be either any user of the website or any other email.
+* Actions: Ability to add a field for attaching a file to the contact form.
+* Actions: Ability to add a field for sending a copy of the letter to the user who fills out a contact form. A copy will be sent to email, specified while filling the contact form.
+* Label: There is a possibility to change a label when the fields of the form are displayed.
 
-= Translate =
+= Translation =
 
-* Bulgarian (bg_BG) (thanks Martin Jekov)
-* Brazilian Portuguese (pt_BR) (thanks <a href="mailto:brenojac@gmail.com">Breno Jacinto</a>, www.iconis.org.br)
-* Dutch (nl_NL) (thanks <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>, Jan Boeijink )
-* German (de_DE) (thanks Hartung Thomas)
-* Italian (it_IT) (thanks <a href="mailto:ilian@ultra-violet.it">Ilian Gagliardi</a>)
-* Norwegian (nb_NO)	(thanks Tore Hjartland)
-* Polish (pl_PL) (thanks Jarek Spirydowicz)
+* Bulgarian (bg_BG) (thanks to Martin Jekov)
+* Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:brenojac@gmail.com">Breno Jacinto</a>, www.iconis.org.br)
+* Dutch (nl_NL) (thanks  to <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>, Jan Boeijink )
+* French (fr_FR) (thanks to Vincent Cibelli)
+* German (de_DE) (thanks to Hartung Thomas)
+* Italian (it_IT) (thanks to <a href="mailto:ilian@ultra-violet.it">Ilian Gagliardi</a>)
+* Norwegian (nb_NO) (thanks to Tore Hjartland)
+* Polish (pl_PL) (thanks to Jarek Spirydowicz)
 * Russian (ru_RU)
-* Spanish (es_ES) (thanks Jesús Parra)
-* Swedish (sv_SV) (thanks Martin Tonek)
-* Turkish (tr_TR) (thanks <a herf="mailto:d-bulent@hotmail.com ">Devrim Bulent Ibis</a>, www.devrimhoca.com)
+* Spanish (es_ES) (thanks to Jesús Parra)
+* Swedish (sv_SV) (thanks to Martin Tonek)
+* Turkish (tr_TR) (thanks to <a herf="mailto:d-bulent@hotmail.com ">Devrim Bulent Ibis</a>, www.devrimhoca.com)
 
-If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
+If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
 == Installation ==
 
@@ -49,181 +50,192 @@ If you create your own language pack or update the existing one, you can send <a
 
 = Where I can find settings to adjust work of the plugin after activation? =
 
-1. In the 'Plugin' menu you can find a link to the settings page.
+In the 'Plugin' menu you can find a link to the settings page.
 
-= After plugin installation I haven't adjust the settings. What is default email address which will be used for a contact via the form? =
+= After plugin installation I haven't adjusted the settings. What is the default email address which will be used for a contact via the form? =
 
-1. Default address which was specified during WordPress installation will be used for the Contact Form plugin as default email address.
+Default address which was specified during WordPress installation will be used by the Contact Form plugin as the default email address.
 
 = How can I add Contact Form to my website? =
 
-1. You need to put a [contact_form] shortcode into your page or some post.
+You need to put [contact_form] shortcode into your page or some post.
 
-= After user choosen via plugin settings page I got this error: "Please input correct email. Settings are not saved." =
+= After user is choosen via plugin settings page I have got this error: "Please input correct email. Settings are not saved." =
 
-1. It means that you have made a syntactical error.
+This means that you have made a syntax error.
 
-= How to use the other language files with the Contact Form? = 
+= How to use other language files with the Contact Form? = 
 
 Here is an example for German language files.
 
-1. In order to use another language for WordPress it is necessary to set the WP version on the required language and in the configurational wp file - `wp-config.php` in the line `define('WPLANG', '');` write `define('WPLANG', 'de_DE');`. If everything is done properly the admin panel will be in German.
+1. In order to use another language for WordPress it is necessary to set the WP version to the required language and in configuration wp file - `wp-config.php` in the line `define('WPLANG', '');` write `define('WPLANG', 'de_DE');`. If everything is done properly admin panel will be in German.
 
-2. Make sure that there are files `de_DE.po` and `de_DE.mo` in the plugin (the folder languages in the root of the plugin).
+2. Make sure that there are files `de_DE.po` and `de_DE.mo` in the plugin (in the languages folder which is in the root of the plugin).
 
-3. If there are no these files it will be necessary to copy other files from this folder (for example, for Russian or Italian language) and rename them (you should write `de_DE` instead of `ru_RU` in the both files).
+3. If there are no such files it will be necessary to copy other files from this folder (for example, for Russian or Italian language) and rename them (you should write `de_DE` instead of `ru_RU` in the both files).
 
-4. The files are edited with the help of the program Poedit - http://www.poedit.net/download.php - please load this program, install it, open the file with the help of this program (the required language file) and for each line in English you should write the translation in German.
+4. The files can be edited with the help of the program Poedit - http://www.poedit.net/download.php - please load this program, install it, open the file with this program (required language file) and for each line in English write translation in German.
 
-5. If everything is done properly all lines will be in German in the admin panel and on frontend.
+5. If everything is done properly all lines will be in German in admin panel and on the frontend.
 
 == Screenshots ==
 
-1. Contact Form dislaying.
-2. Plugin settings in the WordPress admin panel.
-3. Contact Form dislaying with additional fields.
-4. Plugin settings in the WordPress admin panel with additional fields.
+1. Contact Form display.
+2. Plugin settings in WordPress admin panel.
+3. Contact Form display with additional fields.
+4. Plugin settings in WordPress admin panel with additional fields.
+5. Widget settings for using shortcode in the sidebar.
 
 == Changelog ==
 
+= V3.11 - 12.03.2012 =
+* NEW : French language file is added to the plugin.
+* NEW : Added ability to use the contact form shortcode as widget in the sidebars.
+* Change : The change was done to an email sending functionality – now it is using wordpress functionality only.
+
 = V3.10 - 02.03.2012 =
-* NEW : Added Bulgarian language file for plugin.
+* NEW : Bulgarian language file is added to the plugin.
 
 = V3.09 - 24.02.2012 =
-* NEW : Added Spanish language file for plugin.
-* Change : Code to include styles and scripts in a plug for the correct SSL verification.
-* Bugfix : The bug validate email address in admin section was fixed.
+* NEW : Spanish language file is added to the plugin.
+* Change : Code which includes styles and scripts is added to the plugin for correct SSL verification.
+
+* Bugfix : The bug of email address validation in admin section was fixed.
 
 = V3.08 - 17.02.2012 =
-* NEW : Added Spanish language file for plugin.
+* NEW : Spanish language file is added to the plugin.
 
 = V3.07 - 17.02.2012 =
-* NEW : Added Norwegian language file for plugin.
-* NEW : Added Polish language file for plugin.
+* NEW : Norwegian language file is added to the plugin.
+* NEW : Polish language file is added to the plugin.
 
 = V3.06 - 07.02.2012 =
-* NEW : Added Dutch language file for plugin.
+* NEW : Dutch language file is added to the plugin.
 
 = V3.05 - 09.01.2012 =
-* Bugfix : The bug sends email to admin user even if different user is specified when setting plugin to use "use email of wordpress user" was fixed.
-* Bugfix : The bug with sending a blank attachment field of the form was fixed.
+* Bugfix : The bug of sending emails to admin user even if a different user is specified when setting plugin to "use email of wordpress user" was fixed.
+* Bugfix : The bug of sending a blank attachment field of the form was fixed.
 
 = V3.04 - 05.01.2012 =
-* NEW : Added Brazilian Portuguese and Turkish language files for plugin.
+* NEW : Brazilian Portuguese and Turkish language files were added to the plugin.
 
 = V3.03 - 04.01.2012 =
-* NEW : Added German language files for plugin.
-* Bugfix : The bug which is related with the resending of the email when updating of the page was fixed.
+* NEW : German language files are added to the plugin.
+* Bugfix : The bug related to resending of an email after the page is updated was fixed.
 
 = V3.02 - 02.01.2012 =
-* NEW : Added Italian language files for plugin.
-* NEW : Added possibility to change the label when display fields on the form.
-* Changed : Display the names of the files types that user can attach to the mail.
+* NEW : Italian language files were added to the plugin.
+* NEW : A possibility to change a label when the fields of the form are displayed.
+* Changed : Display of the files types names that user can attach to an mail.
 
 = V3.01 - 28.12.2011 =
-* NEW : We added the 'Attachment' and 'Send me a copy' block in the contact form. 
-* NEW : Added language files for plugin.
+* NEW : 'Attachment' and 'Send me a copy' blocks were added to the contact form. 
+* NEW : Language files are added to the plugin.
 
 = V2.08 - 12.11.2011 =
-*We fixed the slashes bug in email and added server info to email.
+*Slashes bug in email is fixed and server info is added to email.
 
 = V2.07 - 10.11.2011 =
-*We fixed the bug of complex form validation when captcha not used in the contact form. Upgrade immediately.
+*The bug of complex form validation when captcha is not used in the contact form is fixed. Please upgrade immediately.
 
 = V2.06 - 16.09.2011 =
-*We fixed the bug of complex email validation when filling in the contact form.
+* The bug of complex email validation when filling in the contact form is fixed.
 
 = V2.05 - 23.08.2011 =
-*BWS Plugins sections was fixed and right now it is consisted with 3 parts: activated, installed and recommended plugins. The bug of position in the admin menu is fixed. Translation ommissions are corrected. Now there is a link to see the site where the email comes from.
+* BWS Plugin's menu section was fixed and right now it is consisted of 3 parts: activated, installed and recommended plugins. 
+ The bug of positioning in admin menu is fixed. Translation omissions are corrected. Now there is a link where it is possible to see the site where email comes from.
 
 = V2.04 - 14.07.2011 =
-*BWS Plugins sections was fixed and right now it is consisted with 2 parts: installed and recommended plugins. Icons displaying is fixed.
+*BWS Plugin's menu section was fixed and right now it is consisted of 2 parts: installed and recommended plugins. Icons displaying is fixed.
 
 = V2.03 - 13.07.2011 =
-*The bug of the use custom email is fixed in this version. Please upgrade the plugin immediately. Thank you
+*The bug of using custom email is fixed in this version. Please upgrade the plugin immediately. Thank you
 
 = V2.02 =
-*The bug of the setting page link is fixed in this version. Please upgrade the plugin immediately. Thank you
+*The bug with the link to the settings page is fixed in this version. Please upgrade the plugin immediately. 
 
 = V2.01 =
-*Usability at the settings page of plugin was improved.
+*Usability at the settings page of the plugin was improved.
 
 = V1.03 =
-*Contact form email adress bug is fixed.
+*Contact form email address bug is fixed.
 
 = V1.02 =
-*Display "thanks" message bug is fixed. Radio buttons automatic switching added (for settings page) after setting mouse cursor (clicking) into a text field.
+* "Thanks" message display bug is fixed. Radio buttons automatic switching is added (for the settings page) after setting mouse cursor (clicking) at a text field.
 
 = V1.01 =
-*Contact form position bug is fixed.
+*Contact form positioning bug is fixed.
 
 = V1.00 =
-*Ability to add Contact Form into a post. Ability to display form via shortcode.
+*Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
 
+= V3.11 =
+The changes have been made to functionality of email sending - now it is using only wordpress functionality. French language file is added to the plugin.
+
 = V3.10 =
-Added Bulgarian language file for plugin.
+Bulgarian language file is added to the plugin.
 
 = V3.09 =
-Added Spanish language file for plugin. Changed code to include styles and scripts in a plug for the correct SSL verification. The bug validate email address in admin section was fixed. Upgrade immediately.
+Spanish language file is added to the plugin. Code that is used to connect styles and scripts is added to the plugin for correct SSL verification. The bug of email address validation in admin section was fixed. Upgrade immediately.
 
 = V3.08 =
-Added Spanish language file for plugin.
+Spanish language file is added to the plugin.
 
 = V3.07 =
-Added Norwegian and Polish language files for plugin.
+Norwegian and Polish language files are added to the plugin.
 
 = V3.06 =
-Added Dutch language file for plugin.
+Dutch language file is added to the plugin.
 
 = V3.05 =
-The bug sends email to admin user even if different user is specified when setting plugin to use "use email of wordpress user" was fixed. The bug with sending a blank attachment field of the form was fixed. Upgrade immediately.
+The bug of sending emails to admin user even if a different user is specified when setting plugin to "use email of wordpress user" was fixed. The bug of sending a blank attachment field of the form was fixed.
 
 = V3.04 =
-Added Brazilian Portuguese and Turkish language files for plugin.
+Brazilian Portuguese and Turkish language files are added to the plugin.
 
 = V3.03 =
-Added German language files for plugin. The bug which is related with the resending of the email when updating of the page was fixed. Upgrade immediately.
+German language files are added to the plugin. The bug related to resending of an email after the page is updated was fixed. Upgrade immediately.
 
 = V3.02 =
-Added Italian language files for plugin. Added possibility to change the label when display fields on the form. Display the names of the files types that user can attach to the mail.
+Italian language files are added to the plugin. A possibility to change a label when the fields of the form are displayed is added. Display of the files types names that user can attach to the mail is added.
 
 = V3.01 =
-We added the 'Attachment' and 'Send me a copy' block in the contact form. Added language files for plugin.
+'Attachment' and 'Send me a copy' block are added to the contact form. Language files are added to the plugin.
 
 = V2.08 =
-We fixed the slashes bug in email and added server info to email.
+Slashes bug in email is fixed and server info is added to an email.
 
 = v2.07 =
-We fixed the bug of complex form validation when captcha not used in the contact form. Upgrade immediately.
+The bug of complex form validation when captcha is not used in the contact form is fixed. Upgrade immediately.
 
 = V2.06 =
-We fixed the bug of complex email validation when filling in the contact form.
+The bug of complex email validation while filling in the contact form is fixed.
 
 = V2.05 =
-BWS Plugins sections was fixed and right now it is consisted with 3 parts: activated, installed and recommended plugins. The bug of position in the admin menu is fixed. Translation ommissions are corrected. Now there is a link to see the site where the email comes from.
+BWS Plugin's menu section was fixed and right now it is consisted of 3 parts: activated, installed and recommended plugins. The bug of positioning in admin menu is fixed. Translation omissions are corrected. Now there is a link where it is possible to see the site where email comes from.
 
 = V2.04 =
-BWS Plugins sections was fixed and right now it is consisted with 2 parts: installed and recommended plugins. Icons displaying is fixed.
+BWS Plugin's menu section was fixed and right now it is consisted of 2 parts: installed and recommended plugins. Icons displaying is fixed.
 
 = V2.03 = 
-The bug of the use custom email is fixed in this version. Please upgrade the plugin immediately. Thank you
+The bug of using custom email is fixed in this version. Please upgrade the plugin immediately. Thank you
 
 = V2.02 =
-The bug of the setting page link is fixed in this version. Please upgrade the plugin immediately. Thank you
+The bug with the link to the settings page is fixed in this version. Please upgrade the plugin immediately.
 
 = V2.01 =
-Usability at the settings page of plugin was improved.
+Usability at the settings page of the plugin was improved.
 
 = V1.03 =
 Contact form email adress bug is fixed. Upgrade immediately.
 
 = V1.02 =
-Display "thanks" message bug is fixed. Radio buttons automatic switching added (for settings page) after setting mouse cursor (clicking) into a text field. Upgrade immediately.
+"Thanks" message display bug is fixed. Radio buttons automatic switching is added (for the settings page) after setting mouse cursor (clicking) at a text field. Upgrade immediately.
 
 = V1.01 =
-Contact form position bug is fixed. Upgrade immediately.
+Contact form positioning bug is fixed. Upgrade immediately.
 
 = V1.00 =
 Upgrade immediately.
