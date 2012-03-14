@@ -1,6 +1,6 @@
 ﻿=== Contact Form ===
 Contributors: bestwebsoft
-Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=13
+Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.3.1
@@ -27,7 +27,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 * Bulgarian (bg_BG) (thanks to Martin Jekov)
 * Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:brenojac@gmail.com">Breno Jacinto</a>, www.iconis.org.br)
 * Dutch (nl_NL) (thanks  to <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>, Jan Boeijink )
-* French (fr_FR) (thanks to Vincent Cibelli)
+* French (fr_FR) (thanks to Alain Thomas and Vincent Cibelli)
 * German (de_DE) (thanks to Hartung Thomas)
 * Italian (it_IT) (thanks to <a href="mailto:ilian@ultra-violet.it">Ilian Gagliardi</a>)
 * Norwegian (nb_NO) (thanks to Tore Hjartland)
@@ -88,6 +88,9 @@ Here is an example for German language files.
 
 == Changelog ==
 
+= V3.13 - 14.03.2012 =
+* Change : French language file is changed.
+
 = V3.12 - 12.03.2012 =
 * NEW : Added ability to upload wav and mp3 files.
 
@@ -136,10 +139,10 @@ Here is an example for German language files.
 * NEW : Language files are added to the plugin.
 
 = V2.08 - 12.11.2011 =
-*Slashes bug in email is fixed and server info is added to email.
+* Slashes bug in email is fixed and server info is added to email.
 
 = V2.07 - 10.11.2011 =
-*The bug of complex form validation when captcha is not used in the contact form is fixed. Please upgrade immediately.
+* The bug of complex form validation when captcha is not used in the contact form is fixed. Please upgrade immediately.
 
 = V2.06 - 16.09.2011 =
 * The bug of complex email validation when filling in the contact form is fixed.
@@ -149,30 +152,33 @@ Here is an example for German language files.
  The bug of positioning in admin menu is fixed. Translation omissions are corrected. Now there is a link where it is possible to see the site where email comes from.
 
 = V2.04 - 14.07.2011 =
-*BWS Plugin's menu section was fixed and right now it is consisted of 2 parts: installed and recommended plugins. Icons displaying is fixed.
+* BWS Plugin's menu section was fixed and right now it is consisted of 2 parts: installed and recommended plugins. Icons displaying is fixed.
 
 = V2.03 - 13.07.2011 =
-*The bug of using custom email is fixed in this version. Please upgrade the plugin immediately. Thank you
+* The bug of using custom email is fixed in this version. Please upgrade the plugin immediately. Thank you
 
 = V2.02 =
-*The bug with the link to the settings page is fixed in this version. Please upgrade the plugin immediately. 
+* The bug with the link to the settings page is fixed in this version. Please upgrade the plugin immediately. 
 
 = V2.01 =
-*Usability at the settings page of the plugin was improved.
+* Usability at the settings page of the plugin was improved.
 
 = V1.03 =
-*Contact form email address bug is fixed.
+* Contact form email address bug is fixed.
 
 = V1.02 =
 * "Thanks" message display bug is fixed. Radio buttons automatic switching is added (for the settings page) after setting mouse cursor (clicking) at a text field.
 
 = V1.01 =
-*Contact form positioning bug is fixed.
+* Contact form positioning bug is fixed.
 
 = V1.00 =
-*Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
+* Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.13 =
+French language file is changed.
 
 = V3.12 =
 Added ability to upload wav and mp3 files.
