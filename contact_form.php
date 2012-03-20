@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.13
+Version: 3.14
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -124,6 +124,7 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 			'cntctfrm_additions_options' => 0,
 			'cntctfrm_attachment' => 0,
 			'cntctfrm_send_copy' => 0,
+			'cntctfrm_from_field' => get_bloginfo( 'name' ),
 			'cntctfrm_change_label' => 0,
 			'cntctfrm_name_label' => __( "Name:", 'contact_form' ),
 			'cntctfrm_email_label' => __( "E-Mail Address:", 'contact_form' ),
@@ -131,7 +132,6 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 			'cntctfrm_message_label' => __( "Message:", 'contact_form' ),
 			'cntctfrm_attachment_label' => __( "Attachment:", 'contact_form' )
 		);
-
 		if( ! get_option( 'cntctfrm_options' ) )
 			add_option( 'cntctfrm_options', $cntctfrm_option_defaults, '', 'yes' );
 
@@ -158,6 +158,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 			if($cntctfrm_options_submit['cntctfrm_additions_options'] == 0) {
 				$cntctfrm_options_submit['cntctfrm_attachment'] = 0;
 				$cntctfrm_options_submit['cntctfrm_send_copy'] = 0;
+				$cntctfrm_options_submit['cntctfrm_from_field'] = get_bloginfo( 'name' );
 				$cntctfrm_options_submit['cntctfrm_change_label'] = 0;
 				$cntctfrm_options_submit['cntctfrm_name_label'] = __( "Name:", 'contact_form' );
 				$cntctfrm_options_submit['cntctfrm_email_label'] = __( "E-Mail Address:", 'contact_form' );
@@ -167,6 +168,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 			} else {
 				$cntctfrm_options_submit['cntctfrm_attachment'] = isset( $_REQUEST['cntctfrm_attachment']) ? $_REQUEST['cntctfrm_attachment'] : 0;
 				$cntctfrm_options_submit['cntctfrm_send_copy'] = isset( $_REQUEST['cntctfrm_send_copy']) ? $_REQUEST['cntctfrm_send_copy'] : 0;
+				$cntctfrm_options_submit['cntctfrm_from_field'] = $_REQUEST['cntctfrm_from_field'];
 				$cntctfrm_options_submit['cntctfrm_change_label'] = isset( $_REQUEST['cntctfrm_change_label']) ? $_REQUEST['cntctfrm_change_label'] : 0;
 				if( $cntctfrm_options_submit['cntctfrm_change_label'] == 1 ) {
 					$cntctfrm_options_submit['cntctfrm_name_label'] = isset( $_REQUEST['cntctfrm_name_label']) ? $_REQUEST['cntctfrm_name_label'] : $cntctfrm_options_submit['cntctfrm_name_label'];
@@ -261,16 +263,22 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
+					<th scope="row" style="width:195px;"><?php _e( "Change FROM fields of the contact form", 'contact_form' ); ?></th>
+					<td colspan="2">
+						<input type="text" style="width:200px;" name="cntctfrm_from_field" value="<?php echo $cntctfrm_options['cntctfrm_from_field']; ?>" /><br />
+					</td>
+				</tr>
+				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
 					<th scope="row" style="width:195px;"><?php _e( "Change label for fields of the contact form", 'contact_form' ); ?></th>
 					<td>
 						<input type="checkbox" id="cntctfrm_change_label" name="cntctfrm_change_label" value="1" <?php if($cntctfrm_options['cntctfrm_change_label'] == '1') echo "checked=\"checked\" "; ?>/>
 					</td>
 					<td class="cntctfrm_change_label_block <?php if($cntctfrm_options['cntctfrm_change_label'] == '0') echo "cntctfrm_hidden"; ?>">
-						<input type="text" name="cntctfrm_name_label" value="<?php echo $cntctfrm_options['cntctfrm_name_label']; ?>" /> <span  class="cntctfrm_info"><?php _e( "Name:", 'contact_form' ); ?></span><br />
-						<input type="text" name="cntctfrm_email_label" value="<?php echo $cntctfrm_options['cntctfrm_email_label']; ?>" /> <span  class="cntctfrm_info"><?php _e( "E-Mail Address:", 'contact_form' ); ?></span><br />
-						<input type="text" name="cntctfrm_subject_label" value="<?php echo $cntctfrm_options['cntctfrm_subject_label']; ?>" /> <span  class="cntctfrm_info"><?php _e( "Subject:", 'contact_form' ); ?></span><br />
-						<input type="text" name="cntctfrm_message_label" value="<?php echo $cntctfrm_options['cntctfrm_message_label']; ?>" /> <span  class="cntctfrm_info"><?php _e( "Message:", 'contact_form' ); ?></span><br />
-						<input type="text" name="cntctfrm_attachment_label" value="<?php echo $cntctfrm_options['cntctfrm_attachment_label']; ?>" /> <span  class="cntctfrm_info"><?php _e( "Attachment:", 'contact_form' ); ?></span><br />
+						<input type="text" name="cntctfrm_name_label" value="<?php echo $cntctfrm_options['cntctfrm_name_label']; ?>" /> <span class="cntctfrm_info"><?php _e( "Name:", 'contact_form' ); ?></span><br />
+						<input type="text" name="cntctfrm_email_label" value="<?php echo $cntctfrm_options['cntctfrm_email_label']; ?>" /> <span class="cntctfrm_info"><?php _e( "E-Mail Address:", 'contact_form' ); ?></span><br />
+						<input type="text" name="cntctfrm_subject_label" value="<?php echo $cntctfrm_options['cntctfrm_subject_label']; ?>" /> <span class="cntctfrm_info"><?php _e( "Subject:", 'contact_form' ); ?></span><br />
+						<input type="text" name="cntctfrm_message_label" value="<?php echo $cntctfrm_options['cntctfrm_message_label']; ?>" /> <span class="cntctfrm_info"><?php _e( "Message:", 'contact_form' ); ?></span><br />
+						<input type="text" name="cntctfrm_attachment_label" value="<?php echo $cntctfrm_options['cntctfrm_attachment_label']; ?>" /> <span class="cntctfrm_info"><?php _e( "Attachment:", 'contact_form' ); ?></span><br />
 					</td>
 				</tr>
 			</table>    
@@ -666,6 +674,14 @@ if ( ! function_exists ( 'cntctfrm_wp_head' ) ) {
 	}
 }
 
+function cntctfrm_email_name_filter( $data ){
+	global $cntctfrm_options;
+	if( isset( $cntctfrm_options['cntctfrm_from_field'] ) && trim( $cntctfrm_options['cntctfrm_from_field'] ) != "" )
+		return $cntctfrm_options['cntctfrm_from_field'];
+	else
+		return $data;
+}
+
 add_action( 'init', 'cntctfrm_plugin_init' );
 
 add_action( 'admin_enqueue_scripts', 'cntctfrm_admin_head' );
@@ -683,4 +699,6 @@ add_shortcode( 'contact_form', 'cntctfrm_display_form' );
 add_action( 'admin_menu', 'cntctfrm_admin_menu' );
 
 add_filter( 'widget_text', 'do_shortcode' );
+
+add_filter( 'wp_mail_from_name', 'cntctfrm_email_name_filter', 10, 1);
 ?>

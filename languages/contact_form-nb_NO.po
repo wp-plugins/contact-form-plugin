@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-12 20:36+0200\n"
-"PO-Revision-Date: 2012-03-12 20:36+0200\n"
+"POT-Creation-Date: 2012-03-20 19:51+0200\n"
+"PO-Revision-Date: 2012-03-20 19:52+0200\n"
 "Last-Translator: BWS <zos@bestwebsoft.com>\n"
 "Language-Team: Thomas Hartung <thartung@adipositas-mm.de>\n"
 "MIME-Version: 1.0\n"
@@ -27,8 +27,8 @@ msgid "Read more"
 msgstr "Les mer"
 
 #: contact_form.php:78
-#: contact_form.php:603
-#: contact_form.php:612
+#: contact_form.php:611
+#: contact_form.php:620
 msgid "Settings"
 msgstr "Innstilllinger"
 
@@ -58,7 +58,7 @@ msgid "If you have any questions, please contact us via plugin@bestwebsoft.com o
 msgstr "Hvis du har spørsmål kan du kontakte oss på plugin@bestwebsoft.com eller bruke kontaktskjemaet på hjemmesiden vår"
 
 #: contact_form.php:108
-#: contact_form.php:211
+#: contact_form.php:213
 msgid "Contact Form Options"
 msgstr "Innstillinger for kontaktskjema"
 
@@ -66,203 +66,207 @@ msgstr "Innstillinger for kontaktskjema"
 msgid "Contact Form"
 msgstr "Kontaktskjema"
 
-#: contact_form.php:128
-#: contact_form.php:162
-#: contact_form.php:179
-#: contact_form.php:269
+#: contact_form.php:129
+#: contact_form.php:163
+#: contact_form.php:181
+#: contact_form.php:277
 msgid "Name:"
 msgstr "Navn:"
 
-#: contact_form.php:129
-#: contact_form.php:163
-#: contact_form.php:180
-#: contact_form.php:270
+#: contact_form.php:130
+#: contact_form.php:164
+#: contact_form.php:182
+#: contact_form.php:278
 msgid "E-Mail Address:"
 msgstr "Epostadresse:"
 
-#: contact_form.php:130
-#: contact_form.php:164
-#: contact_form.php:181
-#: contact_form.php:271
+#: contact_form.php:131
+#: contact_form.php:165
+#: contact_form.php:183
+#: contact_form.php:279
 msgid "Subject:"
 msgstr "Tema:"
 
-#: contact_form.php:131
-#: contact_form.php:165
-#: contact_form.php:182
-#: contact_form.php:272
+#: contact_form.php:132
+#: contact_form.php:166
+#: contact_form.php:184
+#: contact_form.php:280
 msgid "Message:"
 msgstr "Melding:"
 
-#: contact_form.php:132
-#: contact_form.php:166
-#: contact_form.php:183
-#: contact_form.php:273
+#: contact_form.php:133
+#: contact_form.php:167
+#: contact_form.php:185
+#: contact_form.php:281
 msgid "Attachment:"
 msgstr "Vedlegg:"
 
-#: contact_form.php:191
-#: contact_form.php:200
+#: contact_form.php:193
+#: contact_form.php:202
 msgid "Options saved."
 msgstr "Innstillinger lagret."
 
-#: contact_form.php:194
+#: contact_form.php:196
 msgid "Such user is not exist. Settings are not saved."
 msgstr "Denne brukeren finnes ikke. Innstillingene er ikke lagret."
 
-#: contact_form.php:203
+#: contact_form.php:205
 msgid "Please input correct email. Settings are not saved."
 msgstr "Vennligst benytt en korrekt epostadresse. Innstillingene er ikke lagret."
 
-#: contact_form.php:216
+#: contact_form.php:218
 msgid "If you would like to add a Contact Form to your website, just copy and put this shortcode onto your post or page or widget:"
 msgstr "Dersom du ønsket å legge til et kontaktskjema på wedsiden din, kopier og put denne koden i kommentaren din eller på siden din: "
 
-#: contact_form.php:217
+#: contact_form.php:219
 msgid "If information in the below fields are empty then the message will be send to an address which was specified during registration."
 msgstr "Dersom feltene under er tomme, vil meldingen bli sendt til en adresse som var spesifisert ved registrering."
 
-#: contact_form.php:221
+#: contact_form.php:223
 msgid "Use email of wordpress user:"
 msgstr "Benytt eposten til wordpressbruker:"
 
-#: contact_form.php:227
+#: contact_form.php:229
 msgid "Select user name"
 msgstr "Velg brukernavn"
 
-#: contact_form.php:232
+#: contact_form.php:234
 msgid "Set a name of user who will get messages from a contact form."
 msgstr "Sett et brukernavn for mottaker av meldinger fra kontaktskjemaet"
 
-#: contact_form.php:236
+#: contact_form.php:238
 msgid "Use this email:"
 msgstr "Benytt denne epostadressen:"
 
-#: contact_form.php:242
+#: contact_form.php:244
 msgid "Set an email address which will be used for messages receiving."
 msgstr "Sett en epostadresse som skal benyttes for å motta meldinger."
 
-#: contact_form.php:246
+#: contact_form.php:248
 msgid "Additional options"
 msgstr "Flere valg"
 
-#: contact_form.php:249
+#: contact_form.php:251
 msgid "Display Attachment block"
 msgstr "Vis vedlegg"
 
-#: contact_form.php:254
+#: contact_form.php:256
 msgid "Users can attach files of the following types"
 msgstr "Brukere kan legge ved filer av følgende typer"
 
-#: contact_form.php:258
+#: contact_form.php:260
 msgid "Display Send me a copy block"
 msgstr "Vis send meg en kopi"
 
-#: contact_form.php:264
+#: contact_form.php:266
+msgid "Change FROM fields of the contact form"
+msgstr "Endring fra feltene i kontaktskjemaet"
+
+#: contact_form.php:272
 msgid "Change label for fields of the contact form"
 msgstr "Forandre etikett for felter i kontaktskjemaet"
 
-#: contact_form.php:279
+#: contact_form.php:287
 msgid "Save Changes"
 msgstr "Lagre endringer"
 
-#: contact_form.php:310
+#: contact_form.php:318
 msgid "Thank you for contacting us."
 msgstr "Takk for at du tok kontakt med oss"
 
-#: contact_form.php:315
+#: contact_form.php:323
 msgid "Sorry, your e-mail could not be delivered."
 msgstr "Beklager, eposten din kunne ikke leveres."
 
-#: contact_form.php:372
+#: contact_form.php:380
 msgid "You can attach files of the following types"
 msgstr "Du kan legge til filer av følgende typer"
 
-#: contact_form.php:378
+#: contact_form.php:386
 msgid "Send me a copy"
 msgstr "Send meg en kopi"
 
-#: contact_form.php:388
+#: contact_form.php:396
 msgid "Submit"
 msgstr "Send"
 
-#: contact_form.php:404
+#: contact_form.php:412
 msgid "Your name is required."
 msgstr "Navnet ditt er påkrevet."
 
-#: contact_form.php:405
+#: contact_form.php:413
 msgid "A proper e-mail address is required."
 msgstr "En korrekt epostadresse er påkrevet."
 
-#: contact_form.php:406
+#: contact_form.php:414
 msgid "Subject text is required."
 msgstr "Tekst i temafeltet er påkrevet."
 
-#: contact_form.php:407
+#: contact_form.php:415
 msgid "Message text is required."
 msgstr "Tekst i meldingsfeltet er påkrevet"
 
-#: contact_form.php:408
+#: contact_form.php:416
 msgid "Please make corrections below and try again."
 msgstr "Vennligst gjør endringer nedenfor og forsøk igjen."
 
-#: contact_form.php:439
+#: contact_form.php:447
 msgid "Attachment is broken."
 msgstr "Vedlegget fungerer ikke."
 
-#: contact_form.php:452
+#: contact_form.php:460
 msgid "Please complete the CAPTCHA."
 msgstr "Vennligst fyll ut CAPTCHA"
 
-#: contact_form.php:528
-#: contact_form.php:562
+#: contact_form.php:536
+#: contact_form.php:570
 msgid "Sent from (ip address)"
 msgstr "Sendt fra (IP-adresse)"
 
-#: contact_form.php:529
-#: contact_form.php:565
+#: contact_form.php:537
+#: contact_form.php:573
 msgid "Date/Time"
 msgstr "Dato/tid"
 
-#: contact_form.php:530
-#: contact_form.php:568
+#: contact_form.php:538
+#: contact_form.php:576
 msgid "Coming from (referer)"
 msgstr "Sendt fra (referent)"
 
-#: contact_form.php:531
-#: contact_form.php:571
+#: contact_form.php:539
+#: contact_form.php:579
 msgid "Using (user agent)"
 msgstr "med  (user agent)"
 
-#: contact_form.php:536
+#: contact_form.php:544
 msgid "Contact from"
 msgstr "Kontakt fra"
 
-#: contact_form.php:541
+#: contact_form.php:549
 msgid "Name"
 msgstr "Navn"
 
-#: contact_form.php:544
+#: contact_form.php:552
 msgid "Email"
 msgstr "Epost"
 
-#: contact_form.php:547
+#: contact_form.php:555
 msgid "Subject"
 msgstr "Tema"
 
-#: contact_form.php:550
+#: contact_form.php:558
 msgid "Message"
 msgstr "Melding"
 
-#: contact_form.php:553
+#: contact_form.php:561
 msgid "Site"
 msgstr "Site"
 
-#: contact_form.php:613
+#: contact_form.php:621
 msgid "FAQ"
 msgstr "Vanlige spørsmål"
 
-#: contact_form.php:614
+#: contact_form.php:622
 msgid "Support"
 msgstr "Support"
 
