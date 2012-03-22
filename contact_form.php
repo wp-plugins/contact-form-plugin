@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.14
+Version: 3.15
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -125,6 +125,11 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 			'cntctfrm_attachment' => 0,
 			'cntctfrm_send_copy' => 0,
 			'cntctfrm_from_field' => get_bloginfo( 'name' ),
+			'cntctfrm_display_add_info' => 1,
+			'cntctfrm_display_sent_from' => 1,
+			'cntctfrm_display_date_time' => 1,
+			'cntctfrm_display_coming_from' => 1,
+			'cntctfrm_display_user_agent' => 1,
 			'cntctfrm_change_label' => 0,
 			'cntctfrm_name_label' => __( "Name:", 'contact_form' ),
 			'cntctfrm_email_label' => __( "E-Mail Address:", 'contact_form' ),
@@ -159,6 +164,11 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				$cntctfrm_options_submit['cntctfrm_attachment'] = 0;
 				$cntctfrm_options_submit['cntctfrm_send_copy'] = 0;
 				$cntctfrm_options_submit['cntctfrm_from_field'] = get_bloginfo( 'name' );
+				$cntctfrm_options_submit['cntctfrm_display_add_info'] = 1;
+				$cntctfrm_options_submit['cntctfrm_display_sent_from'] = 1;
+				$cntctfrm_options_submit['cntctfrm_display_date_time'] = 1;
+				$cntctfrm_options_submit['cntctfrm_display_coming_from'] = 1;
+				$cntctfrm_options_submit['cntctfrm_display_user_agent'] = 1;
 				$cntctfrm_options_submit['cntctfrm_change_label'] = 0;
 				$cntctfrm_options_submit['cntctfrm_name_label'] = __( "Name:", 'contact_form' );
 				$cntctfrm_options_submit['cntctfrm_email_label'] = __( "E-Mail Address:", 'contact_form' );
@@ -169,7 +179,20 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				$cntctfrm_options_submit['cntctfrm_attachment'] = isset( $_REQUEST['cntctfrm_attachment']) ? $_REQUEST['cntctfrm_attachment'] : 0;
 				$cntctfrm_options_submit['cntctfrm_send_copy'] = isset( $_REQUEST['cntctfrm_send_copy']) ? $_REQUEST['cntctfrm_send_copy'] : 0;
 				$cntctfrm_options_submit['cntctfrm_from_field'] = $_REQUEST['cntctfrm_from_field'];
-				$cntctfrm_options_submit['cntctfrm_change_label'] = isset( $_REQUEST['cntctfrm_change_label']) ? $_REQUEST['cntctfrm_change_label'] : 0;
+				$cntctfrm_options_submit['cntctfrm_display_add_info'] = isset( $_REQUEST['cntctfrm_display_add_info']) ? 1 : 0;
+				$cntctfrm_options_submit['cntctfrm_change_label'] = isset( $_REQUEST['cntctfrm_change_label']) ? 1 : 0;
+				if( $cntctfrm_options_submit['cntctfrm_display_add_info'] == 1 ) {
+					$cntctfrm_options_submit['cntctfrm_display_sent_from'] = isset( $_REQUEST['cntctfrm_display_sent_from']) ? 1 : 0;
+					$cntctfrm_options_submit['cntctfrm_display_date_time'] = isset( $_REQUEST['cntctfrm_display_date_time']) ? 1 : 0;
+					$cntctfrm_options_submit['cntctfrm_display_coming_from'] = isset( $_REQUEST['cntctfrm_display_coming_from']) ? 1 : 0;
+					$cntctfrm_options_submit['cntctfrm_display_user_agent'] = isset( $_REQUEST['cntctfrm_display_user_agent']) ? 1 : 0;
+				}
+				else {
+					$cntctfrm_options_submit['cntctfrm_display_sent_from'] = 1;
+					$cntctfrm_options_submit['cntctfrm_display_date_time'] = 1;
+					$cntctfrm_options_submit['cntctfrm_display_coming_from'] = 1;
+					$cntctfrm_options_submit['cntctfrm_display_user_agent'] = 1;
+				}
 				if( $cntctfrm_options_submit['cntctfrm_change_label'] == 1 ) {
 					$cntctfrm_options_submit['cntctfrm_name_label'] = isset( $_REQUEST['cntctfrm_name_label']) ? $_REQUEST['cntctfrm_name_label'] : $cntctfrm_options_submit['cntctfrm_name_label'];
 					$cntctfrm_options_submit['cntctfrm_email_label'] = isset( $_REQUEST['cntctfrm_email_label']) ? $_REQUEST['cntctfrm_email_label'] : $cntctfrm_options_submit['cntctfrm_email_label'];
@@ -269,6 +292,18 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
+					<th scope="row" style="width:195px;"><?php _e( "Display additional info in email", 'contact_form' ); ?></th>
+					<td>
+						<input type="checkbox" id="cntctfrm_display_add_info" name="cntctfrm_display_add_info" value="1" <?php if($cntctfrm_options['cntctfrm_display_add_info'] == '1') echo "checked=\"checked\" "; ?>/>
+					</td>
+					<td class="cntctfrm_display_add_info_block <?php if($cntctfrm_options['cntctfrm_display_add_info'] == '0') echo "cntctfrm_hidden"; ?>">
+						<input type="checkbox" id="cntctfrm_display_sent_from" name="cntctfrm_display_sent_from" value="1" <?php if($cntctfrm_options['cntctfrm_display_sent_from'] == '1') echo "checked=\"checked\" "; ?>/> <span class="cntctfrm_info"><?php _e( "Sent from (ip address)", 'contact_form' ); ?></span><br />
+						<input type="checkbox" id="cntctfrm_display_date_time" name="cntctfrm_display_date_time" value="1" <?php if($cntctfrm_options['cntctfrm_display_date_time'] == '1') echo "checked=\"checked\" "; ?>/> <span class="cntctfrm_info"><?php _e( "Date/Time", 'contact_form' ); ?></span><br />
+						<input type="checkbox" id="cntctfrm_display_coming_from" name="cntctfrm_display_coming_from" value="1" <?php if($cntctfrm_options['cntctfrm_display_coming_from'] == '1') echo "checked=\"checked\" "; ?>/> <span class="cntctfrm_info"><?php _e( "Coming from (referer)", 'contact_form' ); ?></span><br />
+						<input type="checkbox" id="cntctfrm_display_user_agent" name="cntctfrm_display_user_agent" value="1" <?php if($cntctfrm_options['cntctfrm_display_user_agent'] == '1') echo "checked=\"checked\" "; ?>/> <span class="cntctfrm_info"><?php _e( "Using (user agent)", 'contact_form' ); ?></span><br />
+					</td>
+				</tr>
+				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
 					<th scope="row" style="width:195px;"><?php _e( "Change label for fields of the contact form", 'contact_form' ); ?></th>
 					<td>
 						<input type="checkbox" id="cntctfrm_change_label" name="cntctfrm_change_label" value="1" <?php if($cntctfrm_options['cntctfrm_change_label'] == '1') echo "checked=\"checked\" "; ?>/>
@@ -301,6 +336,8 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 		$content = "";
 
 		$result = "";	
+
+		$page_url = ( isset( $_SERVER["HTTPS"] ) && $_SERVER["HTTPS"] == "on" ? "https://" : "http://" ).$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 		// If contact form submited
 		$name = isset( $_REQUEST['cntctfrm_contact_name'] ) ? $_REQUEST['cntctfrm_contact_name'] : "";
 		$email = isset( $_REQUEST['cntctfrm_contact_email'] ) ? $_REQUEST['cntctfrm_contact_email'] : "";
@@ -325,7 +362,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 		else { 
 			$_SESSION['cntctfrm_send_mail'] = false;
 			// Output form
-			$content .= '<form method="post" id="cntctfrm_contact_form" action="" enctype="multipart/form-data">';
+			$content .= '<form method="post" id="cntctfrm_contact_form" action="'.$page_url.'" enctype="multipart/form-data">';
 			if( isset( $error_message['error_form'] ) ) { 
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_form'].'</div>';
 				}
@@ -532,11 +569,37 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 				$form_action_url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 			}
 
-			$userdomain = gethostbyaddr($_SERVER['REMOTE_ADDR']);
-			$user_info_string .= __('Sent from (ip address)', 'contact_form').': '.$_SERVER['REMOTE_ADDR']." ( ". $userdomain ." )";
-			$user_info_string .= __('Date/Time', 'contact_form').': '.date_i18n( get_option( 'date_format' ).' '.get_option( 'time_format' ), time() );
-			$user_info_string .= __('Coming from (referer)', 'contact_form').': '.$form_action_url;
-			$user_info_string .= __('Using (user agent)', 'contact_form').': '.cntctfrm_clean_input($_SERVER['HTTP_USER_AGENT']);
+			if( $cntctfrm_options['cntctfrm_display_add_info'] == 1) {
+				$userdomain = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+				if( $cntctfrm_options['cntctfrm_display_add_info'] == 1 ||
+						$cntctfrm_options['cntctfrm_display_sent_from'] == 1 ||
+						$cntctfrm_options['cntctfrm_display_coming_from'] == 1 ||
+						$cntctfrm_options['cntctfrm_display_user_agent'] == 1 ) {
+					$user_info_string .= '<tr>
+							<td><br /></td><td><br /></td>
+						</tr>';
+				}
+				if( $cntctfrm_options['cntctfrm_display_sent_from'] == 1) {
+					$user_info_string .= '<tr>
+							<td>'.__('Sent from (ip address)', 'contact_form').':</td><td>'.$_SERVER['REMOTE_ADDR']." ( ". $userdomain ." )".'</td>
+						</tr>';
+				}
+				if( $cntctfrm_options['cntctfrm_display_date_time'] == 1) {
+					$user_info_string .= '<tr>
+							<td>'.__('Date/Time', 'contact_form').':</td><td>'.date_i18n( get_option( 'date_format' ).' '.get_option( 'time_format' ), time() ).'</td>
+						</tr>';
+				}
+				if( $cntctfrm_options['cntctfrm_display_coming_from'] == 1) {
+					$user_info_string .= '<tr>
+							<td>'.__('Coming from (referer)', 'contact_form').':</td><td>'.$form_action_url.'</td>
+						</tr>';
+				}
+				if( $cntctfrm_options['cntctfrm_display_user_agent'] == 1) {
+					$user_info_string .= '<tr>
+							<td>'.__('Using (user agent)', 'contact_form').':</td><td>'.cntctfrm_clean_input($_SERVER['HTTP_USER_AGENT']).'</td>
+						</tr>';
+				}
+			}
 			// message
 			$message = '
 			<html>
@@ -563,21 +626,7 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 					<tr>
 						<td><br /></td><td><br /></td>
 					</tr>
-					<tr>
-						<td><br /></td><td><br /></td>
-					</tr>
-					<tr>
-						<td>'.__('Sent from (ip address)', 'contact_form').': </td><td>'.$_SERVER['REMOTE_ADDR']." ( ". $userdomain ." )".'</td>
-					</tr>
-					<tr>
-						<td>'.__('Date/Time', 'contact_form').': </td><td>'.date_i18n( get_option( 'date_format' ).' '.get_option( 'time_format' ), time() ).'</td>
-					</tr>
-					<tr>
-						<td>'.__('Coming from (referer)', 'contact_form').': </td><td>'.$form_action_url.'</td>
-					</tr>
-					<tr>
-						<td>'.__('Using (user agent)', 'contact_form').': </td><td>'.cntctfrm_clean_input( $_SERVER['HTTP_USER_AGENT'] ).'</td>
-					</tr>
+					'.$user_info_string.'
 				</table>
 			</body>
 			</html>

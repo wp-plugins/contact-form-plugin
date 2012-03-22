@@ -68,3 +68,7 @@
 .textwidget #cntctfrm_contact_subject{
     width: 200px !important;
 }
+
+.form-table td.cntctfrm_display_add_info_block {
+	padding:4px 10px 8px;
+}

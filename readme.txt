@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.3.1
-Stable tag: 3.14
+Stable tag: 3.15
 
 Add Contact Form to your WordPress website.
 
@@ -88,6 +88,10 @@ Here is an example for German language files.
 
 == Changelog ==
 
+= V3.15 - 22.03.2012 =
+* New : The feature to setup the displaying of the additional information fields in the email was implemented (Sent from (ip address), Date/Time, Coming from (referer), Using (user agent)).
+* Bugfix : The bug of attribute action on element form was fixed.
+
 = V3.14 - 20.03.2012 =
 * New : Added ability to change FROM fields.
 
@@ -108,7 +112,6 @@ Here is an example for German language files.
 = V3.09 - 24.02.2012 =
 * NEW : Spanish language file is added to the plugin.
 * Change : Code which includes styles and scripts is added to the plugin for correct SSL verification.
-
 * Bugfix : The bug of email address validation in admin section was fixed.
 
 = V3.08 - 17.02.2012 =
@@ -179,6 +182,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.15 =
+The feature to setup the displaying of the additional information fields in the email was implemented (Sent from (ip address), Date/Time, Coming from (referer), Using (user agent)). The bug of attribute action on element form was fixed.
 
 = V3.14 =
 Added ability to change FROM fields.

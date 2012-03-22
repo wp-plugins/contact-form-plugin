@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-20 19:50+0200\n"
-"PO-Revision-Date: 2012-03-20 19:51+0200\n"
+"POT-Creation-Date: 2012-03-22 12:55+0200\n"
+"PO-Revision-Date: 2012-03-22 12:55+0200\n"
 "Last-Translator: BWS <zos@bestwebsoft.com>\n"
 "Language-Team: Thomas Hartung <thartung@adipositas-mm.de>\n"
 "MIME-Version: 1.0\n"
@@ -27,8 +27,8 @@ msgid "Read more"
 msgstr "Lees verder"
 
 #: contact_form.php:78
-#: contact_form.php:611
-#: contact_form.php:620
+#: contact_form.php:660
+#: contact_form.php:669
 msgid "Settings"
 msgstr "Instellingen"
 
@@ -58,7 +58,7 @@ msgid "If you have any questions, please contact us via plugin@bestwebsoft.com o
 msgstr "Mocht je nog vragen hebben stuur dan een email naar plugin@bestwebsoft.com of vul het contactformulier op onze website in."
 
 #: contact_form.php:108
-#: contact_form.php:213
+#: contact_form.php:236
 msgid "Contact Form Options"
 msgstr "Contact Form Opties"
 
@@ -66,207 +66,211 @@ msgstr "Contact Form Opties"
 msgid "Contact Form"
 msgstr "Contact Form"
 
-#: contact_form.php:129
-#: contact_form.php:163
-#: contact_form.php:181
-#: contact_form.php:277
+#: contact_form.php:134
+#: contact_form.php:173
+#: contact_form.php:204
+#: contact_form.php:312
 msgid "Name:"
 msgstr "Naam:"
 
-#: contact_form.php:130
-#: contact_form.php:164
-#: contact_form.php:182
-#: contact_form.php:278
+#: contact_form.php:135
+#: contact_form.php:174
+#: contact_form.php:205
+#: contact_form.php:313
 msgid "E-Mail Address:"
 msgstr "Email adres:"
 
-#: contact_form.php:131
-#: contact_form.php:165
-#: contact_form.php:183
-#: contact_form.php:279
+#: contact_form.php:136
+#: contact_form.php:175
+#: contact_form.php:206
+#: contact_form.php:314
 msgid "Subject:"
 msgstr "Onderwerp:"
 
-#: contact_form.php:132
-#: contact_form.php:166
-#: contact_form.php:184
-#: contact_form.php:280
+#: contact_form.php:137
+#: contact_form.php:176
+#: contact_form.php:207
+#: contact_form.php:315
 msgid "Message:"
 msgstr "Bericht:"
 
-#: contact_form.php:133
-#: contact_form.php:167
-#: contact_form.php:185
-#: contact_form.php:281
+#: contact_form.php:138
+#: contact_form.php:177
+#: contact_form.php:208
+#: contact_form.php:316
 msgid "Attachment:"
 msgstr "Bijlage:"
 
-#: contact_form.php:193
-#: contact_form.php:202
+#: contact_form.php:216
+#: contact_form.php:225
 msgid "Options saved."
 msgstr "Instellingen opgeslagen."
 
-#: contact_form.php:196
+#: contact_form.php:219
 msgid "Such user is not exist. Settings are not saved."
 msgstr "Deze gebruiker bestaat niet. Instellingen zijn niet opgeslagen."
 
-#: contact_form.php:205
+#: contact_form.php:228
 msgid "Please input correct email. Settings are not saved."
 msgstr "Geef een geldig email adres op. Instellingen zijn niet opgeslagen."
 
-#: contact_form.php:218
+#: contact_form.php:241
 msgid "If you would like to add a Contact Form to your website, just copy and put this shortcode onto your post or page or widget:"
 msgstr "Als je een Contact Form aan je website wil toevoegen, kopieer dan deze code in je bericht op op je pagina of widget:"
 
-#: contact_form.php:219
+#: contact_form.php:242
 msgid "If information in the below fields are empty then the message will be send to an address which was specified during registration."
 msgstr "Als het onderstaande veld leeg blijft, dan zal het bericht gestuurd worden aan het adres dat is gespecificeerd tijdens de registratie."
 
-#: contact_form.php:223
+#: contact_form.php:246
 msgid "Use email of wordpress user:"
 msgstr "Gebruik het email adres van de Wordpress gebruiker:"
 
-#: contact_form.php:229
+#: contact_form.php:252
 msgid "Select user name"
 msgstr "Kies gebruikersnaam"
 
-#: contact_form.php:234
+#: contact_form.php:257
 msgid "Set a name of user who will get messages from a contact form."
 msgstr "Voer de naam in van de gebruiker die berichten van dit contact formulier moet ontvangen."
 
-#: contact_form.php:238
+#: contact_form.php:261
 msgid "Use this email:"
 msgstr "Gebruik dit email adres:"
 
-#: contact_form.php:244
+#: contact_form.php:267
 msgid "Set an email address which will be used for messages receiving."
 msgstr "Geef een email adres op waar de berichten naar verstuurd worden."
 
-#: contact_form.php:248
+#: contact_form.php:271
 msgid "Additional options"
 msgstr "Extra opties"
 
-#: contact_form.php:251
+#: contact_form.php:274
 msgid "Display Attachment block"
 msgstr "Bijlages toestaan"
 
-#: contact_form.php:256
+#: contact_form.php:279
 msgid "Users can attach files of the following types"
 msgstr "Gebruikers kunnen de volgende bestandtypen toevoegen"
 
-#: contact_form.php:260
+#: contact_form.php:283
 msgid "Display Send me a copy block"
 msgstr "Geef \"Kopie aan mij sturen\" weer"
 
-#: contact_form.php:266
+#: contact_form.php:289
 msgid "Change FROM fields of the contact form"
 msgstr "Veranderen van velden van het contactformulier"
 
-#: contact_form.php:272
-msgid "Change label for fields of the contact form"
-msgstr "Verander de namen van de labels"
+#: contact_form.php:295
+msgid "Display additional info in email"
+msgstr ""
 
-#: contact_form.php:287
-msgid "Save Changes"
-msgstr "Bewaar veranderingen"
-
-#: contact_form.php:318
-msgid "Thank you for contacting us."
-msgstr "Bedankt voor uw bericht."
-
-#: contact_form.php:323
-msgid "Sorry, your e-mail could not be delivered."
-msgstr "Sorry, uw bericht kon niet worden verstuurd."
-
-#: contact_form.php:380
-msgid "You can attach files of the following types"
-msgstr "Bestanden van het volgende formaten kunnen worden bijgesloten"
-
-#: contact_form.php:386
-msgid "Send me a copy"
-msgstr "Kopie aan mij sturen"
-
-#: contact_form.php:396
-msgid "Submit"
-msgstr "Versturen"
-
-#: contact_form.php:412
-msgid "Your name is required."
-msgstr "U bent vergeten uw naam op te geven"
-
-#: contact_form.php:413
-msgid "A proper e-mail address is required."
-msgstr "U bent vergeten uw emailadres op te geven"
-
-#: contact_form.php:414
-msgid "Subject text is required."
-msgstr "U bent vergeten een onderwerp op te geven"
-
-#: contact_form.php:415
-msgid "Message text is required."
-msgstr "U bent vergeten een bericht op te geven"
-
-#: contact_form.php:416
-msgid "Please make corrections below and try again."
-msgstr "Vul alle vereiste informatie in en probeer het opnieuw."
-
-#: contact_form.php:447
-msgid "Attachment is broken."
-msgstr "Bijlage is beschadigd."
-
-#: contact_form.php:460
-msgid "Please complete the CAPTCHA."
-msgstr "Vul de CAPTCHA in."
-
-#: contact_form.php:536
-#: contact_form.php:570
+#: contact_form.php:300
+#: contact_form.php:584
 msgid "Sent from (ip address)"
 msgstr "Verstuurd van (IP-adres)"
 
-#: contact_form.php:537
-#: contact_form.php:573
+#: contact_form.php:301
+#: contact_form.php:589
 msgid "Date/Time"
 msgstr "Datum/Tijd"
 
-#: contact_form.php:538
-#: contact_form.php:576
+#: contact_form.php:302
+#: contact_form.php:594
 msgid "Coming from (referer)"
 msgstr "Verstuurd vanaf (referer)"
 
-#: contact_form.php:539
-#: contact_form.php:579
+#: contact_form.php:303
+#: contact_form.php:599
 msgid "Using (user agent)"
 msgstr "Met  (user agent)"
 
-#: contact_form.php:544
+#: contact_form.php:307
+msgid "Change label for fields of the contact form"
+msgstr "Verander de namen van de labels"
+
+#: contact_form.php:322
+msgid "Save Changes"
+msgstr "Bewaar veranderingen"
+
+#: contact_form.php:355
+msgid "Thank you for contacting us."
+msgstr "Bedankt voor uw bericht."
+
+#: contact_form.php:360
+msgid "Sorry, your e-mail could not be delivered."
+msgstr "Sorry, uw bericht kon niet worden verstuurd."
+
+#: contact_form.php:417
+msgid "You can attach files of the following types"
+msgstr "Bestanden van het volgende formaten kunnen worden bijgesloten"
+
+#: contact_form.php:423
+msgid "Send me a copy"
+msgstr "Kopie aan mij sturen"
+
+#: contact_form.php:433
+msgid "Submit"
+msgstr "Versturen"
+
+#: contact_form.php:449
+msgid "Your name is required."
+msgstr "U bent vergeten uw naam op te geven"
+
+#: contact_form.php:450
+msgid "A proper e-mail address is required."
+msgstr "U bent vergeten uw emailadres op te geven"
+
+#: contact_form.php:451
+msgid "Subject text is required."
+msgstr "U bent vergeten een onderwerp op te geven"
+
+#: contact_form.php:452
+msgid "Message text is required."
+msgstr "U bent vergeten een bericht op te geven"
+
+#: contact_form.php:453
+msgid "Please make corrections below and try again."
+msgstr "Vul alle vereiste informatie in en probeer het opnieuw."
+
+#: contact_form.php:484
+msgid "Attachment is broken."
+msgstr "Bijlage is beschadigd."
+
+#: contact_form.php:497
+msgid "Please complete the CAPTCHA."
+msgstr "Vul de CAPTCHA in."
+
+#: contact_form.php:607
 msgid "Contact from"
 msgstr "Contact van"
 
-#: contact_form.php:549
+#: contact_form.php:612
 msgid "Name"
 msgstr "Naam"
 
-#: contact_form.php:552
+#: contact_form.php:615
 msgid "Email"
 msgstr "Email"
 
-#: contact_form.php:555
+#: contact_form.php:618
 msgid "Subject"
 msgstr "Onderwerp"
 
-#: contact_form.php:558
+#: contact_form.php:621
 msgid "Message"
 msgstr "Bericht"
 
-#: contact_form.php:561
+#: contact_form.php:624
 msgid "Site"
 msgstr "Website"
 
-#: contact_form.php:621
+#: contact_form.php:670
 msgid "FAQ"
 msgstr "Veel gestelde vragen (FAQ)"
 
-#: contact_form.php:622
+#: contact_form.php:671
 msgid "Support"
 msgstr "Support"
 
