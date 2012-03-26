@@ -373,7 +373,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_name'].'</div>';
 			}
 			$content .= '<div style="text-align: left;">
-					<input class="text" type="text" size="40" value="'.$name.'" name="cntctfrm_contact_name" id="cntctfrm_contact_name" style="text-align: left; margin: 0;">
+					<input class="text" type="text" size="40" value="'.$name.'" name="cntctfrm_contact_name" id="cntctfrm_contact_name" style="text-align: left; margin: 0;" />
 				</div>
 
 				<div style="text-align: left;">
@@ -383,17 +383,17 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_email'].'</div>';
 				}
 			$content .= '<div style="text-align: left;">
-					<input class="text" type="text" size="40" value="'.$email.'" name="cntctfrm_contact_email" id="cntctfrm_contact_email" style="text-align: left; margin: 0;">
+					<input class="text" type="text" size="40" value="'.$email.'" name="cntctfrm_contact_email" id="cntctfrm_contact_email" style="text-align: left; margin: 0;" />
 				</div>
 
 				<div style="text-align: left;">
-					<label for="cntctfrm_contact_subject1">'. $cntctfrm_options['cntctfrm_subject_label'] . '<span class="required"> *</span></label>
+					<label for="cntctfrm_contact_subject">'. $cntctfrm_options['cntctfrm_subject_label'] . '<span class="required"> *</span></label>
 				</div>';
 			if( isset( $error_message['error_subject'] ) ) {
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_subject'].'</div>';
 			}
 			$content .= '<div style="text-align: left;">
-					<input class="text" type="text" size="40" value="'.$subject.'" name="cntctfrm_contact_subject" id="cntctfrm_contact_subject" style="text-align: left; margin: 0;">
+					<input class="text" type="text" size="40" value="'.$subject.'" name="cntctfrm_contact_subject" id="cntctfrm_contact_subject" style="text-align: left; margin: 0;" />
 				</div>
 
 				<div style="text-align: left;">
@@ -419,7 +419,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 			}
 			if($cntctfrm_options['cntctfrm_send_copy'] == 1 ) {
 				$content .= '<div style="text-align: left;">
-						<input type="checkbox" size="40" value="1" name="cntctfrm_contact_send_copy" id="cntctfrm_contact_send_copy" style="text-align: left; margin: 0;" '.( $send_copy == '1' ? " checked=\"checked\" " : "" ).'>
+						<input type="checkbox" value="1" name="cntctfrm_contact_send_copy" id="cntctfrm_contact_send_copy" style="text-align: left; margin: 0;" '.( $send_copy == '1' ? " checked=\"checked\" " : "" ).' />
 						<label for="cntctfrm_contact_send_copy">'. __( "Send me a copy", 'contact_form' ). '</label>
 					</div>';
 			}
@@ -429,8 +429,8 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 			}
 				
 			$content .= '<div style="text-align: left; padding-top: 8px;">
-					<input type="hidden" value="send" name="cntctfrm_contact_action"><input type="hidden" value="Version: 3.13">
-					<input type="submit" value="'. __( "Submit", 'contact_form' ). '" style="cursor: pointer; margin: 0pt; text-align: center;margin-bottom:10px;"> 
+					<input type="hidden" value="send" name="cntctfrm_contact_action"><input type="hidden" value="Version: 3.13" />
+					<input type="submit" value="'. __( "Submit", 'contact_form' ). '" style="cursor: pointer; margin: 0pt; text-align: center;margin-bottom:10px;" /> 
 				</div>
 				</form>';
 		}
