@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.3.1
-Stable tag: 3.16
+Stable tag: 3.17
 
 Add Contact Form to your WordPress website.
 
@@ -26,9 +26,11 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 
 * Bulgarian (bg_BG) (thanks to Martin Jekov)
 * Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:brenojac@gmail.com">Breno Jacinto</a>, www.iconis.org.br)
+* Danish (da_DK) (thanks to Mads Hannibal)
 * Dutch (nl_NL) (thanks  to <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>, Jan Boeijink )
 * French (fr_FR) (thanks to Alain Thomas and Vincent Cibelli)
 * German (de_DE) (thanks to Hartung Thomas)
+* Greek (el_GR) (thanks to Pantelis Panteloglou)
 * Italian (it_IT) (thanks to <a href="mailto:ilian@ultra-violet.it">Ilian Gagliardi</a>)
 * Norwegian (nb_NO) (thanks to Tore Hjartland)
 * Polish (pl_PL) (thanks to Jarek Spirydowicz)
@@ -88,6 +90,10 @@ Here is an example for German language files.
 
 == Changelog ==
 
+= V3.17 - 12.04.2012 =
+* NEW : Danish and Greek language files is added.
+* NEW : Added ability to send mail using the functional: wordpress wp_mail function or php mail function.
+
 = V3.16 - 26.03.2012 =
 * Bugfix : The form output code is validated. 
 
@@ -96,7 +102,7 @@ Here is an example for German language files.
 * Bugfix : The bug of attribute action on element form was fixed.
 
 = V3.14 - 20.03.2012 =
-* New : Added ability to change FROM fields.
+* NEW : Added ability to change FROM fields.
 
 = V3.13 - 14.03.2012 =
 * Change : French language file is changed.
@@ -185,6 +191,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.17 =
+Danish and Greek language files is added. Added ability to send mail using the functional: wordpress wp_mail function or php mail function.
 
 = V3.16 =
 The form output code is validated. 

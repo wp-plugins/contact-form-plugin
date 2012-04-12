@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.15
+Version: 3.17
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -128,6 +128,7 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 			'cntctfrm_display_add_info' => 1,
 			'cntctfrm_display_sent_from' => 1,
 			'cntctfrm_display_date_time' => 1,
+			'cntctfrm_mail_method' => 'wp-mail',
 			'cntctfrm_display_coming_from' => 1,
 			'cntctfrm_display_user_agent' => 1,
 			'cntctfrm_change_label' => 0,
@@ -161,50 +162,52 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 			$cntctfrm_options_submit['cntctfrm_select_email'] = $_REQUEST['cntctfrm_select_email'];
 			$cntctfrm_options_submit['cntctfrm_additions_options'] = isset( $_REQUEST['cntctfrm_additions_options']) ? $_REQUEST['cntctfrm_additions_options'] : 0;
 			if($cntctfrm_options_submit['cntctfrm_additions_options'] == 0) {
-				$cntctfrm_options_submit['cntctfrm_attachment'] = 0;
-				$cntctfrm_options_submit['cntctfrm_send_copy'] = 0;
-				$cntctfrm_options_submit['cntctfrm_from_field'] = get_bloginfo( 'name' );
-				$cntctfrm_options_submit['cntctfrm_display_add_info'] = 1;
-				$cntctfrm_options_submit['cntctfrm_display_sent_from'] = 1;
-				$cntctfrm_options_submit['cntctfrm_display_date_time'] = 1;
+				$cntctfrm_options_submit['cntctfrm_attachment']					= 0;
+				$cntctfrm_options_submit['cntctfrm_send_copy']					= 0;
+				$cntctfrm_options_submit['cntctfrm_from_field']					= get_bloginfo( 'name' );
+				$cntctfrm_options_submit['cntctfrm_display_add_info']		= 1;
+				$cntctfrm_options_submit['cntctfrm_display_sent_from']	= 1;
+				$cntctfrm_options_submit['cntctfrm_display_date_time']	= 1;
+				$cntctfrm_options_submit['cntctfrm_mail_method']				= 'wp-mail';
 				$cntctfrm_options_submit['cntctfrm_display_coming_from'] = 1;
 				$cntctfrm_options_submit['cntctfrm_display_user_agent'] = 1;
-				$cntctfrm_options_submit['cntctfrm_change_label'] = 0;
-				$cntctfrm_options_submit['cntctfrm_name_label'] = __( "Name:", 'contact_form' );
-				$cntctfrm_options_submit['cntctfrm_email_label'] = __( "E-Mail Address:", 'contact_form' );
-				$cntctfrm_options_submit['cntctfrm_subject_label'] = __( "Subject:", 'contact_form' );
-				$cntctfrm_options_submit['cntctfrm_message_label'] = __( "Message:", 'contact_form' );
-				$cntctfrm_options_submit['cntctfrm_attachment_label'] = __( "Attachment:", 'contact_form' );
+				$cntctfrm_options_submit['cntctfrm_change_label']				= 0;
+				$cntctfrm_options_submit['cntctfrm_name_label']					= __( "Name:", 'contact_form' );
+				$cntctfrm_options_submit['cntctfrm_email_label']				= __( "E-Mail Address:", 'contact_form' );
+				$cntctfrm_options_submit['cntctfrm_subject_label']			= __( "Subject:", 'contact_form' );
+				$cntctfrm_options_submit['cntctfrm_message_label']			= __( "Message:", 'contact_form' );
+				$cntctfrm_options_submit['cntctfrm_attachment_label']		= __( "Attachment:", 'contact_form' );
 			} else {
-				$cntctfrm_options_submit['cntctfrm_attachment'] = isset( $_REQUEST['cntctfrm_attachment']) ? $_REQUEST['cntctfrm_attachment'] : 0;
-				$cntctfrm_options_submit['cntctfrm_send_copy'] = isset( $_REQUEST['cntctfrm_send_copy']) ? $_REQUEST['cntctfrm_send_copy'] : 0;
-				$cntctfrm_options_submit['cntctfrm_from_field'] = $_REQUEST['cntctfrm_from_field'];
+				$cntctfrm_options_submit['cntctfrm_attachment']				= isset( $_REQUEST['cntctfrm_attachment']) ? $_REQUEST['cntctfrm_attachment'] : 0;
+				$cntctfrm_options_submit['cntctfrm_send_copy']				= isset( $_REQUEST['cntctfrm_send_copy']) ? $_REQUEST['cntctfrm_send_copy'] : 0;
+				$cntctfrm_options_submit['cntctfrm_mail_method']			= $_REQUEST['cntctfrm_mail_method'];
+				$cntctfrm_options_submit['cntctfrm_from_field']				= $_REQUEST['cntctfrm_from_field'];
 				$cntctfrm_options_submit['cntctfrm_display_add_info'] = isset( $_REQUEST['cntctfrm_display_add_info']) ? 1 : 0;
-				$cntctfrm_options_submit['cntctfrm_change_label'] = isset( $_REQUEST['cntctfrm_change_label']) ? 1 : 0;
+				$cntctfrm_options_submit['cntctfrm_change_label']			= isset( $_REQUEST['cntctfrm_change_label']) ? 1 : 0;
 				if( $cntctfrm_options_submit['cntctfrm_display_add_info'] == 1 ) {
-					$cntctfrm_options_submit['cntctfrm_display_sent_from'] = isset( $_REQUEST['cntctfrm_display_sent_from']) ? 1 : 0;
-					$cntctfrm_options_submit['cntctfrm_display_date_time'] = isset( $_REQUEST['cntctfrm_display_date_time']) ? 1 : 0;
-					$cntctfrm_options_submit['cntctfrm_display_coming_from'] = isset( $_REQUEST['cntctfrm_display_coming_from']) ? 1 : 0;
-					$cntctfrm_options_submit['cntctfrm_display_user_agent'] = isset( $_REQUEST['cntctfrm_display_user_agent']) ? 1 : 0;
+					$cntctfrm_options_submit['cntctfrm_display_sent_from']		= isset( $_REQUEST['cntctfrm_display_sent_from']) ? 1 : 0;
+					$cntctfrm_options_submit['cntctfrm_display_date_time']		= isset( $_REQUEST['cntctfrm_display_date_time']) ? 1 : 0;
+					$cntctfrm_options_submit['cntctfrm_display_coming_from']	= isset( $_REQUEST['cntctfrm_display_coming_from']) ? 1 : 0;
+					$cntctfrm_options_submit['cntctfrm_display_user_agent']		= isset( $_REQUEST['cntctfrm_display_user_agent']) ? 1 : 0;
 				}
 				else {
-					$cntctfrm_options_submit['cntctfrm_display_sent_from'] = 1;
-					$cntctfrm_options_submit['cntctfrm_display_date_time'] = 1;
-					$cntctfrm_options_submit['cntctfrm_display_coming_from'] = 1;
-					$cntctfrm_options_submit['cntctfrm_display_user_agent'] = 1;
+					$cntctfrm_options_submit['cntctfrm_display_sent_from']		= 1;
+					$cntctfrm_options_submit['cntctfrm_display_date_time']		= 1;
+					$cntctfrm_options_submit['cntctfrm_display_coming_from']	= 1;
+					$cntctfrm_options_submit['cntctfrm_display_user_agent']		= 1;
 				}
 				if( $cntctfrm_options_submit['cntctfrm_change_label'] == 1 ) {
-					$cntctfrm_options_submit['cntctfrm_name_label'] = isset( $_REQUEST['cntctfrm_name_label']) ? $_REQUEST['cntctfrm_name_label'] : $cntctfrm_options_submit['cntctfrm_name_label'];
-					$cntctfrm_options_submit['cntctfrm_email_label'] = isset( $_REQUEST['cntctfrm_email_label']) ? $_REQUEST['cntctfrm_email_label'] : $cntctfrm_options_submit['cntctfrm_email_label'];
-					$cntctfrm_options_submit['cntctfrm_subject_label'] = isset( $_REQUEST['cntctfrm_subject_label']) ? $_REQUEST['cntctfrm_subject_label'] : $cntctfrm_options_submit['cntctfrm_subject_label'];
-					$cntctfrm_options_submit['cntctfrm_message_label'] = isset( $_REQUEST['cntctfrm_message_label']) ? $_REQUEST['cntctfrm_message_label'] : $cntctfrm_options_submit['cntctfrm_message_label'];
+					$cntctfrm_options_submit['cntctfrm_name_label']				= isset( $_REQUEST['cntctfrm_name_label']) ? $_REQUEST['cntctfrm_name_label'] : $cntctfrm_options_submit['cntctfrm_name_label'];
+					$cntctfrm_options_submit['cntctfrm_email_label']			= isset( $_REQUEST['cntctfrm_email_label']) ? $_REQUEST['cntctfrm_email_label'] : $cntctfrm_options_submit['cntctfrm_email_label'];
+					$cntctfrm_options_submit['cntctfrm_subject_label']		= isset( $_REQUEST['cntctfrm_subject_label']) ? $_REQUEST['cntctfrm_subject_label'] : $cntctfrm_options_submit['cntctfrm_subject_label'];
+					$cntctfrm_options_submit['cntctfrm_message_label']		= isset( $_REQUEST['cntctfrm_message_label']) ? $_REQUEST['cntctfrm_message_label'] : $cntctfrm_options_submit['cntctfrm_message_label'];
 					$cntctfrm_options_submit['cntctfrm_attachment_label'] = isset( $_REQUEST['cntctfrm_attachment_label']) ? $_REQUEST['cntctfrm_attachment_label'] : $cntctfrm_options_submit['cntctfrm_attachment_label'];
 				}
 				else {
-					$cntctfrm_options_submit['cntctfrm_name_label'] = __( "Name:", 'contact_form' );
-					$cntctfrm_options_submit['cntctfrm_email_label'] = __( "E-Mail Address:", 'contact_form' );
-					$cntctfrm_options_submit['cntctfrm_subject_label'] = __( "Subject:", 'contact_form' );
-					$cntctfrm_options_submit['cntctfrm_message_label'] = __( "Message:", 'contact_form' );
+					$cntctfrm_options_submit['cntctfrm_name_label']				= __( "Name:", 'contact_form' );
+					$cntctfrm_options_submit['cntctfrm_email_label']			= __( "E-Mail Address:", 'contact_form' );
+					$cntctfrm_options_submit['cntctfrm_subject_label']		= __( "Subject:", 'contact_form' );
+					$cntctfrm_options_submit['cntctfrm_message_label']		= __( "Message:", 'contact_form' );
 					$cntctfrm_options_submit['cntctfrm_attachment_label'] = __( "Attachment:", 'contact_form' );
 				}
 			}			
@@ -244,7 +247,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 			<table class="form-table">
 				<tr valign="top">
 					<th scope="row" style="width:195px;"><?php _e( "Use email of wordpress user:", 'contact_form' ); ?> </th>
-					<td>
+					<td style="width:15px;">
 						<input type="radio" id="cntctfrm_select_email_user" name="cntctfrm_select_email" value="user" <?php if($cntctfrm_options['cntctfrm_select_email'] == 'user') echo "checked=\"checked\" "; ?>/>
 					</td>
 					<td>
@@ -279,10 +282,29 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 						<span  class="cntctfrm_info"><?php echo __( "Users can attach files of the following types", 'contact_form' ) . ": html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, zip, rar, wav, mp3, ppt"; ?></span>
 					</td>
 				</tr>
-				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
+				<tr valign="top" class="cntctfrm_additions_block <?php if( $cntctfrm_options['cntctfrm_additions_options'] == '0' ) echo "cntctfrm_hidden"; ?>">
 					<th scope="row" style="width:195px;"><?php _e( "Display Send me a copy block", 'contact_form' ); ?></th>
 					<td colspan="2">
 						<input type="checkbox" id="cntctfrm_send_copy" name="cntctfrm_send_copy" value="1" <?php if($cntctfrm_options['cntctfrm_send_copy'] == '1') echo "checked=\"checked\" "; ?>/>
+					</td>
+				</tr>
+				<tr class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
+					<th rowspan="2"><?php _e( 'What use?', 'contact_form' ); ?></th>
+					<td>
+						<input type='radio' name='cntctfrm_mail_method' value='wp-mail' <?php if( $cntctfrm_options['cntctfrm_mail_method'] == 'wp-mail' ) echo "checked=\"checked\" "; ?>/>
+					</td>
+					<td>
+						<?php _e( 'Wp-mail', 'mail-send' ); ?> 
+						<span  class="cntctfrm_info">(<?php _e( 'To send mail you can use the wordpress wp_mail function', 'mail_send' ); ?>)</span>
+					</td>
+				</tr>
+				<tr class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
+					<td>
+						<input type='radio' name='cntctfrm_mail_method' value='mail' <?php if($cntctfrm_options['cntctfrm_mail_method'] == 'mail') echo "checked=\"checked\" "; ?>/>
+					</td>
+					<td>
+						<?php _e( 'Mail', 'mail-send' ); ?> 
+						<span  class="cntctfrm_info">(<?php _e( 'To send mail you can use the php mail function', 'mail_send' ); ?>)</span>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
@@ -631,21 +653,74 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 			</body>
 			</html>
 			';
-			// To send HTML mail, the Content-type header must be set
-			$headers  = 'MIME-Version: 1.0' . "\r\n";
-			$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+			if( $cntctfrm_options['cntctfrm_mail_method'] == 'wp-mail' ){
+				// To send HTML mail, the Content-type header must be set
+				$headers  = 'MIME-Version: 1.0' . "\r\n";
+				$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 
-			// Additional headers
-			$headers .= 'From: '.$_REQUEST['cntctfrm_contact_email']. "\r\n";
-			if( $cntctfrm_options['cntctfrm_attachment'] == 1 && isset($_FILES["cntctfrm_contact_attachment"]["tmp_name"]) && $_FILES["cntctfrm_contact_attachment"]["tmp_name"] != "") {
-				$attachments = array( $path_of_uploaded_file );
+				// Additional headers
+				$headers .= 'From: '.$_REQUEST['cntctfrm_contact_email']. "\r\n";
+				if( $cntctfrm_options['cntctfrm_attachment'] == 1 && isset($_FILES["cntctfrm_contact_attachment"]["tmp_name"]) && $_FILES["cntctfrm_contact_attachment"]["tmp_name"] != "") {
+					$attachments = array( $path_of_uploaded_file );
+				}
+
+				if( isset( $_REQUEST['cntctfrm_contact_send_copy'] ) && $_REQUEST['cntctfrm_contact_send_copy'] == 1 )
+					wp_mail($_REQUEST['cntctfrm_contact_email'], stripslashes($subject), stripslashes($message), $headers, $attachments);
+
+				// Mail it
+				return wp_mail($to, stripslashes($subject), stripslashes($message), $headers, $attachments);
 			}
+			else{
+				if( $cntctfrm_options['cntctfrm_attachment'] == 1 && isset($_FILES["cntctfrm_contact_attachment"]["tmp_name"]) && $_FILES["cntctfrm_contact_attachment"]["tmp_name"] != "") {
+					global $path_of_uploaded_file;
+					$headers  = "";
+					$message_block = $message;
 
-			if( isset( $_REQUEST['cntctfrm_contact_send_copy'] ) && $_REQUEST['cntctfrm_contact_send_copy'] == 1 )
-				wp_mail($_REQUEST['cntctfrm_contact_email'], stripslashes($subject), stripslashes($message), $headers, $attachments);
+					// Additional headers
+					$headers .= 'From: '.$_REQUEST['cntctfrm_contact_email']. "\r\n";
 
-			// Mail it
-			return wp_mail($to, stripslashes($subject), stripslashes($message), $headers, $attachments);
+					$bound_text = 	"jimmyP123";
+		 
+					$bound = 	"--".$bound_text."\r\n";
+
+					$bound_last = 	"--".$bound_text."--\r\n";
+
+					$headers .= "MIME-Version: 1.0\r\n"
+						."Content-Type: multipart/mixed; boundary=\"$bound_text\"";
+
+					$message = 	__( "If you can see this MIME than your client doesn't accept MIME types!", "contact_form" ) . "\r\n"
+						.$bound;
+
+		 
+					$message .= 	"Content-Type: text/html; charset=\"utf-8\"\r\n"
+							."Content-Transfer-Encoding: 7bit\r\n\r\n"
+						."".$message_block."\r\n"
+						.$bound;
+		 
+					$file = 	file_get_contents($path_of_uploaded_file);
+					$path_info = pathinfo( $path_of_uploaded_file );
+					 
+					$message .= 	"Content-Type: ".$path_info['extension']."; name=\"".basename($path_of_uploaded_file)."\"\r\n"
+							."Content-Transfer-Encoding: base64\r\n"
+							."Content-disposition: attachment; file=\"".basename($path_of_uploaded_file)."\"\r\n"
+							."\r\n"
+							.chunk_split( base64_encode( $file ) )
+							.$bound_last;
+				}
+				else {
+					// To send HTML mail, the Content-type header must be set
+					$headers  = 'MIME-Version: 1.0' . "\r\n";
+					$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+
+					// Additional headers
+					$headers .= 'From: '.$_REQUEST['cntctfrm_contact_email']. "\r\n";
+				}
+				if( isset( $_REQUEST['cntctfrm_contact_send_copy'] ) && $_REQUEST['cntctfrm_contact_send_copy'] == 1 )
+					@mail($_REQUEST['cntctfrm_contact_email'], stripslashes($subject), stripslashes($message), $headers);
+
+				return @mail($to, stripslashes($subject), stripslashes($message), $headers);
+			}
+			
 		}
 		return false;
 	}
