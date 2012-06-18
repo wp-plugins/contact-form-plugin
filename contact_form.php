@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.17
+Version: 3.18
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -123,6 +123,7 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 			'cntctfrm_select_email' => 'user',
 			'cntctfrm_additions_options' => 0,
 			'cntctfrm_attachment' => 0,
+			'cntctfrm_attachment_explanations' => 1,
 			'cntctfrm_send_copy' => 0,
 			'cntctfrm_from_field' => get_bloginfo( 'name' ),
 			'cntctfrm_display_add_info' => 1,
@@ -163,6 +164,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 			$cntctfrm_options_submit['cntctfrm_additions_options'] = isset( $_REQUEST['cntctfrm_additions_options']) ? $_REQUEST['cntctfrm_additions_options'] : 0;
 			if($cntctfrm_options_submit['cntctfrm_additions_options'] == 0) {
 				$cntctfrm_options_submit['cntctfrm_attachment']					= 0;
+				$cntctfrm_options_submit['cntctfrm_attachment_explanations']					= 1;
 				$cntctfrm_options_submit['cntctfrm_send_copy']					= 0;
 				$cntctfrm_options_submit['cntctfrm_from_field']					= get_bloginfo( 'name' );
 				$cntctfrm_options_submit['cntctfrm_display_add_info']		= 1;
@@ -179,6 +181,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				$cntctfrm_options_submit['cntctfrm_attachment_label']		= __( "Attachment:", 'contact_form' );
 			} else {
 				$cntctfrm_options_submit['cntctfrm_attachment']				= isset( $_REQUEST['cntctfrm_attachment']) ? $_REQUEST['cntctfrm_attachment'] : 0;
+				$cntctfrm_options_submit['cntctfrm_attachment_explanations']				= isset( $_REQUEST['cntctfrm_attachment_explanations']) ? $_REQUEST['cntctfrm_attachment_explanations'] : 0;
 				$cntctfrm_options_submit['cntctfrm_send_copy']				= isset( $_REQUEST['cntctfrm_send_copy']) ? $_REQUEST['cntctfrm_send_copy'] : 0;
 				$cntctfrm_options_submit['cntctfrm_mail_method']			= $_REQUEST['cntctfrm_mail_method'];
 				$cntctfrm_options_submit['cntctfrm_from_field']				= $_REQUEST['cntctfrm_from_field'];
@@ -213,7 +216,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 			}			
 			$cntctfrm_options = array_merge( $cntctfrm_options, $cntctfrm_options_submit  );
 			if( 'user' == $cntctfrm_options_submit['cntctfrm_select_email'] ) {
-				if( false !== get_userdatabylogin( $cntctfrm_options_submit['cntctfrm_user_email'] ) )
+				if( false !== get_user_by( 'login', $cntctfrm_options_submit['cntctfrm_user_email'] ) )
 				{
 					update_option( 'cntctfrm_options', $cntctfrm_options, '', 'yes' );
 					$message = __( "Options saved.", 'contact_form' );
@@ -223,7 +226,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				}
 			}
 			else {
-				if( $cntctfrm_options_submit['cntctfrm_custom_email']  != "" && preg_match( "/^(?:[a-z0-9]+(?:[a-z0-9\-_\.]+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_email'] ) ) ) {
+				if( $cntctfrm_options_submit['cntctfrm_custom_email']  != "" && preg_match( "/^((?:[a-z0-9]+(?:[a-z0-9\-_\.]+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})(','*))+$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_email'] ) ) ) {
 					update_option( 'cntctfrm_options', $cntctfrm_options, '', 'yes' );
 					$message = __( "Options saved.", 'contact_form' );
 				}
@@ -280,6 +283,15 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					</td>
 					<td>
 						<span  class="cntctfrm_info"><?php echo __( "Users can attach files of the following types", 'contact_form' ) . ": html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, zip, rar, wav, mp3, ppt"; ?></span>
+					</td>
+				</tr>
+				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
+					<th scope="row" style="width:195px;"><?php _e( "Display Attachment explanations", 'contact_form' ); ?></th>
+					<td>
+						<input type="checkbox" id="cntctfrm_attachment_explanations" name="cntctfrm_attachment_explanations" value="1" <?php if( $cntctfrm_options['cntctfrm_attachment_explanations'] == '1' && $cntctfrm_options['cntctfrm_attachment'] == '1' ) echo "checked=\"checked\" "; ?>/>
+					</td>
+					<td>
+						<span  class="cntctfrm_info"><?php echo __( "Display explanations after Attachment block", 'contact_form' ); ?></span>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if( $cntctfrm_options['cntctfrm_additions_options'] == '0' ) echo "cntctfrm_hidden"; ?>">
@@ -435,9 +447,12 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 					$content .= '<div style="text-align: left; color: red;">'.$error_message['error_attachment'].'</div>';
 				}
 				$content .= '<div style="text-align: left;">
-						<input type="file" name="cntctfrm_contact_attachment" id="cntctfrm_contact_attachment"'.(isset( $error_message['error_attachment'] ) ? "class='error'": "").' />
-						<label style="font-size:10px;"><br />'. __( "You can attach files of the following types", 'contact_form' ) . ': html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, zip, rar, wav, mp3, ppt</label>
-					</div>';
+						<input type="file" name="cntctfrm_contact_attachment" id="cntctfrm_contact_attachment"'.(isset( $error_message['error_attachment'] ) ? "class='error'": "").' />';
+				if( $cntctfrm_options['cntctfrm_attachment_explanations'] == 1 ){
+						$content .= '<label style="font-size:10px;"><br />'. __( "You can attach files of the following types", 'contact_form' ) . ': html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, zip, rar, wav, mp3, ppt</label>';
+				}
+				$content .= '
+				</div>';
 			}
 			if($cntctfrm_options['cntctfrm_send_copy'] == 1 ) {
 				$content .= '<div style="text-align: left;">

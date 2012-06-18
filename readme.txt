@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
-Tested up to: 3.3.1
-Stable tag: 3.17
+Tested up to: 3.4
+Stable tag: 3.18
 
 Add Contact Form to your WordPress website.
 
@@ -24,6 +24,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 
 = Translation =
 
+* Arabic (ar) (thanks to Hammad Alshammari (ABU HATIM), www.abuhatim.net)
 * Bulgarian (bg_BG) (thanks to Martin Jekov)
 * Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:brenojac@gmail.com">Breno Jacinto</a>, www.iconis.org.br)
 * Danish (da_DK) (thanks to Mads Hannibal)
@@ -31,6 +32,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 * French (fr_FR) (thanks to Alain Thomas and Vincent Cibelli)
 * German (de_DE) (thanks to Hartung Thomas)
 * Greek (el_GR) (thanks to Pantelis Panteloglou)
+* Hindi (hi_IN) (thanks to <a href="mailto:ash.pr@outshinesolutions.com">Team Outshine</a>)
 * Italian (it_IT) (thanks to <a href="mailto:ilian@ultra-violet.it">Ilian Gagliardi</a>)
 * Norwegian (nb_NO) (thanks to Tore Hjartland)
 * Polish (pl_PL) (thanks to Jarek Spirydowicz)
@@ -43,7 +45,9 @@ If you create your own language pack or update the existing one, you can send <a
 
 = Technical support =
 
-Dear users, if you have any questions or propositions regarding our plugins (current options, new options, current issues) please feel free to contact us. Please note that we accept requests in English only. All messages on another languages wouldn't be accepted. 
+Dear users, our plugins are available for free download. If you have any questions or propositions regarding functionality of our plugins (current options, new options, current issues) please feel free to contact us. Please note that we accept requests in English language only. All messages on another languages wouldn't be accepted. 
+
+Also, emails which are reporting about plugin's bugs are accepted for investigation and fixing. Your request must contain URL of the website, issues description and WordPress admin panel access. Plugin customization based on your Wordpress theme is a paid service (standard price is $10, but it could be higer and depends on the complexity of requested changes). We will analize existing issue and make necessary changes after 100% pre-payment.All these paid changes and modifications could be included to the next version of plugin and will be shared for all users like an integral part of the plugin. Free fixing services will be provided for user who send translation on their native language (this should be a new translation of a certain plugin, and you can check available translations on the official plugin page).
 
 == Installation ==
 
@@ -93,6 +97,10 @@ Here is an example for German language files.
 5. Widget settings for using shortcode in the sidebar.
 
 == Changelog ==
+
+= V3.18 - 18.06.2012 =
+* NEW : Arabic and Hindi language files is added.
+* NEW : Added ability to display or hide explanations after Attachment block.
 
 = V3.17 - 12.04.2012 =
 * NEW : Danish and Greek language files is added.
@@ -195,6 +203,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.18 =
+Arabic and Hindi language files is added. Added ability to display or hide explanations after Attachment block.
 
 = V3.17 =
 Danish and Greek language files is added. Added ability to send mail using the functional: wordpress wp_mail function or php mail function.
