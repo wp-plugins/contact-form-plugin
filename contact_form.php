@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.18
+Version: 3.19
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -216,7 +216,12 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 			}			
 			$cntctfrm_options = array_merge( $cntctfrm_options, $cntctfrm_options_submit  );
 			if( 'user' == $cntctfrm_options_submit['cntctfrm_select_email'] ) {
-				if( false !== get_user_by( 'login', $cntctfrm_options_submit['cntctfrm_user_email'] ) )
+				if( function_exists('get_userdatabylogin') && false !== get_userdatabylogin( $cntctfrm_options_submit['cntctfrm_user_email'] ) )
+				{
+					update_option( 'cntctfrm_options', $cntctfrm_options, '', 'yes' );
+					$message = __( "Options saved.", 'contact_form' );
+				}
+				else if( false !== get_user_by( 'login', $cntctfrm_options_submit['cntctfrm_user_email'] ) )
 				{
 					update_option( 'cntctfrm_options', $cntctfrm_options, '', 'yes' );
 					$message = __( "Options saved.", 'contact_form' );
@@ -224,9 +229,10 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				else {
 					$error =__(  "Such user is not exist. Settings are not saved.", 'contact_form' );
 				}
+				var_dump(function_exists('get_userdatabylogin'));
 			}
 			else {
-				if( $cntctfrm_options_submit['cntctfrm_custom_email']  != "" && preg_match( "/^((?:[a-z0-9]+(?:[a-z0-9\-_\.]+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})(','*))+$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_email'] ) ) ) {
+				if( $cntctfrm_options_submit['cntctfrm_custom_email']  != "" && preg_match( "/^((?:[a-z0-9]+(?:[a-z0-9\-_\.]+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})[, ]*)+$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_email'] ) ) ) {
 					update_option( 'cntctfrm_options', $cntctfrm_options, '', 'yes' );
 					$message = __( "Options saved.", 'contact_form' );
 				}
