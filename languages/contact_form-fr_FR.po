@@ -1,0 +1,1309 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: contact_form\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-27 17:40+0300\n"
+"PO-Revision-Date: 2012-06-27 17:40+0300\n"
+"Last-Translator: zos <zos@bestwebsoft.com>\n"
+"Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2;plural=n>2\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: tags/3.12/contact_form.php:76
+#: tags/3.13/contact_form.php:76
+#: tags/3.07/contact_form.php:78
+#: tags/3.15/contact_form.php:76
+#: tags/3.19/contact_form.php:76
+#: tags/3.14/contact_form.php:76
+#: tags/3.17/contact_form.php:76
+#: tags/3.06/contact_form.php:78
+#: tags/3.04/contact_form.php:78
+#: tags/3.05/contact_form.php:78
+#: tags/2011.3.01/contact_form.php:77
+#: tags/3.16/contact_form.php:76
+msgid "Activated plugins"
+msgstr "Plugin activé"
+
+#: tags/3.12/contact_form.php:78
+#: tags/3.12/contact_form.php:86
+#: tags/3.12/contact_form.php:94
+#: tags/3.13/contact_form.php:78
+#: tags/3.13/contact_form.php:86
+#: tags/3.13/contact_form.php:94
+#: tags/3.07/contact_form.php:80
+#: tags/3.07/contact_form.php:88
+#: tags/3.07/contact_form.php:96
+#: tags/3.15/contact_form.php:78
+#: tags/3.15/contact_form.php:86
+#: tags/3.15/contact_form.php:94
+#: tags/3.19/contact_form.php:78
+#: tags/3.19/contact_form.php:86
+#: tags/3.19/contact_form.php:94
+#: tags/3.14/contact_form.php:78
+#: tags/3.14/contact_form.php:86
+#: tags/3.14/contact_form.php:94
+#: tags/3.17/contact_form.php:78
+#: tags/3.17/contact_form.php:86
+#: tags/3.17/contact_form.php:94
+#: tags/3.06/contact_form.php:80
+#: tags/3.06/contact_form.php:88
+#: tags/3.06/contact_form.php:96
+#: tags/3.04/contact_form.php:80
+#: tags/3.04/contact_form.php:88
+#: tags/3.04/contact_form.php:96
+#: tags/3.05/contact_form.php:80
+#: tags/3.05/contact_form.php:88
+#: tags/3.05/contact_form.php:96
+#: tags/2011.3.01/contact_form.php:79
+#: tags/2011.3.01/contact_form.php:87
+#: tags/2011.3.01/contact_form.php:95
+#: tags/3.16/contact_form.php:78
+#: tags/3.16/contact_form.php:86
+#: tags/3.16/contact_form.php:94
+msgid "Read more"
+msgstr "Lire la suite"
+
+#: tags/3.12/contact_form.php:78
+#: tags/3.12/contact_form.php:603
+#: tags/3.12/contact_form.php:612
+#: tags/3.13/contact_form.php:78
+#: tags/3.13/contact_form.php:603
+#: tags/3.13/contact_form.php:612
+#: tags/3.07/contact_form.php:80
+#: tags/3.07/contact_form.php:620
+#: tags/3.07/contact_form.php:629
+#: tags/2011.2.08/contact_form.php:460
+#: tags/2011.2.08/contact_form.php:469
+#: tags/3.15/contact_form.php:78
+#: tags/3.15/contact_form.php:660
+#: tags/3.15/contact_form.php:669
+#: tags/3.19/contact_form.php:78
+#: tags/3.19/contact_form.php:756
+#: tags/3.19/contact_form.php:765
+#: tags/3.14/contact_form.php:78
+#: tags/3.14/contact_form.php:611
+#: tags/3.14/contact_form.php:620
+#: tags/3.17/contact_form.php:78
+#: tags/3.17/contact_form.php:735
+#: tags/3.17/contact_form.php:744
+#: tags/3.06/contact_form.php:80
+#: tags/3.06/contact_form.php:620
+#: tags/3.06/contact_form.php:629
+#: tags/2011.2.04/contact_form.php:402
+#: tags/2011.2.04/contact_form.php:411
+#: tags/3.04/contact_form.php:80
+#: tags/3.04/contact_form.php:620
+#: tags/3.04/contact_form.php:629
+#: tags/2011.05.26/contact_form.php:317
+#: tags/2011.2.03/contact_form.php:360
+#: tags/2011.2.03/contact_form.php:369
+#: tags/3.05/contact_form.php:80
+#: tags/3.05/contact_form.php:620
+#: tags/3.05/contact_form.php:629
+#: tags/2011.3.01/contact_form.php:563
+#: tags/2011.3.01/contact_form.php:572
+#: tags/3.16/contact_form.php:78
+#: tags/3.16/contact_form.php:660
+#: tags/3.16/contact_form.php:669
+msgid "Settings"
+msgstr "Réglages"
+
+#: tags/3.12/contact_form.php:84
+#: tags/3.13/contact_form.php:84
+#: tags/3.07/contact_form.php:86
+#: tags/3.15/contact_form.php:84
+#: tags/3.19/contact_form.php:84
+#: tags/3.14/contact_form.php:84
+#: tags/3.17/contact_form.php:84
+#: tags/3.06/contact_form.php:86
+#: tags/3.04/contact_form.php:86
+#: tags/3.05/contact_form.php:86
+#: tags/2011.3.01/contact_form.php:85
+#: tags/3.16/contact_form.php:84
+msgid "Installed plugins"
+msgstr "Plugin installé"
+
+#: tags/3.12/contact_form.php:92
+#: tags/3.13/contact_form.php:92
+#: tags/3.07/contact_form.php:94
+#: tags/3.15/contact_form.php:92
+#: tags/3.19/contact_form.php:92
+#: tags/3.14/contact_form.php:92
+#: tags/3.17/contact_form.php:92
+#: tags/3.06/contact_form.php:94
+#: tags/3.04/contact_form.php:94
+#: tags/3.05/contact_form.php:94
+#: tags/2011.3.01/contact_form.php:93
+#: tags/3.16/contact_form.php:92
+msgid "Recommended plugins"
+msgstr "Plugin recommandé"
+
+#: tags/3.12/contact_form.php:94
+#: tags/3.13/contact_form.php:94
+#: tags/3.07/contact_form.php:96
+#: tags/3.15/contact_form.php:94
+#: tags/3.19/contact_form.php:94
+#: tags/3.14/contact_form.php:94
+#: tags/3.17/contact_form.php:94
+#: tags/3.06/contact_form.php:96
+#: tags/3.04/contact_form.php:96
+#: tags/3.05/contact_form.php:96
+#: tags/2011.3.01/contact_form.php:95
+#: tags/3.16/contact_form.php:94
+msgid "Download"
+msgstr "Téléchargement"
+
+#: tags/3.12/contact_form.php:94
+#: tags/3.13/contact_form.php:94
+#: tags/3.07/contact_form.php:96
+#: tags/2011.2.08/contact_form.php:122
+#: tags/3.15/contact_form.php:94
+#: tags/3.19/contact_form.php:94
+#: tags/3.14/contact_form.php:94
+#: tags/3.17/contact_form.php:94
+#: tags/3.06/contact_form.php:96
+#: tags/3.04/contact_form.php:96
+#: tags/3.05/contact_form.php:96
+#: tags/2011.3.01/contact_form.php:95
+#: tags/3.16/contact_form.php:94
+#, php-format
+msgid "Install %s"
+msgstr "%s installé"
+
+#: tags/3.12/contact_form.php:94
+#: tags/3.13/contact_form.php:94
+#: tags/3.07/contact_form.php:96
+#: tags/3.15/contact_form.php:94
+#: tags/3.19/contact_form.php:94
+#: tags/3.14/contact_form.php:94
+#: tags/3.17/contact_form.php:94
+#: tags/3.06/contact_form.php:96
+#: tags/3.04/contact_form.php:96
+#: tags/3.05/contact_form.php:96
+#: tags/3.16/contact_form.php:94
+msgid "Install now from wordpress.org"
+msgstr "Installer maintenant depuis wordpress.org"
+
+#: tags/3.12/contact_form.php:96
+#: tags/3.13/contact_form.php:96
+#: tags/3.07/contact_form.php:98
+#: tags/3.15/contact_form.php:96
+#: tags/3.19/contact_form.php:96
+#: tags/3.14/contact_form.php:96
+#: tags/3.17/contact_form.php:96
+#: tags/3.06/contact_form.php:98
+#: tags/3.04/contact_form.php:98
+#: tags/3.05/contact_form.php:98
+#: tags/2011.3.01/contact_form.php:97
+#: tags/3.16/contact_form.php:96
+msgid "If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site"
+msgstr "Si vous avez des questions, merci de contacter plugin@bestwebsoft.com ou d'utilisez le formulaire de contact \"contact form\" sur notre site"
+
+#: tags/3.12/contact_form.php:108
+#: tags/3.12/contact_form.php:211
+#: tags/3.13/contact_form.php:108
+#: tags/3.13/contact_form.php:211
+#: tags/3.07/contact_form.php:110
+#: tags/3.07/contact_form.php:213
+#: tags/3.15/contact_form.php:108
+#: tags/3.15/contact_form.php:236
+#: tags/3.19/contact_form.php:108
+#: tags/3.19/contact_form.php:248
+#: tags/3.14/contact_form.php:108
+#: tags/3.14/contact_form.php:213
+#: tags/3.17/contact_form.php:108
+#: tags/3.17/contact_form.php:239
+#: tags/3.06/contact_form.php:110
+#: tags/3.06/contact_form.php:213
+#: tags/3.04/contact_form.php:110
+#: tags/3.04/contact_form.php:213
+#: tags/3.05/contact_form.php:110
+#: tags/3.05/contact_form.php:213
+#: tags/2011.3.01/contact_form.php:109
+#: tags/2011.3.01/contact_form.php:182
+#: tags/3.16/contact_form.php:108
+#: tags/3.16/contact_form.php:236
+msgid "Contact Form Options"
+msgstr "Options du Formulaire de Contact"
+
+#: tags/3.12/contact_form.php:108
+#: tags/3.13/contact_form.php:108
+#: tags/3.07/contact_form.php:110
+#: tags/3.15/contact_form.php:108
+#: tags/3.19/contact_form.php:108
+#: tags/3.14/contact_form.php:108
+#: tags/3.17/contact_form.php:108
+#: tags/3.06/contact_form.php:110
+#: tags/3.04/contact_form.php:110
+#: tags/3.05/contact_form.php:110
+#: tags/2011.3.01/contact_form.php:109
+#: tags/3.16/contact_form.php:108
+msgid "Contact Form"
+msgstr "Formulaire de Contact"
+
+#: tags/3.12/contact_form.php:128
+#: tags/3.12/contact_form.php:162
+#: tags/3.12/contact_form.php:179
+#: tags/3.12/contact_form.php:269
+#: tags/3.13/contact_form.php:128
+#: tags/3.13/contact_form.php:162
+#: tags/3.13/contact_form.php:179
+#: tags/3.13/contact_form.php:269
+#: tags/3.07/contact_form.php:130
+#: tags/3.07/contact_form.php:164
+#: tags/3.07/contact_form.php:181
+#: tags/3.07/contact_form.php:271
+#: tags/3.15/contact_form.php:134
+#: tags/3.15/contact_form.php:173
+#: tags/3.15/contact_form.php:204
+#: tags/3.15/contact_form.php:312
+#: tags/3.19/contact_form.php:136
+#: tags/3.19/contact_form.php:177
+#: tags/3.19/contact_form.php:210
+#: tags/3.19/contact_form.php:352
+#: tags/3.14/contact_form.php:129
+#: tags/3.14/contact_form.php:163
+#: tags/3.14/contact_form.php:181
+#: tags/3.14/contact_form.php:277
+#: tags/3.17/contact_form.php:135
+#: tags/3.17/contact_form.php:175
+#: tags/3.17/contact_form.php:207
+#: tags/3.17/contact_form.php:334
+#: tags/3.06/contact_form.php:130
+#: tags/3.06/contact_form.php:164
+#: tags/3.06/contact_form.php:181
+#: tags/3.06/contact_form.php:271
+#: tags/3.04/contact_form.php:130
+#: tags/3.04/contact_form.php:164
+#: tags/3.04/contact_form.php:181
+#: tags/3.04/contact_form.php:271
+#: tags/3.05/contact_form.php:130
+#: tags/3.05/contact_form.php:164
+#: tags/3.05/contact_form.php:181
+#: tags/3.05/contact_form.php:271
+#: tags/2011.3.01/contact_form.php:273
+#: tags/3.16/contact_form.php:134
+#: tags/3.16/contact_form.php:173
+#: tags/3.16/contact_form.php:204
+#: tags/3.16/contact_form.php:312
+msgid "Name:"
+msgstr "Nom:"
+
+#: tags/3.12/contact_form.php:129
+#: tags/3.12/contact_form.php:163
+#: tags/3.12/contact_form.php:180
+#: tags/3.12/contact_form.php:270
+#: tags/3.13/contact_form.php:129
+#: tags/3.13/contact_form.php:163
+#: tags/3.13/contact_form.php:180
+#: tags/3.13/contact_form.php:270
+#: tags/3.07/contact_form.php:131
+#: tags/3.07/contact_form.php:165
+#: tags/3.07/contact_form.php:182
+#: tags/3.07/contact_form.php:272
+#: tags/3.15/contact_form.php:135
+#: tags/3.15/contact_form.php:174
+#: tags/3.15/contact_form.php:205
+#: tags/3.15/contact_form.php:313
+#: tags/3.19/contact_form.php:137
+#: tags/3.19/contact_form.php:178
+#: tags/3.19/contact_form.php:211
+#: tags/3.19/contact_form.php:353
+#: tags/3.14/contact_form.php:130
+#: tags/3.14/contact_form.php:164
+#: tags/3.14/contact_form.php:182
+#: tags/3.14/contact_form.php:278
+#: tags/3.17/contact_form.php:136
+#: tags/3.17/contact_form.php:176
+#: tags/3.17/contact_form.php:208
+#: tags/3.17/contact_form.php:335
+#: tags/3.06/contact_form.php:131
+#: tags/3.06/contact_form.php:165
+#: tags/3.06/contact_form.php:182
+#: tags/3.06/contact_form.php:272
+#: tags/3.04/contact_form.php:131
+#: tags/3.04/contact_form.php:165
+#: tags/3.04/contact_form.php:182
+#: tags/3.04/contact_form.php:272
+#: tags/3.05/contact_form.php:131
+#: tags/3.05/contact_form.php:165
+#: tags/3.05/contact_form.php:182
+#: tags/3.05/contact_form.php:272
+#: tags/2011.3.01/contact_form.php:283
+#: tags/3.16/contact_form.php:135
+#: tags/3.16/contact_form.php:174
+#: tags/3.16/contact_form.php:205
+#: tags/3.16/contact_form.php:313
+msgid "E-Mail Address:"
+msgstr "Adresse e-mail:"
+
+#: tags/3.12/contact_form.php:130
+#: tags/3.12/contact_form.php:164
+#: tags/3.12/contact_form.php:181
+#: tags/3.12/contact_form.php:271
+#: tags/3.13/contact_form.php:130
+#: tags/3.13/contact_form.php:164
+#: tags/3.13/contact_form.php:181
+#: tags/3.13/contact_form.php:271
+#: tags/3.07/contact_form.php:132
+#: tags/3.07/contact_form.php:166
+#: tags/3.07/contact_form.php:183
+#: tags/3.07/contact_form.php:273
+#: tags/3.15/contact_form.php:136
+#: tags/3.15/contact_form.php:175
+#: tags/3.15/contact_form.php:206
+#: tags/3.15/contact_form.php:314
+#: tags/3.19/contact_form.php:138
+#: tags/3.19/contact_form.php:179
+#: tags/3.19/contact_form.php:212
+#: tags/3.19/contact_form.php:354
+#: tags/3.14/contact_form.php:131
+#: tags/3.14/contact_form.php:165
+#: tags/3.14/contact_form.php:183
+#: tags/3.14/contact_form.php:279
+#: tags/3.17/contact_form.php:137
+#: tags/3.17/contact_form.php:177
+#: tags/3.17/contact_form.php:209
+#: tags/3.17/contact_form.php:336
+#: tags/3.06/contact_form.php:132
+#: tags/3.06/contact_form.php:166
+#: tags/3.06/contact_form.php:183
+#: tags/3.06/contact_form.php:273
+#: tags/3.04/contact_form.php:132
+#: tags/3.04/contact_form.php:166
+#: tags/3.04/contact_form.php:183
+#: tags/3.04/contact_form.php:273
+#: tags/3.05/contact_form.php:132
+#: tags/3.05/contact_form.php:166
+#: tags/3.05/contact_form.php:183
+#: tags/3.05/contact_form.php:273
+#: tags/2011.3.01/contact_form.php:293
+#: tags/3.16/contact_form.php:136
+#: tags/3.16/contact_form.php:175
+#: tags/3.16/contact_form.php:206
+#: tags/3.16/contact_form.php:314
+msgid "Subject:"
+msgstr "Sujet:"
+
+#: tags/3.12/contact_form.php:131
+#: tags/3.12/contact_form.php:165
+#: tags/3.12/contact_form.php:182
+#: tags/3.12/contact_form.php:272
+#: tags/3.13/contact_form.php:131
+#: tags/3.13/contact_form.php:165
+#: tags/3.13/contact_form.php:182
+#: tags/3.13/contact_form.php:272
+#: tags/3.07/contact_form.php:133
+#: tags/3.07/contact_form.php:167
+#: tags/3.07/contact_form.php:184
+#: tags/3.07/contact_form.php:274
+#: tags/3.15/contact_form.php:137
+#: tags/3.15/contact_form.php:176
+#: tags/3.15/contact_form.php:207
+#: tags/3.15/contact_form.php:315
+#: tags/3.19/contact_form.php:139
+#: tags/3.19/contact_form.php:180
+#: tags/3.19/contact_form.php:213
+#: tags/3.19/contact_form.php:355
+#: tags/3.14/contact_form.php:132
+#: tags/3.14/contact_form.php:166
+#: tags/3.14/contact_form.php:184
+#: tags/3.14/contact_form.php:280
+#: tags/3.17/contact_form.php:138
+#: tags/3.17/contact_form.php:178
+#: tags/3.17/contact_form.php:210
+#: tags/3.17/contact_form.php:337
+#: tags/3.06/contact_form.php:133
+#: tags/3.06/contact_form.php:167
+#: tags/3.06/contact_form.php:184
+#: tags/3.06/contact_form.php:274
+#: tags/3.04/contact_form.php:133
+#: tags/3.04/contact_form.php:167
+#: tags/3.04/contact_form.php:184
+#: tags/3.04/contact_form.php:274
+#: tags/3.05/contact_form.php:133
+#: tags/3.05/contact_form.php:167
+#: tags/3.05/contact_form.php:184
+#: tags/3.05/contact_form.php:274
+#: tags/2011.3.01/contact_form.php:303
+#: tags/3.16/contact_form.php:137
+#: tags/3.16/contact_form.php:176
+#: tags/3.16/contact_form.php:207
+#: tags/3.16/contact_form.php:315
+msgid "Message:"
+msgstr "Message:"
+
+#: tags/3.12/contact_form.php:132
+#: tags/3.12/contact_form.php:166
+#: tags/3.12/contact_form.php:183
+#: tags/3.12/contact_form.php:273
+#: tags/3.13/contact_form.php:132
+#: tags/3.13/contact_form.php:166
+#: tags/3.13/contact_form.php:183
+#: tags/3.13/contact_form.php:273
+#: tags/3.07/contact_form.php:134
+#: tags/3.07/contact_form.php:168
+#: tags/3.07/contact_form.php:185
+#: tags/3.07/contact_form.php:275
+#: tags/3.15/contact_form.php:138
+#: tags/3.15/contact_form.php:177
+#: tags/3.15/contact_form.php:208
+#: tags/3.15/contact_form.php:316
+#: tags/3.19/contact_form.php:140
+#: tags/3.19/contact_form.php:181
+#: tags/3.19/contact_form.php:214
+#: tags/3.19/contact_form.php:356
+#: tags/3.14/contact_form.php:133
+#: tags/3.14/contact_form.php:167
+#: tags/3.14/contact_form.php:185
+#: tags/3.14/contact_form.php:281
+#: tags/3.17/contact_form.php:139
+#: tags/3.17/contact_form.php:179
+#: tags/3.17/contact_form.php:211
+#: tags/3.17/contact_form.php:338
+#: tags/3.06/contact_form.php:134
+#: tags/3.06/contact_form.php:168
+#: tags/3.06/contact_form.php:185
+#: tags/3.06/contact_form.php:275
+#: tags/3.04/contact_form.php:134
+#: tags/3.04/contact_form.php:168
+#: tags/3.04/contact_form.php:185
+#: tags/3.04/contact_form.php:275
+#: tags/3.05/contact_form.php:134
+#: tags/3.05/contact_form.php:168
+#: tags/3.05/contact_form.php:185
+#: tags/3.05/contact_form.php:275
+#: tags/2011.3.01/contact_form.php:313
+#: tags/3.16/contact_form.php:138
+#: tags/3.16/contact_form.php:177
+#: tags/3.16/contact_form.php:208
+#: tags/3.16/contact_form.php:316
+msgid "Attachment:"
+msgstr "Pièce-jointe:"
+
+#: tags/3.12/contact_form.php:191
+#: tags/3.12/contact_form.php:200
+#: tags/3.13/contact_form.php:191
+#: tags/3.13/contact_form.php:200
+#: tags/3.07/contact_form.php:193
+#: tags/3.07/contact_form.php:202
+#: tags/3.15/contact_form.php:216
+#: tags/3.15/contact_form.php:225
+#: tags/3.19/contact_form.php:222
+#: tags/3.19/contact_form.php:227
+#: tags/3.19/contact_form.php:237
+#: tags/3.14/contact_form.php:193
+#: tags/3.14/contact_form.php:202
+#: tags/3.17/contact_form.php:219
+#: tags/3.17/contact_form.php:228
+#: tags/3.06/contact_form.php:193
+#: tags/3.06/contact_form.php:202
+#: tags/3.04/contact_form.php:193
+#: tags/3.04/contact_form.php:202
+#: tags/3.05/contact_form.php:193
+#: tags/3.05/contact_form.php:202
+#: tags/2011.3.01/contact_form.php:162
+#: tags/2011.3.01/contact_form.php:171
+#: tags/3.16/contact_form.php:216
+#: tags/3.16/contact_form.php:225
+msgid "Options saved."
+msgstr "Options sauvegardées."
+
+#: tags/3.12/contact_form.php:194
+#: tags/3.13/contact_form.php:194
+#: tags/3.07/contact_form.php:196
+#: tags/3.15/contact_form.php:219
+#: tags/3.19/contact_form.php:230
+#: tags/3.14/contact_form.php:196
+#: tags/3.17/contact_form.php:222
+#: tags/3.06/contact_form.php:196
+#: tags/3.04/contact_form.php:196
+#: tags/3.05/contact_form.php:196
+#: tags/2011.3.01/contact_form.php:165
+#: tags/3.16/contact_form.php:219
+msgid "Such user is not exist. Settings are not saved."
+msgstr "Cet utilisateur est inconnu. Les modifications ne sont pas sauvegardées."
+
+#: tags/3.12/contact_form.php:203
+#: tags/3.13/contact_form.php:203
+#: tags/3.07/contact_form.php:205
+#: tags/3.15/contact_form.php:228
+#: tags/3.19/contact_form.php:240
+#: tags/3.14/contact_form.php:205
+#: tags/3.17/contact_form.php:231
+#: tags/3.06/contact_form.php:205
+#: tags/3.04/contact_form.php:205
+#: tags/3.05/contact_form.php:205
+#: tags/2011.3.01/contact_form.php:174
+#: tags/3.16/contact_form.php:228
+msgid "Please input correct email. Settings are not saved."
+msgstr "Merci de saisir une adresse e-mail valide. Les modifications ne sont pas sauvegardées."
+
+#: tags/3.12/contact_form.php:216
+#: tags/3.13/contact_form.php:216
+#: tags/3.15/contact_form.php:241
+#: tags/3.19/contact_form.php:253
+#: tags/3.14/contact_form.php:218
+#: tags/3.17/contact_form.php:244
+#: tags/3.16/contact_form.php:241
+msgid "If you would like to add a Contact Form to your website, just copy and put this shortcode onto your post or page or widget:"
+msgstr "Si vous souhaiter ajouter un formulaire de contact à votre site web, copiez juste ce code dans un article ou sur une page ou un widget:"
+
+#: tags/3.12/contact_form.php:217
+#: tags/3.13/contact_form.php:217
+#: tags/3.07/contact_form.php:219
+#: tags/3.15/contact_form.php:242
+#: tags/3.19/contact_form.php:254
+#: tags/3.14/contact_form.php:219
+#: tags/3.17/contact_form.php:245
+#: tags/3.06/contact_form.php:219
+#: tags/3.04/contact_form.php:219
+#: tags/3.05/contact_form.php:219
+#: tags/2011.3.01/contact_form.php:188
+#: tags/3.16/contact_form.php:242
+msgid "If information in the below fields are empty then the message will be send to an address which was specified during registration."
+msgstr "Si les champs ci-dessous ne sont pas renseignés le message sera envoyé à l'adresse spécifiée lors de l'enregistrement."
+
+#: tags/3.12/contact_form.php:221
+#: tags/3.13/contact_form.php:221
+#: tags/3.07/contact_form.php:223
+#: tags/3.15/contact_form.php:246
+#: tags/3.19/contact_form.php:258
+#: tags/3.14/contact_form.php:223
+#: tags/3.17/contact_form.php:249
+#: tags/3.06/contact_form.php:223
+#: tags/3.04/contact_form.php:223
+#: tags/3.05/contact_form.php:223
+#: tags/2011.3.01/contact_form.php:192
+#: tags/3.16/contact_form.php:246
+msgid "Use email of wordpress user:"
+msgstr "Utiliser l'e-mail du compte wordpress:"
+
+#: tags/3.12/contact_form.php:227
+#: tags/3.13/contact_form.php:227
+#: tags/3.07/contact_form.php:229
+#: tags/3.15/contact_form.php:252
+#: tags/3.19/contact_form.php:264
+#: tags/3.14/contact_form.php:229
+#: tags/3.17/contact_form.php:255
+#: tags/3.06/contact_form.php:229
+#: tags/3.04/contact_form.php:229
+#: tags/3.05/contact_form.php:229
+#: tags/3.16/contact_form.php:252
+msgid "Select user name"
+msgstr "Choisir un nom d'utilisateur"
+
+#: tags/3.12/contact_form.php:232
+#: tags/3.13/contact_form.php:232
+#: tags/3.07/contact_form.php:234
+#: tags/3.15/contact_form.php:257
+#: tags/3.19/contact_form.php:269
+#: tags/3.14/contact_form.php:234
+#: tags/3.17/contact_form.php:260
+#: tags/3.06/contact_form.php:234
+#: tags/3.16/contact_form.php:257
+msgid "Set a name of user who will get messages from a contact form."
+msgstr "Choisir le nom d'utilisateur qui recevra les messages envoyés depuis le formulaire de contact."
+
+#: tags/3.12/contact_form.php:236
+#: tags/3.13/contact_form.php:236
+#: tags/3.07/contact_form.php:238
+#: tags/3.15/contact_form.php:261
+#: tags/3.19/contact_form.php:273
+#: tags/3.14/contact_form.php:238
+#: tags/3.17/contact_form.php:264
+#: tags/3.06/contact_form.php:238
+#: tags/3.04/contact_form.php:238
+#: tags/3.05/contact_form.php:238
+#: tags/2011.3.01/contact_form.php:202
+#: tags/3.16/contact_form.php:261
+msgid "Use this email:"
+msgstr "Utiliser cette adresse e-mail:"
+
+#: tags/3.12/contact_form.php:242
+#: tags/3.13/contact_form.php:242
+#: tags/3.07/contact_form.php:244
+#: tags/3.15/contact_form.php:267
+#: tags/3.19/contact_form.php:279
+#: tags/3.14/contact_form.php:244
+#: tags/3.17/contact_form.php:270
+#: tags/3.06/contact_form.php:244
+#: tags/3.04/contact_form.php:244
+#: tags/3.05/contact_form.php:244
+#: tags/2011.3.01/contact_form.php:208
+#: tags/3.16/contact_form.php:267
+msgid "Set an email address which will be used for messages receiving."
+msgstr "Choisir l'adresse e-mail qui sera utilisée pour recevoir les messages."
+
+#: tags/3.12/contact_form.php:246
+#: tags/3.13/contact_form.php:246
+#: tags/3.07/contact_form.php:248
+#: tags/3.15/contact_form.php:271
+#: tags/3.19/contact_form.php:283
+#: tags/3.14/contact_form.php:248
+#: tags/3.17/contact_form.php:274
+#: tags/3.06/contact_form.php:248
+#: tags/3.04/contact_form.php:248
+#: tags/3.05/contact_form.php:248
+#: tags/2011.3.01/contact_form.php:212
+#: tags/3.16/contact_form.php:271
+msgid "Additional options"
+msgstr "Options supplémentaires"
+
+#: tags/3.12/contact_form.php:249
+#: tags/3.13/contact_form.php:249
+#: tags/3.07/contact_form.php:251
+#: tags/3.15/contact_form.php:274
+#: tags/3.19/contact_form.php:286
+#: tags/3.14/contact_form.php:251
+#: tags/3.17/contact_form.php:277
+#: tags/3.06/contact_form.php:251
+#: tags/3.04/contact_form.php:251
+#: tags/3.05/contact_form.php:251
+#: tags/2011.3.01/contact_form.php:215
+#: tags/3.16/contact_form.php:274
+msgid "Display Attachment block"
+msgstr "Afficher le bloc pièce-jointe"
+
+#: tags/3.12/contact_form.php:254
+#: tags/3.13/contact_form.php:254
+#: tags/3.07/contact_form.php:256
+#: tags/3.15/contact_form.php:279
+#: tags/3.19/contact_form.php:291
+#: tags/3.14/contact_form.php:256
+#: tags/3.17/contact_form.php:282
+#: tags/3.06/contact_form.php:256
+#: tags/3.04/contact_form.php:256
+#: tags/3.05/contact_form.php:256
+#: tags/3.16/contact_form.php:279
+msgid "Users can attach files of the following types"
+msgstr "Les utilisateurs peuvent joindre des documents des types suivants"
+
+#: tags/3.12/contact_form.php:258
+#: tags/3.13/contact_form.php:258
+#: tags/3.07/contact_form.php:260
+#: tags/3.15/contact_form.php:283
+#: tags/3.19/contact_form.php:304
+#: tags/3.14/contact_form.php:260
+#: tags/3.17/contact_form.php:286
+#: tags/3.06/contact_form.php:260
+#: tags/3.04/contact_form.php:260
+#: tags/3.05/contact_form.php:260
+#: tags/2011.3.01/contact_form.php:221
+#: tags/3.16/contact_form.php:283
+msgid "Display Send me a copy block"
+msgstr "Afficher \"M'envoyer une copie\" "
+
+#: tags/3.12/contact_form.php:264
+#: tags/3.13/contact_form.php:264
+#: tags/3.07/contact_form.php:266
+#: tags/3.15/contact_form.php:307
+#: tags/3.19/contact_form.php:347
+#: tags/3.14/contact_form.php:272
+#: tags/3.17/contact_form.php:329
+#: tags/3.06/contact_form.php:266
+#: tags/3.04/contact_form.php:266
+#: tags/3.05/contact_form.php:266
+#: tags/3.16/contact_form.php:307
+msgid "Change label for fields of the contact form"
+msgstr "Modifier le nom des champs du formulaire de contact"
+
+#: tags/3.12/contact_form.php:279
+#: tags/3.13/contact_form.php:279
+#: tags/3.07/contact_form.php:281
+#: tags/2011.2.08/contact_form.php:231
+#: tags/3.15/contact_form.php:322
+#: tags/3.19/contact_form.php:362
+#: tags/3.14/contact_form.php:287
+#: tags/3.17/contact_form.php:344
+#: tags/3.06/contact_form.php:281
+#: tags/2011.2.04/contact_form.php:212
+#: tags/3.04/contact_form.php:281
+#: tags/2011.05.26/contact_form.php:130
+#: tags/2011.2.03/contact_form.php:170
+#: tags/3.05/contact_form.php:281
+#: tags/2011.3.01/contact_form.php:229
+#: tags/3.16/contact_form.php:322
+msgid "Save Changes"
+msgstr "Sauvegarder les modifications"
+
+#: tags/3.12/contact_form.php:310
+#: tags/3.13/contact_form.php:310
+#: tags/3.07/contact_form.php:312
+#: tags/2011.2.08/contact_form.php:260
+#: tags/3.15/contact_form.php:355
+#: tags/3.19/contact_form.php:395
+#: tags/3.14/contact_form.php:318
+#: tags/3.17/contact_form.php:377
+#: tags/3.06/contact_form.php:312
+#: tags/3.04/contact_form.php:312
+#: tags/3.05/contact_form.php:312
+#: tags/2011.3.01/contact_form.php:259
+#: tags/3.16/contact_form.php:355
+msgid "Thank you for contacting us."
+msgstr "Merci de nous avoir contacté."
+
+#: tags/3.12/contact_form.php:315
+#: tags/3.13/contact_form.php:315
+#: tags/3.07/contact_form.php:317
+#: tags/2011.2.08/contact_form.php:265
+#: tags/3.15/contact_form.php:360
+#: tags/3.19/contact_form.php:400
+#: tags/3.14/contact_form.php:323
+#: tags/3.17/contact_form.php:382
+#: tags/3.06/contact_form.php:317
+#: tags/2011.2.04/contact_form.php:246
+#: tags/3.04/contact_form.php:317
+#: tags/2011.05.26/contact_form.php:161
+#: tags/2011.2.03/contact_form.php:204
+#: tags/3.05/contact_form.php:317
+#: tags/2011.3.01/contact_form.php:264
+#: tags/3.16/contact_form.php:360
+msgid "Sorry, your e-mail could not be delivered."
+msgstr "Désolé, votre e-mail n'a pas pu être envoyé."
+
+#: tags/3.12/contact_form.php:372
+#: tags/3.13/contact_form.php:372
+#: tags/3.07/contact_form.php:374
+#: tags/3.15/contact_form.php:417
+#: tags/3.19/contact_form.php:458
+#: tags/3.14/contact_form.php:380
+#: tags/3.17/contact_form.php:439
+#: tags/3.06/contact_form.php:374
+#: tags/3.04/contact_form.php:374
+#: tags/3.05/contact_form.php:374
+#: tags/3.16/contact_form.php:417
+msgid "You can attach files of the following types"
+msgstr "Vous pouvez joindre des fichiers aux formats suivants"
+
+#: tags/3.12/contact_form.php:378
+#: tags/3.13/contact_form.php:378
+#: tags/3.07/contact_form.php:380
+#: tags/3.15/contact_form.php:423
+#: tags/3.19/contact_form.php:466
+#: tags/3.14/contact_form.php:386
+#: tags/3.17/contact_form.php:445
+#: tags/3.06/contact_form.php:380
+#: tags/3.04/contact_form.php:380
+#: tags/3.05/contact_form.php:380
+#: tags/2011.3.01/contact_form.php:325
+#: tags/3.16/contact_form.php:423
+msgid "Send me a copy"
+msgstr "M'envoyer une copie"
+
+#: tags/3.12/contact_form.php:388
+#: tags/3.13/contact_form.php:388
+#: tags/3.07/contact_form.php:390
+#: tags/3.15/contact_form.php:433
+#: tags/3.19/contact_form.php:476
+#: tags/3.14/contact_form.php:396
+#: tags/3.17/contact_form.php:455
+#: tags/3.06/contact_form.php:390
+#: tags/3.04/contact_form.php:390
+#: tags/3.05/contact_form.php:390
+#: tags/2011.3.01/contact_form.php:335
+#: tags/3.16/contact_form.php:433
+msgid "Submit"
+msgstr "Envoyer"
+
+#: tags/3.12/contact_form.php:404
+#: tags/3.13/contact_form.php:404
+#: tags/3.07/contact_form.php:406
+#: tags/2011.2.08/contact_form.php:334
+#: tags/3.15/contact_form.php:449
+#: tags/3.19/contact_form.php:492
+#: tags/3.14/contact_form.php:412
+#: tags/3.17/contact_form.php:471
+#: tags/3.06/contact_form.php:406
+#: tags/2011.2.04/contact_form.php:312
+#: tags/3.04/contact_form.php:406
+#: tags/2011.05.26/contact_form.php:228
+#: tags/2011.2.03/contact_form.php:270
+#: tags/3.05/contact_form.php:406
+#: tags/2011.3.01/contact_form.php:351
+#: tags/3.16/contact_form.php:449
+msgid "Your name is required."
+msgstr "Un nom est obligatoire."
+
+#: tags/3.12/contact_form.php:405
+#: tags/3.13/contact_form.php:405
+#: tags/3.07/contact_form.php:407
+#: tags/2011.2.08/contact_form.php:335
+#: tags/3.15/contact_form.php:450
+#: tags/3.19/contact_form.php:493
+#: tags/3.14/contact_form.php:413
+#: tags/3.17/contact_form.php:472
+#: tags/3.06/contact_form.php:407
+#: tags/2011.2.04/contact_form.php:313
+#: tags/3.04/contact_form.php:407
+#: tags/2011.05.26/contact_form.php:229
+#: tags/2011.2.03/contact_form.php:271
+#: tags/3.05/contact_form.php:407
+#: tags/2011.3.01/contact_form.php:352
+#: tags/3.16/contact_form.php:450
+msgid "A proper e-mail address is required."
+msgstr "Une adresse e-mail valide est obligatoire."
+
+#: tags/3.12/contact_form.php:406
+#: tags/3.13/contact_form.php:406
+#: tags/3.07/contact_form.php:408
+#: tags/2011.2.08/contact_form.php:336
+#: tags/3.15/contact_form.php:451
+#: tags/3.19/contact_form.php:494
+#: tags/3.14/contact_form.php:414
+#: tags/3.17/contact_form.php:473
+#: tags/3.06/contact_form.php:408
+#: tags/2011.2.04/contact_form.php:314
+#: tags/3.04/contact_form.php:408
+#: tags/2011.05.26/contact_form.php:230
+#: tags/2011.2.03/contact_form.php:272
+#: tags/3.05/contact_form.php:408
+#: tags/2011.3.01/contact_form.php:353
+#: tags/3.16/contact_form.php:451
+msgid "Subject text is required."
+msgstr "Sujet obligatoire."
+
+#: tags/3.12/contact_form.php:407
+#: tags/3.13/contact_form.php:407
+#: tags/3.07/contact_form.php:409
+#: tags/2011.2.08/contact_form.php:337
+#: tags/3.15/contact_form.php:452
+#: tags/3.19/contact_form.php:495
+#: tags/3.14/contact_form.php:415
+#: tags/3.17/contact_form.php:474
+#: tags/3.06/contact_form.php:409
+#: tags/2011.2.04/contact_form.php:315
+#: tags/3.04/contact_form.php:409
+#: tags/2011.05.26/contact_form.php:231
+#: tags/2011.2.03/contact_form.php:273
+#: tags/3.05/contact_form.php:409
+#: tags/2011.3.01/contact_form.php:354
+#: tags/3.16/contact_form.php:452
+msgid "Message text is required."
+msgstr "Un message est obligatoire."
+
+#: tags/3.12/contact_form.php:408
+#: tags/3.13/contact_form.php:408
+#: tags/3.07/contact_form.php:410
+#: tags/2011.2.08/contact_form.php:338
+#: tags/3.15/contact_form.php:453
+#: tags/3.19/contact_form.php:496
+#: tags/3.14/contact_form.php:416
+#: tags/3.17/contact_form.php:475
+#: tags/3.06/contact_form.php:410
+#: tags/2011.2.04/contact_form.php:316
+#: tags/3.04/contact_form.php:410
+#: tags/2011.05.26/contact_form.php:232
+#: tags/2011.2.03/contact_form.php:274
+#: tags/3.05/contact_form.php:410
+#: tags/2011.3.01/contact_form.php:355
+#: tags/3.16/contact_form.php:453
+msgid "Please make corrections below and try again."
+msgstr "Merci de faire les corrections suivantes et de réessayer."
+
+#: tags/3.12/contact_form.php:439
+#: tags/3.13/contact_form.php:439
+#: tags/3.07/contact_form.php:439
+#: tags/3.15/contact_form.php:484
+#: tags/3.19/contact_form.php:527
+#: tags/3.14/contact_form.php:447
+#: tags/3.17/contact_form.php:506
+#: tags/3.06/contact_form.php:439
+#: tags/3.04/contact_form.php:439
+#: tags/3.05/contact_form.php:439
+#: tags/2011.3.01/contact_form.php:384
+#: tags/3.16/contact_form.php:484
+msgid "Attachment is broken."
+msgstr "La pièce-jointe n'est pas valide."
+
+#: tags/3.12/contact_form.php:452
+#: tags/3.13/contact_form.php:452
+#: tags/3.07/contact_form.php:452
+#: tags/2011.2.08/contact_form.php:350
+#: tags/3.15/contact_form.php:497
+#: tags/3.19/contact_form.php:540
+#: tags/3.14/contact_form.php:460
+#: tags/3.17/contact_form.php:519
+#: tags/3.06/contact_form.php:452
+#: tags/2011.2.04/contact_form.php:328
+#: tags/3.04/contact_form.php:452
+#: tags/2011.05.26/contact_form.php:244
+#: tags/2011.2.03/contact_form.php:286
+#: tags/3.05/contact_form.php:452
+#: tags/2011.3.01/contact_form.php:397
+#: tags/3.16/contact_form.php:497
+msgid "Please complete the CAPTCHA."
+msgstr "Merci de compléter le CAPTCHA."
+
+#: tags/3.12/contact_form.php:528
+#: tags/3.12/contact_form.php:562
+#: tags/3.13/contact_form.php:528
+#: tags/3.13/contact_form.php:562
+#: tags/3.07/contact_form.php:509
+#: tags/3.07/contact_form.php:543
+#: tags/2011.2.08/contact_form.php:389
+#: tags/2011.2.08/contact_form.php:423
+#: tags/3.15/contact_form.php:300
+#: tags/3.15/contact_form.php:584
+#: tags/3.19/contact_form.php:340
+#: tags/3.19/contact_form.php:627
+#: tags/3.14/contact_form.php:536
+#: tags/3.14/contact_form.php:570
+#: tags/3.17/contact_form.php:322
+#: tags/3.17/contact_form.php:606
+#: tags/3.06/contact_form.php:509
+#: tags/3.06/contact_form.php:543
+#: tags/3.04/contact_form.php:509
+#: tags/3.04/contact_form.php:543
+#: tags/3.05/contact_form.php:509
+#: tags/3.05/contact_form.php:543
+#: tags/2011.3.01/contact_form.php:452
+#: tags/2011.3.01/contact_form.php:486
+#: tags/3.16/contact_form.php:300
+#: tags/3.16/contact_form.php:584
+msgid "Sent from (ip address)"
+msgstr "Envoyé de (adresse IP)"
+
+#: tags/3.12/contact_form.php:529
+#: tags/3.12/contact_form.php:565
+#: tags/3.13/contact_form.php:529
+#: tags/3.13/contact_form.php:565
+#: tags/3.07/contact_form.php:510
+#: tags/3.07/contact_form.php:546
+#: tags/2011.2.08/contact_form.php:390
+#: tags/2011.2.08/contact_form.php:426
+#: tags/3.15/contact_form.php:301
+#: tags/3.15/contact_form.php:589
+#: tags/3.19/contact_form.php:341
+#: tags/3.19/contact_form.php:632
+#: tags/3.14/contact_form.php:537
+#: tags/3.14/contact_form.php:573
+#: tags/3.17/contact_form.php:323
+#: tags/3.17/contact_form.php:611
+#: tags/3.06/contact_form.php:510
+#: tags/3.06/contact_form.php:546
+#: tags/3.04/contact_form.php:510
+#: tags/3.04/contact_form.php:546
+#: tags/3.05/contact_form.php:510
+#: tags/3.05/contact_form.php:546
+#: tags/2011.3.01/contact_form.php:453
+#: tags/2011.3.01/contact_form.php:489
+#: tags/3.16/contact_form.php:301
+#: tags/3.16/contact_form.php:589
+msgid "Date/Time"
+msgstr "Date/Heure"
+
+#: tags/3.12/contact_form.php:530
+#: tags/3.12/contact_form.php:568
+#: tags/3.13/contact_form.php:530
+#: tags/3.13/contact_form.php:568
+#: tags/3.07/contact_form.php:511
+#: tags/3.07/contact_form.php:549
+#: tags/2011.2.08/contact_form.php:391
+#: tags/2011.2.08/contact_form.php:429
+#: tags/3.15/contact_form.php:302
+#: tags/3.15/contact_form.php:594
+#: tags/3.19/contact_form.php:342
+#: tags/3.19/contact_form.php:637
+#: tags/3.14/contact_form.php:538
+#: tags/3.14/contact_form.php:576
+#: tags/3.17/contact_form.php:324
+#: tags/3.17/contact_form.php:616
+#: tags/3.06/contact_form.php:511
+#: tags/3.06/contact_form.php:549
+#: tags/3.04/contact_form.php:511
+#: tags/3.04/contact_form.php:549
+#: tags/3.05/contact_form.php:511
+#: tags/3.05/contact_form.php:549
+#: tags/2011.3.01/contact_form.php:454
+#: tags/2011.3.01/contact_form.php:492
+#: tags/3.16/contact_form.php:302
+#: tags/3.16/contact_form.php:594
+msgid "Coming from (referer)"
+msgstr "Envoyer de (référence)"
+
+#: tags/3.12/contact_form.php:531
+#: tags/3.12/contact_form.php:571
+#: tags/3.13/contact_form.php:531
+#: tags/3.13/contact_form.php:571
+#: tags/3.07/contact_form.php:512
+#: tags/3.07/contact_form.php:552
+#: tags/2011.2.08/contact_form.php:392
+#: tags/2011.2.08/contact_form.php:432
+#: tags/3.15/contact_form.php:303
+#: tags/3.15/contact_form.php:599
+#: tags/3.19/contact_form.php:343
+#: tags/3.19/contact_form.php:642
+#: tags/3.14/contact_form.php:539
+#: tags/3.14/contact_form.php:579
+#: tags/3.17/contact_form.php:325
+#: tags/3.17/contact_form.php:621
+#: tags/3.06/contact_form.php:512
+#: tags/3.06/contact_form.php:552
+#: tags/3.04/contact_form.php:512
+#: tags/3.04/contact_form.php:552
+#: tags/3.05/contact_form.php:512
+#: tags/3.05/contact_form.php:552
+#: tags/2011.3.01/contact_form.php:455
+#: tags/2011.3.01/contact_form.php:495
+#: tags/3.16/contact_form.php:303
+#: tags/3.16/contact_form.php:599
+msgid "Using (user agent)"
+msgstr "Depuis (navigateur)"
+
+#: tags/3.12/contact_form.php:536
+#: tags/3.13/contact_form.php:536
+#: tags/3.07/contact_form.php:517
+#: tags/3.15/contact_form.php:607
+#: tags/3.19/contact_form.php:650
+#: tags/3.14/contact_form.php:544
+#: tags/3.17/contact_form.php:629
+#: tags/3.06/contact_form.php:517
+#: tags/3.04/contact_form.php:517
+#: tags/3.05/contact_form.php:517
+#: tags/2011.3.01/contact_form.php:460
+#: tags/3.16/contact_form.php:607
+msgid "Contact from"
+msgstr "Contact de"
+
+#: tags/3.12/contact_form.php:541
+#: tags/3.13/contact_form.php:541
+#: tags/3.07/contact_form.php:522
+#: tags/3.15/contact_form.php:612
+#: tags/3.19/contact_form.php:655
+#: tags/3.14/contact_form.php:549
+#: tags/3.17/contact_form.php:634
+#: tags/3.06/contact_form.php:522
+#: tags/3.04/contact_form.php:522
+#: tags/3.05/contact_form.php:522
+#: tags/2011.3.01/contact_form.php:465
+#: tags/3.16/contact_form.php:612
+msgid "Name"
+msgstr "Nom"
+
+#: tags/3.12/contact_form.php:544
+#: tags/3.13/contact_form.php:544
+#: tags/3.07/contact_form.php:525
+#: tags/3.15/contact_form.php:615
+#: tags/3.19/contact_form.php:658
+#: tags/3.14/contact_form.php:552
+#: tags/3.17/contact_form.php:637
+#: tags/3.06/contact_form.php:525
+#: tags/3.04/contact_form.php:525
+#: tags/3.05/contact_form.php:525
+#: tags/2011.3.01/contact_form.php:468
+#: tags/3.16/contact_form.php:615
+msgid "Email"
+msgstr "E-mail"
+
+#: tags/3.12/contact_form.php:547
+#: tags/3.13/contact_form.php:547
+#: tags/3.07/contact_form.php:528
+#: tags/3.15/contact_form.php:618
+#: tags/3.19/contact_form.php:661
+#: tags/3.14/contact_form.php:555
+#: tags/3.17/contact_form.php:640
+#: tags/3.06/contact_form.php:528
+#: tags/3.04/contact_form.php:528
+#: tags/3.05/contact_form.php:528
+#: tags/2011.3.01/contact_form.php:471
+#: tags/3.16/contact_form.php:618
+msgid "Subject"
+msgstr "Sujet"
+
+#: tags/3.12/contact_form.php:550
+#: tags/3.13/contact_form.php:550
+#: tags/3.07/contact_form.php:531
+#: tags/3.15/contact_form.php:621
+#: tags/3.19/contact_form.php:664
+#: tags/3.14/contact_form.php:558
+#: tags/3.17/contact_form.php:643
+#: tags/3.06/contact_form.php:531
+#: tags/3.04/contact_form.php:531
+#: tags/3.05/contact_form.php:531
+#: tags/2011.3.01/contact_form.php:474
+#: tags/3.16/contact_form.php:621
+msgid "Message"
+msgstr "Message"
+
+#: tags/3.12/contact_form.php:553
+#: tags/3.13/contact_form.php:553
+#: tags/3.07/contact_form.php:534
+#: tags/3.15/contact_form.php:624
+#: tags/3.19/contact_form.php:667
+#: tags/3.14/contact_form.php:561
+#: tags/3.17/contact_form.php:646
+#: tags/3.06/contact_form.php:534
+#: tags/3.04/contact_form.php:534
+#: tags/3.05/contact_form.php:534
+#: tags/2011.3.01/contact_form.php:477
+#: tags/3.16/contact_form.php:624
+msgid "Site"
+msgstr "Site"
+
+#: tags/3.12/contact_form.php:613
+#: tags/3.13/contact_form.php:613
+#: tags/3.07/contact_form.php:630
+#: tags/2011.2.08/contact_form.php:470
+#: tags/3.15/contact_form.php:670
+#: tags/3.19/contact_form.php:766
+#: tags/3.14/contact_form.php:621
+#: tags/3.17/contact_form.php:745
+#: tags/3.06/contact_form.php:630
+#: tags/2011.2.04/contact_form.php:412
+#: tags/3.04/contact_form.php:630
+#: tags/2011.2.03/contact_form.php:370
+#: tags/3.05/contact_form.php:630
+#: tags/2011.3.01/contact_form.php:573
+#: tags/3.16/contact_form.php:670
+msgid "FAQ"
+msgstr "FAQ"
+
+#: tags/3.12/contact_form.php:614
+#: tags/3.13/contact_form.php:614
+#: tags/3.07/contact_form.php:631
+#: tags/2011.2.08/contact_form.php:471
+#: tags/3.15/contact_form.php:671
+#: tags/3.19/contact_form.php:767
+#: tags/3.14/contact_form.php:622
+#: tags/3.17/contact_form.php:746
+#: tags/3.06/contact_form.php:631
+#: tags/2011.2.04/contact_form.php:413
+#: tags/3.04/contact_form.php:631
+#: tags/2011.2.03/contact_form.php:371
+#: tags/3.05/contact_form.php:631
+#: tags/2011.3.01/contact_form.php:574
+#: tags/3.16/contact_form.php:671
+msgid "Support"
+msgstr "Support"
+
+#: tags/3.07/contact_form.php:218
+#: tags/3.06/contact_form.php:218
+#: tags/3.04/contact_form.php:218
+#: tags/3.05/contact_form.php:218
+#: tags/2011.3.01/contact_form.php:187
+#, fuzzy
+msgid "If you would like to add a Contact Form to your website, just copy and put this shortcode onto your post or page:"
+msgstr "Si vous souhaiter ajouter un formulaire de contact à votre site web, copiez juste ce code dans un article ou sur une page ou un widget:"
+
+#: tags/3.07/contact_form.php:575
+#: tags/3.19/contact_form.php:712
+#: tags/3.17/contact_form.php:691
+#: tags/3.06/contact_form.php:575
+#: tags/3.04/contact_form.php:575
+#: tags/3.05/contact_form.php:575
+#: tags/2011.3.01/contact_form.php:518
+msgid "If you can see this MIME than your client doesn't accept MIME types!"
+msgstr "Si vous voyez ce MIME c'est que votre navigateur n'accepte pas ce type de MIME !"
+
+#: tags/2011.2.08/contact_form.php:122
+#: tags/2011.3.01/contact_form.php:95
+msgid "Install Now"
+msgstr "Installa Ora"
+
+#: tags/2011.2.08/contact_form.php:135
+#: tags/2011.2.04/contact_form.php:116
+#: tags/2011.2.03/contact_form.php:74
+#: tags/2011.3.01/contact_form.php:108
+msgid "BWS Plugins"
+msgstr "BWS Plugins"
+
+#: tags/3.15/contact_form.php:289
+#: tags/3.19/contact_form.php:329
+#: tags/3.14/contact_form.php:266
+#: tags/3.17/contact_form.php:311
+#: tags/3.16/contact_form.php:289
+msgid "Change FROM fields of the contact form"
+msgstr "Modifier des champs du formulaire de contact"
+
+#: tags/3.15/contact_form.php:295
+#: tags/3.19/contact_form.php:335
+#: tags/3.17/contact_form.php:317
+#: tags/3.16/contact_form.php:295
+msgid "Display additional info in email"
+msgstr "Afficher les informations complémentaires dans le courriel"
+
+#: tags/3.19/contact_form.php:295
+msgid "Display Attachment explanations"
+msgstr "Afficher les explications sur les pièces jointes"
+
+#: tags/3.19/contact_form.php:300
+msgid "Display explanations after Attachment block"
+msgstr "Afficher les explications après le bloc des pièces jointes"
+
+#: tags/3.19/contact_form.php:310
+#: tags/3.17/contact_form.php:292
+msgid "What use?"
+msgstr "Quel utilisation?"
+
+#: tags/3.19/contact_form.php:315
+#: tags/3.17/contact_form.php:297
+msgid "Wp-mail"
+msgstr "Wp-mail"
+
+#: tags/3.19/contact_form.php:316
+#: tags/3.17/contact_form.php:298
+msgid "To send mail you can use the wordpress wp_mail function"
+msgstr "Pour envoyer l'e-mail, vous pouvez utiliser la fonction wp_mail de wordpress"
+
+#: tags/3.19/contact_form.php:324
+#: tags/3.17/contact_form.php:306
+msgid "Mail"
+msgstr "E-mail"
+
+#: tags/3.19/contact_form.php:325
+#: tags/3.17/contact_form.php:307
+msgid "To send mail you can use the php mail function"
+msgstr "Pour envoyer l'e-mail, vous pouvez utiliser la fonction mail de php"
+
+#: tags/2011.2.04/contact_form.php:241
+#: tags/2011.05.26/contact_form.php:156
+#: tags/2011.2.03/contact_form.php:199
+#, fuzzy
+msgid "Thank you for contact."
+msgstr "Merci de nous avoir contacté."
+
+#: tags/3.04/contact_form.php:234
+#: tags/3.05/contact_form.php:234
+#: tags/2011.3.01/contact_form.php:198
+#, fuzzy
+msgid "Set a name of user wo will get messages from a contact form."
+msgstr "Choisir le nom d'utilisateur qui recevra les messages envoyés depuis le formulaire de contact."
+
+#: trunk/contact_form.php:230
+msgid "If the option 'Redirect to page' is selected then url field should be fillied in the following format"
+msgstr ""
+
+#: trunk/contact_form.php:374
+msgid "Action after the send mail"
+msgstr ""
+
+#: trunk/contact_form.php:376
+#, fuzzy
+msgid "Display text"
+msgstr "Afficher le bloc pièce-jointe"
+
+#: trunk/contact_form.php:377
+msgid "Text"
+msgstr ""
+
+#: trunk/contact_form.php:378
+msgid "Redirect to page"
+msgstr ""
+
+#: trunk/contact_form.php:379
+msgid "Url"
+msgstr ""
+
+#~ msgid "E-Mail Addresse:"
+#~ msgstr "Indirizzo e-mail:"
+
