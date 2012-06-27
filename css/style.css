@@ -50,8 +50,12 @@
 	position:relative;
 	top:5px;
 }
-.cntctfrm_change_label_block input {
+.cntctfrm_change_label_block input, .cntctfrm_action_after_send_block input {
 	margin: 1px 0;
+}
+
+.cntctfrm_action_after_send_block  input[type="text"] {
+	width:250px;
 }
 
 .widget-container #cntctfrm_contact_form input.text, 
