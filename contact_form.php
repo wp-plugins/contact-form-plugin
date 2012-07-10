@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.20
+Version: 3.21
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -675,7 +675,7 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 				}
 				if( $cntctfrm_options['cntctfrm_display_date_time'] == 1) {
 					$user_info_string .= '<tr>
-							<td>'.__('Date/Time', 'contact_form').':</td><td>'.date_i18n( get_option( 'date_format' ).' '.get_option( 'time_format' ), time() ).'</td>
+							<td>'.__('Date/Time', 'contact_form').':</td><td>'.date_i18n( get_option( 'date_format' ).' '.get_option( 'time_format' ), strtotime( current_time( 'mysql' ) ) ).'</td>
 						</tr>';
 				}
 				if( $cntctfrm_options['cntctfrm_display_coming_from'] == 1) {

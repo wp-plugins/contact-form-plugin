@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
-Tested up to: 3.4
-Stable tag: 3.20
+Tested up to: 3.4.1
+Stable tag: 3.21
 
 Add Contact Form to your WordPress website.
 
@@ -40,6 +40,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 * Spanish (es_ES) (thanks to Jesús Parra)
 * Swedish (sv_SV) (thanks to Martin Tonek)
 * Turkish (tr_TR) (thanks to <a herf="mailto:d-bulent@hotmail.com ">Devrim Bulent Ibis</a>, www.devrimhoca.com)
+* Vietnamese (vi_VN) (thanks to NDT Solutions)
 
 If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
@@ -97,6 +98,12 @@ Here is an example for German language files.
 5. Widget settings for using shortcode in the sidebar.
 
 == Changelog ==
+
+= V3.21 - 10.07.2012 =
+* NEW : Hebrew language file is added to the plugin.
+* Update : We updated French language file.
+* Update : We updated all functionality for wordpress 3.4.1.
+* Update : In the email in the field  Date/Time used correct time zone - instead of UTC we use local settings which are setup on the page  Settings -> General.
 
 = V3.20 - 27.06.2012 =
 * NEW : Added ability to select action after the send mail - Display text or Redirect to page.
@@ -210,6 +217,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.21 =
+Hebrew language file is added to the plugin. We updated French language file. We updated all functionality for wordpress 3.4.1. In the email in the field  Date/Time used correct time zone - instead of UTC we use local settings which are setup on the page  Settings -> General.
 
 = V3.20 =
 Added ability to select action after the send mail - Display text or Redirect to page. We updated all functionality for wordpress 3.4.
