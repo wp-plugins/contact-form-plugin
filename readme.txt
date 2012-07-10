@@ -32,6 +32,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 * French (fr_FR) (thanks to Alain Thomas and Vincent Cibelli)
 * German (de_DE) (thanks to Hartung Thomas)
 * Greek (el_GR) (thanks to Pantelis Panteloglou)
+* Hebrew (he_IL) (thanks to Sagive SEO)
 * Hindi (hi_IN) (thanks to <a href="mailto:ash.pr@outshinesolutions.com">Team Outshine</a>)
 * Italian (it_IT) (thanks to <a href="mailto:ilian@ultra-violet.it">Ilian Gagliardi</a>)
 * Norwegian (nb_NO) (thanks to Tore Hjartland)
@@ -40,7 +41,6 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 * Spanish (es_ES) (thanks to Jesús Parra)
 * Swedish (sv_SV) (thanks to Martin Tonek)
 * Turkish (tr_TR) (thanks to <a herf="mailto:d-bulent@hotmail.com ">Devrim Bulent Ibis</a>, www.devrimhoca.com)
-* Vietnamese (vi_VN) (thanks to NDT Solutions)
 
 If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
