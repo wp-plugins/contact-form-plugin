@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Contact Form Plugin v3.05\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-10 10:50+0300\n"
-"PO-Revision-Date: 2012-07-10 10:50+0300\n"
+"POT-Creation-Date: 2012-07-24 19:11+0300\n"
+"PO-Revision-Date: 2012-07-24 19:12+0300\n"
 "Last-Translator: zos <zos@bestwebsoft.com>\n"
 "Language-Team: \n"
 "Language: \n"
@@ -33,8 +33,8 @@ msgstr "Czytaj więcej"
 
 # @ contact_form
 #: contact_form.php:78
-#: contact_form.php:802
-#: contact_form.php:811
+#: contact_form.php:805
+#: contact_form.php:814
 msgid "Settings"
 msgstr "Ustawienia"
 
@@ -245,25 +245,25 @@ msgstr ""
 
 # @ contact_form
 #: contact_form.php:354
-#: contact_form.php:673
+#: contact_form.php:676
 msgid "Sent from (ip address)"
 msgstr "Przysłane z (adres IP)"
 
 # @ contact_form
 #: contact_form.php:355
-#: contact_form.php:678
+#: contact_form.php:681
 msgid "Date/Time"
 msgstr "Data/czas"
 
 # @ contact_form
 #: contact_form.php:356
-#: contact_form.php:683
+#: contact_form.php:686
 msgid "Coming from (referer)"
 msgstr "Przekierowane z (referrer)"
 
 # @ contact_form
 #: contact_form.php:357
-#: contact_form.php:688
+#: contact_form.php:691
 msgid "Using (user agent)"
 msgstr "Klient (program użytkownika)"
 
@@ -300,101 +300,101 @@ msgid "Save Changes"
 msgstr "Zapisz zmiany"
 
 # @ contact_form
-#: contact_form.php:417
+#: contact_form.php:420
 msgid "Sorry, your e-mail could not be delivered."
 msgstr "Niestety, ten e-mail nie mógł zostać dostarczony."
 
 # @ contact_form
-#: contact_form.php:475
+#: contact_form.php:478
 msgid "You can attach files of the following types"
 msgstr "Możesz załączać pliki następujących typów"
 
 # @ contact_form
-#: contact_form.php:483
+#: contact_form.php:486
 msgid "Send me a copy"
 msgstr "Wyślij mi kopię"
 
 # @ contact_form
-#: contact_form.php:493
+#: contact_form.php:496
 msgid "Submit"
 msgstr "Wyślij"
 
 # @ contact_form
-#: contact_form.php:532
+#: contact_form.php:535
 msgid "Your name is required."
 msgstr "Podanie imienia jest wymagane."
 
 # @ contact_form
-#: contact_form.php:533
+#: contact_form.php:536
 msgid "A proper e-mail address is required."
 msgstr "Podanie prawidłowego adresu e-mail jest wymagane."
 
 # @ contact_form
-#: contact_form.php:534
+#: contact_form.php:537
 msgid "Subject text is required."
 msgstr "Podanie tematu jest wymagane."
 
 # @ contact_form
-#: contact_form.php:535
+#: contact_form.php:538
 msgid "Message text is required."
 msgstr "Wiadomość musi mieć jakąś treść."
 
 # @ contact_form
-#: contact_form.php:536
+#: contact_form.php:539
 msgid "Please make corrections below and try again."
 msgstr "Proszę nanieść poprawki i spróbować jeszcze raz."
 
 # @ contact_form
-#: contact_form.php:567
+#: contact_form.php:570
 msgid "Attachment is broken."
 msgstr "Załącznik jest uszkodzony."
 
 # @ contact_form
-#: contact_form.php:580
+#: contact_form.php:583
 msgid "Please complete the CAPTCHA."
 msgstr "Proszę dokładnie przepisać kod."
 
 # @ contact_form
-#: contact_form.php:696
+#: contact_form.php:699
 msgid "Contact from"
 msgstr "Kontakt z"
 
 # @ contact_form
-#: contact_form.php:701
+#: contact_form.php:704
 msgid "Name"
 msgstr "Imię"
 
 # @ contact_form
-#: contact_form.php:704
+#: contact_form.php:707
 msgid "Email"
 msgstr "E-mail"
 
 # @ contact_form
-#: contact_form.php:707
+#: contact_form.php:710
 msgid "Subject"
 msgstr "Temat"
 
 # @ contact_form
-#: contact_form.php:710
+#: contact_form.php:713
 msgid "Message"
 msgstr "Wiadomość"
 
 # @ contact_form
-#: contact_form.php:713
+#: contact_form.php:716
 msgid "Site"
 msgstr "Strona www"
 
-#: contact_form.php:758
+#: contact_form.php:761
 msgid "If you can see this MIME than your client doesn't accept MIME types!"
 msgstr ""
 
 # @ contact_form
-#: contact_form.php:812
+#: contact_form.php:815
 msgid "FAQ"
 msgstr "FAQ"
 
 # @ contact_form
-#: contact_form.php:813
+#: contact_form.php:816
 msgid "Support"
 msgstr "Wsparcie"
 

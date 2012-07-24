@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.21
+Version: 3.22
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -160,7 +160,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 
 		$error = "";	
 		// Save data for settings page
-		if( isset( $_REQUEST['cntctfrm_form_submit'] ) ) {
+		if( isset( $_REQUEST['cntctfrm_form_submit'] ) && check_admin_referer( plugin_basename(__FILE__), 'cntctfrm_nonce_name' ) ) {
 			$cntctfrm_options_submit['cntctfrm_user_email'] = $_REQUEST['cntctfrm_user_email'];
 			$cntctfrm_options_submit['cntctfrm_custom_email'] = $_REQUEST['cntctfrm_custom_email'];
 			$cntctfrm_options_submit['cntctfrm_select_email'] = $_REQUEST['cntctfrm_select_email'];
@@ -383,6 +383,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 			<p class="submit">
 				<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
 			</p>
+			<?php wp_nonce_field( plugin_basename(__FILE__), 'cntctfrm_nonce_name' ); ?>
 		</form>
 	</div>
 	<?php 
@@ -401,6 +402,8 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 		$name = isset( $_REQUEST['cntctfrm_contact_name'] ) ? $_REQUEST['cntctfrm_contact_name'] : "";
 		$email = isset( $_REQUEST['cntctfrm_contact_email'] ) ? $_REQUEST['cntctfrm_contact_email'] : "";
 		$subject = isset( $_REQUEST['cntctfrm_contact_subject'] ) ? $_REQUEST['cntctfrm_contact_subject'] : "";
+		$name = strip_tags( $name );
+		$subject = strip_tags( $subject );
 		$message = isset( $_REQUEST['cntctfrm_contact_message'] ) ? $_REQUEST['cntctfrm_contact_message'] : "";
 		$send_copy = isset( $_REQUEST['cntctfrm_contact_send_copy'] ) ? $_REQUEST['cntctfrm_contact_send_copy'] : "";
 		// If it is good
@@ -484,7 +487,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 					</div>';
 			}
 
-			if(has_filter('cntctfrm_display_captcha')) {
+			if( has_filter( 'cntctfrm_display_captcha' ) ) {
 				$content .= apply_filters( 'cntctfrm_display_captcha' , $error_message );
 			}
 				

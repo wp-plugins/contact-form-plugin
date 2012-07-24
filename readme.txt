@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.4.1
-Stable tag: 3.21
+Stable tag: 3.22
 
 Add Contact Form to your WordPress website.
 
@@ -35,6 +35,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 * Hebrew (he_IL) (thanks to Sagive SEO)
 * Hindi (hi_IN) (thanks to <a href="mailto:ash.pr@outshinesolutions.com">Team Outshine</a>)
 * Italian (it_IT) (thanks to <a href="mailto:ilian@ultra-violet.it">Ilian Gagliardi</a>)
+* Japanese (ja) (thanks to Foken)
 * Norwegian (nb_NO) (thanks to Tore Hjartland)
 * Polish (pl_PL) (thanks to Jarek Spirydowicz)
 * Russian (ru_RU)
@@ -98,6 +99,10 @@ Here is an example for German language files.
 5. Widget settings for using shortcode in the sidebar.
 
 == Changelog ==
+
+= V3.22 - 24.07.2012 =
+* NEW : Japanese language file is added to the plugin.
+* Bugfix : Cross Site Request Forgery bug was fixed. 
 
 = V3.21 - 10.07.2012 =
 * NEW : Hebrew language file is added to the plugin.
@@ -217,6 +222,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.22 =
+Japanese language file is added to the plugin. Cross Site Request Forgery bug was fixed. 
 
 = V3.21 =
 Hebrew language file is added to the plugin. We updated French language file. We updated all functionality for wordpress 3.4.1. In the email in the field  Date/Time used correct time zone - instead of UTC we use local settings which are setup on the page  Settings -> General.

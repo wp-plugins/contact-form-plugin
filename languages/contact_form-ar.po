@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-10 10:48+0300\n"
-"PO-Revision-Date: 2012-07-10 10:49+0300\n"
+"POT-Creation-Date: 2012-07-24 19:10+0300\n"
+"PO-Revision-Date: 2012-07-24 19:10+0300\n"
 "Last-Translator: zos <zos@bestwebsoft.com>\n"
 "Language-Team: Hammad Alshammari (ABU HATIM) www.abuhatim.net <al3zz.com@gmail.com>\n"
 "Language: \n"
@@ -28,8 +28,8 @@ msgid "Read more"
 msgstr "اقرأ المزيد"
 
 #: contact_form.php:78
-#: contact_form.php:802
-#: contact_form.php:811
+#: contact_form.php:805
+#: contact_form.php:814
 msgid "Settings"
 msgstr "إعدادات"
 
@@ -206,22 +206,22 @@ msgid "Display additional info in email"
 msgstr "عرض معلومات اضافية في البريد الالكتروني"
 
 #: contact_form.php:354
-#: contact_form.php:673
+#: contact_form.php:676
 msgid "Sent from (ip address)"
 msgstr "ارسلت من (عنوان IP)"
 
 #: contact_form.php:355
-#: contact_form.php:678
+#: contact_form.php:681
 msgid "Date/Time"
 msgstr "الوقت/التاريخ"
 
 #: contact_form.php:356
-#: contact_form.php:683
+#: contact_form.php:686
 msgid "Coming from (referer)"
 msgstr "Coming from (referer)"
 
 #: contact_form.php:357
-#: contact_form.php:688
+#: contact_form.php:691
 msgid "Using (user agent)"
 msgstr "باستخدام (وكيل المستخدم)"
 
@@ -254,83 +254,83 @@ msgstr ""
 msgid "Save Changes"
 msgstr "حفظ التغييرات"
 
-#: contact_form.php:417
+#: contact_form.php:420
 msgid "Sorry, your e-mail could not be delivered."
 msgstr "عذراً, لم نستطيع تسليم رسالتك."
 
-#: contact_form.php:475
+#: contact_form.php:478
 msgid "You can attach files of the following types"
 msgstr "يمكنك إرفاق الملفات من الأنواع التالية"
 
-#: contact_form.php:483
+#: contact_form.php:486
 msgid "Send me a copy"
 msgstr "أرسل لي نسخة"
 
-#: contact_form.php:493
+#: contact_form.php:496
 msgid "Submit"
 msgstr "تقدم"
 
-#: contact_form.php:532
+#: contact_form.php:535
 msgid "Your name is required."
 msgstr "مطلوب اسمك."
 
-#: contact_form.php:533
+#: contact_form.php:536
 msgid "A proper e-mail address is required."
 msgstr "مطلوب بريد الكتروني صحيح."
 
-#: contact_form.php:534
+#: contact_form.php:537
 msgid "Subject text is required."
 msgstr "مطلوب نص الموضوع."
 
-#: contact_form.php:535
+#: contact_form.php:538
 msgid "Message text is required."
 msgstr "مطلوب نص الرسالة."
 
-#: contact_form.php:536
+#: contact_form.php:539
 msgid "Please make corrections below and try again."
 msgstr "يرجى إجراء التصحيحات أدناه وحاول مرة أخرى."
 
-#: contact_form.php:567
+#: contact_form.php:570
 msgid "Attachment is broken."
 msgstr "المرفق تعطل."
 
-#: contact_form.php:580
+#: contact_form.php:583
 msgid "Please complete the CAPTCHA."
 msgstr "يرجى استكمال رمز التحقق."
 
-#: contact_form.php:696
+#: contact_form.php:699
 msgid "Contact from"
 msgstr "اتصل من"
 
-#: contact_form.php:701
+#: contact_form.php:704
 msgid "Name"
 msgstr "الأسم"
 
-#: contact_form.php:704
+#: contact_form.php:707
 msgid "Email"
 msgstr "البريد الألكتروني"
 
-#: contact_form.php:707
+#: contact_form.php:710
 msgid "Subject"
 msgstr "موضوع الرسالة"
 
-#: contact_form.php:710
+#: contact_form.php:713
 msgid "Message"
 msgstr "الرسالة"
 
-#: contact_form.php:713
+#: contact_form.php:716
 msgid "Site"
 msgstr "الموقع"
 
-#: contact_form.php:758
+#: contact_form.php:761
 msgid "If you can see this MIME than your client doesn't accept MIME types!"
 msgstr "إذا يمكنك أن ترى هذه MIME من العميل الخاص بك لا يقبل أنواع MIME!"
 
-#: contact_form.php:812
+#: contact_form.php:815
 msgid "FAQ"
 msgstr "أسئلة وأجوبة"
 
-#: contact_form.php:813
+#: contact_form.php:816
 msgid "Support"
 msgstr "دعم"
 

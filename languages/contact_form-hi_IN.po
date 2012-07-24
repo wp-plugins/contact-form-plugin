@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-10 10:49+0300\n"
-"PO-Revision-Date: 2012-07-10 10:49+0300\n"
+"POT-Creation-Date: 2012-07-24 19:11+0300\n"
+"PO-Revision-Date: 2012-07-24 19:11+0300\n"
 "Last-Translator: zos <zos@bestwebsoft.com>\n"
 "Language-Team: Team Outshine <ash.pr@outshinesolutions.com>\n"
 "Language: \n"
@@ -28,8 +28,8 @@ msgid "Read more"
 msgstr "अधिक पढ़ें"
 
 #: contact_form.php:78
-#: contact_form.php:802
-#: contact_form.php:811
+#: contact_form.php:805
+#: contact_form.php:814
 msgid "Settings"
 msgstr "सेटिंग्स"
 
@@ -206,22 +206,22 @@ msgid "Display additional info in email"
 msgstr "ईमेल में अतिरिक्त जानकारी प्रदर्शित करें"
 
 #: contact_form.php:354
-#: contact_form.php:673
+#: contact_form.php:676
 msgid "Sent from (ip address)"
 msgstr "(आईपी पते से भेजा गया)"
 
 #: contact_form.php:355
-#: contact_form.php:678
+#: contact_form.php:681
 msgid "Date/Time"
 msgstr "दिनांक / समय"
 
 #: contact_form.php:356
-#: contact_form.php:683
+#: contact_form.php:686
 msgid "Coming from (referer)"
 msgstr "से आ रहा है (referer)"
 
 #: contact_form.php:357
-#: contact_form.php:688
+#: contact_form.php:691
 msgid "Using (user agent)"
 msgstr "उपयोग करना (प्रयोक्ता एजेंट)"
 
@@ -254,83 +254,83 @@ msgstr ""
 msgid "Save Changes"
 msgstr "परिवर्तन सहेजें"
 
-#: contact_form.php:417
+#: contact_form.php:420
 msgid "Sorry, your e-mail could not be delivered."
 msgstr "क्षमा करें, आपका ई - मेल वितरित नहीं किया जा सकता है."
 
-#: contact_form.php:475
+#: contact_form.php:478
 msgid "You can attach files of the following types"
 msgstr "आप निम्न प्रकार का फ़ाइलों को संलग्न कर सकते हैं"
 
-#: contact_form.php:483
+#: contact_form.php:486
 msgid "Send me a copy"
 msgstr "मुझे एक प्रतिलिपि भेजें"
 
-#: contact_form.php:493
+#: contact_form.php:496
 msgid "Submit"
 msgstr "सबमिट"
 
-#: contact_form.php:532
+#: contact_form.php:535
 msgid "Your name is required."
 msgstr "आपका नाम की आवश्यकता है."
 
-#: contact_form.php:533
+#: contact_form.php:536
 msgid "A proper e-mail address is required."
 msgstr "एक उचित ई - मेल पते की आवश्यकता है."
 
-#: contact_form.php:534
+#: contact_form.php:537
 msgid "Subject text is required."
 msgstr "विषय पाठ की आवश्यकता होती है"
 
-#: contact_form.php:535
+#: contact_form.php:538
 msgid "Message text is required."
 msgstr "संदेश पाठ की आवश्यकता है."
 
-#: contact_form.php:536
+#: contact_form.php:539
 msgid "Please make corrections below and try again."
 msgstr "सुधार नीचे बनाने के लिए और फिर प्रयास करें"
 
-#: contact_form.php:567
+#: contact_form.php:570
 msgid "Attachment is broken."
 msgstr "अटैचमेंट टूटा ."
 
-#: contact_form.php:580
+#: contact_form.php:583
 msgid "Please complete the CAPTCHA."
 msgstr "कॅप्चा पूरा करें."
 
-#: contact_form.php:696
+#: contact_form.php:699
 msgid "Contact from"
 msgstr "संपर्क करें"
 
-#: contact_form.php:701
+#: contact_form.php:704
 msgid "Name"
 msgstr "नाम"
 
-#: contact_form.php:704
+#: contact_form.php:707
 msgid "Email"
 msgstr "ईमेल"
 
-#: contact_form.php:707
+#: contact_form.php:710
 msgid "Subject"
 msgstr "विषय"
 
-#: contact_form.php:710
+#: contact_form.php:713
 msgid "Message"
 msgstr "संदेश"
 
-#: contact_form.php:713
+#: contact_form.php:716
 msgid "Site"
 msgstr "साइट"
 
-#: contact_form.php:758
+#: contact_form.php:761
 msgid "If you can see this MIME than your client doesn't accept MIME types!"
 msgstr "यदि आप अपने ग्राहक की तुलना में इस माइम देख सकते हैं MIME प्रकार स्वीकार नहीं करता है!"
 
-#: contact_form.php:812
+#: contact_form.php:815
 msgid "FAQ"
 msgstr "अक्सर पूछे जाने वाले प्रश्न"
 
-#: contact_form.php:813
+#: contact_form.php:816
 msgid "Support"
 msgstr "समर्थन"
 
