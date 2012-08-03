@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.22
+Version: 3.23
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -419,7 +419,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 			// If email not be delivered
 			$error_message['error_form'] = __( "Sorry, your e-mail could not be delivered.", 'contact_form' );
 		}
-		else { 
+		if( true !== $result) { 
 			$_SESSION['cntctfrm_send_mail'] = false;
 			// Output form
 			$content .= '<form method="post" id="cntctfrm_contact_form" action="'.$page_url.'" enctype="multipart/form-data">';
@@ -632,8 +632,8 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 		$to = "";
 		if( isset( $_SESSION['cntctfrm_send_mail'] ) && $_SESSION['cntctfrm_send_mail'] == true )
 			return true;
-		if($cntctfrm_options['cntctfrm_select_email'] == 'user') {
-				if( function_exists('get_userdatabylogin') && false !== $user = get_userdatabylogin($cntctfrm_options['cntctfrm_user_email'] ) ){
+		if( $cntctfrm_options['cntctfrm_select_email'] == 'user' ) {
+				if( function_exists('get_userdatabylogin') && false !== $user = get_userdatabylogin( $cntctfrm_options['cntctfrm_user_email'] ) ){
 					$to = $user->user_email;
 				}
 				else if( false !== $user = get_user_by( 'login', $cntctfrm_options_submit['cntctfrm_user_email'] ) )
@@ -662,7 +662,7 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 			}
 
 			if( $cntctfrm_options['cntctfrm_display_add_info'] == 1) {
-				$userdomain = gethostbyaddr($_SERVER['REMOTE_ADDR']);
+				$userdomain = @gethostbyaddr($_SERVER['REMOTE_ADDR']);
 				if( $cntctfrm_options['cntctfrm_display_add_info'] == 1 ||
 						$cntctfrm_options['cntctfrm_display_sent_from'] == 1 ||
 						$cntctfrm_options['cntctfrm_display_coming_from'] == 1 ||
@@ -701,13 +701,13 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 			<body>
 				<table>
 					<tr>
-						<td width="160">'. __( "Name", 'contact_form' ) . '</td><td>'.$_REQUEST['cntctfrm_contact_name'].'</td>
+						<td width="160">'. __( "Name", 'contact_form' ) . '</td><td>'.strip_tags( $_REQUEST['cntctfrm_contact_name'] ).'</td>
 					</tr>
 					<tr>
 						<td>'. __( "Email", 'contact_form' ) .'</td><td>'.$_REQUEST['cntctfrm_contact_email'].'</td>
 					</tr>
 					<tr>
-						<td>'. __( "Subject", 'contact_form' ) . '</td><td>'.$_REQUEST['cntctfrm_contact_subject'].'</td>
+						<td>'. __( "Subject", 'contact_form' ) . '</td><td>'. strip_tags( $subject ).'</td>
 					</tr>
 					<tr>
 						<td>'. __( "Message", 'contact_form' ) . '</td><td>'.$_REQUEST['cntctfrm_contact_message'].'</td>
@@ -735,13 +735,13 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 				}
 
 				if( isset( $_REQUEST['cntctfrm_contact_send_copy'] ) && $_REQUEST['cntctfrm_contact_send_copy'] == 1 )
-					wp_mail($_REQUEST['cntctfrm_contact_email'], stripslashes($subject), stripslashes($message), $headers, $attachments);
+					wp_mail( $_REQUEST['cntctfrm_contact_email'], stripslashes( strip_tags( $subject ) ), stripslashes( $message ), $headers, $attachments );
 
 				// Mail it
-				return wp_mail($to, stripslashes($subject), stripslashes($message), $headers, $attachments);
+				return wp_mail( $to, stripslashes( strip_tags( $subject ) ), stripslashes( $message ), $headers, $attachments );
 			}
 			else{
-				if( $cntctfrm_options['cntctfrm_attachment'] == 1 && isset($_FILES["cntctfrm_contact_attachment"]["tmp_name"]) && $_FILES["cntctfrm_contact_attachment"]["tmp_name"] != "") {
+				if( $cntctfrm_options['cntctfrm_attachment'] == 1 && isset( $_FILES["cntctfrm_contact_attachment"]["tmp_name"] ) && $_FILES["cntctfrm_contact_attachment"]["tmp_name"] != "") {
 					global $path_of_uploaded_file;
 					$headers  = "";
 					$message_block = $message;
@@ -770,9 +770,9 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 					$file = 	file_get_contents($path_of_uploaded_file);
 					$path_info = pathinfo( $path_of_uploaded_file );
 					 
-					$message .= 	"Content-Type: ".$path_info['extension']."; name=\"".basename($path_of_uploaded_file)."\"\r\n"
+					$message .= 	"Content-Type: ".$path_info['extension']."; name=\"".basename( $path_of_uploaded_file )."\"\r\n"
 							."Content-Transfer-Encoding: base64\r\n"
-							."Content-disposition: attachment; file=\"".basename($path_of_uploaded_file)."\"\r\n"
+							."Content-disposition: attachment; file=\"".basename( $path_of_uploaded_file )."\"\r\n"
 							."\r\n"
 							.chunk_split( base64_encode( $file ) )
 							.$bound_last;
@@ -786,9 +786,9 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 					$headers .= 'From: '.$_REQUEST['cntctfrm_contact_email']. "\r\n";
 				}
 				if( isset( $_REQUEST['cntctfrm_contact_send_copy'] ) && $_REQUEST['cntctfrm_contact_send_copy'] == 1 )
-					@mail($_REQUEST['cntctfrm_contact_email'], stripslashes($subject), stripslashes($message), $headers);
+					@mail( $_REQUEST['cntctfrm_contact_email'], stripslashes( strip_tags( $subject ) ), stripslashes( $message ), $headers );
 
-				return @mail($to, stripslashes($subject), stripslashes($message), $headers);
+				return @mail( $to, stripslashes( strip_tags( $subject ) ), stripslashes( $message ), $headers );
 			}
 			
 		}
