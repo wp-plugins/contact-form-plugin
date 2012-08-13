@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.4.1
-Stable tag: 3.23
+Stable tag: 3.24
 
 Add Contact Form to your WordPress website.
 
@@ -27,6 +27,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 * Arabic (ar) (thanks to Hammad Alshammari (ABU HATIM), www.abuhatim.net)
 * Bulgarian (bg_BG) (thanks to Martin Jekov)
 * Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:brenojac@gmail.com">Breno Jacinto</a>, www.iconis.org.br)
+* Czech (cs_CZ) (thanks to Petr Zápotocký)
 * Danish (da_DK) (thanks to Mads Hannibal)
 * Dutch (nl_NL) (thanks  to <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>, Jan Boeijink )
 * French (fr_FR) (thanks to Alain Thomas and Vincent Cibelli)
@@ -38,6 +39,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 * Japanese (ja) (thanks to Foken)
 * Norwegian (nb_NO) (thanks to Tore Hjartland)
 * Polish (pl_PL) (thanks to Jarek Spirydowicz)
+* Romanian (ro_RO) (thanks to George Bejan and Cosmin Berescu)
 * Russian (ru_RU)
 * Spanish (es_ES) (thanks to Jesús Parra)
 * Swedish (sv_SV) (thanks to Martin Tonek)
@@ -99,6 +101,9 @@ Here is an example for German language files.
 5. Widget settings for using shortcode in the sidebar.
 
 == Changelog ==
+
+= V3.24 - 12.08.2012 =
+* NEW : Czech and Romanian language files are added to the plugin.
 
 = V3.23 - 03.08.2012 =
 * Bugfix : Cross Site Request Forgery bug was fixed.
@@ -225,6 +230,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.24 =
+Czech and Romanian language files are added to the plugin.
 
 = V3.23 =
 Cross Site Request Forgery bug was fixed.
