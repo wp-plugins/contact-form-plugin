@@ -1,243 +1,206 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Contact Form Plugin v3.05\n"
+"Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-17 17:15+0200\n"
-"PO-Revision-Date: 2012-10-17 17:15+0200\n"
-"Last-Translator: zos <zos@bestwebsoft.com>\n"
-"Language-Team: \n"
-"Language: pl_PL\n"
+"POT-Creation-Date: 2012-10-17 17:16+0200\n"
+"PO-Revision-Date: 2012-10-22 13:43+0200\n"
+"Last-Translator: Radovan Georgijevic <radovan@georgijevic.info>\n"
+"Language-Team: Georgijevic Team <http://www.georgijevic.info>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
-"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
-"X-Poedit-Basepath: ../\n"
-"X-Textdomain-Support: yes\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.5.4\n"
+"Language: sr_RS\n"
 "X-Poedit-SearchPath-0: .\n"
 
-# @ contact_form
 #: contact_form.php:76
 msgid "Activated plugins"
-msgstr "Aktywne wtyczki"
+msgstr "Aktivni dodaci"
 
-# @ contact_form
 #: contact_form.php:78 contact_form.php:86 contact_form.php:94
 msgid "Read more"
-msgstr "Czytaj więcej"
+msgstr "Čitaj više"
 
-# @ contact_form
 #: contact_form.php:78 contact_form.php:836 contact_form.php:845
 msgid "Settings"
-msgstr "Ustawienia"
+msgstr "Podešavanja"
 
-# @ contact_form
 #: contact_form.php:84
 msgid "Installed plugins"
-msgstr "Zainstalowane wtyczki"
+msgstr "Instalirani dodaci"
 
-# @ contact_form
 #: contact_form.php:92
 msgid "Recommended plugins"
-msgstr "Polecane wtyczki"
+msgstr "Preporučeni dodaci"
 
-# @ contact_form
 #: contact_form.php:94
 msgid "Download"
-msgstr "Pobierz"
+msgstr "Preuzmi"
 
-# @ default
 #: contact_form.php:94
 #, php-format
 msgid "Install %s"
-msgstr "Instaluj %s"
+msgstr "Instaliraj %s"
 
-# @ contact_form
 #: contact_form.php:94
 msgid "Install now from wordpress.org"
-msgstr "Zainstaluj z wordpress.org"
+msgstr "Instaliraj sa wordpress.org"
 
-# @ contact_form
 #: contact_form.php:96
 msgid ""
 "If you have any questions, please contact us via plugin@bestwebsoft.com or "
 "fill in our contact form on our site"
 msgstr ""
-"Jeśli masz pytania, napisz na adres plugin@bestwebsoft.com lub skorzystaj z "
-"formularza na naszej stronie"
+"Ako imate bilo kakva pitanja, kontaktirajte na mejl plugin@bestwebsoft.com "
+"ili popunite kontakt formu na našem sajtu"
 
-# @ contact_form
 #: contact_form.php:108 contact_form.php:267
 msgid "Contact Form Options"
-msgstr "Opcje Contact Form"
+msgstr "Opcije Kontakt Forme"
 
-# @ contact_form
 #: contact_form.php:108
 msgid "Contact Form"
-msgstr "Contact Form"
+msgstr "Kontakt Forma"
 
-# @ contact_form
 #: contact_form.php:137 contact_form.php:183 contact_form.php:221
 #: contact_form.php:377
 msgid "Name:"
-msgstr "Imię:"
+msgstr "Ime:"
 
-# @ contact_form
 #: contact_form.php:138 contact_form.php:184 contact_form.php:222
 #: contact_form.php:378
 msgid "E-Mail Address:"
-msgstr "Adres e-mail"
+msgstr "E-mail Adresa:"
 
 #: contact_form.php:139 contact_form.php:379
 msgid "Phone:"
 msgstr ""
 
-# @ contact_form
 #: contact_form.php:140 contact_form.php:185 contact_form.php:223
 #: contact_form.php:380
 msgid "Subject:"
-msgstr "Temat:"
+msgstr "Tema:"
 
-# @ contact_form
 #: contact_form.php:141 contact_form.php:186 contact_form.php:224
 #: contact_form.php:381
 msgid "Message:"
-msgstr "Treść wiadomości:"
+msgstr "Poruka:"
 
-# @ contact_form
 #: contact_form.php:142 contact_form.php:187 contact_form.php:225
 #: contact_form.php:382
 msgid "Attachment:"
-msgstr "Załączniki:"
+msgstr "Priveži fajl:"
 
-# @ contact_form
 #: contact_form.php:144 contact_form.php:189
 msgid "Thank you for contacting us."
-msgstr "Dziękujemy za wiadomość."
+msgstr "Hvala što ste nas kontaktirali."
 
 #: contact_form.php:235
 msgid ""
 "If the option 'Redirect to page' is selected then url field should be "
 "fillied in the following format"
 msgstr ""
+"Ako opcija 'Prosledi na stranu' je izabrana onda polje za URL možete "
+"popuniti u sledećem formatu"
 
-# @ contact_form
 #: contact_form.php:242 contact_form.php:247 contact_form.php:256
 msgid "Options saved."
-msgstr "Opcje zapisano"
+msgstr "Opcije sačuvane"
 
-# @ contact_form
 #: contact_form.php:250
 msgid "Such user is not exist. Settings are not saved."
-msgstr "Nie ma takiego użytkownika. Ustawienia nie zostały zapisane."
+msgstr "Takav korisnik ne postoji. Podešavanja nisu sačuvana"
 
-# @ contact_form
 #: contact_form.php:259
 msgid "Please input correct email. Settings are not saved."
-msgstr "Proszę wpisać prawidłowy e-mail. Ustawienia nie zostały zapisane."
+msgstr "Molim vam unesite ispravan mejl. Podešavanja nisu sačuvana."
 
-# @ contact_form
 #: contact_form.php:272
 msgid ""
 "If you would like to add a Contact Form to your website, just copy and put "
 "this shortcode onto your post or page or widget:"
 msgstr ""
-"Jeśli chcesz dodać formularz do swojej strony, po prostu skopiuj ten kod i "
-"wklej go do wpisu lub treści strony lub Widget:"
+"Ako želite da dodate Kontakt Formu na vaš veb sajt, jednostavno iskopirajte "
+"ovaj kratak kod na vašu stranu, članak ili vidžet:"
 
-# @ contact_form
 #: contact_form.php:273
 msgid ""
 "If information in the below fields are empty then the message will be send "
 "to an address which was specified during registration."
 msgstr ""
-"Jeśli poniższe pola zostaną puste, wiadomość zostanie wysłana na adres "
-"podany podczas rejestracji."
+"Ako je polje za podatke ispod prazno tada će poruka biti poslata na adresu "
+"koja je navedena prilikom registracije."
 
-# @ contact_form
 #: contact_form.php:277
 msgid "Use email of wordpress user:"
-msgstr "Użyj adresu e-mail użytkownika:"
+msgstr "Koristi mejl wordpress kosirnika:"
 
-# @ contact_form
 #: contact_form.php:283
 msgid "Select user name"
-msgstr "Wybierz użytkownika"
+msgstr "Odaberi korisničko ime"
 
-# @ contact_form
 #: contact_form.php:288
 msgid "Set a name of user who will get messages from a contact form."
-msgstr "Wybierz użytkownika, który będzie dostawał wiadomości z formularza."
+msgstr "Podesi ime korisnika koji će primiti poruku sa ove kontakt forme."
 
-# @ contact_form
 #: contact_form.php:292
 msgid "Use this email:"
-msgstr "Wybierz ten e-mail:"
+msgstr "Koristi ovaj mejl:"
 
-# @ contact_form
 #: contact_form.php:298
 msgid "Set an email address which will be used for messages receiving."
-msgstr "Ustaw adres e-mail, który będzie używany do odbierania wiadomości."
+msgstr "Podesi mejl adresu koja će biti korišćena za prijem poruka."
 
-# @ contact_form
 #: contact_form.php:302
 msgid "Additional options"
-msgstr "Dodatkowe opcje"
+msgstr "Dodatne opcije"
 
-# @ contact_form
 #: contact_form.php:305
 msgid "Display Attachment block"
-msgstr "Wyświetlaj blok załączników"
+msgstr "Prikaži blok privezaka"
 
-# @ contact_form
 #: contact_form.php:310
 msgid "Users can attach files of the following types"
-msgstr "Można załączać pliki następujących typów"
+msgstr "Korisnici mogu privezivati fajlove sledećih tipova"
 
-# @ contact_form
 #: contact_form.php:314
 msgid "Display Attachment explanations"
-msgstr ""
+msgstr "Prikaži objašnjenja privezaka"
 
-# @ contact_form
 #: contact_form.php:319
 msgid "Display explanations after Attachment block"
-msgstr ""
+msgstr "Prikaži objašnjenja posle bloka Privezaka"
 
-# @ contact_form
 #: contact_form.php:323
 msgid "Display Send me a copy block"
-msgstr "Wyświetlaj blok wysyłania kopii do nadawcy"
+msgstr "Prikaži Pošalji mi kopiju blok"
 
 #: contact_form.php:329
 msgid "What use?"
-msgstr ""
+msgstr "Šta koritite?"
 
-# @ contact_form
 #: contact_form.php:334
 msgid "Wp-mail"
 msgstr "Wp-mail"
 
 #: contact_form.php:335
 msgid "To send mail you can use the wordpress wp_mail function"
-msgstr ""
+msgstr "Da biste poslali mejl možete koristiti wordpress-ovu wp_mail funkciju"
 
-# @ contact_form
 #: contact_form.php:343
 msgid "Mail"
 msgstr "Mail"
 
 #: contact_form.php:344
 msgid "To send mail you can use the php mail function"
-msgstr ""
+msgstr "Da biste poslali mejl možete koristiti php mail funkciju"
 
-# @ contact_form
 #: contact_form.php:348
 msgid "Change FROM fields of the contact form"
-msgstr "Zmień od pola formularza"
+msgstr "Promeni OD polja u kontakt formi"
 
 #: contact_form.php:354
 msgid "Display phone field"
@@ -245,159 +208,143 @@ msgstr ""
 
 #: contact_form.php:360
 msgid "Display additional info in email"
-msgstr ""
+msgstr "Prikaži dodatne informacije u mejlu"
 
-# @ contact_form
 #: contact_form.php:365 contact_form.php:702
 msgid "Sent from (ip address)"
-msgstr "Przysłane z (adres IP)"
+msgstr "Poslato sa (ip adresa)"
 
-# @ contact_form
 #: contact_form.php:366 contact_form.php:707
 msgid "Date/Time"
-msgstr "Data/czas"
+msgstr "Datum/Vreme"
 
-# @ contact_form
 #: contact_form.php:367 contact_form.php:712
 msgid "Coming from (referer)"
-msgstr "Przekierowane z (referrer)"
+msgstr "Došlo od (prosleđivač)"
 
-# @ contact_form
 #: contact_form.php:368 contact_form.php:717
 msgid "Using (user agent)"
-msgstr "Klient (program użytkownika)"
+msgstr "Koristi (user agent)"
 
-# @ contact_form
 #: contact_form.php:372
 msgid "Change label for fields of the contact form"
-msgstr "Zmień etykiety pól formularza"
+msgstr "Promeni oznaku za polja u kontakt formi"
 
 #: contact_form.php:386
 msgid "Action after the send mail"
-msgstr ""
+msgstr "Akcija posle poslatog mejla"
 
-# @ contact_form
 #: contact_form.php:388
-#, fuzzy
 msgid "Display text"
-msgstr "Wyświetlaj blok załączników"
+msgstr "Prikaži tekst"
 
 #: contact_form.php:389
 msgid "Text"
-msgstr ""
+msgstr "Tekst"
 
 #: contact_form.php:390
 msgid "Redirect to page"
-msgstr ""
+msgstr "Preusmeri na stranu"
 
 #: contact_form.php:391
 msgid "Url"
-msgstr ""
+msgstr "Url"
 
-# @ default
 #: contact_form.php:396
 msgid "Save Changes"
-msgstr "Zapisz zmiany"
+msgstr "Sačuvaj izmene"
 
-# @ contact_form
 #: contact_form.php:433
 msgid "Sorry, your e-mail could not be delivered."
-msgstr "Niestety, ten e-mail nie mógł zostać dostarczony."
+msgstr "Izvinite, vaš mejl nije mogao biti dostavljen."
 
-# @ contact_form
 #: contact_form.php:503
 msgid "You can attach files of the following types"
-msgstr "Możesz załączać pliki następujących typów"
+msgstr "Možete privezati fajlove sledećih tipova"
 
-# @ contact_form
 #: contact_form.php:511
 msgid "Send me a copy"
-msgstr "Wyślij mi kopię"
+msgstr "Pošalji mi kopiju"
 
-# @ contact_form
 #: contact_form.php:521
 msgid "Submit"
-msgstr "Wyślij"
+msgstr "Podnesi"
 
-# @ contact_form
 #: contact_form.php:560
 msgid "Your name is required."
-msgstr "Podanie imienia jest wymagane."
+msgstr "Vaše ime je potrebno."
 
-# @ contact_form
 #: contact_form.php:561
 msgid "A proper e-mail address is required."
-msgstr "Podanie prawidłowego adresu e-mail jest wymagane."
+msgstr "Ispravna e-mail adresa potrebna."
 
-# @ contact_form
 #: contact_form.php:562
 msgid "Subject text is required."
-msgstr "Podanie tematu jest wymagane."
+msgstr "Tekst Teme je potreban."
 
-# @ contact_form
 #: contact_form.php:563
 msgid "Message text is required."
-msgstr "Wiadomość musi mieć jakąś treść."
+msgstr "Tekst poruke je potreban."
 
-# @ contact_form
 #: contact_form.php:564
 msgid "Please make corrections below and try again."
-msgstr "Proszę nanieść poprawki i spróbować jeszcze raz."
+msgstr "Molimo vas da izvršite izmene ispod i pokušate ponovo."
 
-# @ contact_form
 #: contact_form.php:596
 msgid "Attachment is broken."
-msgstr "Załącznik jest uszkodzony."
+msgstr "Privezakne radi"
 
-# @ contact_form
 #: contact_form.php:609
 msgid "Please complete the CAPTCHA."
-msgstr "Proszę dokładnie przepisać kod."
+msgstr "Molimo vas popunite CAPTCHA."
 
-# @ contact_form
 #: contact_form.php:725
 msgid "Contact from"
-msgstr "Kontakt z"
+msgstr "Kontakt forma"
 
-# @ contact_form
 #: contact_form.php:730
 msgid "Name"
-msgstr "Imię"
+msgstr "Ime"
 
-# @ contact_form
 #: contact_form.php:733
 msgid "Email"
-msgstr "E-mail"
+msgstr "Email"
 
 #: contact_form.php:738
 msgid "Phone"
 msgstr ""
 
-# @ contact_form
 #: contact_form.php:741
 msgid "Subject"
-msgstr "Temat"
+msgstr "Tema"
 
-# @ contact_form
 #: contact_form.php:744
 msgid "Message"
-msgstr "Wiadomość"
+msgstr "Poruka"
 
-# @ contact_form
 #: contact_form.php:747
 msgid "Site"
-msgstr "Strona www"
+msgstr "Sajt"
 
 #: contact_form.php:792
 msgid "If you can see this MIME than your client doesn't accept MIME types!"
 msgstr ""
+"Ako možete da vidite ovaj MIME to znači da vaš klijent ne prihvata MIME "
+"tipove!"
 
-# @ contact_form
 #: contact_form.php:846
 msgid "FAQ"
 msgstr "FAQ"
 
-# @ contact_form
 #: contact_form.php:847
 msgid "Support"
-msgstr "Wsparcie"
+msgstr "Podrška"
+
+#~ msgid "E-Mail Addresse:"
+#~ msgstr "E-mail adresa:"
+
+#~ msgid "Install Now"
+#~ msgstr "Instaliraj Sada"
+
+#~ msgid "BWS Plugins"
+#~ msgstr "BWS Dodaci"

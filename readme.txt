@@ -41,6 +41,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 * Polish (pl_PL) (thanks to Jarek Spirydowicz)
 * Romanian (ro_RO) (thanks to George Bejan and Cosmin Berescu)
 * Russian (ru_RU)
+* Serbian (sr_RS) (thanks to Georgijevic Team, www.georgijevic.info)
 * Spanish (es_ES) (thanks to Jesús Parra)
 * Swedish (sv_SV) (thanks to Martin Tonek)
 * Turkish (tr_TR) (thanks to <a herf="mailto:d-bulent@hotmail.com ">Devrim Bulent Ibis</a>, www.devrimhoca.com)
@@ -101,6 +102,10 @@ Here is an example for German language files.
 5. Widget settings for using shortcode in the sidebar.
 
 == Changelog ==
+
+= V3.25 - 22.11.2012 =
+* NEW : Added phone number as additiional form field.
+* NEW : Serbian language file is added to the plugin.
 
 = V3.24 - 12.08.2012 =
 * NEW : Czech and Romanian language files are added to the plugin.
@@ -230,6 +235,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.25 =
+Added phone number as additiional form field. Serbian language file is added to the plugin.
 
 = V3.24 =
 Czech and Romanian language files are added to the plugin.

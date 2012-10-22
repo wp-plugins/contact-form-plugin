@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.24
+Version: 3.25
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -126,6 +126,7 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 			'cntctfrm_attachment_explanations' => 1,
 			'cntctfrm_send_copy' => 0,
 			'cntctfrm_from_field' => get_bloginfo( 'name' ),
+			'cntctfrm_display_phone_field' => 0,
 			'cntctfrm_display_add_info' => 1,
 			'cntctfrm_display_sent_from' => 1,
 			'cntctfrm_display_date_time' => 1,
@@ -135,6 +136,7 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 			'cntctfrm_change_label' => 0,
 			'cntctfrm_name_label' => __( "Name:", 'contact_form' ),
 			'cntctfrm_email_label' => __( "E-Mail Address:", 'contact_form' ),
+			'cntctfrm_phone_label' => __( "Phone:", 'contact_form' ),
 			'cntctfrm_subject_label' => __( "Subject:", 'contact_form' ),
 			'cntctfrm_message_label' => __( "Message:", 'contact_form' ),
 			'cntctfrm_attachment_label' => __( "Attachment:", 'contact_form' ),
@@ -170,6 +172,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				$cntctfrm_options_submit['cntctfrm_attachment_explanations']					= 1;
 				$cntctfrm_options_submit['cntctfrm_send_copy']					= 0;
 				$cntctfrm_options_submit['cntctfrm_from_field']					= get_bloginfo( 'name' );
+				$cntctfrm_options_submit['cntctfrm_display_phone_field']	= 0;
 				$cntctfrm_options_submit['cntctfrm_display_add_info']		= 1;
 				$cntctfrm_options_submit['cntctfrm_display_sent_from']	= 1;
 				$cntctfrm_options_submit['cntctfrm_display_date_time']	= 1;
@@ -190,9 +193,11 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				$cntctfrm_options_submit['cntctfrm_attachment_explanations']				= isset( $_REQUEST['cntctfrm_attachment_explanations']) ? $_REQUEST['cntctfrm_attachment_explanations'] : 0;
 				$cntctfrm_options_submit['cntctfrm_send_copy']				= isset( $_REQUEST['cntctfrm_send_copy']) ? $_REQUEST['cntctfrm_send_copy'] : 0;
 				$cntctfrm_options_submit['cntctfrm_mail_method']			= $_REQUEST['cntctfrm_mail_method'];
-				$cntctfrm_options_submit['cntctfrm_from_field']				= $_REQUEST['cntctfrm_from_field'];
+				$cntctfrm_options_submit['cntctfrm_mail_method']			= $_REQUEST['cntctfrm_mail_method'];
 				$cntctfrm_options_submit['cntctfrm_display_add_info'] = isset( $_REQUEST['cntctfrm_display_add_info']) ? 1 : 0;
 				$cntctfrm_options_submit['cntctfrm_change_label']			= isset( $_REQUEST['cntctfrm_change_label']) ? 1 : 0;
+				$cntctfrm_options_submit['cntctfrm_display_phone_field']			= isset( $_REQUEST['cntctfrm_display_phone_field']) ? 1 : 0;
+				
 				if( $cntctfrm_options_submit['cntctfrm_display_add_info'] == 1 ) {
 					$cntctfrm_options_submit['cntctfrm_display_sent_from']		= isset( $_REQUEST['cntctfrm_display_sent_from']) ? 1 : 0;
 					$cntctfrm_options_submit['cntctfrm_display_date_time']		= isset( $_REQUEST['cntctfrm_display_date_time']) ? 1 : 0;
@@ -208,6 +213,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				if( $cntctfrm_options_submit['cntctfrm_change_label'] == 1 ) {
 					$cntctfrm_options_submit['cntctfrm_name_label']				= isset( $_REQUEST['cntctfrm_name_label']) ? $_REQUEST['cntctfrm_name_label'] : $cntctfrm_options_submit['cntctfrm_name_label'];
 					$cntctfrm_options_submit['cntctfrm_email_label']			= isset( $_REQUEST['cntctfrm_email_label']) ? $_REQUEST['cntctfrm_email_label'] : $cntctfrm_options_submit['cntctfrm_email_label'];
+					$cntctfrm_options_submit['cntctfrm_phone_label']			= isset( $_REQUEST['cntctfrm_phone_label']) ? $_REQUEST['cntctfrm_phone_label'] : $cntctfrm_options_submit['cntctfrm_phone_label'];
 					$cntctfrm_options_submit['cntctfrm_subject_label']		= isset( $_REQUEST['cntctfrm_subject_label']) ? $_REQUEST['cntctfrm_subject_label'] : $cntctfrm_options_submit['cntctfrm_subject_label'];
 					$cntctfrm_options_submit['cntctfrm_message_label']		= isset( $_REQUEST['cntctfrm_message_label']) ? $_REQUEST['cntctfrm_message_label'] : $cntctfrm_options_submit['cntctfrm_message_label'];
 					$cntctfrm_options_submit['cntctfrm_attachment_label'] = isset( $_REQUEST['cntctfrm_attachment_label']) ? $_REQUEST['cntctfrm_attachment_label'] : $cntctfrm_options_submit['cntctfrm_attachment_label'];
@@ -215,6 +221,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				else {
 					$cntctfrm_options_submit['cntctfrm_name_label']				= __( "Name:", 'contact_form' );
 					$cntctfrm_options_submit['cntctfrm_email_label']			= __( "E-Mail Address:", 'contact_form' );
+					$cntctfrm_options_submit['cntctfrm_phone_label']			= __( "Phone:", 'contact_form' );
 					$cntctfrm_options_submit['cntctfrm_subject_label']		= __( "Subject:", 'contact_form' );
 					$cntctfrm_options_submit['cntctfrm_message_label']		= __( "Message:", 'contact_form' );
 					$cntctfrm_options_submit['cntctfrm_attachment_label'] = __( "Attachment:", 'contact_form' );
@@ -302,7 +309,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 						<input type="checkbox" id="cntctfrm_attachment" name="cntctfrm_attachment" value="1" <?php if($cntctfrm_options['cntctfrm_attachment'] == '1') echo "checked=\"checked\" "; ?>/>
 					</td>
 					<td>
-						<span  class="cntctfrm_info"><?php echo __( "Users can attach files of the following types", 'contact_form' ) . ": html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, zip, rar, wav, mp3, ppt"; ?></span>
+						<span  class="cntctfrm_info"><?php echo __( "Users can attach files of the following types", 'contact_form' ) . ": html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, xls, zip, rar, wav, mp3, ppt"; ?></span>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
@@ -346,6 +353,12 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
+					<th scope="row" style="width:195px;"><?php _e( "Display phone field", 'contact_form' ); ?></th>
+					<td>
+						<input type="checkbox" id="cntctfrm_display_phone_field" name="cntctfrm_display_phone_field" value="1" <?php if($cntctfrm_options['cntctfrm_display_phone_field'] == '1') echo "checked=\"checked\" "; ?>/>
+					</td>
+				</tr>
+				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
 					<th scope="row" style="width:195px;"><?php _e( "Display additional info in email", 'contact_form' ); ?></th>
 					<td>
 						<input type="checkbox" id="cntctfrm_display_add_info" name="cntctfrm_display_add_info" value="1" <?php if($cntctfrm_options['cntctfrm_display_add_info'] == '1') echo "checked=\"checked\" "; ?>/>
@@ -365,6 +378,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					<td class="cntctfrm_change_label_block <?php if($cntctfrm_options['cntctfrm_change_label'] == '0') echo "cntctfrm_hidden"; ?>">
 						<input type="text" name="cntctfrm_name_label" value="<?php echo $cntctfrm_options['cntctfrm_name_label']; ?>" /> <span class="cntctfrm_info"><?php _e( "Name:", 'contact_form' ); ?></span><br />
 						<input type="text" name="cntctfrm_email_label" value="<?php echo $cntctfrm_options['cntctfrm_email_label']; ?>" /> <span class="cntctfrm_info"><?php _e( "E-Mail Address:", 'contact_form' ); ?></span><br />
+						<input type="text" name="cntctfrm_phone_label" value="<?php echo $cntctfrm_options['cntctfrm_phone_label']; ?>" /> <span class="cntctfrm_info"><?php _e( "Phone:", 'contact_form' ); ?></span><br />
 						<input type="text" name="cntctfrm_subject_label" value="<?php echo $cntctfrm_options['cntctfrm_subject_label']; ?>" /> <span class="cntctfrm_info"><?php _e( "Subject:", 'contact_form' ); ?></span><br />
 						<input type="text" name="cntctfrm_message_label" value="<?php echo $cntctfrm_options['cntctfrm_message_label']; ?>" /> <span class="cntctfrm_info"><?php _e( "Message:", 'contact_form' ); ?></span><br />
 						<input type="text" name="cntctfrm_attachment_label" value="<?php echo $cntctfrm_options['cntctfrm_attachment_label']; ?>" /> <span class="cntctfrm_info"><?php _e( "Attachment:", 'contact_form' ); ?></span><br />
@@ -393,7 +407,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 // Display contact form in front end - page or post
 if( ! function_exists( 'cntctfrm_display_form' ) ) {
 	function cntctfrm_display_form() {
-		global $error_message, $cntctfrm_options, $result;
+		global $error_message, $cntctfrm_options, $cntctfrm_result;
 		$cntctfrm_options = get_option( 'cntctfrm_options' );
 		$content = "";
 
@@ -405,21 +419,22 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 		$name = strip_tags( $name );
 		$subject = strip_tags( $subject );
 		$message = isset( $_REQUEST['cntctfrm_contact_message'] ) ? $_REQUEST['cntctfrm_contact_message'] : "";
+		$phone = isset( $_REQUEST['cntctfrm_contact_phone'] ) ? $_REQUEST['cntctfrm_contact_phone'] : "";
 		$send_copy = isset( $_REQUEST['cntctfrm_contact_send_copy'] ) ? $_REQUEST['cntctfrm_contact_send_copy'] : "";
 		// If it is good
-		if( true === $result ) {
+		if( true === $cntctfrm_result ) {
 			$_SESSION['cntctfrm_send_mail'] = true;
 			if( $cntctfrm_options['cntctfrm_action_after_send'] == 1 )
 				$content .= $cntctfrm_options['cntctfrm_thank_text'];
 			else
 				$content .= "<script type='text/javascript'>window.location.href = '".$cntctfrm_options['cntctfrm_redirect_url']."';</script>";
 		}
-		else if( false === $result )
+		else if( false === $cntctfrm_result )
 		{
 			// If email not be delivered
 			$error_message['error_form'] = __( "Sorry, your e-mail could not be delivered.", 'contact_form' );
 		}
-		if( true !== $result) { 
+		if( true !== $cntctfrm_result) { 
 			$_SESSION['cntctfrm_send_mail'] = false;
 			// Output form
 			$content .= '<form method="post" id="cntctfrm_contact_form" action="'.$page_url.'" enctype="multipart/form-data">';
@@ -441,12 +456,24 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 				</div>';
 			if( isset( $error_message['error_email'] ) ) {
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_email'].'</div>';
-				}
+			}
 			$content .= '<div style="text-align: left;">
 					<input class="text" type="text" size="40" value="'.$email.'" name="cntctfrm_contact_email" id="cntctfrm_contact_email" style="text-align: left; margin: 0;" />
 				</div>
-
-				<div style="text-align: left;">
+			';
+			if( $cntctfrm_options['cntctfrm_display_phone_field'] == 1 ) { 
+				$content .= '<div style="text-align: left;">
+						<label for="cntctfrm_contact_phone">'. $cntctfrm_options['cntctfrm_phone_label'] . '</label>
+					</div>';
+				if( isset( $error_message['error_phone'] ) ) {
+					$content .= '<div style="text-align: left; color: red;">'.$error_message['error_phone'].'</div>';
+				}
+				$content .= '<div style="text-align: left;">
+						<input class="text" type="text" size="40" value="'.$phone.'" name="cntctfrm_contact_phone" id="cntctfrm_contact_phone" style="text-align: left; margin: 0;" />
+					</div>
+					';
+			}
+			$content .= '<div style="text-align: left;">
 					<label for="cntctfrm_contact_subject">'. $cntctfrm_options['cntctfrm_subject_label'] . '<span class="required"> *</span></label>
 				</div>';
 			if( isset( $error_message['error_subject'] ) ) {
@@ -475,7 +502,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 				$content .= '<div style="text-align: left;">
 						<input type="file" name="cntctfrm_contact_attachment" id="cntctfrm_contact_attachment"'.(isset( $error_message['error_attachment'] ) ? "class='error'": "").' />';
 				if( $cntctfrm_options['cntctfrm_attachment_explanations'] == 1 ){
-						$content .= '<label style="font-size:10px;"><br />'. __( "You can attach files of the following types", 'contact_form' ) . ': html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, zip, rar, wav, mp3, ppt</label>';
+						$content .= '<label style="font-size:10px;"><br />'. __( "You can attach files of the following types", 'contact_form' ) . ': html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, xls, zip, rar, wav, mp3, ppt</label>';
 				}
 				$content .= '
 				</div>';
@@ -503,15 +530,15 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 
 if( ! function_exists( 'cntctfrm_check_and_send' ) ) {
 		function cntctfrm_check_and_send() {
-				global $result;
+				global $cntctfrm_result;
 				$cntctfrm_options = get_option( 'cntctfrm_options' );
 				if( isset( $_REQUEST['cntctfrm_contact_action'] ) )
 				{
 					// Check all input data
-					$result = cntctfrm_check_form();
+					$cntctfrm_result = cntctfrm_check_form();
 				}
 				// If it is good
-				if( true === $result ) {
+				if( true === $cntctfrm_result ) {
 					$_SESSION['cntctfrm_send_mail'] = true;
 					if( $cntctfrm_options['cntctfrm_action_after_send'] == 0 ){
 						wp_redirect( $cntctfrm_options['cntctfrm_redirect_url'] ); 
@@ -529,7 +556,7 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 		$path_of_uploaded_file = '';
 		if( empty( $cntctfrm_options ) )
 				$cntctfrm_options = get_option( 'cntctfrm_options' );
-		$result = "";
+		$cntctfrm_result = "";
 		// Error messages array
 		$error_message = array();
 		$error_message['error_name'] = __( "Your name is required.", 'contact_form' );
@@ -562,6 +589,7 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 				'pdf'=>'application/pdf',
 				'doc'=>'application/msword',
 				'docx'=>'application/mswor',
+				'xls'=>'application/vnd.ms-excel',
 				'zip'=>'application/zip',
 				'rar'=>'application/rar',
 				'wav'=>'audio/wav',
@@ -619,9 +647,9 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 		if( 1 == count( $error_message ) ) {
 			unset( $error_message['error_form'] );
 			// If all is good - send mail
-			$result = cntctfrm_send_mail();
+			$cntctfrm_result = cntctfrm_send_mail();
 		}
-		return $result;
+		return $cntctfrm_result;
 	}
 }
 
@@ -706,7 +734,12 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 					<tr>
 						<td>'. __( "Email", 'contact_form' ) .'</td><td>'.$_REQUEST['cntctfrm_contact_email'].'</td>
 					</tr>
-					<tr>
+					';
+			if( $cntctfrm_options['cntctfrm_display_phone_field'] == 1 )
+				$message .= '<tr>
+						<td>'. __( "Phone", 'contact_form' ) . '</td><td>'. strip_tags( $_REQUEST['cntctfrm_contact_phone'] ).'</td>
+					</tr>';
+			$message .= '<tr>
 						<td>'. __( "Subject", 'contact_form' ) . '</td><td>'. strip_tags( $subject ).'</td>
 					</tr>
 					<tr>
