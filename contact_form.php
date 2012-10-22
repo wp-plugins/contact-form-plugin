@@ -416,7 +416,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 			// If email not be delivered
 			$error_message['error_form'] = __( "Sorry, your e-mail could not be delivered.", 'contact_form' );
 		}
-		else { 
+		if( true !== $result) { 
 			$_SESSION['cntctfrm_send_mail'] = false;
 			// Output form
 			$content .= '<form method="post" id="cntctfrm_contact_form" action="'.$page_url.'" enctype="multipart/form-data">';
@@ -698,13 +698,13 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 			<body>
 				<table>
 					<tr>
-						<td width="160">'. __( "Name", 'contact_form' ) . '</td><td>'.$_REQUEST['cntctfrm_contact_name'].'</td>
+						<td width="160">'. __( "Name", 'contact_form' ) . '</td><td>'.strip_tags( $_REQUEST['cntctfrm_contact_name'] ).'</td>
 					</tr>
 					<tr>
 						<td>'. __( "Email", 'contact_form' ) .'</td><td>'.$_REQUEST['cntctfrm_contact_email'].'</td>
 					</tr>
 					<tr>
-						<td>'. __( "Subject", 'contact_form' ) . '</td><td>'.$_REQUEST['cntctfrm_contact_subject'].'</td>
+						<td>'. __( "Subject", 'contact_form' ) . '</td><td>'.strip_tags( $_REQUEST['cntctfrm_contact_subject'] ).'</td>
 					</tr>
 					<tr>
 						<td>'. __( "Message", 'contact_form' ) . '</td><td>'.$_REQUEST['cntctfrm_contact_message'].'</td>
@@ -732,10 +732,10 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 				}
 
 				if( isset( $_REQUEST['cntctfrm_contact_send_copy'] ) && $_REQUEST['cntctfrm_contact_send_copy'] == 1 )
-					wp_mail($_REQUEST['cntctfrm_contact_email'], stripslashes($subject), stripslashes($message), $headers, $attachments);
+					wp_mail($_REQUEST['cntctfrm_contact_email'], stripslashes( strip_tags( $subject ) ), stripslashes($message), $headers, $attachments);
 
 				// Mail it
-				return wp_mail($to, stripslashes($subject), stripslashes($message), $headers, $attachments);
+				return wp_mail($to, stripslashes( strip_tags( $subject ) ), stripslashes( $message ), $headers, $attachments);
 			}
 			else{
 				if( $cntctfrm_options['cntctfrm_attachment'] == 1 && isset($_FILES["cntctfrm_contact_attachment"]["tmp_name"]) && $_FILES["cntctfrm_contact_attachment"]["tmp_name"] != "") {
@@ -783,9 +783,9 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 					$headers .= 'From: '.$_REQUEST['cntctfrm_contact_email']. "\r\n";
 				}
 				if( isset( $_REQUEST['cntctfrm_contact_send_copy'] ) && $_REQUEST['cntctfrm_contact_send_copy'] == 1 )
-					@mail($_REQUEST['cntctfrm_contact_email'], stripslashes($subject), stripslashes($message), $headers);
+					@mail($_REQUEST['cntctfrm_contact_email'], stripslashes( strip_tags( $subject ) ), stripslashes( $message ), $headers);
 
-				return @mail($to, stripslashes($subject), stripslashes($message), $headers);
+				return @mail($to, stripslashes( strip_tags( $subject ) ), stripslashes( $message ), $headers);
 			}
 			
 		}
