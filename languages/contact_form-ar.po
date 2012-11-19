@@ -1,0 +1,364 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: contact_form\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-19 13:26+0200\n"
+"PO-Revision-Date: 2012-11-19 13:26+0200\n"
+"Last-Translator: BWS <zos@bestwebsoft.com>\n"
+"Language-Team: Hammad Alshammari (ABU HATIM) www.abuhatim.net <al3zz."
+"com@gmail.com>\n"
+"Language: ar_SA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: contact_form.php:76
+msgid "Activated plugins"
+msgstr "تفعيل الإضافات"
+
+#: contact_form.php:78 contact_form.php:86 contact_form.php:94
+msgid "Read more"
+msgstr "اقرأ المزيد"
+
+#: contact_form.php:78 contact_form.php:880 contact_form.php:889
+msgid "Settings"
+msgstr "إعدادات"
+
+#: contact_form.php:84
+msgid "Installed plugins"
+msgstr "تثبيت الإضافات"
+
+#: contact_form.php:92
+msgid "Recommended plugins"
+msgstr "اضافات موصى بها"
+
+#: contact_form.php:94
+msgid "Download"
+msgstr "تحميل"
+
+#: contact_form.php:94
+#, php-format
+msgid "Install %s"
+msgstr "تنصيب %s"
+
+#: contact_form.php:94
+msgid "Install now from wordpress.org"
+msgstr "تثبيت من wordpress.org"
+
+#: contact_form.php:96
+msgid ""
+"If you have any questions, please contact us via plugin@bestwebsoft.com or "
+"fill in our contact form on our site"
+msgstr ""
+"إذا كان لديك أي أسئلة، يرجى الاتصال بنا عبر plugin@bestwebsoft.com أو ملء "
+"استمارة الاتصال على موقعنا"
+
+#: contact_form.php:108 contact_form.php:285
+msgid "Contact Form Options"
+msgstr "خيارات نموذج اتصل بنا"
+
+#: contact_form.php:108
+msgid "Contact Form"
+msgstr "نموذج الاتصال"
+
+#: contact_form.php:142 contact_form.php:193 contact_form.php:237
+#: contact_form.php:412
+msgid "Name:"
+msgstr "الأسم:"
+
+#: contact_form.php:143 contact_form.php:194 contact_form.php:238
+#: contact_form.php:413
+msgid "E-Mail Address:"
+msgstr "البريد الالكتروني:"
+
+#: contact_form.php:144 contact_form.php:239 contact_form.php:414
+msgid "Phone:"
+msgstr ""
+
+#: contact_form.php:145 contact_form.php:195 contact_form.php:240
+#: contact_form.php:415
+msgid "Subject:"
+msgstr "موضوع الرسالة:"
+
+#: contact_form.php:146 contact_form.php:196 contact_form.php:241
+#: contact_form.php:416
+msgid "Message:"
+msgstr "الرسالة:"
+
+#: contact_form.php:147 contact_form.php:197 contact_form.php:242
+#: contact_form.php:417
+msgid "Attachment:"
+msgstr "المرفقات:"
+
+#: contact_form.php:149 contact_form.php:199
+msgid "Thank you for contacting us."
+msgstr "أشكركم على الاتصال بنا. سيتم الرد عليكم في أقرب فرصة."
+
+#: contact_form.php:252
+msgid ""
+"If the option 'Redirect to page' is selected then url field should be "
+"fillied in the following format"
+msgstr ""
+
+#: contact_form.php:259 contact_form.php:264 contact_form.php:273
+msgid "Options saved."
+msgstr "الخيارات حُفظت."
+
+#: contact_form.php:267
+msgid "Such user is not exist. Settings are not saved."
+msgstr "هذا المستخدم لا وجود له. لم يتم حفظ الإعدادات."
+
+#: contact_form.php:277
+msgid "Please input correct email. Settings are not saved."
+msgstr "الرجاء إدخال بريد الكتروني صحيح. الاعدادات لم تُحفظ."
+
+#: contact_form.php:290
+msgid ""
+"If you would like to add a Contact Form to your website, just copy and put "
+"this shortcode onto your post or page or widget:"
+msgstr ""
+"إذا كنت ترغب في إضافة نموذج الاتصال إلى موقع الويب الخاص بك، قم بنسخ ولصق "
+"هذا الرمز القصير:"
+
+#: contact_form.php:291
+msgid ""
+"If information in the below fields are empty then the message will be send "
+"to an address which was specified during registration."
+msgstr ""
+"إذا كانت المعلومات في الحقول أدناه فارغة سيتم إرسال الرسالة إلى عنوان الذي "
+"تم تحديده أثناء التسجيل."
+
+#: contact_form.php:295
+msgid "Use email of wordpress user:"
+msgstr "أستخدم بريد العضو في وورد بريس:"
+
+#: contact_form.php:301
+msgid "Select user name"
+msgstr "اختر اسم المستخدم"
+
+#: contact_form.php:306
+msgid "Set a name of user who will get messages from a contact form."
+msgstr "تعيين اسم المستخدم من الذين سيحصلون على رسائل من شكل من أشكال الاتصال."
+
+#: contact_form.php:310
+msgid "Use this email:"
+msgstr "استخدام هذا البريد الالكتروني:"
+
+#: contact_form.php:316
+msgid "Set an email address which will be used for messages receiving."
+msgstr "تعيين عنوان البريد الإلكتروني التي سيتم استخدامها لاستقبال الرسائل."
+
+#: contact_form.php:320
+msgid "Additional options"
+msgstr "خيارات إضافية"
+
+#: contact_form.php:323
+msgid "Display Attachment block"
+msgstr "عرض حقل المرفقات"
+
+#: contact_form.php:328
+msgid "Users can attach files of the following types"
+msgstr "يمكن للمستخدمين إرفاق الملفات من الأنواع التالية"
+
+#: contact_form.php:332
+#, fuzzy
+msgid "Display Attachment explanations"
+msgstr "عرض حقل المرفقات"
+
+#: contact_form.php:337
+#, fuzzy
+msgid "Display explanations after Attachment block"
+msgstr "عرض حقل المرفقات"
+
+#: contact_form.php:341
+msgid "Display Send me a copy block"
+msgstr "عرض خيار (أرسل لي نسخة)"
+
+#: contact_form.php:347
+msgid "What use?"
+msgstr "ماذا تستخدم؟"
+
+#: contact_form.php:352
+msgid "Wp-mail"
+msgstr "Wp-mail"
+
+#: contact_form.php:353
+msgid "To send mail you can use the wordpress wp_mail function"
+msgstr "لإرسال البريد يمكنك استخدام وظيفة wp_mail"
+
+#: contact_form.php:361
+msgid "Mail"
+msgstr "Mail"
+
+#: contact_form.php:362
+msgid "To send mail you can use the php mail function"
+msgstr "لإرسال البريد يمكنك استخدام وظيفة البريد PHP"
+
+#: contact_form.php:366
+msgid "Change FROM fields of the contact form"
+msgstr "تغيير من الحقول من نموذج الاتصال"
+
+#: contact_form.php:372
+msgid "Display phone field"
+msgstr ""
+
+#: contact_form.php:378
+msgid "Required field"
+msgstr ""
+
+#: contact_form.php:387 contact_form.php:774
+msgid "Name"
+msgstr "الأسم"
+
+#: contact_form.php:388
+#, fuzzy
+msgid "E-Mail Address"
+msgstr "البريد الالكتروني:"
+
+#: contact_form.php:389 contact_form.php:782
+msgid "Phone"
+msgstr ""
+
+#: contact_form.php:390 contact_form.php:785
+msgid "Subject"
+msgstr "موضوع الرسالة"
+
+#: contact_form.php:391 contact_form.php:788
+msgid "Message"
+msgstr "الرسالة"
+
+#: contact_form.php:395
+msgid "Display additional info in email"
+msgstr "عرض معلومات اضافية في البريد الالكتروني"
+
+#: contact_form.php:400 contact_form.php:746
+msgid "Sent from (ip address)"
+msgstr "ارسلت من (عنوان IP)"
+
+#: contact_form.php:401 contact_form.php:751
+msgid "Date/Time"
+msgstr "الوقت/التاريخ"
+
+#: contact_form.php:402 contact_form.php:756
+msgid "Coming from (referer)"
+msgstr "Coming from (referer)"
+
+#: contact_form.php:403 contact_form.php:761
+msgid "Using (user agent)"
+msgstr "باستخدام (وكيل المستخدم)"
+
+#: contact_form.php:407
+msgid "Change label for fields of the contact form"
+msgstr "تغيير تسمية حقول نموذج الاتصال"
+
+#: contact_form.php:421
+msgid "Action after the send mail"
+msgstr ""
+
+#: contact_form.php:423
+#, fuzzy
+msgid "Display text"
+msgstr "عرض حقل المرفقات"
+
+#: contact_form.php:424
+msgid "Text"
+msgstr ""
+
+#: contact_form.php:425
+msgid "Redirect to page"
+msgstr ""
+
+#: contact_form.php:426
+msgid "Url"
+msgstr ""
+
+#: contact_form.php:431
+msgid "Save Changes"
+msgstr "حفظ التغييرات"
+
+#: contact_form.php:469
+msgid "Sorry, your e-mail could not be delivered."
+msgstr "عذراً, لم نستطيع تسليم رسالتك."
+
+#: contact_form.php:539
+msgid "You can attach files of the following types"
+msgstr "يمكنك إرفاق الملفات من الأنواع التالية"
+
+#: contact_form.php:547
+msgid "Send me a copy"
+msgstr "أرسل لي نسخة"
+
+#: contact_form.php:557
+msgid "Submit"
+msgstr "تقدم"
+
+#: contact_form.php:597
+msgid "Your name is required."
+msgstr "مطلوب اسمك."
+
+#: contact_form.php:599
+msgid "A proper e-mail address is required."
+msgstr "مطلوب بريد الكتروني صحيح."
+
+#: contact_form.php:601
+msgid "Subject text is required."
+msgstr "مطلوب نص الموضوع."
+
+#: contact_form.php:603
+msgid "Message text is required."
+msgstr "مطلوب نص الرسالة."
+
+#: contact_form.php:605
+#, fuzzy
+msgid "Phone is required field."
+msgstr "مطلوب اسمك."
+
+#: contact_form.php:606
+msgid "Please make corrections below and try again."
+msgstr "يرجى إجراء التصحيحات أدناه وحاول مرة أخرى."
+
+#: contact_form.php:638
+msgid "Attachment is broken."
+msgstr "المرفق تعطل."
+
+#: contact_form.php:653
+msgid "Please complete the CAPTCHA."
+msgstr "يرجى استكمال رمز التحقق."
+
+#: contact_form.php:769
+msgid "Contact from"
+msgstr "اتصل من"
+
+#: contact_form.php:777
+msgid "Email"
+msgstr "البريد الألكتروني"
+
+#: contact_form.php:791
+msgid "Site"
+msgstr "الموقع"
+
+#: contact_form.php:836
+msgid "If you can see this MIME than your client doesn't accept MIME types!"
+msgstr "إذا يمكنك أن ترى هذه MIME من العميل الخاص بك لا يقبل أنواع MIME!"
+
+#: contact_form.php:890
+msgid "FAQ"
+msgstr "أسئلة وأجوبة"
+
+#: contact_form.php:891
+msgid "Support"
+msgstr "دعم"
+
+#~ msgid "E-Mail Addresse:"
+#~ msgstr "Indirizzo e-mail:"
+
+#~ msgid "Install Now"
+#~ msgstr "Installa Ora"
+
+#~ msgid "BWS Plugins"
+#~ msgstr "BWS Plugins"

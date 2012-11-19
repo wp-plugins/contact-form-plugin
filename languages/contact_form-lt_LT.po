@@ -1,0 +1,364 @@
+# Donatas G. <dgvirtual@akl.lt>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: contact_form\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-19 13:28+0200\n"
+"PO-Revision-Date: 2012-11-19 13:28+0200\n"
+"Last-Translator: zos <zos@bestwebsoft.com>\n"
+"Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: contact_form.php:76
+msgid "Activated plugins"
+msgstr "Aktyvuoti įskiepiai"
+
+#: contact_form.php:78 contact_form.php:86 contact_form.php:94
+msgid "Read more"
+msgstr "Skaityti daugiau"
+
+#: contact_form.php:78 contact_form.php:880 contact_form.php:889
+msgid "Settings"
+msgstr "Nustatymai"
+
+#: contact_form.php:84
+msgid "Installed plugins"
+msgstr "Įdiegti įskiepiai"
+
+#: contact_form.php:92
+msgid "Recommended plugins"
+msgstr "Rekomenduojami įskiepiai"
+
+#: contact_form.php:94
+msgid "Download"
+msgstr "Atsisiųsti"
+
+#: contact_form.php:94
+#, php-format
+msgid "Install %s"
+msgstr "Įdiegti %s"
+
+#: contact_form.php:94
+msgid "Install now from wordpress.org"
+msgstr "Įdiegti dabar iš wordpress.org"
+
+#: contact_form.php:96
+msgid ""
+"If you have any questions, please contact us via plugin@bestwebsoft.com or "
+"fill in our contact form on our site"
+msgstr ""
+"Jei turite klausimų, prašome susisiekti su mumis per plugin@bestwebsoft.com "
+"arba užpildykite mūsų kontaktų formą mūsų svetainėje"
+
+#: contact_form.php:108 contact_form.php:285
+msgid "Contact Form Options"
+msgstr "Kontaktų formos parinktys"
+
+#: contact_form.php:108
+msgid "Contact Form"
+msgstr "Kontaktų forma"
+
+#: contact_form.php:142 contact_form.php:193 contact_form.php:237
+#: contact_form.php:412
+msgid "Name:"
+msgstr "Vardas:"
+
+#: contact_form.php:143 contact_form.php:194 contact_form.php:238
+#: contact_form.php:413
+msgid "E-Mail Address:"
+msgstr "El. pašto adresas:"
+
+#: contact_form.php:144 contact_form.php:239 contact_form.php:414
+msgid "Phone:"
+msgstr ""
+
+#: contact_form.php:145 contact_form.php:195 contact_form.php:240
+#: contact_form.php:415
+msgid "Subject:"
+msgstr "Tema:"
+
+#: contact_form.php:146 contact_form.php:196 contact_form.php:241
+#: contact_form.php:416
+msgid "Message:"
+msgstr "Pranešimas:"
+
+#: contact_form.php:147 contact_form.php:197 contact_form.php:242
+#: contact_form.php:417
+msgid "Attachment:"
+msgstr "Priedas:"
+
+#: contact_form.php:149 contact_form.php:199
+msgid "Thank you for contacting us."
+msgstr "Dėkojame, kad su mumis susisiekėte."
+
+#: contact_form.php:252
+msgid ""
+"If the option 'Redirect to page' is selected then url field should be "
+"fillied in the following format"
+msgstr ""
+
+#: contact_form.php:259 contact_form.php:264 contact_form.php:273
+msgid "Options saved."
+msgstr "Parinktys išsaugotos."
+
+#: contact_form.php:267
+msgid "Such user is not exist. Settings are not saved."
+msgstr "Toks vartotojas neegzistuoja. Nustatymai neišsaugoti."
+
+#: contact_form.php:277
+msgid "Please input correct email. Settings are not saved."
+msgstr "Prašome įrašyti teisingą el. pašto adresą. Nustatymai neįrašyti."
+
+#: contact_form.php:290
+msgid ""
+"If you would like to add a Contact Form to your website, just copy and put "
+"this shortcode onto your post or page or widget:"
+msgstr ""
+"Jei norite pridėti kontaktų formą prie savo svetainės, tiesiog nukopijuokite "
+"šį trumpą kodą į savo puslapį ar elementą:"
+
+#: contact_form.php:291
+msgid ""
+"If information in the below fields are empty then the message will be send "
+"to an address which was specified during registration."
+msgstr ""
+"Jei informacijos žemiau esančiuose laukuose nėra, pranešimas bus išsiųstas "
+"adresu, kuris buvo nurodytas prisiregistravimo metu."
+
+#: contact_form.php:295
+msgid "Use email of wordpress user:"
+msgstr "Naudoti wordpress vartotojo el. pašto adresą:"
+
+#: contact_form.php:301
+msgid "Select user name"
+msgstr "Pasirinkite vartotojo vardą"
+
+#: contact_form.php:306
+msgid "Set a name of user who will get messages from a contact form."
+msgstr "Nurodykite vardą vartotojo, kuris gaus pranešimus iš Kontaktų formos."
+
+#: contact_form.php:310
+msgid "Use this email:"
+msgstr "Naudoti šį el. pašto adresą:"
+
+#: contact_form.php:316
+msgid "Set an email address which will be used for messages receiving."
+msgstr "Nustatykite el. pašto adresą, kuris bus naudojamas pranešimams gauti."
+
+#: contact_form.php:320
+msgid "Additional options"
+msgstr "Papildomos parinktys"
+
+#: contact_form.php:323
+msgid "Display Attachment block"
+msgstr "Rodyti priedų įrašą"
+
+#: contact_form.php:328
+msgid "Users can attach files of the following types"
+msgstr "Vartotojai gali prikabinti šių tipų failus"
+
+#: contact_form.php:332
+msgid "Display Attachment explanations"
+msgstr ""
+
+#: contact_form.php:337
+msgid "Display explanations after Attachment block"
+msgstr ""
+
+#: contact_form.php:341
+msgid "Display Send me a copy block"
+msgstr "Rodyti „Siųsti kopiją man“ įrašą"
+
+#: contact_form.php:347
+msgid "What use?"
+msgstr ""
+
+#: contact_form.php:352
+msgid "Wp-mail"
+msgstr "Wp-mail"
+
+#: contact_form.php:353
+msgid "To send mail you can use the wordpress wp_mail function"
+msgstr ""
+
+#: contact_form.php:361
+msgid "Mail"
+msgstr "Mail"
+
+#: contact_form.php:362
+msgid "To send mail you can use the php mail function"
+msgstr ""
+
+#: contact_form.php:366
+msgid "Change FROM fields of the contact form"
+msgstr "Pakeiskite IŠ srityse kontaktų formos"
+
+#: contact_form.php:372
+msgid "Display phone field"
+msgstr ""
+
+#: contact_form.php:378
+msgid "Required field"
+msgstr ""
+
+#: contact_form.php:387 contact_form.php:774
+msgid "Name"
+msgstr "Vardas"
+
+#: contact_form.php:388
+#, fuzzy
+msgid "E-Mail Address"
+msgstr "El. pašto adresas:"
+
+#: contact_form.php:389 contact_form.php:782
+msgid "Phone"
+msgstr ""
+
+#: contact_form.php:390 contact_form.php:785
+msgid "Subject"
+msgstr "Tema"
+
+#: contact_form.php:391 contact_form.php:788
+msgid "Message"
+msgstr "Tekstas"
+
+#: contact_form.php:395
+msgid "Display additional info in email"
+msgstr ""
+
+#: contact_form.php:400 contact_form.php:746
+msgid "Sent from (ip address)"
+msgstr "Siųsta iš (ip adresas)"
+
+#: contact_form.php:401 contact_form.php:751
+msgid "Date/Time"
+msgstr "Data/laikas"
+
+#: contact_form.php:402 contact_form.php:756
+msgid "Coming from (referer)"
+msgstr "Ateita iš (nukreipiklis)"
+
+#: contact_form.php:403 contact_form.php:761
+msgid "Using (user agent)"
+msgstr "Naudoja (naršyklės įrašas)"
+
+#: contact_form.php:407
+msgid "Change label for fields of the contact form"
+msgstr "Pakeiskite antraštes kontaktų formos etiketėms"
+
+#: contact_form.php:421
+msgid "Action after the send mail"
+msgstr ""
+
+#: contact_form.php:423
+#, fuzzy
+msgid "Display text"
+msgstr "Rodyti priedų įrašą"
+
+#: contact_form.php:424
+msgid "Text"
+msgstr ""
+
+#: contact_form.php:425
+msgid "Redirect to page"
+msgstr ""
+
+#: contact_form.php:426
+msgid "Url"
+msgstr ""
+
+#: contact_form.php:431
+msgid "Save Changes"
+msgstr "Įrašyti pakeitimus"
+
+#: contact_form.php:469
+msgid "Sorry, your e-mail could not be delivered."
+msgstr "Deja, jūsų el. laiško nepavyko pristatyti."
+
+#: contact_form.php:539
+msgid "You can attach files of the following types"
+msgstr "Galite prikabinti šių tipų failus"
+
+#: contact_form.php:547
+msgid "Send me a copy"
+msgstr "Siųsti kopiją man"
+
+#: contact_form.php:557
+msgid "Submit"
+msgstr "Siųsti"
+
+#: contact_form.php:597
+msgid "Your name is required."
+msgstr "Būtina įrašyti vardą."
+
+#: contact_form.php:599
+msgid "A proper e-mail address is required."
+msgstr "Būtina įrašyti teisingą el. pašto adresą."
+
+#: contact_form.php:601
+msgid "Subject text is required."
+msgstr "Būtina įrašyti temą."
+
+#: contact_form.php:603
+msgid "Message text is required."
+msgstr "Būtina įrašyti laiško turinį."
+
+#: contact_form.php:605
+#, fuzzy
+msgid "Phone is required field."
+msgstr "Būtina įrašyti vardą."
+
+#: contact_form.php:606
+msgid "Please make corrections below and try again."
+msgstr "Prašome pataisyti laišką ir bandyti iš naujo."
+
+#: contact_form.php:638
+msgid "Attachment is broken."
+msgstr "Pridedamas failas sugadintas."
+
+#: contact_form.php:653
+msgid "Please complete the CAPTCHA."
+msgstr "Prašome užpildyti CAPTCHA."
+
+#: contact_form.php:769
+msgid "Contact from"
+msgstr "Kontaktų forma"
+
+#: contact_form.php:777
+msgid "Email"
+msgstr "El. paštas"
+
+#: contact_form.php:791
+msgid "Site"
+msgstr "Svetainė"
+
+#: contact_form.php:836
+msgid "If you can see this MIME than your client doesn't accept MIME types!"
+msgstr "Jei galite matyti šį MIME tipą, jūsų klientas nepriima MIME tipų!"
+
+#: contact_form.php:890
+msgid "FAQ"
+msgstr "DUK"
+
+#: contact_form.php:891
+msgid "Support"
+msgstr "Palaikymas"
+
+#~ msgid "E-Mail Addresse:"
+#~ msgstr "E-mail адрес:"
+
+#~ msgid "Install Now"
+#~ msgstr "Инсталирайте сега"
+
+#~ msgid "BWS Plugins"
+#~ msgstr "Разширение BWS"
