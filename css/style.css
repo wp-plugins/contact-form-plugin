@@ -6,6 +6,13 @@
 #cntctfrm_contact_subject {
 	width:320px;
 }
+#cntctfrm_required_name_field, 
+#cntctfrm_required_email_field, 
+#cntctfrm_required_phone_field, 
+#cntctfrm_required_subject_field, 
+#cntctfrm_required_message_field {
+    margin: 3px 0 4px;
+}
 #adminmenu #toplevel_page_bws_plugins div.wp-menu-image
 {
 	background: url("../images/icon_16.png") no-repeat scroll center center transparent;

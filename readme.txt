@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.4.2
-Stable tag: 3.25
+Stable tag: 3.26
 
 Add Contact Form to your WordPress website.
 
@@ -30,6 +30,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 * Czech (cs_CZ) (thanks to Petr Zápotocký)
 * Danish (da_DK) (thanks to Mads Hannibal)
 * Dutch (nl_NL) (thanks  to <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>, Jan Boeijink )
+* Persian (fa_IR) (thanks to <a href="me@alirezaJamali.net">Alireza Jamali</a>, alirezajamali.net)
 * French (fr_FR) (thanks to Alain Thomas and Vincent Cibelli)
 * German (de_DE) (thanks to Hartung Thomas)
 * Greek (el_GR) (thanks to Pantelis Panteloglou)
@@ -103,7 +104,12 @@ Here is an example for German language files.
 
 == Changelog ==
 
-= V3.25 - 22.11.2012 =
+= V3.26 - 19.11.2012 =
+* NEW : The setting of the required fields was added.
+* NEW : Persian language file is added to the plugin.
+* Update : The email address validation was changed.
+
+= V3.25 - 22.10.2012 =
 * NEW : Added phone number as additiional form field.
 * NEW : Serbian language file is added to the plugin.
 
@@ -235,6 +241,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.26 =
+The setting of the required fields was added. Persian language file is added to the plugin. The email address validation was changed.
 
 = V3.25 =
 Added phone number as additiional form field. Serbian language file is added to the plugin.

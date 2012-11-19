@@ -4,208 +4,205 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-11-19 13:26+0200\n"
 "PO-Revision-Date: 2012-11-19 13:26+0200\n"
-"Last-Translator: zos <zos@bestwebsoft.com>\n"
-"Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
-"Language: bg_BG\n"
+"Last-Translator: MAM <shahrpajuh@gmail.com>\n"
+"Language-Team: AlirezaJamali <me@alirezaJamali.net>\n"
+"Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: contact_form.php:76
 msgid "Activated plugins"
-msgstr "Активиране на приложението"
+msgstr "افزونه های فعال"
 
 #: contact_form.php:78 contact_form.php:86 contact_form.php:94
 msgid "Read more"
-msgstr "Прочетете повече"
+msgstr "متن کامل"
 
 #: contact_form.php:78 contact_form.php:880 contact_form.php:889
 msgid "Settings"
-msgstr "Настройки"
+msgstr "تنظیمات"
 
 #: contact_form.php:84
 msgid "Installed plugins"
-msgstr "Инсталиране на приложението"
+msgstr "افزونه های نصب شده"
 
 #: contact_form.php:92
 msgid "Recommended plugins"
-msgstr "Препоръчани приложения"
+msgstr "افزونه های پیشنهادی"
 
 #: contact_form.php:94
 msgid "Download"
-msgstr "Изтегляне"
+msgstr "دانلود"
 
 #: contact_form.php:94
 #, php-format
 msgid "Install %s"
-msgstr "Инсталиране %s"
+msgstr "نصب  %s"
 
 #: contact_form.php:94
 msgid "Install now from wordpress.org"
-msgstr "Инсталирай сега от  wordpress.org"
+msgstr "هم اکنون نصب کنید  wordpress.org"
 
 #: contact_form.php:96
 msgid ""
 "If you have any questions, please contact us via plugin@bestwebsoft.com or "
 "fill in our contact form on our site"
 msgstr ""
-"Ако имате някакви въпроси, моля свържете с нас чрез plugin@bestwebsoft.com "
-"или попълнете нашата форма за контакти на нашия сайт"
+"چنانچه سئوالی دارید لطفا از طریق رایانامه plugin@bestwebsoft.com یا فرم "
+"ارتباطی سایت با با تماس بگیرید."
 
 #: contact_form.php:108 contact_form.php:285
 msgid "Contact Form Options"
-msgstr "Настройки на Формата за контакт"
+msgstr "گزینه های فرم ارتباط با مدیریت"
 
 #: contact_form.php:108
 msgid "Contact Form"
-msgstr "Форма за контакт"
+msgstr "فرم ارتباط با مدیریت"
 
 #: contact_form.php:142 contact_form.php:193 contact_form.php:237
 #: contact_form.php:412
 msgid "Name:"
-msgstr "Име:"
+msgstr "نام "
 
 #: contact_form.php:143 contact_form.php:194 contact_form.php:238
 #: contact_form.php:413
 msgid "E-Mail Address:"
-msgstr "E-mail адрес:"
+msgstr "رایانامه "
 
 #: contact_form.php:144 contact_form.php:239 contact_form.php:414
 msgid "Phone:"
-msgstr ""
+msgstr "شماره تماس "
 
 #: contact_form.php:145 contact_form.php:195 contact_form.php:240
 #: contact_form.php:415
 msgid "Subject:"
-msgstr "Тема:"
+msgstr "موضوع "
 
 #: contact_form.php:146 contact_form.php:196 contact_form.php:241
 #: contact_form.php:416
 msgid "Message:"
-msgstr "Съобщение:"
+msgstr "متن پیام "
 
 #: contact_form.php:147 contact_form.php:197 contact_form.php:242
 #: contact_form.php:417
 msgid "Attachment:"
-msgstr "Прикачване на файл:"
+msgstr "پیوست "
 
 #: contact_form.php:149 contact_form.php:199
 msgid "Thank you for contacting us."
-msgstr "Благодарим Ви, че се свързахте с нас."
+msgstr "قدردان همیاری شما هستیم."
 
 #: contact_form.php:252
 msgid ""
 "If the option 'Redirect to page' is selected then url field should be "
 "fillied in the following format"
 msgstr ""
+"اگر گزینه \"انتقال به\" انتخاب شود بایستی فیلد مربوط به تارنما را تکمیل کنید"
 
 #: contact_form.php:259 contact_form.php:264 contact_form.php:273
 msgid "Options saved."
-msgstr "Опциите са запазени"
+msgstr "تغییرات ثبت شد."
 
 #: contact_form.php:267
 msgid "Such user is not exist. Settings are not saved."
-msgstr "Не са намерени данни за потребителя. Настройките не са запазени"
+msgstr "این کاربر وجود ندارد، تغییرات ثبت نشد."
 
 #: contact_form.php:277
 msgid "Please input correct email. Settings are not saved."
-msgstr "Моля, въведете коректен Email. Настройките не са запазени."
+msgstr "لطفا از صحت رایانامه اطمینان حاصل فرمایید، تغییرات ثبت نشد."
 
 #: contact_form.php:290
 msgid ""
 "If you would like to add a Contact Form to your website, just copy and put "
 "this shortcode onto your post or page or widget:"
 msgstr ""
-"Ако искате да добавите формата за контакт на своят сайт копирайте и "
-"поставете този код в страницата или публикацията или джаджа:"
+"اگر مایل به استفاده از فرم ارتباط با مدیریت می باشید، کد را در صفحه یا نوشته "
+"دلخواه قرار دهید : "
 
 #: contact_form.php:291
 msgid ""
 "If information in the below fields are empty then the message will be send "
 "to an address which was specified during registration."
 msgstr ""
-"Ако посочените по-долу полета не са попълнени, съобщението ще бъде изпратено "
-"на Email адрес, който е определен по време на регистрацията"
+"اگر اطلاعات درخواستی زیر تکمیل نشود پیام به آدرس ثبت نام ارسال خواهد شد."
 
 #: contact_form.php:295
 msgid "Use email of wordpress user:"
-msgstr "Използвайте Email на Wordpress потребител:"
+msgstr "از رایانامه کاربران استفاده کن : "
 
 #: contact_form.php:301
 msgid "Select user name"
-msgstr "Избиране на потребител"
+msgstr "انتخاب شناسه کاربری"
 
 #: contact_form.php:306
 msgid "Set a name of user who will get messages from a contact form."
-msgstr ""
-"Задайте името на потребителя, който ще получава съобщенията от формата за "
-"контакт."
+msgstr "نام کاربری را که پیام را دریافت می کند مشخص کنید. "
 
 #: contact_form.php:310
 msgid "Use this email:"
-msgstr "Използвайте този Email:"
+msgstr "استفاده از این رایانامه : "
 
 #: contact_form.php:316
 msgid "Set an email address which will be used for messages receiving."
-msgstr ""
-"Задаване на Email адрес, който ще се използва за получаване на съобщения."
+msgstr "رایانامه ای را برای دریافت پیام مشخص کنید."
 
 #: contact_form.php:320
 msgid "Additional options"
-msgstr "Допълнителни настройки"
+msgstr "گزینه های بیشتر"
 
 #: contact_form.php:323
 msgid "Display Attachment block"
-msgstr "Покажи опция за прикачване на файл"
+msgstr "نمایش گزینه پیوست"
 
 #: contact_form.php:328
 msgid "Users can attach files of the following types"
-msgstr "Потребителите могат да прикачват файлове от следните видове"
+msgstr "کاربران قادر به ارسال این نوع فایلها می باشند"
 
 #: contact_form.php:332
 msgid "Display Attachment explanations"
-msgstr ""
+msgstr "نمایش توضیحات پیوست"
 
 #: contact_form.php:337
 msgid "Display explanations after Attachment block"
-msgstr ""
+msgstr "نمایش توضیحات بعد از پیوست"
 
 #: contact_form.php:341
 msgid "Display Send me a copy block"
-msgstr "Показване на опция за изпращане на копие"
+msgstr "نمایش گزینه \"ارسال یک نسخه برای من\""
 
 #: contact_form.php:347
 msgid "What use?"
-msgstr ""
+msgstr "چه استفاده ای؟"
 
 #: contact_form.php:352
 msgid "Wp-mail"
-msgstr "Wp-mail"
+msgstr "افزونه ارسال رایانامه Wp-mail"
 
 #: contact_form.php:353
 msgid "To send mail you can use the wordpress wp_mail function"
-msgstr ""
+msgstr "جهت ارسال رایانامه افزونه Wp-mail نصب کنید"
 
 #: contact_form.php:361
 msgid "Mail"
-msgstr "Mail"
+msgstr "رایانامه"
 
 #: contact_form.php:362
 msgid "To send mail you can use the php mail function"
-msgstr ""
+msgstr "برای ارسال رایانامه می توانید از امکانات PHP استفاده کنید"
 
 #: contact_form.php:366
 msgid "Change FROM fields of the contact form"
-msgstr "Промяна от полета на формата за контакт"
+msgstr "از طریق موارد فرم ارتباط با مدیریت تغییر دهید"
 
 #: contact_form.php:372
 msgid "Display phone field"
-msgstr ""
+msgstr "نمایش فیلد شماره تماس"
 
 #: contact_form.php:378
 msgid "Required field"
@@ -213,154 +210,151 @@ msgstr ""
 
 #: contact_form.php:387 contact_form.php:774
 msgid "Name"
-msgstr "Име"
+msgstr "نام "
 
 #: contact_form.php:388
 #, fuzzy
 msgid "E-Mail Address"
-msgstr "E-mail адрес:"
+msgstr "رایانامه "
 
 #: contact_form.php:389 contact_form.php:782
 msgid "Phone"
-msgstr ""
+msgstr "شماره تماس"
 
 #: contact_form.php:390 contact_form.php:785
 msgid "Subject"
-msgstr "Относно"
+msgstr "موضوع "
 
 #: contact_form.php:391 contact_form.php:788
 msgid "Message"
-msgstr "Съобщение"
+msgstr "متن پیام "
 
 #: contact_form.php:395
 msgid "Display additional info in email"
-msgstr ""
+msgstr "اطلاعات بیشتر را در رایانامه نمایش بده"
 
 #: contact_form.php:400 contact_form.php:746
 msgid "Sent from (ip address)"
-msgstr "Изпратено от (ip адрес)"
+msgstr "ارسال از سوی (ip address)"
 
 #: contact_form.php:401 contact_form.php:751
 msgid "Date/Time"
-msgstr "Дата/Час"
+msgstr "روز / زمان"
 
 #: contact_form.php:402 contact_form.php:756
 msgid "Coming from (referer)"
-msgstr "Идва от (referer)"
+msgstr "دریافت از سوی (referer)"
 
 #: contact_form.php:403 contact_form.php:761
 msgid "Using (user agent)"
-msgstr "Използвайки (user agent)"
+msgstr "استفاده از (user agent)"
 
 #: contact_form.php:407
 msgid "Change label for fields of the contact form"
-msgstr "Промяна на етикетите за полета във формата за контакт"
+msgstr "تغییر عناوین فیلدهای فرم تماس با مدیریت "
 
 #: contact_form.php:421
 msgid "Action after the send mail"
-msgstr ""
+msgstr "عکس العمل پس از ارسال"
 
 #: contact_form.php:423
-#, fuzzy
 msgid "Display text"
-msgstr "Покажи опция за прикачване на файл"
+msgstr "نمایش متن"
 
 #: contact_form.php:424
 msgid "Text"
-msgstr ""
+msgstr "متن"
 
 #: contact_form.php:425
 msgid "Redirect to page"
-msgstr ""
+msgstr "انتقال به "
 
 #: contact_form.php:426
 msgid "Url"
-msgstr ""
+msgstr "تارنما"
 
 #: contact_form.php:431
 msgid "Save Changes"
-msgstr "Запис на промените"
+msgstr "ثبت تغییرات"
 
 #: contact_form.php:469
 msgid "Sorry, your e-mail could not be delivered."
-msgstr "Съжаляваме, Вашето съобщение не може да бъде изпратено."
+msgstr "امکان ارسال رایانامه برای شما وجود ندارد."
 
 #: contact_form.php:539
 msgid "You can attach files of the following types"
-msgstr "Можете да прикачвате файлове от следните типове"
+msgstr "می توانید فایل با این فرمت ارسال فرمایید "
 
 #: contact_form.php:547
 msgid "Send me a copy"
-msgstr "Изпрати ми копие"
+msgstr "به رایانامه من ارسال شود"
 
 #: contact_form.php:557
 msgid "Submit"
-msgstr "Изпрати"
+msgstr "ارسال"
 
 #: contact_form.php:597
 msgid "Your name is required."
-msgstr "Вашето име е задължително."
+msgstr "نام ضروری می باشد. "
 
 #: contact_form.php:599
 msgid "A proper e-mail address is required."
-msgstr "Правилният Email адрес е задължителен."
+msgstr "رایانامه ضروری می باشد. "
 
 #: contact_form.php:601
 msgid "Subject text is required."
-msgstr "Заглавието е задължитено."
+msgstr "عنوان ضروری می باشد. "
 
 #: contact_form.php:603
 msgid "Message text is required."
-msgstr "Текстовото съобщение е задължително."
+msgstr "متن پیام ضروری می باشد. "
 
 #: contact_form.php:605
 #, fuzzy
 msgid "Phone is required field."
-msgstr "Вашето име е задължително."
+msgstr "نام ضروری می باشد. "
 
 #: contact_form.php:606
 msgid "Please make corrections below and try again."
-msgstr "Моля направете необходимите корекции по-долу и опитайте отново."
+msgstr "لطفا پس از انجام اصلاحات دوباره ارسال نمایید. "
 
 #: contact_form.php:638
 msgid "Attachment is broken."
-msgstr "Прикаченият файл не се поддържа"
+msgstr "فایل آسیب دیده می باشد.  "
 
 #: contact_form.php:653
 msgid "Please complete the CAPTCHA."
-msgstr "Моля попълнете CAPTCHA."
+msgstr "لطفا کد امنیتی را وارد کنید. "
 
 #: contact_form.php:769
 msgid "Contact from"
-msgstr "Форма за контакт"
+msgstr "فرم ارتباط با مدیریت"
 
 #: contact_form.php:777
 msgid "Email"
-msgstr "Email"
+msgstr "رایانامه "
 
 #: contact_form.php:791
 msgid "Site"
-msgstr "Сайт"
+msgstr "سایت"
 
 #: contact_form.php:836
 msgid "If you can see this MIME than your client doesn't accept MIME types!"
-msgstr ""
-"Ако видиждате това значи, че вашият MIME клиент за електронна поща не "
-"поддържа MIME тип!"
+msgstr "اگر می توانید این MIME کاربران را ببینید، نوع آن قابل پذیرش نیست!"
 
 #: contact_form.php:890
 msgid "FAQ"
-msgstr "FAQ"
+msgstr "سئوالات مطرح"
 
 #: contact_form.php:891
 msgid "Support"
-msgstr "Поддръжка"
+msgstr "پشتیبانی"
 
 #~ msgid "E-Mail Addresse:"
-#~ msgstr "E-mail адрес:"
+#~ msgstr "Indirizzo e-mail:"
 
 #~ msgid "Install Now"
-#~ msgstr "Инсталирайте сега"
+#~ msgstr "Installa Ora"
 
 #~ msgid "BWS Plugins"
-#~ msgstr "Разширение BWS"
+#~ msgstr "BWS Plugins"
