@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.26
+Version: 3.27
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -202,6 +202,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				$cntctfrm_options_submit['cntctfrm_attachment']				= isset( $_REQUEST['cntctfrm_attachment']) ? $_REQUEST['cntctfrm_attachment'] : 0;
 				$cntctfrm_options_submit['cntctfrm_attachment_explanations']				= isset( $_REQUEST['cntctfrm_attachment_explanations']) ? $_REQUEST['cntctfrm_attachment_explanations'] : 0;
 				$cntctfrm_options_submit['cntctfrm_send_copy']				= isset( $_REQUEST['cntctfrm_send_copy']) ? $_REQUEST['cntctfrm_send_copy'] : 0;
+				$cntctfrm_options_submit['cntctfrm_from_field']				= $_REQUEST['cntctfrm_from_field'];
 				$cntctfrm_options_submit['cntctfrm_mail_method']			= $_REQUEST['cntctfrm_mail_method'];
 				$cntctfrm_options_submit['cntctfrm_mail_method']			= $_REQUEST['cntctfrm_mail_method'];
 				$cntctfrm_options_submit['cntctfrm_display_add_info'] = isset( $_REQUEST['cntctfrm_display_add_info']) ? 1 : 0;
