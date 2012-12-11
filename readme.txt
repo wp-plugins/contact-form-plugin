@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.4.2
-Stable tag: 3.27
+Stable tag: 3.28
 
 Add Contact Form to your WordPress website.
 
@@ -32,6 +32,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 * Dutch (nl_NL) (thanks  to <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>, Jan Boeijink )
 * Persian (fa_IR) (thanks to <a href="me@alirezaJamali.net">Alireza Jamali</a>, alirezajamali.net)
 * French (fr_FR) (thanks to Alain Thomas and Vincent Cibelli)
+* Galician (gl_ES) (thanks to Paula Rios)
 * German (de_DE) (thanks to Hartung Thomas)
 * Greek (el_GR) (thanks to Pantelis Panteloglou)
 * Hebrew (he_IL) (thanks to Sagive SEO)
@@ -103,6 +104,11 @@ Here is an example for German language files.
 5. Widget settings for using shortcode in the sidebar.
 
 == Changelog ==
+
+= V3.28 - 11.12.2012 =
+* NEW : Galician language file is added to the plugin.
+* NEW : Multilanguage labels for fields is added to the plugin.
+* Update : The shortcode structure was changed.
 
 = V3.27 - 20.11.2012 =
 * Bugfix : The error related to the saving of the field "Change FROM fields of the contact form" was fixed.
@@ -244,6 +250,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.28 =
+Galician language file is added to the plugin. Multilanguage labels for fields is added to the plugin. The shortcode structure was changed.
 
 = V3.27 =
 The error related to the saving of the field "Change FROM fields of the contact form" was fixed.

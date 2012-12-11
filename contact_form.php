@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.27
+Version: 3.28
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -115,12 +115,14 @@ if( ! function_exists( 'cntctfrm_admin_menu' ) ) {
 // Register settings for plugin
 if( ! function_exists( 'cntctfrm_settings' ) ) {
 	function cntctfrm_settings() {
-		global $cntctfrm_options;
+		global $cntctfrm_options, $cntctfrm_option_defaults;
 
 		$cntctfrm_option_defaults = array(
 			'cntctfrm_user_email' => 'admin',
 			'cntctfrm_custom_email' => '',
 			'cntctfrm_select_email' => 'user',
+			'cntctfrm_from_email' => 'user',
+			'cntctfrm_custom_from_email' => '',
 			'cntctfrm_additions_options' => 0,
 			'cntctfrm_attachment' => 0,
 			'cntctfrm_attachment_explanations' => 1,
@@ -138,21 +140,49 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 			'cntctfrm_mail_method' => 'wp-mail',
 			'cntctfrm_display_coming_from' => 1,
 			'cntctfrm_display_user_agent' => 1,
+			'cntctfrm_language'	=> array(),
 			'cntctfrm_change_label' => 0,
-			'cntctfrm_name_label' => __( "Name:", 'contact_form' ),
-			'cntctfrm_email_label' => __( "E-Mail Address:", 'contact_form' ),
-			'cntctfrm_phone_label' => __( "Phone:", 'contact_form' ),
-			'cntctfrm_subject_label' => __( "Subject:", 'contact_form' ),
-			'cntctfrm_message_label' => __( "Message:", 'contact_form' ),
-			'cntctfrm_attachment_label' => __( "Attachment:", 'contact_form' ),
+			'cntctfrm_name_label' => array( 'en' => __( "Name:", 'contact_form' ) ),
+			'cntctfrm_email_label' => array( 'en' => __( "E-Mail Address:", 'contact_form' ) ),
+			'cntctfrm_phone_label' => array( 'en' => __( "Phone:", 'contact_form' ) ),
+			'cntctfrm_subject_label' => array( 'en' => __( "Subject:", 'contact_form' ) ),
+			'cntctfrm_message_label' => array( 'en' => __( "Message:", 'contact_form' ) ),
+			'cntctfrm_attachment_label' => array( 'en' => __( "Attachment:", 'contact_form' ) ),
+			'cntctfrm_submit_label' => array( 'en' => __( "Submit", 'contact_form' ) ),
+			'cntctfrm_name_error' => array( 'en' => __( "Your name is required.", 'contact_form' ) ),
+			'cntctfrm_email_error' => array( 'en' => __( "A proper e-mail address is required.", 'contact_form' ) ),
+			'cntctfrm_phone_error' => array( 'en' => __( "Subject text is required.", 'contact_form' ) ),
+			'cntctfrm_subject_error' => array( 'en' => __( "Message text is required.", 'contact_form' ) ),
+			'cntctfrm_message_error' => array( 'en' => __( "Phone is required field.", 'contact_form' ) ),
+			'cntctfrm_attachment_error' => array( 'en' => __( "Attachment is broken.", 'contact_form' ) ),
+			'cntctfrm_captcha_error' => array( 'en' => __( "Please complete the CAPTCHA.", 'contact_form' ) ),
+			'cntctfrm_form_error' => array( 'en' => __( "Please make corrections below and try again.", 'contact_form' ) ),
 			'cntctfrm_action_after_send' => 1,
-			'cntctfrm_thank_text' => __( "Thank you for contacting us.", 'contact_form' ),
+			'cntctfrm_thank_text' => array( 'en' => __( "Thank you for contacting us.", 'contact_form' ) ),
 			'cntctfrm_redirect_url' => ''
 		);
 		if( ! get_option( 'cntctfrm_options' ) )
 			add_option( 'cntctfrm_options', $cntctfrm_option_defaults, '', 'yes' );
 
 		$cntctfrm_options = get_option( 'cntctfrm_options' );
+		if( empty( $cntctfrm_options['cntctfrm_language'] ) && ! is_array( $cntctfrm_options['cntctfrm_name_label'] ) ) {
+			$cntctfrm_options['cntctfrm_name_label']				= array( 'en' => $cntctfrm_options['cntctfrm_name_label'] );
+			$cntctfrm_options['cntctfrm_email_label']				= array( 'en' => $cntctfrm_options['cntctfrm_email_label'] );
+			$cntctfrm_options['cntctfrm_phone_label']				= array( 'en' => $cntctfrm_options['cntctfrm_phone_label'] );
+			$cntctfrm_options['cntctfrm_subject_label']			= array( 'en' => $cntctfrm_options['cntctfrm_subject_label'] );
+			$cntctfrm_options['cntctfrm_message_label']			= array( 'en' => $cntctfrm_options['cntctfrm_message_label'] );
+			$cntctfrm_options['cntctfrm_attachment_label']	= array( 'en' => $cntctfrm_options['cntctfrm_attachment_label'] );
+			$cntctfrm_options['cntctfrm_thank_text']				= array( 'en' => $cntctfrm_options['cntctfrm_thank_text'] );
+			$cntctfrm_options['cntctfrm_submit_label']			= array( 'en' => $cntctfrm_option_defaults['cntctfrm_submit_label']['en'] );
+			$cntctfrm_options['cntctfrm_name_error']				= array( 'en' => $cntctfrm_option_defaults['cntctfrm_name_error']['en'] );
+			$cntctfrm_options['cntctfrm_email_error']				= array( 'en' => $cntctfrm_option_defaults['cntctfrm_email_error']['en'] );
+			$cntctfrm_options['cntctfrm_phone_error']				= array( 'en' => $cntctfrm_option_defaults['cntctfrm_phone_error']['en'] );
+			$cntctfrm_options['cntctfrm_subject_error']			= array( 'en' => $cntctfrm_option_defaults['cntctfrm_subject_error']['en'] );
+			$cntctfrm_options['cntctfrm_message_error']			= array( 'en' => $cntctfrm_option_defaults['cntctfrm_message_error']['en'] );
+			$cntctfrm_options['cntctfrm_attachment_error']	= array( 'en' => $cntctfrm_option_defaults['cntctfrm_attachment_error']['en'] );
+			$cntctfrm_options['cntctfrm_captcha_error']			= array( 'en' => $cntctfrm_option_defaults['cntctfrm_captcha_error']['en'] );
+			$cntctfrm_options['cntctfrm_form_error']				= array( 'en' => $cntctfrm_option_defaults['cntctfrm_form_error']['en'] );
+		}
 		$cntctfrm_options = array_merge( $cntctfrm_option_defaults, $cntctfrm_options );
 		update_option( 'cntctfrm_options', $cntctfrm_options );
 	}
@@ -171,6 +201,8 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 			$cntctfrm_options_submit['cntctfrm_user_email'] = $_REQUEST['cntctfrm_user_email'];
 			$cntctfrm_options_submit['cntctfrm_custom_email'] = stripslashes( $_REQUEST['cntctfrm_custom_email'] );
 			$cntctfrm_options_submit['cntctfrm_select_email'] = $_REQUEST['cntctfrm_select_email'];
+			$cntctfrm_options_submit['cntctfrm_from_email'] = $_REQUEST['cntctfrm_from_email'];
+			$cntctfrm_options_submit['cntctfrm_custom_from_email'] = stripslashes( $_REQUEST['cntctfrm_custom_from_email'] );
 			$cntctfrm_options_submit['cntctfrm_additions_options'] = isset( $_REQUEST['cntctfrm_additions_options']) ? $_REQUEST['cntctfrm_additions_options'] : 0;
 			if($cntctfrm_options_submit['cntctfrm_additions_options'] == 0) {
 				$cntctfrm_options_submit['cntctfrm_attachment']					= 0;
@@ -190,29 +222,59 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				$cntctfrm_options_submit['cntctfrm_display_coming_from'] = 1;
 				$cntctfrm_options_submit['cntctfrm_display_user_agent'] = 1;
 				$cntctfrm_options_submit['cntctfrm_change_label']				= 0;
-				$cntctfrm_options_submit['cntctfrm_name_label']					= __( "Name:", 'contact_form' );
-				$cntctfrm_options_submit['cntctfrm_email_label']				= __( "E-Mail Address:", 'contact_form' );
-				$cntctfrm_options_submit['cntctfrm_subject_label']			= __( "Subject:", 'contact_form' );
-				$cntctfrm_options_submit['cntctfrm_message_label']			= __( "Message:", 'contact_form' );
-				$cntctfrm_options_submit['cntctfrm_attachment_label']		= __( "Attachment:", 'contact_form' );
 				$cntctfrm_options_submit['cntctfrm_action_after_send']	= 1;
-			 $cntctfrm_options_submit['cntctfrm_thank_text']	= __( "Thank you for contacting us.", 'contact_form' );
-			 $cntctfrm_options_submit['cntctfrm_redirect_url']	= '';
+				if( empty( $cntctfrm_options['cntctfrm_language'] ) ) {
+					$cntctfrm_options_submit['cntctfrm_name_label']					= $cntctfrm_option_defaults['cntctfrm_name_label'];
+					$cntctfrm_options_submit['cntctfrm_email_label']				= $cntctfrm_option_defaults['cntctfrm_email_label'];
+					$cntctfrm_options_submit['cntctfrm_phone_label']				= $cntctfrm_option_defaults['cntctfrm_phone_label'];
+					$cntctfrm_options_submit['cntctfrm_subject_label']			= $cntctfrm_option_defaults['cntctfrm_subject_label'];
+					$cntctfrm_options_submit['cntctfrm_message_label']			= $cntctfrm_option_defaults['cntctfrm_message_label'];
+					$cntctfrm_options_submit['cntctfrm_attachment_label']		= $cntctfrm_option_defaults['cntctfrm_attachment_label'];
+					$cntctfrm_options_submit['cntctfrm_thank_text']					= $cntctfrm_option_defaults['cntctfrm_thank_text'];
+					$cntctfrm_options_submit['cntctfrm_submit_label']				= $cntctfrm_option_defaults['cntctfrm_submit_label'];
+					$cntctfrm_options_submit['cntctfrm_name_error']					= $cntctfrm_option_defaults['cntctfrm_name_error'];
+					$cntctfrm_options_submit['cntctfrm_email_error']				= $cntctfrm_option_defaults['cntctfrm_email_error'];
+					$cntctfrm_options_submit['cntctfrm_phone_error']				= $cntctfrm_option_defaults['cntctfrm_phone_error'];
+					$cntctfrm_options_submit['cntctfrm_subject_error']			= $cntctfrm_option_defaults['cntctfrm_subject_error'];
+					$cntctfrm_options_submit['cntctfrm_message_error']			= $cntctfrm_option_defaults['cntctfrm_message_error'];
+					$cntctfrm_options_submit['cntctfrm_attachment_error']		= $cntctfrm_option_defaults['cntctfrm_attachment_error'];
+					$cntctfrm_options_submit['cntctfrm_captcha_error']			= $cntctfrm_option_defaults['cntctfrm_captcha_error'];
+					$cntctfrm_options_submit['cntctfrm_form_error']					= $cntctfrm_option_defaults['cntctfrm_form_error'];
+				}
+				else{
+					$cntctfrm_options_submit['cntctfrm_name_label']['en']					= $cntctfrm_option_defaults['cntctfrm_name_label']['en'];
+					$cntctfrm_options_submit['cntctfrm_email_label']['en']				= $cntctfrm_option_defaults['cntctfrm_email_label']['en'];
+					$cntctfrm_options_submit['cntctfrm_phone_label']['en']				= $cntctfrm_option_defaults['cntctfrm_phone_label']['en'];
+					$cntctfrm_options_submit['cntctfrm_subject_label']['en']			= $cntctfrm_option_defaults['cntctfrm_subject_label']['en'];
+					$cntctfrm_options_submit['cntctfrm_message_label']['en']			= $cntctfrm_option_defaults['cntctfrm_message_label']['en'];
+					$cntctfrm_options_submit['cntctfrm_attachment_label']['en']		= $cntctfrm_option_defaults['cntctfrm_attachment_label']['en'];
+					$cntctfrm_options_submit['cntctfrm_thank_text']['en']					= $cntctfrm_option_defaults['cntctfrm_thank_text']['en'];
+					$cntctfrm_options_submit['cntctfrm_submit_label']['en']				= $cntctfrm_option_defaults['cntctfrm_submit_label']['en'];
+					$cntctfrm_options_submit['cntctfrm_name_error']['en']					= $cntctfrm_option_defaults['cntctfrm_name_error']['en'];
+					$cntctfrm_options_submit['cntctfrm_email_error']['en']				= $cntctfrm_option_defaults['cntctfrm_email_error']['en'];
+					$cntctfrm_options_submit['cntctfrm_phone_error']['en']				= $cntctfrm_option_defaults['cntctfrm_phone_error']['en'];
+					$cntctfrm_options_submit['cntctfrm_subject_error']['en']			= $cntctfrm_option_defaults['cntctfrm_subject_error']['en'];
+					$cntctfrm_options_submit['cntctfrm_message_error']['en']			= $cntctfrm_option_defaults['cntctfrm_message_error']['en'];
+					$cntctfrm_options_submit['cntctfrm_attachment_error']['en']		= $cntctfrm_option_defaults['cntctfrm_attachment_error']['en'];
+					$cntctfrm_options_submit['cntctfrm_captcha_error']['en']			= $cntctfrm_option_defaults['cntctfrm_captcha_error']['en'];
+					$cntctfrm_options_submit['cntctfrm_form_error']['en']					= $cntctfrm_option_defaults['cntctfrm_form_error']['en'];
+				}
+			 $cntctfrm_options_submit['cntctfrm_redirect_url']				= '';
 			} else {
-				$cntctfrm_options_submit['cntctfrm_attachment']				= isset( $_REQUEST['cntctfrm_attachment']) ? $_REQUEST['cntctfrm_attachment'] : 0;
-				$cntctfrm_options_submit['cntctfrm_attachment_explanations']				= isset( $_REQUEST['cntctfrm_attachment_explanations']) ? $_REQUEST['cntctfrm_attachment_explanations'] : 0;
-				$cntctfrm_options_submit['cntctfrm_send_copy']				= isset( $_REQUEST['cntctfrm_send_copy']) ? $_REQUEST['cntctfrm_send_copy'] : 0;
-				$cntctfrm_options_submit['cntctfrm_from_field']				= $_REQUEST['cntctfrm_from_field'];
-				$cntctfrm_options_submit['cntctfrm_mail_method']			= $_REQUEST['cntctfrm_mail_method'];
-				$cntctfrm_options_submit['cntctfrm_mail_method']			= $_REQUEST['cntctfrm_mail_method'];
-				$cntctfrm_options_submit['cntctfrm_display_add_info'] = isset( $_REQUEST['cntctfrm_display_add_info']) ? 1 : 0;
-				$cntctfrm_options_submit['cntctfrm_change_label']			= isset( $_REQUEST['cntctfrm_change_label']) ? 1 : 0;
+				$cntctfrm_options_submit['cntctfrm_attachment']								= isset( $_REQUEST['cntctfrm_attachment']) ? $_REQUEST['cntctfrm_attachment'] : 0;
+				$cntctfrm_options_submit['cntctfrm_attachment_explanations']	= isset( $_REQUEST['cntctfrm_attachment_explanations']) ? $_REQUEST['cntctfrm_attachment_explanations'] : 0;
+				$cntctfrm_options_submit['cntctfrm_send_copy']								= isset( $_REQUEST['cntctfrm_send_copy']) ? $_REQUEST['cntctfrm_send_copy'] : 0;
+				$cntctfrm_options_submit['cntctfrm_from_field']								= $_REQUEST['cntctfrm_from_field'];
+				$cntctfrm_options_submit['cntctfrm_mail_method']							= $_REQUEST['cntctfrm_mail_method'];
+				$cntctfrm_options_submit['cntctfrm_mail_method']							= $_REQUEST['cntctfrm_mail_method'];
+				$cntctfrm_options_submit['cntctfrm_display_add_info']					= isset( $_REQUEST['cntctfrm_display_add_info']) ? 1 : 0;
+				$cntctfrm_options_submit['cntctfrm_change_label']							= isset( $_REQUEST['cntctfrm_change_label']) ? 1 : 0;
 				$cntctfrm_options_submit['cntctfrm_display_phone_field']			= isset( $_REQUEST['cntctfrm_display_phone_field']) ? 1 : 0;
 				$cntctfrm_options_submit['cntctfrm_required_name_field']			= isset( $_REQUEST['cntctfrm_required_name_field']) ? 1 : 0;
 				$cntctfrm_options_submit['cntctfrm_required_email_field']			= isset( $_REQUEST['cntctfrm_required_email_field']) ? 1 : 0;
 				$cntctfrm_options_submit['cntctfrm_required_phone_field']			= isset( $_REQUEST['cntctfrm_required_phone_field']) ? 1 : 0;
-				$cntctfrm_options_submit['cntctfrm_required_subject_field']			= isset( $_REQUEST['cntctfrm_required_subject_field']) ? 1 : 0;
-				$cntctfrm_options_submit['cntctfrm_required_message_field']			= isset( $_REQUEST['cntctfrm_required_message_field']) ? 1 : 0;
+				$cntctfrm_options_submit['cntctfrm_required_subject_field']		= isset( $_REQUEST['cntctfrm_required_subject_field']) ? 1 : 0;
+				$cntctfrm_options_submit['cntctfrm_required_message_field']		= isset( $_REQUEST['cntctfrm_required_message_field']) ? 1 : 0;
 				
 				if( $cntctfrm_options_submit['cntctfrm_display_add_info'] == 1 ) {
 					$cntctfrm_options_submit['cntctfrm_display_sent_from']		= isset( $_REQUEST['cntctfrm_display_sent_from']) ? 1 : 0;
@@ -227,25 +289,66 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					$cntctfrm_options_submit['cntctfrm_display_user_agent']		= 1;
 				}
 				if( $cntctfrm_options_submit['cntctfrm_change_label'] == 1 ) {
-					$cntctfrm_options_submit['cntctfrm_name_label']				= isset( $_REQUEST['cntctfrm_name_label']) ? $_REQUEST['cntctfrm_name_label'] : $cntctfrm_options_submit['cntctfrm_name_label'];
-					$cntctfrm_options_submit['cntctfrm_email_label']			= isset( $_REQUEST['cntctfrm_email_label']) ? $_REQUEST['cntctfrm_email_label'] : $cntctfrm_options_submit['cntctfrm_email_label'];
-					$cntctfrm_options_submit['cntctfrm_phone_label']			= isset( $_REQUEST['cntctfrm_phone_label']) ? $_REQUEST['cntctfrm_phone_label'] : $cntctfrm_options_submit['cntctfrm_phone_label'];
-					$cntctfrm_options_submit['cntctfrm_subject_label']		= isset( $_REQUEST['cntctfrm_subject_label']) ? $_REQUEST['cntctfrm_subject_label'] : $cntctfrm_options_submit['cntctfrm_subject_label'];
-					$cntctfrm_options_submit['cntctfrm_message_label']		= isset( $_REQUEST['cntctfrm_message_label']) ? $_REQUEST['cntctfrm_message_label'] : $cntctfrm_options_submit['cntctfrm_message_label'];
-					$cntctfrm_options_submit['cntctfrm_attachment_label'] = isset( $_REQUEST['cntctfrm_attachment_label']) ? $_REQUEST['cntctfrm_attachment_label'] : $cntctfrm_options_submit['cntctfrm_attachment_label'];
+					foreach( $_REQUEST['cntctfrm_name_label'] as $key=>$val ){
+						$cntctfrm_options_submit['cntctfrm_name_label'][$key]					= $_REQUEST['cntctfrm_name_label'][$key];
+						$cntctfrm_options_submit['cntctfrm_email_label'][$key]				= $_REQUEST['cntctfrm_email_label'][$key];
+						$cntctfrm_options_submit['cntctfrm_phone_label'][$key]				= $_REQUEST['cntctfrm_phone_label'][$key];
+						$cntctfrm_options_submit['cntctfrm_subject_label'][$key]			= $_REQUEST['cntctfrm_subject_label'][$key];
+						$cntctfrm_options_submit['cntctfrm_message_label'][$key]			= $_REQUEST['cntctfrm_message_label'][$key];
+						$cntctfrm_options_submit['cntctfrm_attachment_label'][$key]		= $_REQUEST['cntctfrm_attachment_label'][$key];
+						$cntctfrm_options_submit['cntctfrm_thank_text'][$key]					= $_REQUEST['cntctfrm_thank_text'][$key];
+						$cntctfrm_options_submit['cntctfrm_submit_label'][$key]				= $_REQUEST['cntctfrm_submit_label'][$key];
+						$cntctfrm_options_submit['cntctfrm_name_error'][$key]					= $_REQUEST['cntctfrm_name_error'][$key];
+						$cntctfrm_options_submit['cntctfrm_email_error'][$key]				= $_REQUEST['cntctfrm_email_error'][$key];
+						$cntctfrm_options_submit['cntctfrm_phone_error'][$key]				= $_REQUEST['cntctfrm_phone_error'][$key];
+						$cntctfrm_options_submit['cntctfrm_subject_error'][$key]			= $_REQUEST['cntctfrm_subject_error'][$key];
+						$cntctfrm_options_submit['cntctfrm_message_error'][$key]			= $_REQUEST['cntctfrm_message_error'][$key];
+						$cntctfrm_options_submit['cntctfrm_attachment_error'][$key]		= $_REQUEST['cntctfrm_attachment_error'][$key];
+						$cntctfrm_options_submit['cntctfrm_captcha_error'][$key]			= $_REQUEST['cntctfrm_captcha_error'][$key];
+						$cntctfrm_options_submit['cntctfrm_form_error'][$key]					= $_REQUEST['cntctfrm_form_error'][$key];
+					}
 				}
 				else {
-					$cntctfrm_options_submit['cntctfrm_name_label']				= __( "Name:", 'contact_form' );
-					$cntctfrm_options_submit['cntctfrm_email_label']			= __( "E-Mail Address:", 'contact_form' );
-					$cntctfrm_options_submit['cntctfrm_phone_label']			= __( "Phone:", 'contact_form' );
-					$cntctfrm_options_submit['cntctfrm_subject_label']		= __( "Subject:", 'contact_form' );
-					$cntctfrm_options_submit['cntctfrm_message_label']		= __( "Message:", 'contact_form' );
-					$cntctfrm_options_submit['cntctfrm_attachment_label'] = __( "Attachment:", 'contact_form' );
+					if( empty( $cntctfrm_options['cntctfrm_language'] ) ) {
+						$cntctfrm_options_submit['cntctfrm_name_label']					= $cntctfrm_option_defaults['cntctfrm_name_label'];
+						$cntctfrm_options_submit['cntctfrm_email_label']				= $cntctfrm_option_defaults['cntctfrm_email_label'];
+						$cntctfrm_options_submit['cntctfrm_phone_label']				= $cntctfrm_option_defaults['cntctfrm_phone_label'];
+						$cntctfrm_options_submit['cntctfrm_subject_label']			= $cntctfrm_option_defaults['cntctfrm_subject_label'];
+						$cntctfrm_options_submit['cntctfrm_message_label']			= $cntctfrm_option_defaults['cntctfrm_message_label'];
+						$cntctfrm_options_submit['cntctfrm_attachment_label']		= $cntctfrm_option_defaults['cntctfrm_attachment_label'];
+						$cntctfrm_options_submit['cntctfrm_thank_text']					= $cntctfrm_option_defaults['cntctfrm_thank_text'];
+						$cntctfrm_options_submit['cntctfrm_submit_label']				= $cntctfrm_option_defaults['cntctfrm_submit_label'];
+						$cntctfrm_options_submit['cntctfrm_name_error']					= $cntctfrm_option_defaults['cntctfrm_name_error'];
+						$cntctfrm_options_submit['cntctfrm_email_error']				= $cntctfrm_option_defaults['cntctfrm_email_error'];
+						$cntctfrm_options_submit['cntctfrm_phone_error']				= $cntctfrm_option_defaults['cntctfrm_phone_error'];
+						$cntctfrm_options_submit['cntctfrm_subject_error']			= $cntctfrm_option_defaults['cntctfrm_subject_error'];
+						$cntctfrm_options_submit['cntctfrm_message_error']			= $cntctfrm_option_defaults['cntctfrm_message_error'];
+						$cntctfrm_options_submit['cntctfrm_attachment_error']		= $cntctfrm_option_defaults['cntctfrm_attachment_error'];
+						$cntctfrm_options_submit['cntctfrm_captcha_error']			= $cntctfrm_option_defaults['cntctfrm_captcha_error'];
+						$cntctfrm_options_submit['cntctfrm_form_error']					= $cntctfrm_option_defaults['cntctfrm_form_error'];
+					}
+					else{
+						$cntctfrm_options_submit['cntctfrm_name_label']['en']					= $cntctfrm_option_defaults['cntctfrm_name_label']['en'];
+						$cntctfrm_options_submit['cntctfrm_email_label']['en']				= $cntctfrm_option_defaults['cntctfrm_email_label']['en'];
+						$cntctfrm_options_submit['cntctfrm_phone_label']['en']				= $cntctfrm_option_defaults['cntctfrm_phone_label']['en'];
+						$cntctfrm_options_submit['cntctfrm_subject_label']['en']			= $cntctfrm_option_defaults['cntctfrm_subject_label']['en'];
+						$cntctfrm_options_submit['cntctfrm_message_label']['en']			= $cntctfrm_option_defaults['cntctfrm_message_label']['en'];
+						$cntctfrm_options_submit['cntctfrm_attachment_label']['en']		= $cntctfrm_option_defaults['cntctfrm_attachment_label']['en'];
+						$cntctfrm_options_submit['cntctfrm_thank_text']['en']					= $cntctfrm_option_defaults['cntctfrm_thank_text']['en'];
+						$cntctfrm_options_submit['cntctfrm_submit_label']['en']				= $cntctfrm_option_defaults['cntctfrm_submit_label']['en'];
+						$cntctfrm_options_submit['cntctfrm_name_error']['en']					= $cntctfrm_option_defaults['cntctfrm_name_error']['en'];
+						$cntctfrm_options_submit['cntctfrm_email_error']['en']				= $cntctfrm_option_defaults['cntctfrm_email_error']['en'];
+						$cntctfrm_options_submit['cntctfrm_phone_error']['en']				= $cntctfrm_option_defaults['cntctfrm_phone_error']['en'];
+						$cntctfrm_options_submit['cntctfrm_subject_error']['en']			= $cntctfrm_option_defaults['cntctfrm_subject_error']['en'];
+						$cntctfrm_options_submit['cntctfrm_message_error']['en']			= $cntctfrm_option_defaults['cntctfrm_message_error']['en'];
+						$cntctfrm_options_submit['cntctfrm_attachment_error']['en']		= $cntctfrm_option_defaults['cntctfrm_attachment_error']['en'];
+						$cntctfrm_options_submit['cntctfrm_captcha_error']['en']			= $cntctfrm_option_defaults['cntctfrm_captcha_error']['en'];
+						$cntctfrm_options_submit['cntctfrm_form_error']['en']					= $cntctfrm_option_defaults['cntctfrm_form_error']['en'];
+					}
 				}
 				$cntctfrm_options_submit['cntctfrm_action_after_send']	= $_REQUEST['cntctfrm_action_after_send'];
-			 $cntctfrm_options_submit['cntctfrm_thank_text']	= $_REQUEST['cntctfrm_thank_text'];
-			 $cntctfrm_options_submit['cntctfrm_redirect_url']	= $_REQUEST['cntctfrm_redirect_url'];
-			}			
+				$cntctfrm_options_submit['cntctfrm_redirect_url']	= $_REQUEST['cntctfrm_redirect_url'];
+			}
 			$cntctfrm_options = array_merge( $cntctfrm_options, $cntctfrm_options_submit  );
 			if( $cntctfrm_options_submit['cntctfrm_action_after_send'] == 0 
 				&& ( trim( $cntctfrm_options_submit['cntctfrm_redirect_url'] ) == "" 
@@ -254,32 +357,44 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					$cntctfrm_options['cntctfrm_action_after_send'] = 1;
 			}
 			if( 'user' == $cntctfrm_options_submit['cntctfrm_select_email'] ) {
-				if( function_exists('get_userdatabylogin') && false !== get_userdatabylogin( $cntctfrm_options_submit['cntctfrm_user_email'] ) )
-				{
-					update_option( 'cntctfrm_options', $cntctfrm_options, '', 'yes' );
-					$message = __( "Options saved.", 'contact_form' );
+				if( function_exists('get_userdatabylogin') && false !== get_userdatabylogin( $cntctfrm_options_submit['cntctfrm_user_email'] ) ){
 				}
-				else if( false !== get_user_by( 'login', $cntctfrm_options_submit['cntctfrm_user_email'] ) )
-				{
-					update_option( 'cntctfrm_options', $cntctfrm_options, '', 'yes' );
-					$message = __( "Options saved.", 'contact_form' );
+				else if( false !== get_user_by( 'login', $cntctfrm_options_submit['cntctfrm_user_email'] ) ){
 				}
 				else {
 					$error .=__(  "Such user is not exist. Settings are not saved.", 'contact_form' );
 				}
 			}
 			else {
-				if( $cntctfrm_options_submit['cntctfrm_custom_email']  != "" && preg_match( "/^((?:[a-z0-9']+(?:[a-z0-9\-_\.']+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})[, ]*)+$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_email'] ) ) ) {
-					update_option( 'cntctfrm_options', $cntctfrm_options, '', 'yes' );
-					$message = __( "Options saved.", 'contact_form' );
-				}
-				else {
-					var_dump($cntctfrm_options_submit['cntctfrm_custom_email']);
+				if( $cntctfrm_options_submit['cntctfrm_custom_email'] == "" || !preg_match( "/^((?:[a-z0-9']+(?:[a-z0-9\-_\.']+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})[, ]*)+$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_email'] ) ) ){
 					$error .= __( "Please input correct email. Settings are not saved.", 'contact_form' );
 				}
 			}
+			if( 'custom' == $cntctfrm_options_submit['cntctfrm_from_email'] ) {
+				if( $cntctfrm_options_submit['cntctfrm_custom_from_email'] == "" 
+					&& !preg_match( "/^((?:[a-z0-9']+(?:[a-z0-9\-_\.']+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})[, ]*)+$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_from_email'] ) ) ) {
+					$error .= __( "Please input correct 'FROM' email. Settings are not saved.", 'contact_form' );
+				}
+			}
+			if( $error == '' ){
+				update_option( 'cntctfrm_options', $cntctfrm_options, '', 'yes' );
+				$message = __( "Options saved.", 'contact_form' );
+			}
 		}
 		// Display form on the setting page
+		$lang_codes = array(
+			'aa' => 'Afar', 'ab' => 'Abkhazian', 'af' => 'Afrikaans', 'ak' => 'Akan', 'sq' => 'Albanian', 'am' => 'Amharic', 'ar' => 'Arabic', 'an' => 'Aragonese', 'hy' => 'Armenian', 'as' => 'Assamese', 'av' => 'Avaric', 'ae' => 'Avestan', 'ay' => 'Aymara', 'az' => 'Azerbaijani', 'ba' => 'Bashkir', 'bm' => 'Bambara', 'eu' => 'Basque', 'be' => 'Belarusian', 'bn' => 'Bengali',
+			'bh' => 'Bihari', 'bi' => 'Bislama', 'bs' => 'Bosnian', 'br' => 'Breton', 'bg' => 'Bulgarian', 'my' => 'Burmese', 'ca' => 'Catalan; Valencian', 'ch' => 'Chamorro', 'ce' => 'Chechen', 'zh' => 'Chinese', 'cu' => 'Church Slavic; Old Slavonic; Church Slavonic; Old Bulgarian; Old Church Slavonic', 'cv' => 'Chuvash', 'kw' => 'Cornish', 'co' => 'Corsican', 'cr' => 'Cree',
+			'cs' => 'Czech', 'da' => 'Danish', 'dv' => 'Divehi; Dhivehi; Maldivian', 'nl' => 'Dutch; Flemish', 'dz' => 'Dzongkha', 'eo' => 'Esperanto', 'et' => 'Estonian', 'ee' => 'Ewe', 'fo' => 'Faroese', 'fj' => 'Fijjian', 'fi' => 'Finnish', 'fr' => 'French', 'fy' => 'Western Frisian', 'ff' => 'Fulah', 'ka' => 'Georgian', 'de' => 'German', 'gd' => 'Gaelic; Scottish Gaelic',
+			'ga' => 'Irish', 'gl' => 'Galician', 'gv' => 'Manx', 'el' => 'Greek, Modern', 'gn' => 'Guarani', 'gu' => 'Gujarati', 'ht' => 'Haitian; Haitian Creole', 'ha' => 'Hausa', 'he' => 'Hebrew', 'hz' => 'Herero', 'hi' => 'Hindi', 'ho' => 'Hiri Motu', 'hu' => 'Hungarian', 'ig' => 'Igbo', 'is' => 'Icelandic', 'io' => 'Ido', 'ii' => 'Sichuan Yi', 'iu' => 'Inuktitut', 'ie' => 'Interlingue',
+			'ia' => 'Interlingua (International Auxiliary Language Association)', 'id' => 'Indonesian', 'ik' => 'Inupiaq', 'it' => 'Italian', 'jv' => 'Javanese', 'ja' => 'Japanese', 'kl' => 'Kalaallisut; Greenlandic', 'kn' => 'Kannada', 'ks' => 'Kashmiri', 'kr' => 'Kanuri', 'kk' => 'Kazakh', 'km' => 'Central Khmer', 'ki' => 'Kikuyu; Gikuyu', 'rw' => 'Kinyarwanda', 'ky' => 'Kirghiz; Kyrgyz',
+			'kv' => 'Komi', 'kg' => 'Kongo', 'ko' => 'Korean', 'kj' => 'Kuanyama; Kwanyama', 'ku' => 'Kurdish', 'lo' => 'Lao', 'la' => 'Latin', 'lv' => 'Latvian', 'li' => 'Limburgan; Limburger; Limburgish', 'ln' => 'Lingala', 'lt' => 'Lithuanian', 'lb' => 'Luxembourgish; Letzeburgesch', 'lu' => 'Luba-Katanga', 'lg' => 'Ganda', 'mk' => 'Macedonian', 'mh' => 'Marshallese', 'ml' => 'Malayalam',
+			'mi' => 'Maori', 'mr' => 'Marathi', 'ms' => 'Malay', 'mg' => 'Malagasy', 'mt' => 'Maltese', 'mo' => 'Moldavian', 'mn' => 'Mongolian', 'na' => 'Nauru', 'nv' => 'Navajo; Navaho', 'nr' => 'Ndebele, South; South Ndebele', 'nd' => 'Ndebele, North; North Ndebele', 'ng' => 'Ndonga', 'ne' => 'Nepali', 'nn' => 'Norwegian Nynorsk; Nynorsk, Norwegian', 'nb' => 'Bokmål, Norwegian, Norwegian Bokmål',
+			'no' => 'Norwegian', 'ny' => 'Chichewa; Chewa; Nyanja', 'oc' => 'Occitan, Provençal', 'oj' => 'Ojibwa', 'or' => 'Oriya', 'om' => 'Oromo', 'os' => 'Ossetian; Ossetic', 'pa' => 'Panjabi; Punjabi', 'fa' => 'Persian', 'pi' => 'Pali', 'pl' => 'Polish', 'pt' => 'Portuguese', 'ps' => 'Pushto', 'qu' => 'Quechua', 'rm' => 'Romansh', 'ro' => 'Romanian', 'rn' => 'Rundi', 'ru' => 'Russian',
+			'sg' => 'Sango', 'sa' => 'Sanskrit', 'sr' => 'Serbian', 'hr' => 'Croatian', 'si' => 'Sinhala; Sinhalese', 'sk' => 'Slovak', 'sl' => 'Slovenian', 'se' => 'Northern Sami', 'sm' => 'Samoan', 'sn' => 'Shona', 'sd' => 'Sindhi', 'so' => 'Somali', 'st' => 'Sotho, Southern', 'es' => 'Spanish; Castilian', 'sc' => 'Sardinian', 'ss' => 'Swati', 'su' => 'Sundanese', 'sw' => 'Swahili',
+			'sv' => 'Swedish', 'ty' => 'Tahitian', 'ta' => 'Tamil', 'tt' => 'Tatar', 'te' => 'Telugu', 'tg' => 'Tajik', 'tl' => 'Tagalog', 'th' => 'Thai', 'bo' => 'Tibetan', 'ti' => 'Tigrinya', 'to' => 'Tonga (Tonga Islands)', 'tn' => 'Tswana', 'ts' => 'Tsonga', 'tk' => 'Turkmen', 'tr' => 'Turkish', 'tw' => 'Twi', 'ug' => 'Uighur; Uyghur', 'uk' => 'Ukrainian', 'ur' => 'Urdu', 'uz' => 'Uzbek',
+			've' => 'Venda', 'vi' => 'Vietnamese', 'vo' => 'Volapük', 'cy' => 'Welsh','wa' => 'Walloon','wo' => 'Wolof', 'xh' => 'Xhosa', 'yi' => 'Yiddish', 'yo' => 'Yoruba', 'za' => 'Zhuang; Chuang', 'zu' => 'Zulu' );
+		
 	?>
 	<div class="wrap">
 		<div class="icon32 icon32-bws" id="icon-options-general"></div>
@@ -288,16 +403,14 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 		<div class="error" <?php if( "" == $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
 		<form method="post" action="admin.php?page=contact_form.php">
 			<span style="margin-bottom:15px;">
-				<p><?php _e( "If you would like to add a Contact Form to your website, just copy and put this shortcode onto your post or page or widget:", 'contact_form' ); ?> [contact_form]</p>
+				<p><?php _e( "If you would like to add a Contact Form to your website, just copy and put this shortcode onto your post or page or widget:", 'contact_form' ); ?> [contact_form] or [contact_form lang=en]</p>
 				<?php _e( "If information in the below fields are empty then the message will be send to an address which was specified during registration.", 'contact_form' ); ?>
 			</span>
 			<table class="form-table">
 				<tr valign="top">
 					<th scope="row" style="width:195px;"><?php _e( "Use email of wordpress user:", 'contact_form' ); ?> </th>
-					<td style="width:15px;">
+					<td colspan="2">
 						<input type="radio" id="cntctfrm_select_email_user" name="cntctfrm_select_email" value="user" <?php if($cntctfrm_options['cntctfrm_select_email'] == 'user') echo "checked=\"checked\" "; ?>/>
-					</td>
-					<td>
 						<select name="cntctfrm_user_email">
 							<option disabled><?php _e( "Select user name", 'contact_form' ); ?></option>
 							<?php while( list( $key, $value ) = each( $userslogin ) ) { ?>
@@ -309,11 +422,8 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				</tr>
 				<tr valign="top">
 					<th scope="row" style="width:195px;"><?php _e( "Use this email:", 'contact_form' ); ?> </th>
-					<td>
-						<input type="radio" id="cntctfrm_select_email_custom" name="cntctfrm_select_email" value="custom" <?php if($cntctfrm_options['cntctfrm_select_email'] == 'custom') echo "checked=\"checked\" "; ?>/>
-					</td>
-					<td>
-						<input type="text" name="cntctfrm_custom_email" value="<?php echo $cntctfrm_options['cntctfrm_custom_email']; ?>" onfocus="document.getElementById('cntctfrm_select_email_custom').checked = true;" />
+					<td colspan="2">
+						<input type="radio" id="cntctfrm_select_email_custom" name="cntctfrm_select_email" value="custom" <?php if($cntctfrm_options['cntctfrm_select_email'] == 'custom') echo "checked=\"checked\" "; ?>/> <input type="text" name="cntctfrm_custom_email" value="<?php echo $cntctfrm_options['cntctfrm_custom_email']; ?>" onfocus="document.getElementById('cntctfrm_select_email_custom').checked = true;" />
 						<span class="cntctfrm_info"><?php _e( "Set an email address which will be used for messages receiving.", 'contact_form' ); ?></span>
 					</td>
 				</tr>
@@ -322,20 +432,14 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
 					<th scope="row" style="width:195px;"><?php _e( "Display Attachment block", 'contact_form' ); ?></th>
-					<td>
-						<input type="checkbox" id="cntctfrm_attachment" name="cntctfrm_attachment" value="1" <?php if($cntctfrm_options['cntctfrm_attachment'] == '1') echo "checked=\"checked\" "; ?>/>
-					</td>
-					<td>
-						<span  class="cntctfrm_info"><?php echo __( "Users can attach files of the following types", 'contact_form' ) . ": html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, xls, zip, rar, wav, mp3, ppt"; ?></span>
+					<td colspan="2">
+						<input type="checkbox" id="cntctfrm_attachment" name="cntctfrm_attachment" value="1" <?php if($cntctfrm_options['cntctfrm_attachment'] == '1') echo "checked=\"checked\" "; ?>/> <span  class="cntctfrm_info"><?php echo __( "Users can attach files of the following types", 'contact_form' ) . ": html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, xls, zip, rar, wav, mp3, ppt"; ?></span>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
 					<th scope="row" style="width:195px;"><?php _e( "Display Attachment explanations", 'contact_form' ); ?></th>
-					<td>
-						<input type="checkbox" id="cntctfrm_attachment_explanations" name="cntctfrm_attachment_explanations" value="1" <?php if( $cntctfrm_options['cntctfrm_attachment_explanations'] == '1' && $cntctfrm_options['cntctfrm_attachment'] == '1' ) echo "checked=\"checked\" "; ?>/>
-					</td>
-					<td>
-						<span  class="cntctfrm_info"><?php echo __( "Display explanations after Attachment block", 'contact_form' ); ?></span>
+					<td colspan="2">
+						<input type="checkbox" id="cntctfrm_attachment_explanations" name="cntctfrm_attachment_explanations" value="1" <?php if( $cntctfrm_options['cntctfrm_attachment_explanations'] == '1' && $cntctfrm_options['cntctfrm_attachment'] == '1' ) echo "checked=\"checked\" "; ?>/> <span  class="cntctfrm_info"><?php echo __( "Display explanations after Attachment block", 'contact_form' ); ?></span>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if( $cntctfrm_options['cntctfrm_additions_options'] == '0' ) echo "cntctfrm_hidden"; ?>">
@@ -346,84 +450,155 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				</tr>
 				<tr class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
 					<th rowspan="2"><?php _e( 'What use?', 'contact_form' ); ?></th>
-					<td>
+					<td colspan="2">
 						<input type='radio' name='cntctfrm_mail_method' value='wp-mail' <?php if( $cntctfrm_options['cntctfrm_mail_method'] == 'wp-mail' ) echo "checked=\"checked\" "; ?>/>
-					</td>
-					<td>
 						<?php _e( 'Wp-mail', 'mail-send' ); ?> 
 						<span  class="cntctfrm_info">(<?php _e( 'To send mail you can use the wordpress wp_mail function', 'mail_send' ); ?>)</span>
 					</td>
 				</tr>
 				<tr class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
-					<td>
+					<td colspan="2">
 						<input type='radio' name='cntctfrm_mail_method' value='mail' <?php if($cntctfrm_options['cntctfrm_mail_method'] == 'mail') echo "checked=\"checked\" "; ?>/>
-					</td>
-					<td>
 						<?php _e( 'Mail', 'mail-send' ); ?> 
 						<span  class="cntctfrm_info">(<?php _e( 'To send mail you can use the php mail function', 'mail_send' ); ?>)</span>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
-					<th scope="row" style="width:195px;"><?php _e( "Change FROM fields of the contact form", 'contact_form' ); ?></th>
+					<th scope="row" style="width:195px;"><?php _e( "Change text for 'FROM' field of the email", 'contact_form' ); ?></th>
 					<td colspan="2">
 						<input type="text" style="width:200px;" name="cntctfrm_from_field" value="<?php echo stripslashes( $cntctfrm_options['cntctfrm_from_field'] ); ?>" /><br />
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
+					<th scope="row" style="width:195px;"><?php _e( "Select email for 'FROM' field of the email", 'contact_form' ); ?></th>
+					<td colspan="2">
+						<input type="radio" id="cntctfrm_from_email" name="cntctfrm_from_email" value="user" <?php if( $cntctfrm_options['cntctfrm_from_email'] == 'user' ) echo "checked=\"checked\" "; ?>/> User email <span class="cntctfrm_info">(<?php _e( "In the field 'From' in the mail it will use email of that user who fills the form.", 'contact_form' ); ?>)</span><br />
+						<input type="radio" id="cntctfrm_from_custom_email" name="cntctfrm_from_email" value="custom" <?php if($cntctfrm_options['cntctfrm_from_email'] == 'custom') echo "checked=\"checked\" "; ?>/> <input type="text" name="cntctfrm_custom_from_email" value="<?php echo $cntctfrm_options['cntctfrm_custom_from_email']; ?>" onfocus="document.getElementById('cntctfrm_from_custom_email').checked = true;" />
+						<span class="cntctfrm_info">(<?php _e( "In the field 'From' it will use this email.", 'contact_form' ); ?>)</span>
+					</td>
+				</tr>
+				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
 					<th scope="row" style="width:195px;"><?php _e( "Display phone field", 'contact_form' ); ?></th>
-					<td>
+					<td colspan="2">
 						<input type="checkbox" id="cntctfrm_display_phone_field" name="cntctfrm_display_phone_field" value="1" <?php if($cntctfrm_options['cntctfrm_display_phone_field'] == '1') echo "checked=\"checked\" "; ?>/>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
 					<th scope="row" style="width:195px;"><?php _e( "Required field", 'contact_form' ); ?></th>
-					<td>
-						<input type="checkbox" id="cntctfrm_required_name_field" name="cntctfrm_required_name_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_name_field'] == '1') echo "checked=\"checked\" "; ?>/><br />
-						<input type="checkbox" id="cntctfrm_required_email_field" name="cntctfrm_required_email_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_email_field'] == '1') echo "checked=\"checked\" "; ?>/><br />
-						<input type="checkbox" id="cntctfrm_required_phone_field" name="cntctfrm_required_phone_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_phone_field'] == '1') echo "checked=\"checked\" "; ?>/><br />
-						<input type="checkbox" id="cntctfrm_required_subject_field" name="cntctfrm_required_subject_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_subject_field'] == '1') echo "checked=\"checked\" "; ?>/><br />
-						<input type="checkbox" id="cntctfrm_required_message_field" name="cntctfrm_required_message_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_message_field'] == '1') echo "checked=\"checked\" "; ?>/>
-					</td>
-					<td>
-						<span class="cntctfrm_info"><?php _e( "Name", 'contact_form' ); ?></span><br />
-						<span class="cntctfrm_info"><?php _e( "E-Mail Address", 'contact_form' ); ?></span><br />
-						<span class="cntctfrm_info"><?php _e( "Phone", 'contact_form' ); ?></span><br />
-						<span class="cntctfrm_info"><?php _e( "Subject", 'contact_form' ); ?></span><br />
-						<span class="cntctfrm_info"><?php _e( "Message", 'contact_form' ); ?></span>
+					<td colspan="2">
+						<input type="checkbox" id="cntctfrm_required_name_field" name="cntctfrm_required_name_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_name_field'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Name", 'contact_form' ); ?><br />
+						<input type="checkbox" id="cntctfrm_required_email_field" name="cntctfrm_required_email_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_email_field'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "E-Mail Address", 'contact_form' ); ?><br />
+						<input type="checkbox" id="cntctfrm_required_phone_field" name="cntctfrm_required_phone_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_phone_field'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Phone", 'contact_form' ); ?><br />
+						<input type="checkbox" id="cntctfrm_required_subject_field" name="cntctfrm_required_subject_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_subject_field'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Subject", 'contact_form' ); ?><br />
+						<input type="checkbox" id="cntctfrm_required_message_field" name="cntctfrm_required_message_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_message_field'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Message", 'contact_form' ); ?>
 					</td>
 				</tr>
-				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
+				<tr valign="top" class="cntctfrm_additions_block <?php if( $cntctfrm_options['cntctfrm_additions_options'] == '0' ) echo "cntctfrm_hidden"; ?>">
 					<th scope="row" style="width:195px;"><?php _e( "Display additional info in email", 'contact_form' ); ?></th>
-					<td>
+					<td style="width:15px;">
 						<input type="checkbox" id="cntctfrm_display_add_info" name="cntctfrm_display_add_info" value="1" <?php if($cntctfrm_options['cntctfrm_display_add_info'] == '1') echo "checked=\"checked\" "; ?>/>
 					</td>
-					<td class="cntctfrm_display_add_info_block <?php if($cntctfrm_options['cntctfrm_display_add_info'] == '0') echo "cntctfrm_hidden"; ?>">
-						<input type="checkbox" id="cntctfrm_display_sent_from" name="cntctfrm_display_sent_from" value="1" <?php if($cntctfrm_options['cntctfrm_display_sent_from'] == '1') echo "checked=\"checked\" "; ?>/> <span class="cntctfrm_info"><?php _e( "Sent from (ip address)", 'contact_form' ); ?></span><br />
-						<input type="checkbox" id="cntctfrm_display_date_time" name="cntctfrm_display_date_time" value="1" <?php if($cntctfrm_options['cntctfrm_display_date_time'] == '1') echo "checked=\"checked\" "; ?>/> <span class="cntctfrm_info"><?php _e( "Date/Time", 'contact_form' ); ?></span><br />
-						<input type="checkbox" id="cntctfrm_display_coming_from" name="cntctfrm_display_coming_from" value="1" <?php if($cntctfrm_options['cntctfrm_display_coming_from'] == '1') echo "checked=\"checked\" "; ?>/> <span class="cntctfrm_info"><?php _e( "Coming from (referer)", 'contact_form' ); ?></span><br />
-						<input type="checkbox" id="cntctfrm_display_user_agent" name="cntctfrm_display_user_agent" value="1" <?php if($cntctfrm_options['cntctfrm_display_user_agent'] == '1') echo "checked=\"checked\" "; ?>/> <span class="cntctfrm_info"><?php _e( "Using (user agent)", 'contact_form' ); ?></span><br />
+					<td class="cntctfrm_display_add_info_block <?php if( $cntctfrm_options['cntctfrm_display_add_info'] == '0' ) echo "cntctfrm_hidden"; ?>">
+						<input type="checkbox" id="cntctfrm_display_sent_from" name="cntctfrm_display_sent_from" value="1" <?php if($cntctfrm_options['cntctfrm_display_sent_from'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Sent from (ip address)", 'contact_form' ); ?><br />
+						<input type="checkbox" id="cntctfrm_display_date_time" name="cntctfrm_display_date_time" value="1" <?php if($cntctfrm_options['cntctfrm_display_date_time'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Date/Time", 'contact_form' ); ?><br />
+						<input type="checkbox" id="cntctfrm_display_coming_from" name="cntctfrm_display_coming_from" value="1" <?php if($cntctfrm_options['cntctfrm_display_coming_from'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Coming from (referer)", 'contact_form' ); ?><br />
+						<input type="checkbox" id="cntctfrm_display_user_agent" name="cntctfrm_display_user_agent" value="1" <?php if($cntctfrm_options['cntctfrm_display_user_agent'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Using (user agent)", 'contact_form' ); ?><br />
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
-					<th scope="row" style="width:195px;"><?php _e( "Change label for fields of the contact form", 'contact_form' ); ?></th>
-					<td>
+					<th scope="row" style="width:195px;"><?php _e( "Language settings for label fields", 'contact_form' ); ?></th>
+					<td colspan="2">
+						<select name="cntctfrm_languages" id="cntctfrm_languages" style="width:300px;">
+						<?php foreach ( $lang_codes as $key=>$val ) {
+							if( in_array( $key, $cntctfrm_options['cntctfrm_language'] ) )
+								continue;
+							echo '<option value="' . esc_attr( $key ) . '"> ' . esc_html ( $val ) . '</option>';
+						} ?>
+						</select>
+						<input type="button" class="button-primary" id="cntctfrm_add_language_button" value="<?php _e('Add language', 'contact_form'); ?>" />
+					</td>
+				</tr>
+				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
+					<th scope="row" style="width:195px;"><?php _e( "Change label for fields of the contact form and error messages", 'contact_form' ); ?></th>
+					<td style="width:15px;">
 						<input type="checkbox" id="cntctfrm_change_label" name="cntctfrm_change_label" value="1" <?php if($cntctfrm_options['cntctfrm_change_label'] == '1') echo "checked=\"checked\" "; ?>/>
 					</td>
 					<td class="cntctfrm_change_label_block <?php if($cntctfrm_options['cntctfrm_change_label'] == '0') echo "cntctfrm_hidden"; ?>">
-						<input type="text" name="cntctfrm_name_label" value="<?php echo $cntctfrm_options['cntctfrm_name_label']; ?>" /> <span class="cntctfrm_info"><?php _e( "Name:", 'contact_form' ); ?></span><br />
-						<input type="text" name="cntctfrm_email_label" value="<?php echo $cntctfrm_options['cntctfrm_email_label']; ?>" /> <span class="cntctfrm_info"><?php _e( "E-Mail Address:", 'contact_form' ); ?></span><br />
-						<input type="text" name="cntctfrm_phone_label" value="<?php echo $cntctfrm_options['cntctfrm_phone_label']; ?>" /> <span class="cntctfrm_info"><?php _e( "Phone:", 'contact_form' ); ?></span><br />
-						<input type="text" name="cntctfrm_subject_label" value="<?php echo $cntctfrm_options['cntctfrm_subject_label']; ?>" /> <span class="cntctfrm_info"><?php _e( "Subject:", 'contact_form' ); ?></span><br />
-						<input type="text" name="cntctfrm_message_label" value="<?php echo $cntctfrm_options['cntctfrm_message_label']; ?>" /> <span class="cntctfrm_info"><?php _e( "Message:", 'contact_form' ); ?></span><br />
-						<input type="text" name="cntctfrm_attachment_label" value="<?php echo $cntctfrm_options['cntctfrm_attachment_label']; ?>" /> <span class="cntctfrm_info"><?php _e( "Attachment:", 'contact_form' ); ?></span><br />
+						<div class="cntctfrm_label_language_tab cntctfrm_active" id="cntctfrm_label_en"><?php _e('English', 'contact_form'); ?></div>
+						<?php if( ! empty( $cntctfrm_options['cntctfrm_language'] ) ){ 
+							foreach( $cntctfrm_options['cntctfrm_language'] as $val ) {
+								echo '<div class="cntctfrm_label_language_tab" id="cntctfrm_label_'.$val.'">'.$lang_codes[$val].' <span class="cntctfrm_delete" rel="'.$val.'">X</span></div>';
+							} 
+						} ?>
+						<div class="clear"></div>
+						<div class="cntctfrm_language_tab cntctfrm_tab_en">
+							<input type="text" name="cntctfrm_name_label[en]" value="<?php echo $cntctfrm_options['cntctfrm_name_label']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Name:", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_email_label[en]" value="<?php echo $cntctfrm_options['cntctfrm_email_label']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "E-Mail Address:", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_phone_label[en]" value="<?php echo $cntctfrm_options['cntctfrm_phone_label']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Phone:", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_subject_label[en]" value="<?php echo $cntctfrm_options['cntctfrm_subject_label']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Subject:", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_message_label[en]" value="<?php echo $cntctfrm_options['cntctfrm_message_label']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Message:", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_attachment_label[en]" value="<?php echo $cntctfrm_options['cntctfrm_attachment_label']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Attachment:", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_submit_label[en]" value="<?php echo $cntctfrm_options['cntctfrm_submit_label']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Submit", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_name_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_name_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for name field", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_email_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_email_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for email field", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_phone_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_phone_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for phone field", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_subject_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_subject_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for subject field", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_message_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_message_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for message field", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_attachment_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_attachment_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for attachment field", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_captcha_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_captcha_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for captcha", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_form_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_form_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for all form", 'contact_form' ); ?></span><br />
+							<span class="cntctfrm_info"><?php _e( "Use shortcode", 'contact_form' ); echo " [contact_form lang=en] or [contact_form] "; _e( "for this language", 'contact_form' ); ?></span>
+						</div>
+						<?php if( ! empty( $cntctfrm_options['cntctfrm_language'] ) ){ 
+							foreach( $cntctfrm_options['cntctfrm_language'] as $val ) { ?>
+								<div class="cntctfrm_language_tab hidden cntctfrm_tab_<?php echo $val; ?>">
+									<input type="text" name="cntctfrm_name_label[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_name_label'][$val] ) ) echo $cntctfrm_options['cntctfrm_name_label'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Name:", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_email_label[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_email_label'][$val] ) ) echo $cntctfrm_options['cntctfrm_email_label'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "E-Mail Address:", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_phone_label[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_phone_label'][$val] ) ) echo $cntctfrm_options['cntctfrm_phone_label'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Phone:", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_subject_label[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_subject_label'][$val] ) ) echo $cntctfrm_options['cntctfrm_subject_label'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Subject:", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_message_label[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_message_label'][$val] ) ) echo $cntctfrm_options['cntctfrm_message_label'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Message:", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_attachment_label[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_attachment_label'][$val] ) ) echo $cntctfrm_options['cntctfrm_attachment_label'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Attachment:", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_submit_label[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_submit_label'][$val] ) ) echo $cntctfrm_options['cntctfrm_submit_label'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Submit", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_name_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_name_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_name_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for name field", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_email_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_email_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_email_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for email field", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_phone_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_phone_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_phone_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for phone field", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_subject_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_subject_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_subject_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for subject field", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_message_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_message_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_message_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for message field", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_attachment_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_attachment_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_attachment_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for attachment field", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_captcha_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_captcha_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_captcha_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for captcha", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_form_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_form_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_form_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for all form", 'contact_form' ); ?></span><br />
+									<span class="cntctfrm_info"><?php _e( "Use shortcode", 'contact_form' ); echo " [contact_form lang=".$val."] "; _e( "for this language", 'contact_form' ); ?></span>
+								</div>
+							<?php } 
+						} ?>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
 					<th scope="row" style="width:195px;"><?php _e( "Action after the send mail", 'contact_form' ); ?></th>
 					<td colspan="2" class="cntctfrm_action_after_send_block">
-					 <input type="radio" id="cntctfrm_action_after_send" name="cntctfrm_action_after_send" value="1" <?php if($cntctfrm_options['cntctfrm_action_after_send'] == '1') echo "checked=\"checked\" "; ?>/> <span class="cntctfrm_info"><?php _e( "Display text", 'contact_form' ); ?></span><br />
-						<input type="text" name="cntctfrm_thank_text" value="<?php echo $cntctfrm_options['cntctfrm_thank_text']; ?>" /> <span class="cntctfrm_info"><?php _e( "Text", 'contact_form' ); ?></span><br />
-						<input type="radio" id="cntctfrm_action_after_send" name="cntctfrm_action_after_send" value="0" <?php if($cntctfrm_options['cntctfrm_action_after_send'] == '0') echo "checked=\"checked\" "; ?>/> <span class="cntctfrm_info"><?php _e( "Redirect to page", 'contact_form' ); ?></span><br />
+						<input type="radio" id="cntctfrm_action_after_send" name="cntctfrm_action_after_send" value="1" <?php if($cntctfrm_options['cntctfrm_action_after_send'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Display text", 'contact_form' ); ?><br />
+						<div class="cntctfrm_label_language_tab cntctfrm_active" id="cntctfrm_text_en"><?php _e('English', 'contact_form'); ?></div>
+						<?php if( ! empty( $cntctfrm_options['cntctfrm_language'] ) ){ 
+							foreach( $cntctfrm_options['cntctfrm_language'] as $val ) {
+								echo '<div class="cntctfrm_label_language_tab" id="cntctfrm_text_'.$val.'">'.$lang_codes[$val].' <span class="cntctfrm_delete" rel="'.$val.'">X</span></div>';
+							} 
+						} ?>
+						<div class="clear"></div>
+						<div class="cntctfrm_language_tab cntctfrm_tab_en">
+							<input type="text" name="cntctfrm_thank_text[en]" value="<?php echo $cntctfrm_options['cntctfrm_thank_text']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Text", 'contact_form' ); ?></span><br />
+							<span class="cntctfrm_info"><?php _e( "Use shortcode", 'contact_form' ); echo " [contact_form=en] or [contact_form] "; _e( "for this language", 'contact_form' ); ?></span>
+						</div>
+						<?php if( ! empty( $cntctfrm_options['cntctfrm_language'] ) ){ 
+							foreach( $cntctfrm_options['cntctfrm_language'] as $val ) { ?>
+								<div class="cntctfrm_language_tab hidden cntctfrm_tab_<?php echo $val; ?>">
+									<input type="text" name="cntctfrm_thank_text[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_thank_text'][$val] ) ) echo $cntctfrm_options['cntctfrm_thank_text'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Text", 'contact_form' ); ?></span><br />
+									<span class="cntctfrm_info"><?php _e( "Use shortcode", 'contact_form' ); echo " [contact_form lang=".$val."] "; _e( "for this language", 'contact_form' ); ?></span>
+								</div>
+							<?php } 
+						} ?>
+						<div id="cntctfrm_before"></div>
+						<br />
+						<input type="radio" id="cntctfrm_action_after_send" name="cntctfrm_action_after_send" value="0" <?php if($cntctfrm_options['cntctfrm_action_after_send'] == '0') echo "checked=\"checked\" "; ?>/> <?php _e( "Redirect to page", 'contact_form' ); ?><br />
 						<input type="text" name="cntctfrm_redirect_url" value="<?php echo $cntctfrm_options['cntctfrm_redirect_url']; ?>" /> <span class="cntctfrm_info"><?php _e( "Url", 'contact_form' ); ?></span><br />
 					</td>
 			</table>    
@@ -440,8 +615,9 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 
 // Display contact form in front end - page or post
 if( ! function_exists( 'cntctfrm_display_form' ) ) {
-	function cntctfrm_display_form() {
+	function cntctfrm_display_form( $atts = array( 'lang' => 'en' ) ) {
 		global $error_message, $cntctfrm_options, $cntctfrm_result;
+		extract( shortcode_atts( array( 'lang' => 'en' ), $atts ) );
 		$cntctfrm_options = get_option( 'cntctfrm_options' );
 		$content = "";
 
@@ -460,7 +636,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 		if( true === $cntctfrm_result ) {
 			$_SESSION['cntctfrm_send_mail'] = true;
 			if( $cntctfrm_options['cntctfrm_action_after_send'] == 1 )
-				$content .= $cntctfrm_options['cntctfrm_thank_text'];
+				$content .= $cntctfrm_options['cntctfrm_thank_text'][$lang];
 			else
 				$content .= "<script type='text/javascript'>window.location.href = '".$cntctfrm_options['cntctfrm_redirect_url']."';</script>";
 		}
@@ -477,7 +653,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_form'].'</div>';
 				}
 			$content .= '<div style="text-align: left; padding-top: 5px;">
-					<label for="cntctfrm_contact_name">'. $cntctfrm_options['cntctfrm_name_label'] . ( $cntctfrm_options['cntctfrm_required_name_field'] == 1 ? '<span class="required"> *</span></label>' : '</label>' ) . '
+					<label for="cntctfrm_contact_name">'. $cntctfrm_options['cntctfrm_name_label'][$lang] . ( $cntctfrm_options['cntctfrm_required_name_field'] == 1 ? '<span class="required"> *</span></label>' : '</label>' ) . '
 				</div>';
 			if( isset( $error_message['error_name'] ) ) {
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_name'].'</div>';
@@ -487,7 +663,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 				</div>
 
 				<div style="text-align: left;">
-					<label for="cntctfrm_contact_email">'. $cntctfrm_options['cntctfrm_email_label'] . ( $cntctfrm_options['cntctfrm_required_email_field'] == 1 ? '<span class="required"> *</span></label>' : '</label>' ) . '
+					<label for="cntctfrm_contact_email">'. $cntctfrm_options['cntctfrm_email_label'][$lang] . ( $cntctfrm_options['cntctfrm_required_email_field'] == 1 ? '<span class="required"> *</span></label>' : '</label>' ) . '
 				</div>';
 			if( isset( $error_message['error_email'] ) ) {
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_email'].'</div>';
@@ -498,7 +674,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 			';
 			if( $cntctfrm_options['cntctfrm_display_phone_field'] == 1 ) { 
 				$content .= '<div style="text-align: left;">
-						<label for="cntctfrm_contact_phone">'. $cntctfrm_options['cntctfrm_phone_label'] . ( $cntctfrm_options['cntctfrm_required_phone_field'] == 1 ? '<span class="required"> *</span></label>' : '</label>' ) . '
+						<label for="cntctfrm_contact_phone">'. $cntctfrm_options['cntctfrm_phone_label'][$lang] . ( $cntctfrm_options['cntctfrm_required_phone_field'] == 1 ? '<span class="required"> *</span></label>' : '</label>' ) . '
 					</div>';
 				if( isset( $error_message['error_phone'] ) ) {
 					$content .= '<div style="text-align: left; color: red;">'.$error_message['error_phone'].'</div>';
@@ -509,7 +685,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 					';
 			}
 			$content .= '<div style="text-align: left;">
-					<label for="cntctfrm_contact_subject">'. $cntctfrm_options['cntctfrm_subject_label'] . ( $cntctfrm_options['cntctfrm_required_subject_field'] == 1 ? '<span class="required"> *</span></label>' : '</label>' ) . '
+					<label for="cntctfrm_contact_subject">'. $cntctfrm_options['cntctfrm_subject_label'][$lang] . ( $cntctfrm_options['cntctfrm_required_subject_field'] == 1 ? '<span class="required"> *</span></label>' : '</label>' ) . '
 				</div>';
 			if( isset( $error_message['error_subject'] ) ) {
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_subject'].'</div>';
@@ -519,7 +695,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 				</div>
 
 				<div style="text-align: left;">
-					<label for="cntctfrm_contact_message">'. $cntctfrm_options['cntctfrm_message_label'] . ( $cntctfrm_options['cntctfrm_required_message_field'] == 1 ? '<span class="required"> *</span></label>' : '</label>' ) . '
+					<label for="cntctfrm_contact_message">'. $cntctfrm_options['cntctfrm_message_label'][$lang] . ( $cntctfrm_options['cntctfrm_required_message_field'] == 1 ? '<span class="required"> *</span></label>' : '</label>' ) . '
 				</div>';
 			if( isset( $error_message['error_message'] ) ) {
 				$content .= '<div style="text-align: left; color: red;">'.$error_message['error_message'].'</div>';
@@ -529,7 +705,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 				</div>';
 			if($cntctfrm_options['cntctfrm_attachment'] == 1 ) {
 				$content .= '<div style="text-align: left;">
-						<label for="cntctfrm_contact_attachment">'. $cntctfrm_options['cntctfrm_attachment_label'] . '</label>
+						<label for="cntctfrm_contact_attachment">'. $cntctfrm_options['cntctfrm_attachment_label'][$lang] . '</label>
 					</div>';
 				if( isset( $error_message['error_attachment'] ) ) {
 					$content .= '<div style="text-align: left; color: red;">'.$error_message['error_attachment'].'</div>';
@@ -555,7 +731,8 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 				
 			$content .= '<div style="text-align: left; padding-top: 8px;">
 					<input type="hidden" value="send" name="cntctfrm_contact_action"><input type="hidden" value="Version: 3.26" />
-					<input type="submit" value="'. __( "Submit", 'contact_form' ). '" style="cursor: pointer; margin: 0pt; text-align: center;margin-bottom:10px;" /> 
+					<input type="hidden" value="'.$lang.'" name="cntctfrm_language">
+					<input type="submit" value="'. $cntctfrm_options['cntctfrm_submit_label'][$lang]. '" style="cursor: pointer; margin: 0pt; text-align: center;margin-bottom:10px;" /> 
 				</div>
 				</form>';
 		}
@@ -567,8 +744,7 @@ if( ! function_exists( 'cntctfrm_check_and_send' ) ) {
 		function cntctfrm_check_and_send() {
 				global $cntctfrm_result;
 				$cntctfrm_options = get_option( 'cntctfrm_options' );
-				if( isset( $_REQUEST['cntctfrm_contact_action'] ) )
-				{
+				if( isset( $_REQUEST['cntctfrm_contact_action'] ) ){
 					// Check all input data
 					$cntctfrm_result = cntctfrm_check_form();
 				}
@@ -588,6 +764,8 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 	function cntctfrm_check_form() {
 		global $error_message;
 		global $cntctfrm_options;
+
+		$language = isset( $_REQUEST['cntctfrm_language'] ) ? $_REQUEST['cntctfrm_language'] : 'en';
 		$path_of_uploaded_file = '';
 		if( empty( $cntctfrm_options ) )
 				$cntctfrm_options = get_option( 'cntctfrm_options' );
@@ -595,16 +773,16 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 		// Error messages array
 		$error_message = array();
 		if( $cntctfrm_options['cntctfrm_required_name_field'] == 1 )
-			$error_message['error_name'] = __( "Your name is required.", 'contact_form' );
+			$error_message['error_name'] = $cntctfrm_options['cntctfrm_name_error'][$language];
 		if( $cntctfrm_options['cntctfrm_required_email_field'] == 1 )
-			$error_message['error_email'] = __( "A proper e-mail address is required.", 'contact_form' );
+			$error_message['error_email'] = $cntctfrm_options['cntctfrm_email_error'][$language];
 		if( $cntctfrm_options['cntctfrm_required_subject_field'] == 1 )
-			$error_message['error_subject'] = __( "Subject text is required.", 'contact_form' );
+			$error_message['error_subject'] = $cntctfrm_options['cntctfrm_subject_error'][$language];
 		if( $cntctfrm_options['cntctfrm_required_message_field'] == 1 )
-			$error_message['error_message'] = __( "Message text is required.", 'contact_form' );
+			$error_message['error_message'] = $cntctfrm_options['cntctfrm_message_error'][$language];
 		if( $cntctfrm_options['cntctfrm_required_phone_field'] == 1 )
-			$error_message['error_phone'] = __( "Phone is required field.", 'contact_form' );
-		$error_message['error_form'] = __( "Please make corrections below and try again.", 'contact_form' );
+			$error_message['error_phone'] = $cntctfrm_options['cntctfrm_phone_error'][$language];
+		$error_message['error_form'] = $cntctfrm_options['cntctfrm_form_error'][$language];
 		if( $cntctfrm_options['cntctfrm_attachment'] == 1 ) {
 			global $path_of_uploaded_file;
 			global $mime_type;
@@ -636,7 +814,7 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 				'wav'=>'audio/wav',
 				'mp3'=>'audio/mp3',
 				'ppt'=>'application/vnd.ms-powerpoint');
-			$error_message['error_attachment'] = __( "Attachment is broken.", "contact_form" );
+			$error_message['error_attachment'] = $cntctfrm_options['cntctfrm_attachment_error'][$language];
 		}
 		// Check information wich was input in fields
 		if( $cntctfrm_options['cntctfrm_required_name_field'] == 1 && "" != $_REQUEST['cntctfrm_contact_name'] )
@@ -651,7 +829,7 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 			unset( $error_message['error_phone'] );
 		// If captcha plugin exists
 		if( ! apply_filters( 'cntctfrm_check_form', $_REQUEST ) )
-			$error_message['error_captcha'] = __( "Please complete the CAPTCHA.", 'contact_form' );
+			$error_message['error_captcha'] = $cntctfrm_options['cntctfrm_captcha_error'][$language];
 		if( isset($_FILES["cntctfrm_contact_attachment"]["tmp_name"]) && $_FILES["cntctfrm_contact_attachment"]["tmp_name"] != "") {
 			if( is_multisite() ){
 				if( defined('UPLOADS') ) {
@@ -805,7 +983,10 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 				$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 
 				// Additional headers
-				$headers .= 'From: '.stripslashes( $_REQUEST['cntctfrm_contact_email'] ). "\r\n";
+				if( 'custom' == $cntctfrm_options['cntctfrm_from_email'] )
+					$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '\r\n';
+				else
+					$headers .= 'From: '.stripslashes( $_REQUEST['cntctfrm_contact_email'] ). '\r\n';
 				if( $cntctfrm_options['cntctfrm_attachment'] == 1 && isset($_FILES["cntctfrm_contact_attachment"]["tmp_name"]) && $_FILES["cntctfrm_contact_attachment"]["tmp_name"] != "") {
 					$attachments = array( $path_of_uploaded_file );
 				}
@@ -823,7 +1004,10 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 					$message_block = $message;
 
 					// Additional headers
-					$headers .= 'From: '.stripslashes( $_REQUEST['cntctfrm_contact_email'] ). "\r\n";
+				if( 'custom' == $cntctfrm_options['cntctfrm_from_email'] )
+					$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '>\r\n';
+				else
+					$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $_REQUEST['cntctfrm_contact_email'] ). '>\r\n';
 
 					$bound_text = 	"jimmyP123";
 		 
@@ -859,7 +1043,10 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 					$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 
 					// Additional headers
-					$headers .= 'From: '.stripslashes( $_REQUEST['cntctfrm_contact_email'] ). "\r\n";
+					if( 'custom' == $cntctfrm_options['cntctfrm_from_email'] )
+						$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '>\r\n';
+					else
+						$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $_REQUEST['cntctfrm_contact_email'] ). '>\r\n';
 				}
 				if( isset( $_REQUEST['cntctfrm_contact_send_copy'] ) && $_REQUEST['cntctfrm_contact_send_copy'] == 1 )
 					@mail( stripslashes( $_REQUEST['cntctfrm_contact_email'] ), stripslashes( strip_tags( $subject ) ), stripslashes( $message ), $headers );
@@ -935,6 +1122,7 @@ if ( ! function_exists ( 'cntctfrm_admin_head' ) ) {
 	function cntctfrm_admin_head() {
 		wp_enqueue_style( 'cntctfrmStylesheet', plugins_url( 'css/style.css', __FILE__ ) );
 		wp_enqueue_script( 'cntctfrmScript', plugins_url( 'js/script.js', __FILE__ ) );
+		echo '<script type="text/javascript">var confirm_text = "'.__('Are you sure you want to delete this language?', 'contact_form').'"</script>';
 	}
 }
 
@@ -950,6 +1138,53 @@ function cntctfrm_email_name_filter( $data ){
 		return stripslashes( $cntctfrm_options['cntctfrm_from_field'] );
 	else
 		return $data;
+}
+
+function cntctfrm_add_language(){
+	$cntctfrm_options = get_option( 'cntctfrm_options' );
+	$cntctfrm_options['cntctfrm_language'][] = $_REQUEST['lang'];
+	update_option( 'cntctfrm_options', $cntctfrm_options, '', 'yes' );
+	die();
+}
+
+function cntctfrm_remove_language(){
+	$cntctfrm_options = get_option( 'cntctfrm_options' );
+	if( $key = array_search( $_REQUEST['lang'], $cntctfrm_options['cntctfrm_language'] ) !== false ) 
+		$cntctfrm_options['cntctfrm_language'] = array_diff( $cntctfrm_options['cntctfrm_language'], array( $_REQUEST['lang'] ) );
+	if( isset( $cntctfrm_options['cntctfrm_name_label'][$_REQUEST['lang']] ) )
+		unset( $cntctfrm_options['cntctfrm_name_label'][$_REQUEST['lang']]);
+	if( isset( $cntctfrm_options['cntctfrm_email_label'][$_REQUEST['lang']] ) )
+		unset( $cntctfrm_options['cntctfrm_email_label'][$_REQUEST['lang']]);
+	if( isset( $cntctfrm_options['cntctfrm_phone_label'][$_REQUEST['lang']] ) )
+		unset( $cntctfrm_options['cntctfrm_phone_label'][$_REQUEST['lang']]);
+	if( isset( $cntctfrm_options['cntctfrm_subject_label'][$_REQUEST['lang']] ) )
+		unset( $cntctfrm_options['cntctfrm_subject_label'][$_REQUEST['lang']]);
+	if( isset( $cntctfrm_options['cntctfrm_message_label'][$_REQUEST['lang']] ) )
+		unset( $cntctfrm_options['cntctfrm_message_label'][$_REQUEST['lang']]);
+	if( isset( $cntctfrm_options['cntctfrm_attachment_label'][$_REQUEST['lang']] ) )
+		unset( $cntctfrm_options['cntctfrm_attachment_label'][$_REQUEST['lang']]);
+	if( isset( $cntctfrm_options['cntctfrm_thank_text'][$_REQUEST['lang']] ) )
+		unset( $cntctfrm_options['cntctfrm_thank_text'][$_REQUEST['lang']]);
+	if( isset( $cntctfrm_options['cntctfrm_submit_label'][$_REQUEST['lang']] ) )
+		unset( $cntctfrm_options['cntctfrm_submit_label'][$_REQUEST['lang']]);
+	if( isset( $cntctfrm_options['cntctfrm_name_error'][$_REQUEST['lang']] ) )
+		unset( $cntctfrm_options['cntctfrm_name_error'][$_REQUEST['lang']]);
+	if( isset( $cntctfrm_options['cntctfrm_email_error'][$_REQUEST['lang']] ) )
+		unset( $cntctfrm_options['cntctfrm_email_error'][$_REQUEST['lang']]);
+	if( isset( $cntctfrm_options['cntctfrm_phone_error'][$_REQUEST['lang']] ) )
+		unset( $cntctfrm_options['cntctfrm_phone_error'][$_REQUEST['lang']]);
+	if( isset( $cntctfrm_options['cntctfrm_subject_error'][$_REQUEST['lang']] ) )
+		unset( $cntctfrm_options['cntctfrm_subject_error'][$_REQUEST['lang']]);
+	if( isset( $cntctfrm_options['cntctfrm_message_error'][$_REQUEST['lang']] ) )
+		unset( $cntctfrm_options['cntctfrm_message_error'][$_REQUEST['lang']]);
+	if( isset( $cntctfrm_options['cntctfrm_attachment_error'][$_REQUEST['lang']] ) )
+		unset( $cntctfrm_options['cntctfrm_attachment_error'][$_REQUEST['lang']]);
+	if( isset( $cntctfrm_options['cntctfrm_captcha_error'][$_REQUEST['lang']] ) )
+		unset( $cntctfrm_options['cntctfrm_captcha_error'][$_REQUEST['lang']]);
+	if( isset( $cntctfrm_options['cntctfrm_form_error'][$_REQUEST['lang']] ) )
+		unset( $cntctfrm_options['cntctfrm_form_error'][$_REQUEST['lang']]);
+	update_option( 'cntctfrm_options', $cntctfrm_options );
+	die();
 }
 
 add_action( 'init', 'cntctfrm_plugin_init' );
@@ -973,4 +1208,8 @@ add_action( 'admin_menu', 'cntctfrm_admin_menu' );
 add_filter( 'widget_text', 'do_shortcode' );
 
 add_filter( 'wp_mail_from_name', 'cntctfrm_email_name_filter', 10, 1);
+
+add_action( 'wp_ajax_cntctfrm_add_language', 'cntctfrm_add_language' );
+add_action( 'wp_ajax_cntctfrm_remove_language', 'cntctfrm_remove_language' );
+
 ?>
