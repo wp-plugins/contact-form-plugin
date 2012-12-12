@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.28
+Version: 3.29
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -191,7 +191,7 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 // Add settings page in admin area
 if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 	function cntctfrm_settings_page() {
-		global $cntctfrm_options, $wpdb;
+		global $cntctfrm_options, $wpdb, $cntctfrm_option_defaults;
 
 		$userslogin = $wpdb->get_col( "SELECT user_login FROM  $wpdb->users ", 0 ); 
 
@@ -730,7 +730,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 			}
 				
 			$content .= '<div style="text-align: left; padding-top: 8px;">
-					<input type="hidden" value="send" name="cntctfrm_contact_action"><input type="hidden" value="Version: 3.26" />
+					<input type="hidden" value="send" name="cntctfrm_contact_action"><input type="hidden" value="Version: 3.29" />
 					<input type="hidden" value="'.$lang.'" name="cntctfrm_language">
 					<input type="submit" value="'. $cntctfrm_options['cntctfrm_submit_label'][$lang]. '" style="cursor: pointer; margin: 0pt; text-align: center;margin-bottom:10px;" /> 
 				</div>

@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.4.2
-Stable tag: 3.28
+Stable tag: 3.29
 
 Add Contact Form to your WordPress website.
 
@@ -104,6 +104,9 @@ Here is an example for German language files.
 5. Widget settings for using shortcode in the sidebar.
 
 == Changelog ==
+
+= V3.29 - 12.12.2012 =
+* Bugfix : The error related to the empty label on the contact form was fixed.
 
 = V3.28 - 11.12.2012 =
 * NEW : Galician language file is added to the plugin.
@@ -250,6 +253,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.29 =
+The error related to the empty label on the contact form was fixed.
 
 = V3.28 =
 Galician language file is added to the plugin. Multilanguage labels for fields is added to the plugin. The shortcode structure was changed.
