@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: contact_form\n"
+"Project-Id-Version: contact_form 3.29\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-11 13:39+0200\n"
-"PO-Revision-Date: 2012-12-11 13:39+0200\n"
-"Last-Translator: zos <zos@bestwebsoft.com>\n"
+"POT-Creation-Date: 2012-12-19 13:31+0200\n"
+"PO-Revision-Date: 2012-12-19 13:31+0200\n"
+"Last-Translator: Luc Capronnier <lcapronnier@yahoo.com>\n"
 "Language-Team: Luc Capronnier <lcapronnier@yahoo.com>\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2;plural=n>2;\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -25,7 +25,7 @@ msgstr "Plugin activé"
 msgid "Read more"
 msgstr "Lire la suite"
 
-#: contact_form.php:78 contact_form.php:1068 contact_form.php:1077
+#: contact_form.php:78 contact_form.php:1064 contact_form.php:1073
 msgid "Settings"
 msgstr "Réglages"
 
@@ -76,7 +76,7 @@ msgstr "Adresse e-mail:"
 
 #: contact_form.php:147 contact_form.php:537 contact_form.php:557
 msgid "Phone:"
-msgstr ""
+msgstr "Téléphone:"
 
 #: contact_form.php:148 contact_form.php:538 contact_form.php:558
 msgid "Subject:"
@@ -111,9 +111,8 @@ msgid "Message text is required."
 msgstr "Un message est obligatoire."
 
 #: contact_form.php:156
-#, fuzzy
 msgid "Phone is required field."
-msgstr "Un nom est obligatoire."
+msgstr "Le numéro de téléphone est obligatoire."
 
 #: contact_form.php:157
 msgid "Attachment is broken."
@@ -151,11 +150,10 @@ msgstr ""
 "sauvegardées."
 
 #: contact_form.php:376
-#, fuzzy
 msgid "Please input correct 'FROM' email. Settings are not saved."
 msgstr ""
-"Merci de saisir une adresse e-mail valide. Les modifications ne sont pas "
-"sauvegardées."
+"Merci de saisir une adresse e-mail valide pour le 'FROM'. Les modifications "
+"ne sont pas sauvegardées."
 
 #: contact_form.php:381
 msgid "Options saved."
@@ -245,44 +243,44 @@ msgid "To send mail you can use the php mail function"
 msgstr "Pour envoyer l'e-mail, vous pouvez utiliser la fonction mail de php"
 
 #: contact_form.php:467
-#, fuzzy
 msgid "Change text for 'FROM' field of the email"
-msgstr "Modifier des champs du formulaire de contact"
+msgstr "Modifier le texte pour le champ 'FROM' du courriel"
 
 #: contact_form.php:473
 msgid "Select email for 'FROM' field of the email"
-msgstr ""
+msgstr "Sélectionner l'adresse e-mail pour le champ 'FROM' du courriel"
 
 #: contact_form.php:475
 msgid ""
 "In the field 'From' in the mail it will use email of that user who fills the "
 "form."
 msgstr ""
+"Dans le champ 'From' du courriel, il sera utilisé l'adresse e-mail de "
+"l'utlisateur qui rempli le formulaire."
 
 #: contact_form.php:477
 msgid "In the field 'From' it will use this email."
-msgstr ""
+msgstr "Dans le champ 'FROM', cette adresse e-mail sera utilisée."
 
 #: contact_form.php:481
 msgid "Display phone field"
-msgstr ""
+msgstr "Afficher le champ téléphone"
 
 #: contact_form.php:487
 msgid "Required field"
-msgstr ""
+msgstr "Champ obligatoire"
 
 #: contact_form.php:489 contact_form.php:953
 msgid "Name"
 msgstr "Nom"
 
 #: contact_form.php:490
-#, fuzzy
 msgid "E-Mail Address"
-msgstr "Adresse e-mail:"
+msgstr "Adresse e-mail"
 
 #: contact_form.php:491 contact_form.php:961
 msgid "Phone"
-msgstr ""
+msgstr "Téléphone"
 
 #: contact_form.php:492 contact_form.php:964
 msgid "Subject"
@@ -314,62 +312,63 @@ msgstr "Depuis (navigateur)"
 
 #: contact_form.php:509
 msgid "Language settings for label fields"
-msgstr ""
+msgstr "Définition des langues pour les titres des champs"
 
 #: contact_form.php:518
 msgid "Add language"
-msgstr ""
+msgstr "Ajouter une langue"
 
 #: contact_form.php:522
-#, fuzzy
 msgid "Change label for fields of the contact form and error messages"
-msgstr "Modifier le nom des champs du formulaire de contact"
+msgstr ""
+"Modifier le texte pour les champs du formulaire de contact et les messages "
+"d'erreur"
 
 #: contact_form.php:527 contact_form.php:580
 msgid "English"
-msgstr ""
+msgstr "Anglais"
 
 #: contact_form.php:542 contact_form.php:562
 msgid "Error message for name field"
-msgstr ""
+msgstr "Message d'erreur pour le champ nom"
 
 #: contact_form.php:543 contact_form.php:563
 msgid "Error message for email field"
-msgstr ""
+msgstr "Message d'erreur pour le champ e-mail"
 
 #: contact_form.php:544 contact_form.php:564
 msgid "Error message for phone field"
-msgstr ""
+msgstr "Message d'erreur pour le champ téléphone"
 
 #: contact_form.php:545 contact_form.php:565
 msgid "Error message for subject field"
-msgstr ""
+msgstr "Message d'erreur pour le champ sujet"
 
 #: contact_form.php:546 contact_form.php:566
 msgid "Error message for message field"
-msgstr ""
+msgstr "Message d'erreur pour le champ message"
 
 #: contact_form.php:547 contact_form.php:567
 msgid "Error message for attachment field"
-msgstr ""
+msgstr "Message d'erreur pour le champ fichier joint"
 
 #: contact_form.php:548 contact_form.php:568
 msgid "Error message for captcha"
-msgstr ""
+msgstr "Message d'erreur pour le captcha"
 
 #: contact_form.php:549 contact_form.php:569
 msgid "Error message for all form"
-msgstr ""
+msgstr "Message d'erreur demandant à compléter les champs manquants"
 
 #: contact_form.php:550 contact_form.php:570 contact_form.php:589
 #: contact_form.php:595
 msgid "Use shortcode"
-msgstr ""
+msgstr "Utiliser le code court"
 
 #: contact_form.php:550 contact_form.php:570 contact_form.php:589
 #: contact_form.php:595
 msgid "for this language"
-msgstr ""
+msgstr "pour cette langue"
 
 #: contact_form.php:577
 msgid "Action after the send mail"
@@ -425,17 +424,17 @@ msgstr ""
 "Si vous voyez ce MIME c'est que votre navigateur n'accepte pas ce type de "
 "MIME !"
 
-#: contact_form.php:1078
+#: contact_form.php:1074
 msgid "FAQ"
 msgstr "FAQ"
 
-#: contact_form.php:1079
+#: contact_form.php:1075
 msgid "Support"
 msgstr "Support"
 
-#: contact_form.php:1125
+#: contact_form.php:1121
 msgid "Are you sure you want to delete this language?"
-msgstr ""
+msgstr "Etes vous sûr de vouloir supprimer cette langue ?"
 
 #, fuzzy
 #~ msgid ""

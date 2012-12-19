@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
-Tested up to: 3.4.2
-Stable tag: 3.29
+Tested up to: 3.5
+Stable tag: 3.30
 
 Add Contact Form to your WordPress website.
 
@@ -31,7 +31,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 * Danish (da_DK) (thanks to Mads Hannibal)
 * Dutch (nl_NL) (thanks  to <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>, Jan Boeijink )
 * Persian (fa_IR) (thanks to <a href="me@alirezaJamali.net">Alireza Jamali</a>, alirezajamali.net)
-* French (fr_FR) (thanks to Alain Thomas and Vincent Cibelli)
+* French (fr_FR) (thanks to Alain Thomas and Vincent Cibelli and Capronnier Luc)
 * Galician (gl_ES) (thanks to Paula Rios)
 * German (de_DE) (thanks to Hartung Thomas)
 * Greek (el_GR) (thanks to Pantelis Panteloglou)
@@ -104,6 +104,10 @@ Here is an example for German language files.
 5. Widget settings for using shortcode in the sidebar.
 
 == Changelog ==
+
+= V3.30 - 19.12.2012 =
+* Bugfix : The error related to extra "rn" in the user email address when using WP_mail and in the Name field when using php_mail was fixed.
+* Update : We updated all functionality for wordpress 3.5.
 
 = V3.29 - 12.12.2012 =
 * Bugfix : The error related to the empty label on the contact form was fixed.
@@ -253,6 +257,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.30 =
+The error related to extra "rn" in the user email address when using WP_mail and in the Name field when using php_mail was fixed. We updated all functionality for wordpress 3.5.
 
 = V3.29 =
 The error related to the empty label on the contact form was fixed.

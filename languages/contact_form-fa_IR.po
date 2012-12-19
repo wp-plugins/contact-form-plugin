@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-11 13:39+0200\n"
-"PO-Revision-Date: 2012-12-11 13:39+0200\n"
+"POT-Creation-Date: 2012-12-19 13:30+0200\n"
+"PO-Revision-Date: 2012-12-19 13:30+0200\n"
 "Last-Translator: MAM <shahrpajuh@gmail.com>\n"
 "Language-Team: AlirezaJamali <me@alirezaJamali.net>\n"
 "Language: fa_IR\n"
@@ -24,7 +24,7 @@ msgstr "افزونه های فعال"
 msgid "Read more"
 msgstr "متن کامل"
 
-#: contact_form.php:78 contact_form.php:1068 contact_form.php:1077
+#: contact_form.php:78 contact_form.php:1064 contact_form.php:1073
 msgid "Settings"
 msgstr "تنظیمات"
 
@@ -412,15 +412,15 @@ msgstr "سایت"
 msgid "If you can see this MIME than your client doesn't accept MIME types!"
 msgstr "اگر می توانید این MIME کاربران را ببینید، نوع آن قابل پذیرش نیست!"
 
-#: contact_form.php:1078
+#: contact_form.php:1074
 msgid "FAQ"
 msgstr "سئوالات مطرح"
 
-#: contact_form.php:1079
+#: contact_form.php:1075
 msgid "Support"
 msgstr "پشتیبانی"
 
-#: contact_form.php:1125
+#: contact_form.php:1121
 msgid "Are you sure you want to delete this language?"
 msgstr ""
 

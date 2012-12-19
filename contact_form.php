@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.29
+Version: 3.30
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -730,7 +730,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 			}
 				
 			$content .= '<div style="text-align: left; padding-top: 8px;">
-					<input type="hidden" value="send" name="cntctfrm_contact_action"><input type="hidden" value="Version: 3.29" />
+					<input type="hidden" value="send" name="cntctfrm_contact_action"><input type="hidden" value="Version: 3.30" />
 					<input type="hidden" value="'.$lang.'" name="cntctfrm_language">
 					<input type="submit" value="'. $cntctfrm_options['cntctfrm_submit_label'][$lang]. '" style="cursor: pointer; margin: 0pt; text-align: center;margin-bottom:10px;" /> 
 				</div>
@@ -979,14 +979,14 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 			';
 			if( $cntctfrm_options['cntctfrm_mail_method'] == 'wp-mail' ){
 				// To send HTML mail, the Content-type header must be set
-				$headers  = 'MIME-Version: 1.0' . "\r\n";
-				$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+				$headers  = 'MIME-Version: 1.0' . "\n";
+				$headers .= 'Content-type: text/html; charset=utf-8' . "\n";
 
 				// Additional headers
 				if( 'custom' == $cntctfrm_options['cntctfrm_from_email'] )
-					$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '\r\n';
+					$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '';
 				else
-					$headers .= 'From: '.stripslashes( $_REQUEST['cntctfrm_contact_email'] ). '\r\n';
+					$headers .= 'From: '.stripslashes( $_REQUEST['cntctfrm_contact_email'] ). '';
 				if( $cntctfrm_options['cntctfrm_attachment'] == 1 && isset($_FILES["cntctfrm_contact_attachment"]["tmp_name"]) && $_FILES["cntctfrm_contact_attachment"]["tmp_name"] != "") {
 					$attachments = array( $path_of_uploaded_file );
 				}
@@ -1005,48 +1005,44 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 
 					// Additional headers
 				if( 'custom' == $cntctfrm_options['cntctfrm_from_email'] )
-					$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '>\r\n';
+					$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '>\n';
 				else
-					$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $_REQUEST['cntctfrm_contact_email'] ). '>\r\n';
+					$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $_REQUEST['cntctfrm_contact_email'] ). '>\n';
 
 					$bound_text = 	"jimmyP123";
 		 
-					$bound = 	"--".$bound_text."\r\n";
+					$bound = 	"--".$bound_text."";
 
-					$bound_last = 	"--".$bound_text."--\r\n";
+					$bound_last = 	"--".$bound_text."--";
 
-					$headers .= "MIME-Version: 1.0\r\n"
-						."Content-Type: multipart/mixed; boundary=\"$bound_text\"";
+					$headers .= "MIME-Version: 1.0\n".
+						"Content-Type: multipart/mixed; boundary=\"$bound_text\"";
 
-					$message = 	__( "If you can see this MIME than your client doesn't accept MIME types!", "contact_form" ) . "\r\n"
-						.$bound;
+					$message = 	__( "If you can see this MIME than your client doesn't accept MIME types!", "contact_form" ) . "\n";
 
-		 
-					$message .= 	"Content-Type: text/html; charset=\"utf-8\"\r\n"
-							."Content-Transfer-Encoding: 7bit\r\n\r\n"
-						."".$message_block."\r\n"
-						.$bound;
-		 
+					$message .= $bound."\n" . "Content-Type: text/html; charset=\"utf-8\"\n" .
+						"Content-Transfer-Encoding: 7bit\n\n" . $message_block . "\n\n";
+				 
+						
 					$file = 	file_get_contents($path_of_uploaded_file);
-					$path_info = pathinfo( $path_of_uploaded_file );
-					 
-					$message .= 	"Content-Type: ".$path_info['extension']."; name=\"".basename( $path_of_uploaded_file )."\"\r\n"
-							."Content-Transfer-Encoding: base64\r\n"
-							."Content-disposition: attachment; file=\"".basename( $path_of_uploaded_file )."\"\r\n"
-							."\r\n"
-							.chunk_split( base64_encode( $file ) )
-							.$bound_last;
+					$message .= $bound."\n";
+
+					$message .= "Content-Type: application/octet-stream; name=\"".basename($path_of_uploaded_file)."\"\n" .
+					"Content-Description: ".basename($path_of_uploaded_file)."\n" .
+					"Content-Disposition: attachment;\n" . " filename=\"".basename($path_of_uploaded_file)."\"; size=".filesize($path_of_uploaded_file).";\n" .
+					"Content-Transfer-Encoding: base64\n\n" . chunk_split( base64_encode( $file ) ) . "\n\n";
+						$message .= $bound_last;
 				}
 				else {
 					// To send HTML mail, the Content-type header must be set
-					$headers  = 'MIME-Version: 1.0' . "\r\n";
-					$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+					$headers  = 'MIME-Version: 1.0' . "\n";
+					$headers .= 'Content-type: text/html; charset=utf-8' . "\n";
 
 					// Additional headers
 					if( 'custom' == $cntctfrm_options['cntctfrm_from_email'] )
-						$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '>\r\n';
+						$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '>\n';
 					else
-						$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $_REQUEST['cntctfrm_contact_email'] ). '>\r\n';
+						$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $_REQUEST['cntctfrm_contact_email'] ). '>\n';
 				}
 				if( isset( $_REQUEST['cntctfrm_contact_send_copy'] ) && $_REQUEST['cntctfrm_contact_send_copy'] == 1 )
 					@mail( stripslashes( $_REQUEST['cntctfrm_contact_email'] ), stripslashes( strip_tags( $subject ) ), stripslashes( $message ), $headers );
@@ -1112,7 +1108,7 @@ function cntctfrm_sanitize_string($string, $preserve_space = 0 ) {
 if ( ! function_exists ( 'cntctfrm_plugin_init' ) ) {
 	function cntctfrm_plugin_init() {
 		if ( ! session_id() )
-			session_start();
+			@session_start();
 		load_plugin_textdomain( 'contact_form', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
 	}
 } // end function cntctfrm_plugin_init

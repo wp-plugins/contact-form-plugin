@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-11 13:39+0200\n"
-"PO-Revision-Date: 2012-12-11 13:39+0200\n"
+"POT-Creation-Date: 2012-12-19 13:31+0200\n"
+"PO-Revision-Date: 2012-12-19 13:31+0200\n"
 "Last-Translator: zos <zos@bestwebsoft.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -27,7 +27,7 @@ msgstr "Aktyvuoti įskiepiai"
 msgid "Read more"
 msgstr "Skaityti daugiau"
 
-#: contact_form.php:78 contact_form.php:1068 contact_form.php:1077
+#: contact_form.php:78 contact_form.php:1064 contact_form.php:1073
 msgid "Settings"
 msgstr "Nustatymai"
 
@@ -416,15 +416,15 @@ msgstr "Svetainė"
 msgid "If you can see this MIME than your client doesn't accept MIME types!"
 msgstr "Jei galite matyti šį MIME tipą, jūsų klientas nepriima MIME tipų!"
 
-#: contact_form.php:1078
+#: contact_form.php:1074
 msgid "FAQ"
 msgstr "DUK"
 
-#: contact_form.php:1079
+#: contact_form.php:1075
 msgid "Support"
 msgstr "Palaikymas"
 
-#: contact_form.php:1125
+#: contact_form.php:1121
 msgid "Are you sure you want to delete this language?"
 msgstr ""
 

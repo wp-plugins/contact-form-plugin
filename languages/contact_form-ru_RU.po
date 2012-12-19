@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-11 13:40+0200\n"
-"PO-Revision-Date: 2012-12-11 13:40+0200\n"
+"POT-Creation-Date: 2012-12-19 13:32+0200\n"
+"PO-Revision-Date: 2012-12-19 13:37+0200\n"
 "Last-Translator: zos <zos@bestwebsoft.com>\n"
 "Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "Language: ru_RU\n"
@@ -24,7 +24,7 @@ msgstr "Активированные плагины"
 msgid "Read more"
 msgstr "Читать далее"
 
-#: contact_form.php:78 contact_form.php:1068 contact_form.php:1077
+#: contact_form.php:78 contact_form.php:1064 contact_form.php:1073
 msgid "Settings"
 msgstr "Настройки"
 
@@ -147,9 +147,9 @@ msgid "Please input correct email. Settings are not saved."
 msgstr "Пожалуйста, введите корректный email. Настройки не сохранены."
 
 #: contact_form.php:376
-#, fuzzy
 msgid "Please input correct 'FROM' email. Settings are not saved."
-msgstr "Пожалуйста, введите корректный email. Настройки не сохранены."
+msgstr ""
+"Пожалуйста, введите корректный email для поля 'FROM'. Настройки не сохранены."
 
 #: contact_form.php:381
 msgid "Options saved."
@@ -238,23 +238,24 @@ msgid "To send mail you can use the php mail function"
 msgstr "Для отправки почты вы можете использовать функцию php mail"
 
 #: contact_form.php:467
-#, fuzzy
 msgid "Change text for 'FROM' field of the email"
-msgstr "Изменить поле ОТ в контактной форме"
+msgstr "Изменить текст для поля ОТ в письме"
 
 #: contact_form.php:473
 msgid "Select email for 'FROM' field of the email"
-msgstr ""
+msgstr "Выберите email для поля 'FROM' письма"
 
 #: contact_form.php:475
 msgid ""
 "In the field 'From' in the mail it will use email of that user who fills the "
 "form."
 msgstr ""
+"В поле \"From\" в письме будет использоваться электронная почта того "
+"пользователя, который заполняет форму."
 
 #: contact_form.php:477
 msgid "In the field 'From' it will use this email."
-msgstr ""
+msgstr "В поле \"From\" в письме будет использоваться данная электронная почта"
 
 #: contact_form.php:481
 msgid "Display phone field"
@@ -306,62 +307,61 @@ msgstr "Используя (user agent)"
 
 #: contact_form.php:509
 msgid "Language settings for label fields"
-msgstr ""
+msgstr "Языковые настройки для названия полей в форме"
 
 #: contact_form.php:518
 msgid "Add language"
-msgstr ""
+msgstr "Добавиьт язык"
 
 #: contact_form.php:522
-#, fuzzy
 msgid "Change label for fields of the contact form and error messages"
-msgstr "Изменить названия полей  контактной формы"
+msgstr "Изменить названия полей  контактной формы и сообщений об ошибках"
 
 #: contact_form.php:527 contact_form.php:580
 msgid "English"
-msgstr ""
+msgstr "Английский"
 
 #: contact_form.php:542 contact_form.php:562
 msgid "Error message for name field"
-msgstr ""
+msgstr "Сообщение об ошибке для поля Name"
 
 #: contact_form.php:543 contact_form.php:563
 msgid "Error message for email field"
-msgstr ""
+msgstr "Сообщение об ошибке для поля Email"
 
 #: contact_form.php:544 contact_form.php:564
 msgid "Error message for phone field"
-msgstr ""
+msgstr "Сообщение об ошибке для поля Phone"
 
 #: contact_form.php:545 contact_form.php:565
 msgid "Error message for subject field"
-msgstr ""
+msgstr "Сообщение об ошибке для поля Subject"
 
 #: contact_form.php:546 contact_form.php:566
 msgid "Error message for message field"
-msgstr ""
+msgstr "Сообщение об ошибке для поля Message"
 
 #: contact_form.php:547 contact_form.php:567
 msgid "Error message for attachment field"
-msgstr ""
+msgstr "Сообщение об ошибке для поля Attachment"
 
 #: contact_form.php:548 contact_form.php:568
 msgid "Error message for captcha"
-msgstr ""
+msgstr "Сообщение об ошибке для поля Captcha"
 
 #: contact_form.php:549 contact_form.php:569
 msgid "Error message for all form"
-msgstr ""
+msgstr "Сообщение об ошибке для всей формы"
 
 #: contact_form.php:550 contact_form.php:570 contact_form.php:589
 #: contact_form.php:595
 msgid "Use shortcode"
-msgstr ""
+msgstr "Использовать шорткод"
 
 #: contact_form.php:550 contact_form.php:570 contact_form.php:589
 #: contact_form.php:595
 msgid "for this language"
-msgstr ""
+msgstr "для данного языка"
 
 #: contact_form.php:577
 msgid "Action after the send mail"
@@ -417,17 +417,17 @@ msgstr ""
 "Если вы можете видеть этот MIME значит ваш почтовый клиент не поддерживает "
 "MIME тип!"
 
-#: contact_form.php:1078
+#: contact_form.php:1074
 msgid "FAQ"
 msgstr "FAQ"
 
-#: contact_form.php:1079
+#: contact_form.php:1075
 msgid "Support"
 msgstr "Поддержка"
 
-#: contact_form.php:1125
+#: contact_form.php:1121
 msgid "Are you sure you want to delete this language?"
-msgstr ""
+msgstr "Вы действительно хотите удалить данные для этого языка?"
 
 #~ msgid "E-Mail Addresse:"
 #~ msgstr "E-mail адрес:"

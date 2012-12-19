@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-11 13:39+0200\n"
-"PO-Revision-Date: 2012-12-11 13:39+0200\n"
+"POT-Creation-Date: 2012-12-19 13:31+0200\n"
+"PO-Revision-Date: 2012-12-19 13:31+0200\n"
 "Last-Translator: zos <zos@bestwebsoft.com>\n"
 "Language-Team: Thomas Hartung <thartung@adipositas-mm.de>\n"
 "Language: ja_JP\n"
@@ -24,7 +24,7 @@ msgstr "有効なプラグイン"
 msgid "Read more"
 msgstr "もっと読む"
 
-#: contact_form.php:78 contact_form.php:1068 contact_form.php:1077
+#: contact_form.php:78 contact_form.php:1064 contact_form.php:1073
 msgid "Settings"
 msgstr "設定"
 
@@ -418,15 +418,15 @@ msgstr "サイト"
 msgid "If you can see this MIME than your client doesn't accept MIME types!"
 msgstr "このMIMEを見ている場合は、貴方のクライアントはMIMEタイプを読めません。"
 
-#: contact_form.php:1078
+#: contact_form.php:1074
 msgid "FAQ"
 msgstr "FAQ"
 
-#: contact_form.php:1079
+#: contact_form.php:1075
 msgid "Support"
 msgstr "サポート"
 
-#: contact_form.php:1125
+#: contact_form.php:1121
 msgid "Are you sure you want to delete this language?"
 msgstr ""
 

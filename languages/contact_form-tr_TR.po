@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-11 13:40+0200\n"
-"PO-Revision-Date: 2012-12-11 13:40+0200\n"
+"POT-Creation-Date: 2012-12-19 13:37+0200\n"
+"PO-Revision-Date: 2012-12-19 13:37+0200\n"
 "Last-Translator: zos <zos@bestwebsoft.com>\n"
 "Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "Language: it_IT\n"
@@ -24,7 +24,7 @@ msgstr "Aktif eklentiler"
 msgid "Read more"
 msgstr "Devamı"
 
-#: contact_form.php:78 contact_form.php:1068 contact_form.php:1077
+#: contact_form.php:78 contact_form.php:1064 contact_form.php:1073
 msgid "Settings"
 msgstr "Ayarlar"
 
@@ -411,15 +411,15 @@ msgstr "Site"
 msgid "If you can see this MIME than your client doesn't accept MIME types!"
 msgstr "Istemci daha bu MIME görürseniz MIME türlerini kabul etmez!"
 
-#: contact_form.php:1078
+#: contact_form.php:1074
 msgid "FAQ"
 msgstr "Sık Sorulanlar"
 
-#: contact_form.php:1079
+#: contact_form.php:1075
 msgid "Support"
 msgstr "Destek"
 
-#: contact_form.php:1125
+#: contact_form.php:1121
 msgid "Are you sure you want to delete this language?"
 msgstr ""
 

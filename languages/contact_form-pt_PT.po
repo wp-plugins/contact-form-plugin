@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-11 13:40+0200\n"
-"PO-Revision-Date: 2012-12-11 13:40+0200\n"
+"POT-Creation-Date: 2012-12-19 13:32+0200\n"
+"PO-Revision-Date: 2012-12-19 13:32+0200\n"
 "Last-Translator: zos <zos@bestwebsoft.com>\n"
 "Language-Team: Thomas Hartung <thartung@adipositas-mm.de>\n"
 "Language: rm_SH\n"
@@ -24,7 +24,7 @@ msgstr "Plugins ativados"
 msgid "Read more"
 msgstr "Leia Mais"
 
-#: contact_form.php:78 contact_form.php:1068 contact_form.php:1077
+#: contact_form.php:78 contact_form.php:1064 contact_form.php:1073
 msgid "Settings"
 msgstr "Configurações"
 
@@ -420,15 +420,15 @@ msgstr ""
 "Se você consegue ver esta MENSAGEM então seu  cliente não aceita tipos MIME! "
 "Favor usar um cliente mais atualizado."
 
-#: contact_form.php:1078
+#: contact_form.php:1074
 msgid "FAQ"
 msgstr "Perguntas Frequentes"
 
-#: contact_form.php:1079
+#: contact_form.php:1075
 msgid "Support"
 msgstr "Suporte"
 
-#: contact_form.php:1125
+#: contact_form.php:1121
 msgid "Are you sure you want to delete this language?"
 msgstr ""
 
