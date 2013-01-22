@@ -5,6 +5,8 @@ Tags: Contact Form, text, contact, form, contacts, contakt form, request, contac
 Requires at least: 2.9
 Tested up to: 3.5
 Stable tag: 3.30
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Add Contact Form to your WordPress website.
 
