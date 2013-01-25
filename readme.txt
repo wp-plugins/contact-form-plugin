@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.5
-Stable tag: 3.30
+Stable tag: 3.31
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,7 +47,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 * Russian (ru_RU)
 * Serbian (sr_RS) (thanks to Georgijevic Team, www.georgijevic.info)
 * Spanish (es_ES) (thanks to Jesús Parra)
-* Swedish (sv_SV) (thanks to Martin Tonek)
+* Swedish (sv_SE) (thanks to Martin Tonek, <a href="joakim@limewoodmedia.com">Joakim Lindskog</a>)
 * Turkish (tr_TR) (thanks to <a herf="mailto:d-bulent@hotmail.com ">Devrim Bulent Ibis</a>, www.devrimhoca.com)
 
 If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
@@ -106,6 +106,9 @@ Here is an example for German language files.
 5. Widget settings for using shortcode in the sidebar.
 
 == Changelog ==
+
+= V3.31 - 25.01.2013 =
+* Update : Swedish language file was updated.
 
 = V3.30 - 19.12.2012 =
 * Bugfix : The error related to extra "rn" in the user email address when using WP_mail and in the Name field when using php_mail was fixed.
@@ -259,6 +262,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.31 =
+Swedish language file was updated.
 
 = V3.30 =
 The error related to extra "rn" in the user email address when using WP_mail and in the Name field when using php_mail was fixed. We updated all functionality for wordpress 3.5.

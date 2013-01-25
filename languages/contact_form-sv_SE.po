@@ -2,438 +2,453 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-19 13:37+0200\n"
-"PO-Revision-Date: 2012-12-19 13:37+0200\n"
-"Last-Translator: zos <zos@bestwebsoft.com>\n"
-"Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
-"Language: sv_SE\n"
+"POT-Creation-Date: 2013-01-25 12:36+0300\n"
+"PO-Revision-Date: 2013-01-25 12:48+0300\n"
+"Last-Translator: \n"
+"Language-Team: Martin Tonek, Joakim Lindskog <joakim@limewoodmedia.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: sv_SE\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: contact_form.php:76
+#: contact_form.php:77
 msgid "Activated plugins"
-msgstr "Aktiverat plugin"
+msgstr "Aktiverade tillägg"
 
-#: contact_form.php:78 contact_form.php:86 contact_form.php:94
+#: contact_form.php:79
+#: contact_form.php:87
+#: contact_form.php:95
 msgid "Read more"
 msgstr "Läs mer"
 
-#: contact_form.php:78 contact_form.php:1064 contact_form.php:1073
+#: contact_form.php:79
+#: contact_form.php:1065
+#: contact_form.php:1074
 msgid "Settings"
 msgstr "Inställningar"
 
-#: contact_form.php:84
+#: contact_form.php:85
 msgid "Installed plugins"
-msgstr "Installerade plugin"
+msgstr "Installerade tillägg"
 
-#: contact_form.php:92
+#: contact_form.php:93
 msgid "Recommended plugins"
-msgstr "Rekommenderade plugin"
+msgstr "Rekommenderade tillägg"
 
-#: contact_form.php:94
+#: contact_form.php:95
 msgid "Download"
 msgstr "Ladda ner"
 
-#: contact_form.php:94
+#: contact_form.php:95
 #, php-format
 msgid "Install %s"
-msgstr "Installerar %s"
+msgstr "Installera %s"
 
-#: contact_form.php:94
+#: contact_form.php:95
 msgid "Install now from wordpress.org"
 msgstr "Installera från wordpress.org"
 
-#: contact_form.php:96
-msgid ""
-"If you have any questions, please contact us via plugin@bestwebsoft.com or "
-"fill in our contact form on our site"
-msgstr ""
-"Om du har några frågor, var snäll och kontakta oss på plugin@bestwebsoft.com "
-"eller använd fårt kontaktformulär på vår hemsida"
+#: contact_form.php:97
+msgid "If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site"
+msgstr "Om du har några frågor, vänligen kontakta oss på plugin@bestwebsoft.com eller använd kontaktformuläret på vår hemsida"
 
-#: contact_form.php:108 contact_form.php:401
+#: contact_form.php:109
+#: contact_form.php:402
 msgid "Contact Form Options"
-msgstr "Inställningar för Kontaktformulär"
+msgstr "Inställningar för kontaktformulär"
 
-#: contact_form.php:108
+#: contact_form.php:109
 msgid "Contact Form"
-msgstr "Kontak formulär"
+msgstr "Kontaktformulär"
 
-#: contact_form.php:145 contact_form.php:535 contact_form.php:555
+#: contact_form.php:146
+#: contact_form.php:536
+#: contact_form.php:556
 msgid "Name:"
 msgstr "Namn:"
 
-#: contact_form.php:146 contact_form.php:536 contact_form.php:556
+#: contact_form.php:147
+#: contact_form.php:537
+#: contact_form.php:557
 msgid "E-Mail Address:"
 msgstr "Epostadress:"
 
-#: contact_form.php:147 contact_form.php:537 contact_form.php:557
+#: contact_form.php:148
+#: contact_form.php:538
+#: contact_form.php:558
 msgid "Phone:"
-msgstr ""
+msgstr "Telefon:"
 
-#: contact_form.php:148 contact_form.php:538 contact_form.php:558
+#: contact_form.php:149
+#: contact_form.php:539
+#: contact_form.php:559
 msgid "Subject:"
-msgstr "Rubrik:"
+msgstr "Ämne:"
 
-#: contact_form.php:149 contact_form.php:539 contact_form.php:559
+#: contact_form.php:150
+#: contact_form.php:540
+#: contact_form.php:560
 msgid "Message:"
 msgstr "Meddelande:"
 
-#: contact_form.php:150 contact_form.php:540 contact_form.php:560
+#: contact_form.php:151
+#: contact_form.php:541
+#: contact_form.php:561
 msgid "Attachment:"
 msgstr "Bilaga:"
 
-#: contact_form.php:151 contact_form.php:541 contact_form.php:561
+#: contact_form.php:152
+#: contact_form.php:542
+#: contact_form.php:562
 msgid "Submit"
 msgstr "Skicka"
 
-#: contact_form.php:152
-msgid "Your name is required."
-msgstr "Ditt namn krävs"
-
 #: contact_form.php:153
+msgid "Your name is required."
+msgstr "Ditt namn krävs."
+
+#: contact_form.php:154
 msgid "A proper e-mail address is required."
 msgstr "En korrekt epostadress krävs."
 
-#: contact_form.php:154
-msgid "Subject text is required."
-msgstr "Rubrik krävs."
-
 #: contact_form.php:155
+msgid "Subject text is required."
+msgstr "Ämne krävs."
+
+#: contact_form.php:156
 msgid "Message text is required."
 msgstr "Meddelandetext krävs."
 
-#: contact_form.php:156
-#, fuzzy
-msgid "Phone is required field."
-msgstr "Ditt namn krävs"
-
 #: contact_form.php:157
-msgid "Attachment is broken."
-msgstr "Fel vid bilaga"
+msgid "Phone is required field."
+msgstr "Telefon krävs."
 
 #: contact_form.php:158
-msgid "Please complete the CAPTCHA."
-msgstr "Var vänlig och fyll i CAPTCHA."
+msgid "Attachment is broken."
+msgstr "Fel med bilaga."
 
 #: contact_form.php:159
-msgid "Please make corrections below and try again."
-msgstr "Var vänlig och gör ändringarna nedan och försök igen."
+msgid "Please complete the CAPTCHA."
+msgstr "Vänligen fyll i CAPTCHA."
 
-#: contact_form.php:161
+#: contact_form.php:160
+msgid "Please make corrections below and try again."
+msgstr "Vänligen gör ändringarna nedan och försök igen."
+
+#: contact_form.php:162
 msgid "Thank you for contacting us."
 msgstr "Tack för att du kontaktat oss."
 
-#: contact_form.php:356
-msgid ""
-"If the option 'Redirect to page' is selected then url field should be "
-"fillied in the following format"
-msgstr ""
+#: contact_form.php:357
+msgid "If the option 'Redirect to page' is selected then url field should be fillied in the following format"
+msgstr "Om alternativet 'Omdirigera till sida' valts bör URL-fältet fyllas i med följande format"
 
-#: contact_form.php:365
+#: contact_form.php:366
 msgid "Such user is not exist. Settings are not saved."
-msgstr "Sådan användare finns inte. Inställningar har inte sparats."
+msgstr "Användaren finns inte. Inställningar sparades inte."
 
-#: contact_form.php:370
+#: contact_form.php:371
 msgid "Please input correct email. Settings are not saved."
-msgstr ""
-"Var vänlig och ange en korrekt epostadress. Inställningar är inte sparade."
+msgstr "Vänligen ange en korrekt epostadress. Inställningar sparades inte."
 
-#: contact_form.php:376
-#, fuzzy
+#: contact_form.php:377
 msgid "Please input correct 'FROM' email. Settings are not saved."
-msgstr ""
-"Var vänlig och ange en korrekt epostadress. Inställningar är inte sparade."
+msgstr "Vänligen ange en korrekt epostadress att skicka ifrån. Inställningar sparades inte."
 
-#: contact_form.php:381
+#: contact_form.php:382
 msgid "Options saved."
-msgstr "Inställningar sparade"
-
-#: contact_form.php:406
-msgid ""
-"If you would like to add a Contact Form to your website, just copy and put "
-"this shortcode onto your post or page or widget:"
-msgstr ""
-"Om du vill lägga till ett kontaktformulär på din hemsida, kopiera och "
-"kilstra in denna snabbkod i ditt inlägg eller sida eller widget:"
+msgstr "Inställningar sparades."
 
 #: contact_form.php:407
-msgid ""
-"If information in the below fields are empty then the message will be send "
-"to an address which was specified during registration."
-msgstr ""
-"Om information i fälten nedan är tomma så kommer meddelandet att skickas "
-"till en adress som specifierades vid registrering."
+msgid "If you would like to add a Contact Form to your website, just copy and put this shortcode onto your post or page or widget:"
+msgstr "Om du vill lägga till ett kontaktformulär på din hemsida, kopiera och klistra in denna snabbkod i ditt inlägg, din sida eller widget:"
 
-#: contact_form.php:411
+#: contact_form.php:408
+msgid "If information in the below fields are empty then the message will be send to an address which was specified during registration."
+msgstr "Om fälten nedan är tomma kommer meddelandet att skickas till en adress som angavs vid registrering."
+
+#: contact_form.php:412
 msgid "Use email of wordpress user:"
-msgstr "Använd epostadress för wordpress användare:"
+msgstr "Använd epostadress för Wordpress-användare:"
 
-#: contact_form.php:415
+#: contact_form.php:416
 msgid "Select user name"
 msgstr "Välj användarnamn"
 
-#: contact_form.php:420
+#: contact_form.php:421
 msgid "Set a name of user who will get messages from a contact form."
-msgstr ""
-"Ange ett namn på en användare som kommer få meddelandena från "
-"kontaktformulären"
+msgstr "Ange ett namn för användaren som kommer få meddelandena från kontaktformulären."
 
-#: contact_form.php:424
+#: contact_form.php:425
 msgid "Use this email:"
-msgstr "Använd denna epost:"
+msgstr "Använd denna epostadress:"
 
-#: contact_form.php:427
+#: contact_form.php:428
 msgid "Set an email address which will be used for messages receiving."
 msgstr "Ange en epostadress som ska användas för att ta emot meddelandena."
 
-#: contact_form.php:431
+#: contact_form.php:432
 msgid "Additional options"
-msgstr "Fler val"
+msgstr "Fler alternativ"
 
-#: contact_form.php:434
+#: contact_form.php:435
 msgid "Display Attachment block"
-msgstr "Visa bifogade"
+msgstr "Visa bifogade filer"
 
-#: contact_form.php:436
+#: contact_form.php:437
 msgid "Users can attach files of the following types"
 msgstr "Användare kan lägga till filer av följande typer"
 
-#: contact_form.php:440
+#: contact_form.php:441
 msgid "Display Attachment explanations"
-msgstr ""
+msgstr "Visa förklaringar för bilagor"
 
-#: contact_form.php:442
+#: contact_form.php:443
 msgid "Display explanations after Attachment block"
-msgstr ""
+msgstr "Visa förklaringar under bilagor"
 
-#: contact_form.php:446
+#: contact_form.php:447
 msgid "Display Send me a copy block"
 msgstr "Visa \"Skicka mig en kopia\""
 
-#: contact_form.php:452
+#: contact_form.php:453
 msgid "What use?"
-msgstr ""
-
-#: contact_form.php:455
-msgid "Wp-mail"
-msgstr "Wp-mail"
+msgstr "Vilken epostfunktion vill du använda?"
 
 #: contact_form.php:456
-msgid "To send mail you can use the wordpress wp_mail function"
-msgstr ""
+msgid "Wp-mail"
+msgstr "wp_mail"
 
-#: contact_form.php:462
-msgid "Mail"
-msgstr "Mail"
+#: contact_form.php:457
+msgid "To send mail you can use the wordpress wp_mail function"
+msgstr "Du kan använda Wordpress-funktionen wp_mail för att skicka epost"
 
 #: contact_form.php:463
+msgid "Mail"
+msgstr "PHP mail"
+
+#: contact_form.php:464
 msgid "To send mail you can use the php mail function"
-msgstr ""
+msgstr "Du kan använda PHP-funktionen mail för att skicka epost"
 
-#: contact_form.php:467
-#, fuzzy
+#: contact_form.php:468
 msgid "Change text for 'FROM' field of the email"
-msgstr "Förändring från fält i kontaktformuläret"
+msgstr "Ändra text i 'FROM'-fältet för epostmeddelandet"
 
-#: contact_form.php:473
+#: contact_form.php:474
 msgid "Select email for 'FROM' field of the email"
-msgstr ""
+msgstr "Välj epostadress till 'FROM'-fältet för epostmeddelandet"
 
-#: contact_form.php:475
-msgid ""
-"In the field 'From' in the mail it will use email of that user who fills the "
-"form."
-msgstr ""
+#: contact_form.php:476
+msgid "In the field 'From' in the mail it will use email of that user who fills the form."
+msgstr "'FROM'-fältet i epostmeddelandet använder epostadressen för användaren som fyller i kontaktformuläret."
 
-#: contact_form.php:477
+#: contact_form.php:478
 msgid "In the field 'From' it will use this email."
-msgstr ""
+msgstr "'FROM'-fältet använder denna epostadress."
 
-#: contact_form.php:481
+#: contact_form.php:482
 msgid "Display phone field"
-msgstr ""
+msgstr "Visa telefon-fältet"
 
-#: contact_form.php:487
+#: contact_form.php:488
 msgid "Required field"
-msgstr ""
+msgstr "Fältet krävs"
 
-#: contact_form.php:489 contact_form.php:953
+#: contact_form.php:490
+#: contact_form.php:954
 msgid "Name"
 msgstr "Namn"
 
-#: contact_form.php:490
+#: contact_form.php:491
 #, fuzzy
 msgid "E-Mail Address"
 msgstr "Epostadress:"
 
-#: contact_form.php:491 contact_form.php:961
+#: contact_form.php:492
+#: contact_form.php:962
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
-#: contact_form.php:492 contact_form.php:964
+#: contact_form.php:493
+#: contact_form.php:965
 msgid "Subject"
-msgstr "Rubrik"
+msgstr "Ämne"
 
-#: contact_form.php:493 contact_form.php:967
+#: contact_form.php:494
+#: contact_form.php:968
 msgid "Message"
 msgstr "Meddelande"
 
-#: contact_form.php:497
+#: contact_form.php:498
 msgid "Display additional info in email"
-msgstr ""
+msgstr "Visa ytterligare information i epostmeddelandet"
 
-#: contact_form.php:502 contact_form.php:925
+#: contact_form.php:503
+#: contact_form.php:926
 msgid "Sent from (ip address)"
 msgstr "Skickat från (IP-adress)"
 
-#: contact_form.php:503 contact_form.php:930
+#: contact_form.php:504
+#: contact_form.php:931
 msgid "Date/Time"
 msgstr "Dag/tid"
 
-#: contact_form.php:504 contact_form.php:935
+#: contact_form.php:505
+#: contact_form.php:936
 msgid "Coming from (referer)"
 msgstr "Skickat från (referent)"
 
-#: contact_form.php:505 contact_form.php:940
+#: contact_form.php:506
+#: contact_form.php:941
 msgid "Using (user agent)"
 msgstr "med  (user agent)"
 
-#: contact_form.php:509
+#: contact_form.php:510
 msgid "Language settings for label fields"
-msgstr ""
+msgstr "Språkinställningar för etikettfält"
 
-#: contact_form.php:518
+#: contact_form.php:519
 msgid "Add language"
-msgstr ""
+msgstr "Lägg till språk"
 
-#: contact_form.php:522
-#, fuzzy
+#: contact_form.php:523
 msgid "Change label for fields of the contact form and error messages"
-msgstr "Ändra etiketter för fält på kontaktformuläret"
+msgstr "Ändra etiketter för fält i kontaktformuläret och för felmeddelanden"
 
-#: contact_form.php:527 contact_form.php:580
+#: contact_form.php:528
+#: contact_form.php:581
 msgid "English"
-msgstr ""
+msgstr "Engelska"
 
-#: contact_form.php:542 contact_form.php:562
+#: contact_form.php:543
+#: contact_form.php:563
 msgid "Error message for name field"
-msgstr ""
+msgstr "Felmeddelande för namnfältet"
 
-#: contact_form.php:543 contact_form.php:563
+#: contact_form.php:544
+#: contact_form.php:564
 msgid "Error message for email field"
-msgstr ""
+msgstr "Felmeddelande för epostfältet"
 
-#: contact_form.php:544 contact_form.php:564
+#: contact_form.php:545
+#: contact_form.php:565
 msgid "Error message for phone field"
-msgstr ""
+msgstr "Felmeddelande för telefonfältet"
 
-#: contact_form.php:545 contact_form.php:565
+#: contact_form.php:546
+#: contact_form.php:566
 msgid "Error message for subject field"
-msgstr ""
+msgstr "Felmeddelande för ämnesfältet"
 
-#: contact_form.php:546 contact_form.php:566
+#: contact_form.php:547
+#: contact_form.php:567
 msgid "Error message for message field"
-msgstr ""
+msgstr "Felmeddelande för meddelandefältet"
 
-#: contact_form.php:547 contact_form.php:567
+#: contact_form.php:548
+#: contact_form.php:568
 msgid "Error message for attachment field"
-msgstr ""
+msgstr "Felmeddelande för bilaga"
 
-#: contact_form.php:548 contact_form.php:568
+#: contact_form.php:549
+#: contact_form.php:569
 msgid "Error message for captcha"
-msgstr ""
+msgstr "Felmeddelande för captcha"
 
-#: contact_form.php:549 contact_form.php:569
+#: contact_form.php:550
+#: contact_form.php:570
 msgid "Error message for all form"
-msgstr ""
+msgstr "Felmeddelande för hela formuläret"
 
-#: contact_form.php:550 contact_form.php:570 contact_form.php:589
-#: contact_form.php:595
+#: contact_form.php:551
+#: contact_form.php:571
+#: contact_form.php:590
+#: contact_form.php:596
 msgid "Use shortcode"
-msgstr ""
+msgstr "Använd snabbkod"
 
-#: contact_form.php:550 contact_form.php:570 contact_form.php:589
-#: contact_form.php:595
+#: contact_form.php:551
+#: contact_form.php:571
+#: contact_form.php:590
+#: contact_form.php:596
 msgid "for this language"
-msgstr ""
+msgstr "för detta språk"
 
-#: contact_form.php:577
+#: contact_form.php:578
 msgid "Action after the send mail"
-msgstr ""
+msgstr "Efter att epostmeddelandet skickats"
 
-#: contact_form.php:579
-#, fuzzy
+#: contact_form.php:580
 msgid "Display text"
-msgstr "Visa bifogade"
+msgstr "Visa text"
 
-#: contact_form.php:588 contact_form.php:594
+#: contact_form.php:589
+#: contact_form.php:595
 msgid "Text"
-msgstr ""
-
-#: contact_form.php:601
-msgid "Redirect to page"
-msgstr ""
+msgstr "Text"
 
 #: contact_form.php:602
-msgid "Url"
-msgstr ""
+msgid "Redirect to page"
+msgstr "Omdirigera till sida"
 
-#: contact_form.php:607
+#: contact_form.php:603
+msgid "Url"
+msgstr "URL"
+
+#: contact_form.php:608
 msgid "Save Changes"
 msgstr "Spara ändringar"
 
-#: contact_form.php:646
+#: contact_form.php:647
 msgid "Sorry, your e-mail could not be delivered."
 msgstr "Beklagar, men ditt meddelande kunde inte levereras."
 
-#: contact_form.php:716
+#: contact_form.php:717
 msgid "You can attach files of the following types"
 msgstr "Du kan lägga till filer av följande typ."
 
-#: contact_form.php:724
+#: contact_form.php:725
 msgid "Send me a copy"
 msgstr "Skicka mig en kopia"
 
-#: contact_form.php:948
+#: contact_form.php:949
 msgid "Contact from"
-msgstr "Kontakformulär"
+msgstr "Kontaktformulär"
 
-#: contact_form.php:956
+#: contact_form.php:957
 msgid "Email"
 msgstr "Epost"
 
-#: contact_form.php:970
+#: contact_form.php:971
 msgid "Site"
-msgstr "www"
+msgstr "Hemsida"
 
-#: contact_form.php:1021
+#: contact_form.php:1022
 msgid "If you can see this MIME than your client doesn't accept MIME types!"
 msgstr "Om du ser detta MIME så stödjer inte din client MIME!"
 
-#: contact_form.php:1074
+#: contact_form.php:1075
 msgid "FAQ"
 msgstr "Vanliga frågor"
 
-#: contact_form.php:1075
+#: contact_form.php:1076
 msgid "Support"
 msgstr "Support"
 
-#: contact_form.php:1121
+#: contact_form.php:1122
 msgid "Are you sure you want to delete this language?"
-msgstr ""
+msgstr "Är du säker på att du vill ta bort detta språk?"
 
 #~ msgid "E-Mail Addresse:"
 #~ msgstr "Epost adress"
-
 #~ msgid "Install Now"
 #~ msgstr "Installera nu"
-
 #~ msgid "BWS Plugins"
 #~ msgstr "BWS Plugins"
+
