@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
-Tested up to: 3.5
-Stable tag: 3.31
+Tested up to: 3.5.1
+Stable tag: 3.32
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,6 +106,10 @@ Here is an example for German language files.
 5. Widget settings for using shortcode in the sidebar.
 
 == Changelog ==
+
+= V3.32 - 31.01.2013 =
+* Bugfix : Bugs in admin menu were fixed.
+* Update : We updated all functionality for wordpress 3.5.1.
 
 = V3.31 - 25.01.2013 =
 * Update : Swedish language file was updated.
@@ -262,6 +266,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.32 =
+Bugs in admin menu were fixed. We updated all functionality for wordpress 3.5.1.
 
 = V3.31 =
 Swedish language file was updated.
