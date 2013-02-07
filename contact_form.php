@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.33
+Version: 3.34
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -145,19 +145,19 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 			'cntctfrm_language'	=> array(),
 			'cntctfrm_change_label' => 0,
 			'cntctfrm_name_label' => array( 'en' => __( "Name:", 'contact_form' ) ),
-			'cntctfrm_email_label' => array( 'en' => __( "E-Mail Address:", 'contact_form' ) ),
-			'cntctfrm_phone_label' => array( 'en' => __( "Phone:", 'contact_form' ) ),
+			'cntctfrm_email_label' => array( 'en' => __( "Email Address:", 'contact_form' ) ),
+			'cntctfrm_phone_label' => array( 'en' => __( "Phone number:", 'contact_form' ) ),
 			'cntctfrm_subject_label' => array( 'en' => __( "Subject:", 'contact_form' ) ),
 			'cntctfrm_message_label' => array( 'en' => __( "Message:", 'contact_form' ) ),
 			'cntctfrm_attachment_label' => array( 'en' => __( "Attachment:", 'contact_form' ) ),
 			'cntctfrm_submit_label' => array( 'en' => __( "Submit", 'contact_form' ) ),
 			'cntctfrm_name_error' => array( 'en' => __( "Your name is required.", 'contact_form' ) ),
 			'cntctfrm_email_error' => array( 'en' => __( "A proper e-mail address is required.", 'contact_form' ) ),
-			'cntctfrm_phone_error' => array( 'en' => __( "Subject text is required.", 'contact_form' ) ),
+			'cntctfrm_phone_error' => array( 'en' => __( "Subject is required.", 'contact_form' ) ),
 			'cntctfrm_subject_error' => array( 'en' => __( "Message text is required.", 'contact_form' ) ),
-			'cntctfrm_message_error' => array( 'en' => __( "Phone is required field.", 'contact_form' ) ),
-			'cntctfrm_attachment_error' => array( 'en' => __( "Attachment is broken.", 'contact_form' ) ),
-			'cntctfrm_captcha_error' => array( 'en' => __( "Please complete the CAPTCHA.", 'contact_form' ) ),
+			'cntctfrm_message_error' => array( 'en' => __( "Phone number is required.", 'contact_form' ) ),
+			'cntctfrm_attachment_error' => array( 'en' => __( "File format is not valid.", 'contact_form' ) ),
+			'cntctfrm_captcha_error' => array( 'en' => __( "Please fill out the CAPTCHA.", 'contact_form' ) ),
 			'cntctfrm_form_error' => array( 'en' => __( "Please make corrections below and try again.", 'contact_form' ) ),
 			'cntctfrm_action_after_send' => 1,
 			'cntctfrm_thank_text' => array( 'en' => __( "Thank you for contacting us.", 'contact_form' ) ),
@@ -355,7 +355,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 			if( $cntctfrm_options_submit['cntctfrm_action_after_send'] == 0 
 				&& ( trim( $cntctfrm_options_submit['cntctfrm_redirect_url'] ) == "" 
 				|| !preg_match( '@^(?:http://)?([^/]+)@i', trim( $cntctfrm_options_submit['cntctfrm_redirect_url'] ) ) ) ) {
-					$error .=__(  "If the option 'Redirect to page' is selected then url field should be fillied in the following format", 'contact_form' )." <code>http://your_site/your_page</code>";
+					$error .=__(  "If the 'Redirect to page' option is selected then the URL field should be in the following format", 'contact_form' )." <code>http://your_site/your_page</code>";
 					$cntctfrm_options['cntctfrm_action_after_send'] = 1;
 			}
 			if( 'user' == $cntctfrm_options_submit['cntctfrm_select_email'] ) {
@@ -364,18 +364,18 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				else if( false !== get_user_by( 'login', $cntctfrm_options_submit['cntctfrm_user_email'] ) ){
 				}
 				else {
-					$error .=__(  "Such user is not exist. Settings are not saved.", 'contact_form' );
+					$error .=__(  "Such user does not exist. Settings are not saved.", 'contact_form' );
 				}
 			}
 			else {
 				if( $cntctfrm_options_submit['cntctfrm_custom_email'] == "" || !preg_match( "/^((?:[a-z0-9']+(?:[a-z0-9\-_\.']+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})[, ]*)+$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_email'] ) ) ){
-					$error .= __( "Please input correct email. Settings are not saved.", 'contact_form' );
+					$error .= __( "Please enter a valid email address. Settings are not saved.", 'contact_form' );
 				}
 			}
 			if( 'custom' == $cntctfrm_options_submit['cntctfrm_from_email'] ) {
 				if( $cntctfrm_options_submit['cntctfrm_custom_from_email'] == "" 
 					&& !preg_match( "/^((?:[a-z0-9']+(?:[a-z0-9\-_\.']+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})[, ]*)+$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_from_email'] ) ) ) {
-					$error .= __( "Please input correct 'FROM' email. Settings are not saved.", 'contact_form' );
+					$error .= __( "Please enter a valid email address in the 'FROM' field. Settings are not saved.", 'contact_form' );
 				}
 			}
 			if( $error == '' ){
@@ -405,28 +405,28 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 		<div class="error" <?php if( "" == $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
 		<form method="post" action="admin.php?page=contact_form.php">
 			<span style="margin-bottom:15px;">
-				<p><?php _e( "If you would like to add a Contact Form to your website, just copy and put this shortcode onto your post or page or widget:", 'contact_form' ); ?> [contact_form] or [contact_form lang=en]</p>
-				<?php _e( "If information in the below fields are empty then the message will be send to an address which was specified during registration.", 'contact_form' ); ?>
+				<p><?php _e( "If you would like to add the Contact Form to your website, just copy and paste this shortcode to your post or page or widget:", 'contact_form' ); ?> [contact_form] or [contact_form lang=en]</p>
+				<?php _e( "If you leave the fields empty, the messages will be sent to the email address specified during registration.", 'contact_form' ); ?>
 			</span>
 			<table class="form-table">
 				<tr valign="top">
-					<th scope="row" style="width:195px;"><?php _e( "Use email of wordpress user:", 'contact_form' ); ?> </th>
+					<th scope="row" style="width:195px;"><?php _e( "The user's email address:", 'contact_form' ); ?> </th>
 					<td colspan="2">
 						<input type="radio" id="cntctfrm_select_email_user" name="cntctfrm_select_email" value="user" <?php if($cntctfrm_options['cntctfrm_select_email'] == 'user') echo "checked=\"checked\" "; ?>/>
 						<select name="cntctfrm_user_email">
-							<option disabled><?php _e( "Select user name", 'contact_form' ); ?></option>
+							<option disabled><?php _e( "Create a username", 'contact_form' ); ?></option>
 							<?php while( list( $key, $value ) = each( $userslogin ) ) { ?>
 								<option value="<?php echo $value; ?>" <?php if( $cntctfrm_options['cntctfrm_user_email'] == $value ) echo "selected=\"selected\" "; ?>><?php echo $value; ?></option>
 							<?php } ?>
 						</select>
-						<span class="cntctfrm_info"><?php _e( "Set a name of user who will get messages from a contact form.", 'contact_form' ); ?></span>
+						<span class="cntctfrm_info"><?php _e( "Enter a username of the person who should get the messages from the contact form.", 'contact_form' ); ?></span>
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row" style="width:195px;"><?php _e( "Use this email:", 'contact_form' ); ?> </th>
+					<th scope="row" style="width:195px;"><?php _e( "Use this email address:", 'contact_form' ); ?> </th>
 					<td colspan="2">
 						<input type="radio" id="cntctfrm_select_email_custom" name="cntctfrm_select_email" value="custom" <?php if($cntctfrm_options['cntctfrm_select_email'] == 'custom') echo "checked=\"checked\" "; ?>/> <input type="text" name="cntctfrm_custom_email" value="<?php echo $cntctfrm_options['cntctfrm_custom_email']; ?>" onfocus="document.getElementById('cntctfrm_select_email_custom').checked = true;" />
-						<span class="cntctfrm_info"><?php _e( "Set an email address which will be used for messages receiving.", 'contact_form' ); ?></span>
+						<span class="cntctfrm_info"><?php _e( "Enter the email address you want the messages forwarded to.", 'contact_form' ); ?></span>
 					</td>
 				</tr>
 				<tr valign="top">
@@ -435,13 +435,13 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
 					<th scope="row" style="width:195px;"><?php _e( "Display Attachment block", 'contact_form' ); ?></th>
 					<td colspan="2">
-						<input type="checkbox" id="cntctfrm_attachment" name="cntctfrm_attachment" value="1" <?php if($cntctfrm_options['cntctfrm_attachment'] == '1') echo "checked=\"checked\" "; ?>/> <span  class="cntctfrm_info"><?php echo __( "Users can attach files of the following types", 'contact_form' ) . ": html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, xls, zip, rar, wav, mp3, ppt"; ?></span>
+						<input type="checkbox" id="cntctfrm_attachment" name="cntctfrm_attachment" value="1" <?php if($cntctfrm_options['cntctfrm_attachment'] == '1') echo "checked=\"checked\" "; ?>/> <span  class="cntctfrm_info"><?php echo __( "Users can attach the following file formats", 'contact_form' ) . ": html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, xls, zip, rar, wav, mp3, ppt"; ?></span>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
-					<th scope="row" style="width:195px;"><?php _e( "Display Attachment explanations", 'contact_form' ); ?></th>
+					<th scope="row" style="width:195px;"><?php _e( "Display Attachment tips", 'contact_form' ); ?></th>
 					<td colspan="2">
-						<input type="checkbox" id="cntctfrm_attachment_explanations" name="cntctfrm_attachment_explanations" value="1" <?php if( $cntctfrm_options['cntctfrm_attachment_explanations'] == '1' && $cntctfrm_options['cntctfrm_attachment'] == '1' ) echo "checked=\"checked\" "; ?>/> <span  class="cntctfrm_info"><?php echo __( "Display explanations after Attachment block", 'contact_form' ); ?></span>
+						<input type="checkbox" id="cntctfrm_attachment_explanations" name="cntctfrm_attachment_explanations" value="1" <?php if( $cntctfrm_options['cntctfrm_attachment_explanations'] == '1' && $cntctfrm_options['cntctfrm_attachment'] == '1' ) echo "checked=\"checked\" "; ?>/> <span  class="cntctfrm_info"><?php echo __( "Display tips below the Attachment block", 'contact_form' ); ?></span>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if( $cntctfrm_options['cntctfrm_additions_options'] == '0' ) echo "cntctfrm_hidden"; ?>">
@@ -451,11 +451,11 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					</td>
 				</tr>
 				<tr class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
-					<th rowspan="2"><?php _e( 'What use?', 'contact_form' ); ?></th>
+					<th rowspan="2"><?php _e( 'What to use?', 'contact_form' ); ?></th>
 					<td colspan="2">
 						<input type='radio' name='cntctfrm_mail_method' value='wp-mail' <?php if( $cntctfrm_options['cntctfrm_mail_method'] == 'wp-mail' ) echo "checked=\"checked\" "; ?>/>
 						<?php _e( 'Wp-mail', 'mail-send' ); ?> 
-						<span  class="cntctfrm_info">(<?php _e( 'To send mail you can use the wordpress wp_mail function', 'mail_send' ); ?>)</span>
+						<span  class="cntctfrm_info">(<?php _e( 'You can use the wp_mail function for mailing', 'mail_send' ); ?>)</span>
 					</td>
 				</tr>
 				<tr class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
@@ -466,17 +466,17 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
-					<th scope="row" style="width:195px;"><?php _e( "Change text for 'FROM' field of the email", 'contact_form' ); ?></th>
+					<th scope="row" style="width:195px;"><?php _e( "Change text of the 'FROM' field", 'contact_form' ); ?></th>
 					<td colspan="2">
 						<input type="text" style="width:200px;" name="cntctfrm_from_field" value="<?php echo stripslashes( $cntctfrm_options['cntctfrm_from_field'] ); ?>" /><br />
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
-					<th scope="row" style="width:195px;"><?php _e( "Select email for 'FROM' field of the email", 'contact_form' ); ?></th>
+					<th scope="row" style="width:195px;"><?php _e( "Enter the email address in the 'From' field", 'contact_form' ); ?></th>
 					<td colspan="2">
-						<input type="radio" id="cntctfrm_from_email" name="cntctfrm_from_email" value="user" <?php if( $cntctfrm_options['cntctfrm_from_email'] == 'user' ) echo "checked=\"checked\" "; ?>/> User email <span class="cntctfrm_info">(<?php _e( "In the field 'From' in the mail it will use email of that user who fills the form.", 'contact_form' ); ?>)</span><br />
+						<input type="radio" id="cntctfrm_from_email" name="cntctfrm_from_email" value="user" <?php if( $cntctfrm_options['cntctfrm_from_email'] == 'user' ) echo "checked=\"checked\" "; ?>/> User email <span class="cntctfrm_info">(<?php _e( "The email address of the user who fills the form is going to be used in the field 'From'.", 'contact_form' ); ?>)</span><br />
 						<input type="radio" id="cntctfrm_from_custom_email" name="cntctfrm_from_email" value="custom" <?php if($cntctfrm_options['cntctfrm_from_email'] == 'custom') echo "checked=\"checked\" "; ?>/> <input type="text" name="cntctfrm_custom_from_email" value="<?php echo $cntctfrm_options['cntctfrm_custom_from_email']; ?>" onfocus="document.getElementById('cntctfrm_from_custom_email').checked = true;" />
-						<span class="cntctfrm_info">(<?php _e( "In the field 'From' it will use this email.", 'contact_form' ); ?>)</span>
+						<span class="cntctfrm_info">(<?php _e( "This email address will be used in the 'From' field.", 'contact_form' ); ?>)</span>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
@@ -486,7 +486,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
-					<th scope="row" style="width:195px;"><?php _e( "Required field", 'contact_form' ); ?></th>
+					<th scope="row" style="width:195px;"><?php _e( "Required fields", 'contact_form' ); ?></th>
 					<td colspan="2">
 						<input type="checkbox" id="cntctfrm_required_name_field" name="cntctfrm_required_name_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_name_field'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Name", 'contact_form' ); ?><br />
 						<input type="checkbox" id="cntctfrm_required_email_field" name="cntctfrm_required_email_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_email_field'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "E-Mail Address", 'contact_form' ); ?><br />
@@ -503,12 +503,12 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					<td class="cntctfrm_display_add_info_block <?php if( $cntctfrm_options['cntctfrm_display_add_info'] == '0' ) echo "cntctfrm_hidden"; ?>">
 						<input type="checkbox" id="cntctfrm_display_sent_from" name="cntctfrm_display_sent_from" value="1" <?php if($cntctfrm_options['cntctfrm_display_sent_from'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Sent from (ip address)", 'contact_form' ); ?><br />
 						<input type="checkbox" id="cntctfrm_display_date_time" name="cntctfrm_display_date_time" value="1" <?php if($cntctfrm_options['cntctfrm_display_date_time'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Date/Time", 'contact_form' ); ?><br />
-						<input type="checkbox" id="cntctfrm_display_coming_from" name="cntctfrm_display_coming_from" value="1" <?php if($cntctfrm_options['cntctfrm_display_coming_from'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Coming from (referer)", 'contact_form' ); ?><br />
+						<input type="checkbox" id="cntctfrm_display_coming_from" name="cntctfrm_display_coming_from" value="1" <?php if($cntctfrm_options['cntctfrm_display_coming_from'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Sent from (referer)", 'contact_form' ); ?><br />
 						<input type="checkbox" id="cntctfrm_display_user_agent" name="cntctfrm_display_user_agent" value="1" <?php if($cntctfrm_options['cntctfrm_display_user_agent'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Using (user agent)", 'contact_form' ); ?><br />
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
-					<th scope="row" style="width:195px;"><?php _e( "Language settings for label fields", 'contact_form' ); ?></th>
+					<th scope="row" style="width:195px;"><?php _e( "Language settings for the field names in the form", 'contact_form' ); ?></th>
 					<td colspan="2">
 						<select name="cntctfrm_languages" id="cntctfrm_languages" style="width:300px;">
 						<?php foreach ( $lang_codes as $key=>$val ) {
@@ -521,7 +521,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
-					<th scope="row" style="width:195px;"><?php _e( "Change label for fields of the contact form and error messages", 'contact_form' ); ?></th>
+					<th scope="row" style="width:195px;"><?php _e( "Change the names of the contact form fields and error messages", 'contact_form' ); ?></th>
 					<td style="width:15px;">
 						<input type="checkbox" id="cntctfrm_change_label" name="cntctfrm_change_label" value="1" <?php if($cntctfrm_options['cntctfrm_change_label'] == '1') echo "checked=\"checked\" "; ?>/>
 					</td>
@@ -535,40 +535,40 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 						<div class="clear"></div>
 						<div class="cntctfrm_language_tab cntctfrm_tab_en">
 							<input type="text" name="cntctfrm_name_label[en]" value="<?php echo $cntctfrm_options['cntctfrm_name_label']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Name:", 'contact_form' ); ?></span><br />
-							<input type="text" name="cntctfrm_email_label[en]" value="<?php echo $cntctfrm_options['cntctfrm_email_label']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "E-Mail Address:", 'contact_form' ); ?></span><br />
-							<input type="text" name="cntctfrm_phone_label[en]" value="<?php echo $cntctfrm_options['cntctfrm_phone_label']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Phone:", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_email_label[en]" value="<?php echo $cntctfrm_options['cntctfrm_email_label']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Email Address:", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_phone_label[en]" value="<?php echo $cntctfrm_options['cntctfrm_phone_label']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Phone number:", 'contact_form' ); ?></span><br />
 							<input type="text" name="cntctfrm_subject_label[en]" value="<?php echo $cntctfrm_options['cntctfrm_subject_label']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Subject:", 'contact_form' ); ?></span><br />
 							<input type="text" name="cntctfrm_message_label[en]" value="<?php echo $cntctfrm_options['cntctfrm_message_label']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Message:", 'contact_form' ); ?></span><br />
 							<input type="text" name="cntctfrm_attachment_label[en]" value="<?php echo $cntctfrm_options['cntctfrm_attachment_label']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Attachment:", 'contact_form' ); ?></span><br />
 							<input type="text" name="cntctfrm_submit_label[en]" value="<?php echo $cntctfrm_options['cntctfrm_submit_label']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Submit", 'contact_form' ); ?></span><br />
-							<input type="text" name="cntctfrm_name_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_name_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for name field", 'contact_form' ); ?></span><br />
-							<input type="text" name="cntctfrm_email_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_email_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for email field", 'contact_form' ); ?></span><br />
-							<input type="text" name="cntctfrm_phone_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_phone_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for phone field", 'contact_form' ); ?></span><br />
-							<input type="text" name="cntctfrm_subject_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_subject_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for subject field", 'contact_form' ); ?></span><br />
-							<input type="text" name="cntctfrm_message_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_message_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for message field", 'contact_form' ); ?></span><br />
-							<input type="text" name="cntctfrm_attachment_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_attachment_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for attachment field", 'contact_form' ); ?></span><br />
-							<input type="text" name="cntctfrm_captcha_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_captcha_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for captcha", 'contact_form' ); ?></span><br />
-							<input type="text" name="cntctfrm_form_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_form_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for all form", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_name_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_name_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Name field", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_email_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_email_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Email field", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_phone_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_phone_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Phone field", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_subject_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_subject_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Subject field", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_message_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_message_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Message field", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_attachment_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_attachment_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Attachment field", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_captcha_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_captcha_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Captcha field", 'contact_form' ); ?></span><br />
+							<input type="text" name="cntctfrm_form_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_form_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the whole form", 'contact_form' ); ?></span><br />
 							<span class="cntctfrm_info"><?php _e( "Use shortcode", 'contact_form' ); echo " [contact_form lang=en] or [contact_form] "; _e( "for this language", 'contact_form' ); ?></span>
 						</div>
 						<?php if( ! empty( $cntctfrm_options['cntctfrm_language'] ) ){ 
 							foreach( $cntctfrm_options['cntctfrm_language'] as $val ) { ?>
 								<div class="cntctfrm_language_tab hidden cntctfrm_tab_<?php echo $val; ?>">
 									<input type="text" name="cntctfrm_name_label[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_name_label'][$val] ) ) echo $cntctfrm_options['cntctfrm_name_label'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Name:", 'contact_form' ); ?></span><br />
-									<input type="text" name="cntctfrm_email_label[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_email_label'][$val] ) ) echo $cntctfrm_options['cntctfrm_email_label'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "E-Mail Address:", 'contact_form' ); ?></span><br />
-									<input type="text" name="cntctfrm_phone_label[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_phone_label'][$val] ) ) echo $cntctfrm_options['cntctfrm_phone_label'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Phone:", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_email_label[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_email_label'][$val] ) ) echo $cntctfrm_options['cntctfrm_email_label'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Email Address:", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_phone_label[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_phone_label'][$val] ) ) echo $cntctfrm_options['cntctfrm_phone_label'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Phone number:", 'contact_form' ); ?></span><br />
 									<input type="text" name="cntctfrm_subject_label[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_subject_label'][$val] ) ) echo $cntctfrm_options['cntctfrm_subject_label'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Subject:", 'contact_form' ); ?></span><br />
 									<input type="text" name="cntctfrm_message_label[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_message_label'][$val] ) ) echo $cntctfrm_options['cntctfrm_message_label'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Message:", 'contact_form' ); ?></span><br />
 									<input type="text" name="cntctfrm_attachment_label[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_attachment_label'][$val] ) ) echo $cntctfrm_options['cntctfrm_attachment_label'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Attachment:", 'contact_form' ); ?></span><br />
 									<input type="text" name="cntctfrm_submit_label[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_submit_label'][$val] ) ) echo $cntctfrm_options['cntctfrm_submit_label'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Submit", 'contact_form' ); ?></span><br />
-									<input type="text" name="cntctfrm_name_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_name_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_name_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for name field", 'contact_form' ); ?></span><br />
-									<input type="text" name="cntctfrm_email_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_email_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_email_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for email field", 'contact_form' ); ?></span><br />
-									<input type="text" name="cntctfrm_phone_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_phone_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_phone_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for phone field", 'contact_form' ); ?></span><br />
-									<input type="text" name="cntctfrm_subject_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_subject_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_subject_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for subject field", 'contact_form' ); ?></span><br />
-									<input type="text" name="cntctfrm_message_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_message_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_message_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for message field", 'contact_form' ); ?></span><br />
-									<input type="text" name="cntctfrm_attachment_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_attachment_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_attachment_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for attachment field", 'contact_form' ); ?></span><br />
-									<input type="text" name="cntctfrm_captcha_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_captcha_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_captcha_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for captcha", 'contact_form' ); ?></span><br />
-									<input type="text" name="cntctfrm_form_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_form_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_form_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for all form", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_name_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_name_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_name_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Name field", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_email_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_email_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_email_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Email field", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_phone_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_phone_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_phone_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Phone field", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_subject_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_subject_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_subject_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Subject field", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_message_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_message_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_message_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Message field", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_attachment_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_attachment_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_attachment_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Attachment field", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_captcha_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_captcha_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_captcha_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Captcha field", 'contact_form' ); ?></span><br />
+									<input type="text" name="cntctfrm_form_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_form_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_form_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the whole form", 'contact_form' ); ?></span><br />
 									<span class="cntctfrm_info"><?php _e( "Use shortcode", 'contact_form' ); echo " [contact_form lang=".$val."] "; _e( "for this language", 'contact_form' ); ?></span>
 								</div>
 							<?php } 
@@ -576,7 +576,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
-					<th scope="row" style="width:195px;"><?php _e( "Action after the send mail", 'contact_form' ); ?></th>
+					<th scope="row" style="width:195px;"><?php _e( "Action after email is sent", 'contact_form' ); ?></th>
 					<td colspan="2" class="cntctfrm_action_after_send_block">
 						<input type="radio" id="cntctfrm_action_after_send" name="cntctfrm_action_after_send" value="1" <?php if($cntctfrm_options['cntctfrm_action_after_send'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Display text", 'contact_form' ); ?><br />
 						<div class="cntctfrm_label_language_tab cntctfrm_active" id="cntctfrm_text_en"><?php _e('English', 'contact_form'); ?></div>
@@ -600,7 +600,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 						} ?>
 						<div id="cntctfrm_before"></div>
 						<br />
-						<input type="radio" id="cntctfrm_action_after_send" name="cntctfrm_action_after_send" value="0" <?php if($cntctfrm_options['cntctfrm_action_after_send'] == '0') echo "checked=\"checked\" "; ?>/> <?php _e( "Redirect to page", 'contact_form' ); ?><br />
+						<input type="radio" id="cntctfrm_action_after_send" name="cntctfrm_action_after_send" value="0" <?php if($cntctfrm_options['cntctfrm_action_after_send'] == '0') echo "checked=\"checked\" "; ?>/> <?php _e( "Redirect to the page", 'contact_form' ); ?><br />
 						<input type="text" name="cntctfrm_redirect_url" value="<?php echo $cntctfrm_options['cntctfrm_redirect_url']; ?>" /> <span class="cntctfrm_info"><?php _e( "Url", 'contact_form' ); ?></span><br />
 					</td>
 			</table>    
@@ -645,7 +645,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 		else if( false === $cntctfrm_result )
 		{
 			// If email not be delivered
-			$error_message['error_form'] = __( "Sorry, your e-mail could not be delivered.", 'contact_form' );
+			$error_message['error_form'] = __( "Sorry, email message could not be delivered.", 'contact_form' );
 		}
 		if( true !== $cntctfrm_result) { 
 			$_SESSION['cntctfrm_send_mail'] = false;
@@ -715,7 +715,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 				$content .= '<div style="text-align: left;">
 						<input type="file" name="cntctfrm_contact_attachment" id="cntctfrm_contact_attachment"'.(isset( $error_message['error_attachment'] ) ? "class='error'": "").' />';
 				if( $cntctfrm_options['cntctfrm_attachment_explanations'] == 1 ){
-						$content .= '<label style="font-size:10px;"><br />'. __( "You can attach files of the following types", 'contact_form' ) . ': html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, xls, zip, rar, wav, mp3, ppt</label>';
+						$content .= '<label style="font-size:10px;"><br />'. __( "You can attach the following file formats", 'contact_form' ) . ': html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, xls, zip, rar, wav, mp3, ppt</label>';
 				}
 				$content .= '
 				</div>';
@@ -934,7 +934,7 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 				}
 				if( $cntctfrm_options['cntctfrm_display_coming_from'] == 1) {
 					$user_info_string .= '<tr>
-							<td>'.__('Coming from (referer)', 'contact_form').':</td><td>'.$form_action_url.'</td>
+							<td>'.__('Sent from (referer)', 'contact_form').':</td><td>'.$form_action_url.'</td>
 						</tr>';
 				}
 				if( $cntctfrm_options['cntctfrm_display_user_agent'] == 1) {
@@ -1020,7 +1020,7 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 					$headers .= "MIME-Version: 1.0\n".
 						"Content-Type: multipart/mixed; boundary=\"$bound_text\"";
 
-					$message = 	__( "If you can see this MIME than your client doesn't accept MIME types!", "contact_form" ) . "\n";
+					$message = 	__( "If you can see this MIME, it means that the MIME type is not supported by your email client!", "contact_form" ) . "\n";
 
 					$message .= $bound."\n" . "Content-Type: text/html; charset=\"utf-8\"\n" .
 						"Content-Transfer-Encoding: 7bit\n\n" . $message_block . "\n\n";
@@ -1120,7 +1120,7 @@ if ( ! function_exists ( 'cntctfrm_admin_head' ) ) {
 	function cntctfrm_admin_head() {
 		wp_enqueue_style( 'cntctfrmStylesheet', plugins_url( 'css/style.css', __FILE__ ) );
 		wp_enqueue_script( 'cntctfrmScript', plugins_url( 'js/script.js', __FILE__ ) );
-		echo '<script type="text/javascript">var confirm_text = "'.__('Are you sure you want to delete this language?', 'contact_form').'"</script>';
+		echo '<script type="text/javascript">var confirm_text = "'.__('Are you sure that you want to delete this language data?', 'contact_form').'"</script>';
 	}
 }
 
