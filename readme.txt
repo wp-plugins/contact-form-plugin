@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.5.1
-Stable tag: 3.34
+Stable tag: 3.35
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,6 +106,9 @@ Here is an example for German language files.
 5. Widget settings for using shortcode in the sidebar.
 
 == Changelog ==
+
+= V3.35 - 19.02.2013 =
+* Bugfix : The error related to the cross-site scripting vulnerabilities was fixed.
 
 = V3.34 - 7.02.2013 =
 * Update : We changed the English text in the plugin file and all language files were updated.
@@ -272,6 +275,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.35 =
+The error related to the cross-site scripting vulnerabilities was fixed.
 
 = V3.34 =
 We changed the English text in the plugin file and all language files were updated.
