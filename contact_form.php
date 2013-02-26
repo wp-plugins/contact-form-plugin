@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.37
+Version: 3.38
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -642,7 +642,7 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 		if( true === $cntctfrm_result ) {
 			$_SESSION['cntctfrm_send_mail'] = true;
 			if( $cntctfrm_options['cntctfrm_action_after_send'] == 1 )
-				$content .= $cntctfrm_options['cntctfrm_thank_text'][$lang];
+				$content .= '<div id="cntctfrm_thanks">' . $cntctfrm_options['cntctfrm_thank_text'][$lang] . '</div>';
 			else
 				$content .= "<script type='text/javascript'>window.location.href = '".$cntctfrm_options['cntctfrm_redirect_url']."';</script>";
 		}
