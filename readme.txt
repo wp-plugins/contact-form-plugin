@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.5.1
-Stable tag: 3.38
+Stable tag: 3.39
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 * Spanish (es_ES) (thanks to Jesús Parra)
 * Swedish (sv_SE) (thanks to Martin Tonek, <a href="joakim@limewoodmedia.com">Joakim Lindskog</a>, <a href="mailto:maarten@vandendriest.com">Maarten van den Driest</a> - crossanddot.nl)
 * Turkish (tr_TR) (thanks to <a herf="mailto:d-bulent@hotmail.com ">Devrim Bulent Ibis</a>, www.devrimhoca.com)
+* Ukrainian (uk) (thanks to <a herf="mailto:xxxxAndyxxxx@gmail.com">Andrew Yaschuk</a>)
 
 If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
@@ -108,6 +109,9 @@ Here is an example for German language files.
 5. Widget settings for using shortcode in the sidebar.
 
 == Changelog ==
+
+= V3.39 - 04.03.2013 =
+* NEW : Ukrainian language file was added to the plugin.
 
 = V3.38 - 26.02.2013 =
 * NEW : We added HTML tag for the text, that is displaying after email is sent.
@@ -286,6 +290,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.39 =
+Ukrainian language file was added to the plugin.
 
 = V3.38 =
 We added HTML tag for the text, that is displaying after email is sent.
