@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.5.1
-Stable tag: 3.39
+Stable tag: 3.40
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,6 +40,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 * Greek (el_GR) (thanks to Pantelis Panteloglou)
 * Hebrew (he_IL) (thanks to Sagive SEO)
 * Hindi (hi_IN) (thanks to <a href="mailto:ash.pr@outshinesolutions.com">Team Outshine</a>)
+* Hungarian (hu_HU) (thanks to <a href="mailto:karcsi1978@gmail.com">Karoly Kovacs</a>)
 * Italian (it_IT) (thanks to <a href="mailto:ilian@ultra-violet.it">Ilian Gagliardi</a>)
 * Japanese (ja) (thanks to Foken)
 * Norwegian (nb_NO) (thanks to Tore Hjartland)
@@ -109,6 +110,10 @@ Here is an example for German language files.
 5. Widget settings for using shortcode in the sidebar.
 
 == Changelog ==
+
+= V3.40 - 19.03.2013 =
+* NEW : Hungarian language file was added to the plugin.
+* Bugfix : The bug of displaying error messages was fixed.
 
 = V3.39 - 04.03.2013 =
 * NEW : Ukrainian language file was added to the plugin.
@@ -290,6 +295,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.40 =
+Hungarian language file was added to the plugin. The bug of displaying error messages was fixed.
 
 = V3.39 =
 Ukrainian language file was added to the plugin.

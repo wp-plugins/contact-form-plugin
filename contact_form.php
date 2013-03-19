@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.39
+Version: 3.40
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -186,6 +186,14 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 			$cntctfrm_options['cntctfrm_form_error']				= array( 'en' => $cntctfrm_option_defaults['cntctfrm_form_error']['en'] );
 		}
 		$cntctfrm_options = array_merge( $cntctfrm_option_defaults, $cntctfrm_options );
+
+		if ( $cntctfrm_options['cntctfrm_subject_error']['en'] == __( "Message text is required.", 'contact_form' ) )
+			$cntctfrm_options['cntctfrm_subject_error']['en'] = __( "Subject is required.", 'contact_form' );
+		if ( $cntctfrm_options['cntctfrm_message_error']['en'] == __( "Phone number is required.", 'contact_form' ) )
+			$cntctfrm_options['cntctfrm_message_error']['en'] = __( "Message text is required.", 'contact_form' );
+		if ( $cntctfrm_options['cntctfrm_phone_error']['en'] == __( "Subject is required.", 'contact_form' ) )
+			$cntctfrm_options['cntctfrm_phone_error']['en'] = __( "Phone number is required.", 'contact_form' );
+
 		update_option( 'cntctfrm_options', $cntctfrm_options );
 	}
 }
