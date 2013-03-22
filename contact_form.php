@@ -1241,7 +1241,7 @@ function cntctfrm_remove_language(){
 
 // Function for delete options
 if ( ! function_exists ( 'cntctfrm_delete_options' ) ) {
-	function pdtrdvncd_delete_function() {
+	function cntctfrm_delete_options() {
 		global $wpdb;
 		delete_option( 'cntctfrm_options' );
 	}
