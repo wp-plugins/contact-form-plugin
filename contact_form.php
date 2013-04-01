@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.41
+Version: 3.42
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -647,7 +647,11 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 		$cntctfrm_options = get_option( 'cntctfrm_options' );
 		$content = "";
 
-		$page_url = ( isset( $_SERVER["HTTPS"] ) && $_SERVER["HTTPS"] == "on" ? "https://" : "http://" ).$_SERVER["SERVER_NAME"].strip_tags( $_SERVER["REQUEST_URI"] );
+		if ( '80' != $_SERVER["SERVER_PORT"] )
+            $page_url = $page_url = ( isset( $_SERVER["HTTPS"] ) && $_SERVER["HTTPS"] == "on" ? "https://" : "http://" ).$_SERVER["SERVER_NAME"].':'. $_SERVER["SERVER_PORT"].strip_tags( $_SERVER["REQUEST_URI"] );
+		else
+            $page_url = ( isset( $_SERVER["HTTPS"] ) && $_SERVER["HTTPS"] == "on" ? "https://" : "http://" ).$_SERVER["SERVER_NAME"].strip_tags( $_SERVER["REQUEST_URI"] );
+
 		// If contact form submited
 		$name = isset( $_POST['cntctfrm_contact_name'] ) ? $_POST['cntctfrm_contact_name'] : "";
 		$email = isset( $_POST['cntctfrm_contact_email'] ) ? stripslashes( $_POST['cntctfrm_contact_email'] ) : "";

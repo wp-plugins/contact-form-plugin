@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
 Requires at least: 2.9
 Tested up to: 3.5.1
-Stable tag: 3.41
+Stable tag: 3.42
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -110,6 +110,10 @@ Here is an example for German language files.
 5. Widget settings for using shortcode in the sidebar.
 
 == Changelog ==
+
+= V3.42 - 01.04.2013 =
+* Update : Serbian language file was updated.
+* Bugfix : The bug after clicking submit, when site uses a custom port, was fixed.
 
 = V3.41 - 22.03.2013 =
 * NEW : Added ability to change a label 'Send me a copy'.
@@ -299,6 +303,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.42 =
+Serbian language file was updated. The bug after clicking submit, when site uses a custom port, was fixed.
 
 = V3.41 =
 Added ability to change a label 'Send me a copy'. The bug of changing the message 'Action after email is sent' was fixed.
