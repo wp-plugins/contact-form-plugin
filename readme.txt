@@ -1,10 +1,10 @@
 ﻿=== Contact Form ===
 Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
-Tags: Contact Form, text, contact, form, contacts, contakt form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, atachment, send copy
+Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 2.9
 Tested up to: 3.5.1
-Stable tag: 3.42
+Stable tag: 3.43
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,24 +12,24 @@ Add Contact Form to your WordPress website.
 
 == Description ==
 
-Contact Form allows you to add a feedback form easilly and simply to a post or a page.
+Contact Form allows you to add a feedback form to a post or a page in an easy manner.
 
 <a href="http://wordpress.org/extend/plugins/contact-form-plugin/faq/" target="_blank">FAQ</a>
 <a href="http://bestwebsoft.com/plugin/contact-form/" target="_blank">Support</a>
 
 = Features =
 
-* Actions: There is a possibility of choosing where to send email messages. This can be either any user of the website or any other email.
-* Actions: Ability to add a field for attaching a file to the contact form.
-* Actions: Ability to add a field for sending a copy of the letter to the user who fills out a contact form. A copy will be sent to email, specified while filling the contact form.
-* Label: There is a possibility to change a label when the fields of the form are displayed.
+* Actions: You can choose where to send the messages - this can be any user and any email address.
+* Actions: You can add a field for file attachment.
+* Actions: You can add a field for sending a copy of the message to the user who fills out the contact form. A copy will be sent to the email address specified while filling the contact form.
+* Label: There is a possibility to change a label when the fields are displayed.
 
 = Translation =
 
 * Arabic (ar) (thanks to Hammad Alshammari (ABU HATIM), www.abuhatim.net)
 * Belarusian (be_BY) (thanks to <a href="mailto:nullbsd@gmail.com">Sakałoŭ Alaksiej</a>)
 * Bulgarian (bg_BG) (thanks to Martin Jekov)
-* European Portuguese (pt_PT) (thanks to <a href="mailto:cesarbsilva@gmail.com">César Silva</a>, http://clubetelemoveis.com )
+* European Portuguese (pt_PT) (thanks to <a href="mailto:cesarbsilva@gmail.com">César Silva</a>, www.clubetelemoveis.com )
 * Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:brenojac@gmail.com">Breno Jacinto</a>, www.iconis.org.br)
 * Czech (cs_CZ) (thanks to Petr Zápotocký)
 * Danish (da_DK) (thanks to Mads Hannibal)
@@ -50,7 +50,7 @@ Contact Form allows you to add a feedback form easilly and simply to a post or a
 * Russian (ru_RU)
 * Serbian (sr_RS) (thanks to Georgijevic Team, www.georgijevic.info)
 * Spanish (es_ES) (thanks to Jesús Parra)
-* Swedish (sv_SE) (thanks to Martin Tonek, <a href="joakim@limewoodmedia.com">Joakim Lindskog</a>, <a href="mailto:maarten@vandendriest.com">Maarten van den Driest</a> - crossanddot.nl)
+* Swedish (sv_SE) (thanks to Martin Tonek, <a href="joakim@limewoodmedia.com">Joakim Lindskog</a>, <a href="mailto:maarten@vandendriest.com">Maarten van den Driest</a> - www.crossanddot.nl)
 * Turkish (tr_TR) (thanks to <a href="mailto:d-bulent@hotmail.com ">Devrim Bulent Ibis</a>, www.devrimhoca.com)
 * Ukrainian (uk) (thanks to <a href="mailto:xxxxAndyxxxx@gmail.com">Andrew Yaschuk</a>)
 
@@ -58,48 +58,50 @@ If you create your own language pack or update the existing one, you can send <a
 
 = Technical support =
 
-Dear users, our plugins are available for free download. If you have any questions or propositions regarding functionality of our plugins (current options, new options, current issues) please feel free to contact us. Please note that we accept requests in English language only. All messages on another languages wouldn't be accepted. 
+Dear users, our plugins are available for free download. If you have any questions or recommendations regarding the functionality of our plugins (existing options, new options, current issues), please feel free to contact us. Please note that we accept requests in English only. All messages in another languages won't be accepted.
 
-Also, emails which are reporting about plugin's bugs are accepted for investigation and fixing. Your request must contain URL of the website, issues description and WordPress admin panel access. Plugin customization based on your Wordpress theme is a paid service (standard price is $40, but it could be higer and depends on the complexity of requested changes). We will analize existing issue and make necessary changes after 100% pre-payment.All these paid changes and modifications could be included to the next version of plugin and will be shared for all users like an integral part of the plugin. Free fixing services will be provided for user who send translation on their native language (this should be a new translation of a certain plugin, and you can check available translations on the official plugin page).
+If you notice any bugs in the plugins, you can notify us about it and we'll investigate and fix the issue then. Your request should contain URL of the website, issues description and WordPress admin panel credentials.
+Moreover we can customize the plugin according to your requirements. It's a paid service (as a rule it costs $40, but the price can vary depending on the amount of the necessary changes and their complexity). Please note that we could also include this or that feature (developed for you) in the next release and share with the other users then. 
+We can fix some things for free for the users who provide translation of our plugin into their native language (this should be a new translation of a certain plugin, you can check available translations on the official plugin page).
 
 == Installation ==
 
-1. Upload `Contact Form` folder to the `/wp-content/plugins/` directory.
-2. Activate the plugin through the 'Plugins' menu in your WordPress admin panel.
-3. You can adjust necessary settings through your WordPress admin panel in "Settings" > "Contact Form".
-4. Create a page or a post and insert shortcode [contact_form] to the text.
+1. Upload the `Contact Form` folder to the `/wp-content/plugins/` directory.
+2. Activate the plugin using the 'Plugins' menu in your WordPress admin panel.
+3. You can adjust the necessary settings using your WordPress admin panel in "Settings" > "Contact Form".
+4. Create a page or a post and insert the shortcode [contact_form] into the text.
 
 == Frequently Asked Questions ==
 
-= Where I can find settings to adjust work of the plugin after activation? =
+= Where can I find the settings to adjust the plugin work after activation? =
 
 In the 'Plugin' menu you can find a link to the settings page.
 
-= After plugin installation I haven't adjusted the settings. What is the default email address which will be used for a contact via the form? =
+= After the plugin installation I haven't adjusted the settings. What is the default email address used for a contact via the form? =
 
-Default address which was specified during WordPress installation will be used by the Contact Form plugin as the default email address.
+The address specified during WordPress installation will be used by the Contact Form plugin as the default one.
 
 = How can I add Contact Form to my website? =
 
-You need to put [contact_form] shortcode into your page or some post.
+You should put the shortcode [contact_form] into your page or post.
 
-= After user is choosen via plugin settings page I have got this error: "Please input correct email. Settings are not saved." =
+= I chose a user via the plugin settings and got this error: "Please enter a valid email address. Settings are not saved." =
 
-This means that you have made a syntax error.
+This means that you made a syntax error.
 
-= How to use other language files with the Contact Form? = 
+= How to use some other language files with the Contact Form? = 
 
-Here is an example for German language files.
+Here is an example for the German language files.
 
-1. In order to use another language for WordPress it is necessary to set the WP version to the required language and in configuration wp file - `wp-config.php` in the line `define('WPLANG', '');` write `define('WPLANG', 'de_DE');`. If everything is done properly admin panel will be in German.
+1. In order to use another language for WordPress it is necessary to switch the WP version to the required language and in the configuration wp file - `wp-config.php` in the line `define('WPLANG', '');` write `define('WPLANG', 'de_DE');`. If everything is done properly admin panel will be in German.
 
-2. Make sure that there are files `de_DE.po` and `de_DE.mo` in the plugin (in the languages folder which is in the root of the plugin).
+2. Make sure that there are the files `de_DE.po` and `de_DE.mo` in the plugin (in the languages folder which is in the root of the plugin).
 
-3. If there are no such files it will be necessary to copy other files from this folder (for example, for Russian or Italian language) and rename them (you should write `de_DE` instead of `ru_RU` in the both files).
+3. If there are no such files you should copy the other files from this folder (for example, for Russian or Italian language) and rename them (you should write `de_DE` instead of `ru_RU` in both files).
 
-4. The files can be edited with the help of the program Poedit - http://www.poedit.net/download.php - please load this program, install it, open the file with this program (required language file) and for each line in English write translation in German.
+4. The files can be edited with the help of the program Poedit - http://www.poedit.net/download.php - please download this program, install it, open the file with this program (required language file) and for each line in English write translation in German.
 
-5. If everything is done properly all lines will be in German in admin panel and on the frontend.
+5. If everything is done properly all lines will be in German in the admin panel and in the front-end.
 
 == Screenshots ==
 
@@ -111,29 +113,33 @@ Here is an example for German language files.
 
 == Changelog ==
 
+= V3.43 - 08.04.2013 =
+* Update : We updated the English text in the plugin file.
+* Bugfix : We fixed the bug of displaying phone error messages when a phone number field is not display.
+
 = V3.42 - 01.04.2013 =
-* Update : Serbian language file was updated.
-* Bugfix : The bug after clicking submit, when site uses a custom port, was fixed.
+* Update : Serbian language file is updated.
+* Bugfix : The bug after clicking submit, when site uses a custom port, is fixed.
 
 = V3.41 - 22.03.2013 =
 * NEW : Added ability to change a label 'Send me a copy'.
 * Bugfix : The bug of changing the message 'Action after email is sent' was fixed.
 
 = V3.40 - 19.03.2013 =
-* NEW : Hungarian language file was added to the plugin.
+* NEW : Hungarian language file is added to the plugin.
 * Bugfix : The bug of displaying error messages was fixed.
 
 = V3.39 - 04.03.2013 =
-* NEW : Ukrainian language file was added to the plugin.
+* NEW : Ukrainian language file is added to the plugin.
 
 = V3.38 - 26.02.2013 =
-* NEW : We added HTML tag for the text, that is displaying after email is sent.
+* NEW : We added HTML tag for the text, that is displayed after email is sent.
 
 = V3.37 - 21.02.2013 =
-* NEW : Belarusian language file was added to the plugin.
+* NEW : Belarusian language file is added to the plugin.
 
 = V3.36 - 19.02.2013 =
-* Update : European Portuguese language file was updated.
+* Update : European Portuguese language file is updated.
 
 = V3.35 - 19.02.2013 =
 * Bugfix : The error related to the cross-site scripting vulnerabilities was fixed.
@@ -303,6 +309,9 @@ Here is an example for German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.43 =
+We updated the English text in the plugin file. We fixed the bug of displaying phone error messages when a phone number field is not display.
 
 = V3.42 =
 Serbian language file was updated. The bug after clicking submit, when site uses a custom port, was fixed.

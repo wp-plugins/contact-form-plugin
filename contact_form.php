@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.42
+Version: 3.43
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -153,7 +153,7 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 			'cntctfrm_send_copy_label' => array( 'en' => __( "Send me a copy", 'contact_form' ) ),
 			'cntctfrm_submit_label' => array( 'en' => __( "Submit", 'contact_form' ) ),
 			'cntctfrm_name_error' => array( 'en' => __( "Your name is required.", 'contact_form' ) ),
-			'cntctfrm_email_error' => array( 'en' => __( "A proper e-mail address is required.", 'contact_form' ) ),
+			'cntctfrm_email_error' => array( 'en' => __( "A valid email address is required.", 'contact_form' ) ),
 			'cntctfrm_phone_error' => array( 'en' => __( "Phone number is required.", 'contact_form' ) ),
 			'cntctfrm_subject_error' => array( 'en' => __( "Subject is required.", 'contact_form' ) ),
 			'cntctfrm_message_error' => array( 'en' => __( "Message text is required.", 'contact_form' ) ),
@@ -288,7 +288,12 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				$cntctfrm_options_submit['cntctfrm_display_phone_field']			= isset( $_POST['cntctfrm_display_phone_field']) ? 1 : 0;
 				$cntctfrm_options_submit['cntctfrm_required_name_field']			= isset( $_POST['cntctfrm_required_name_field']) ? 1 : 0;
 				$cntctfrm_options_submit['cntctfrm_required_email_field']			= isset( $_POST['cntctfrm_required_email_field']) ? 1 : 0;
-				$cntctfrm_options_submit['cntctfrm_required_phone_field']			= isset( $_POST['cntctfrm_required_phone_field']) ? 1 : 0;
+			//	$cntctfrm_options_submit['cntctfrm_required_phone_field']			= isset( $_POST['cntctfrm_required_phone_field']) ? 1 : 0;
+				if ( $cntctfrm_options_submit['cntctfrm_display_phone_field'] == 0 ) {
+					$cntctfrm_options_submit['cntctfrm_required_phone_field']	= 0;
+				} else {
+					$cntctfrm_options_submit['cntctfrm_required_phone_field']	= isset( $_POST['cntctfrm_required_phone_field']) ? 1 : 0;
+				}
 				$cntctfrm_options_submit['cntctfrm_required_subject_field']		= isset( $_POST['cntctfrm_required_subject_field']) ? 1 : 0;
 				$cntctfrm_options_submit['cntctfrm_required_message_field']		= isset( $_POST['cntctfrm_required_message_field']) ? 1 : 0;
 				
@@ -391,7 +396,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 			}
 			else {
 				if( $cntctfrm_options_submit['cntctfrm_custom_email'] == "" || !preg_match( "/^((?:[a-z0-9']+(?:[a-z0-9\-_\.']+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})[, ]*)+$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_email'] ) ) ){
-					$error .= __( "Please enter a valid email address. Settings are not saved.", 'contact_form' );
+					$error .= __( "Please enter a valid email address in the 'FROM' field. Settings are not saved.", 'contact_form' );
 				}
 			}
 			if( 'custom' == $cntctfrm_options_submit['cntctfrm_from_email'] ) {
@@ -430,10 +435,10 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				<p><?php _e( "If you would like to add the Contact Form to your website, just copy and paste this shortcode to your post or page or widget:", 'contact_form' ); ?> [contact_form] or [contact_form lang=en]</p>
 				<?php _e( "If you leave the fields empty, the messages will be sent to the email address specified during registration.", 'contact_form' ); ?>
 			</span>
-			<table class="form-table">
+			<table class="form-table" style="width:auto;" >
 				<tr valign="top">
 					<th scope="row" style="width:200px;"><?php _e( "The user's email address:", 'contact_form' ); ?> </th>
-					<td colspan="2">
+					<td colspan="2" style="width:750px;">
 						<input type="radio" id="cntctfrm_select_email_user" name="cntctfrm_select_email" value="user" <?php if($cntctfrm_options['cntctfrm_select_email'] == 'user') echo "checked=\"checked\" "; ?>/>
 						<select name="cntctfrm_user_email">
 							<option disabled><?php _e( "Create a username", 'contact_form' ); ?></option>
@@ -496,13 +501,13 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
 					<th scope="row" style="width:200px;"><?php _e( "Enter the email address in the 'From' field", 'contact_form' ); ?></th>
 					<td colspan="2">
-						<input type="radio" id="cntctfrm_from_email" name="cntctfrm_from_email" value="user" <?php if( $cntctfrm_options['cntctfrm_from_email'] == 'user' ) echo "checked=\"checked\" "; ?>/> User email <span class="cntctfrm_info">(<?php _e( "The email address of the user who fills the form is going to be used in the field 'From'.", 'contact_form' ); ?>)</span><br />
+						<input type="radio" id="cntctfrm_from_email" name="cntctfrm_from_email" value="user" <?php if( $cntctfrm_options['cntctfrm_from_email'] == 'user' ) echo "checked=\"checked\" "; ?>/> User email <span class="cntctfrm_info">(<?php _e( "The email address of the user who fills the form will be used in the field 'From'.", 'contact_form' ); ?>)</span><br />
 						<input type="radio" id="cntctfrm_from_custom_email" name="cntctfrm_from_email" value="custom" <?php if($cntctfrm_options['cntctfrm_from_email'] == 'custom') echo "checked=\"checked\" "; ?>/> <input type="text" name="cntctfrm_custom_from_email" value="<?php echo $cntctfrm_options['cntctfrm_custom_from_email']; ?>" onfocus="document.getElementById('cntctfrm_from_custom_email').checked = true;" />
 						<span class="cntctfrm_info">(<?php _e( "This email address will be used in the 'From' field.", 'contact_form' ); ?>)</span>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
-					<th scope="row" style="width:200px;"><?php _e( "Display phone field", 'contact_form' ); ?></th>
+					<th scope="row" style="width:200px;"><?php _e( "Display a phone number field", 'contact_form' ); ?></th>
 					<td colspan="2">
 						<input type="checkbox" id="cntctfrm_display_phone_field" name="cntctfrm_display_phone_field" value="1" <?php if($cntctfrm_options['cntctfrm_display_phone_field'] == '1') echo "checked=\"checked\" "; ?>/>
 					</td>
@@ -511,14 +516,14 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					<th scope="row" style="width:200px;"><?php _e( "Required fields", 'contact_form' ); ?></th>
 					<td colspan="2">
 						<input type="checkbox" id="cntctfrm_required_name_field" name="cntctfrm_required_name_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_name_field'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Name", 'contact_form' ); ?><br />
-						<input type="checkbox" id="cntctfrm_required_email_field" name="cntctfrm_required_email_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_email_field'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "E-Mail Address", 'contact_form' ); ?><br />
+						<input type="checkbox" id="cntctfrm_required_email_field" name="cntctfrm_required_email_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_email_field'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Email Address", 'contact_form' ); ?><br />
 						<input type="checkbox" id="cntctfrm_required_phone_field" name="cntctfrm_required_phone_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_phone_field'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Phone", 'contact_form' ); ?><br />
 						<input type="checkbox" id="cntctfrm_required_subject_field" name="cntctfrm_required_subject_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_subject_field'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Subject", 'contact_form' ); ?><br />
 						<input type="checkbox" id="cntctfrm_required_message_field" name="cntctfrm_required_message_field" value="1" <?php if($cntctfrm_options['cntctfrm_required_message_field'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Message", 'contact_form' ); ?>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if( $cntctfrm_options['cntctfrm_additions_options'] == '0' ) echo "cntctfrm_hidden"; ?>">
-					<th scope="row" style="width:200px;"><?php _e( "Display additional info in email", 'contact_form' ); ?></th>
+					<th scope="row" style="width:200px;"><?php _e( "Display additional info in the email", 'contact_form' ); ?></th>
 					<td style="width:15px;">
 						<input type="checkbox" id="cntctfrm_display_add_info" name="cntctfrm_display_add_info" value="1" <?php if($cntctfrm_options['cntctfrm_display_add_info'] == '1') echo "checked=\"checked\" "; ?>/>
 					</td>
@@ -539,7 +544,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 							echo '<option value="' . esc_attr( $key ) . '"> ' . esc_html ( $val ) . '</option>';
 						} ?>
 						</select>
-						<input type="button" class="button-primary" id="cntctfrm_add_language_button" value="<?php _e('Add language', 'contact_form'); ?>" />
+						<input type="button" class="button-primary" id="cntctfrm_add_language_button" value="<?php _e('Add a language', 'contact_form'); ?>" />
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
@@ -827,7 +832,7 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 			$error_message['error_subject'] = $cntctfrm_options['cntctfrm_subject_error'][$language];
 		if( $cntctfrm_options['cntctfrm_required_message_field'] == 1 )
 			$error_message['error_message'] = $cntctfrm_options['cntctfrm_message_error'][$language];
-		if( $cntctfrm_options['cntctfrm_required_phone_field'] == 1 )
+		if( $cntctfrm_options['cntctfrm_required_phone_field'] == 1 && $cntctfrm_options['cntctfrm_display_phone_field'] == 1 )
 			$error_message['error_phone'] = $cntctfrm_options['cntctfrm_phone_error'][$language];
 		$error_message['error_form'] = $cntctfrm_options['cntctfrm_form_error'][$language];
 		if( $cntctfrm_options['cntctfrm_attachment'] == 1 ) {
@@ -1063,9 +1068,9 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 
 					// Additional headers
 				if( 'custom' == $cntctfrm_options['cntctfrm_from_email'] )
-					$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '>\n';
+					$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '>' . "\n";
 				else
-					$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $email ). '>\n';
+					$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $email ). '>' . "\n";
 
 					$bound_text = 	"jimmyP123";
 		 
@@ -1098,9 +1103,9 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 
 					// Additional headers
 					if( 'custom' == $cntctfrm_options['cntctfrm_from_email'] )
-						$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '>\n';
+						$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '>' . "\n";
 					else
-						$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.$email. '>\n';
+						$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.$email. '>' . "\n";
 				}
 				if( isset( $_POST['cntctfrm_contact_send_copy'] ) && $_POST['cntctfrm_contact_send_copy'] == 1 )
 					@mail( $email, $subject, $message_text, $headers );
