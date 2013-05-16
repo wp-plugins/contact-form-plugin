@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 2.9
 Tested up to: 3.5.1
-Stable tag: 3.43
+Stable tag: 3.44
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,14 +15,14 @@ Add Contact Form to your WordPress website.
 Contact Form allows you to add a feedback form to a post or a page in an easy manner.
 
 <a href="http://wordpress.org/extend/plugins/contact-form-plugin/faq/" target="_blank">FAQ</a>
-<a href="http://bestwebsoft.com/plugin/contact-form/" target="_blank">Support</a>
+<a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
 = Features =
 
 * Actions: You can choose where to send the messages - this can be any user and any email address.
 * Actions: You can add a field for file attachment.
-* Actions: You can add a field for sending a copy of the message to the user who fills out the contact form. A copy will be sent to the email address specified while filling the contact form.
-* Label: There is a possibility to change a label when the fields are displayed.
+* Actions: You can add a field for sending a copy of the message to the user who fills out the contact form. A copy will be sent to the email address specified while filling out the contact form.
+* Label: Ability to change a label when the fields are displayed.
 
 = Translation =
 
@@ -33,7 +33,7 @@ Contact Form allows you to add a feedback form to a post or a page in an easy ma
 * Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:brenojac@gmail.com">Breno Jacinto</a>, www.iconis.org.br)
 * Czech (cs_CZ) (thanks to Petr Zápotocký)
 * Danish (da_DK) (thanks to Mads Hannibal)
-* Dutch (nl_NL) (thanks  to <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>, Jan Boeijink, <a href="mailto:info@katchy.nl">Dorine Kat-Stronck</a>)
+* Dutch (nl_NL) (thanks  to <a href="mailto:ronald@hostingu.nl">HostingU, Ronald Verheul</a>, Jan Boeijink, <a href="mailto:info@katchy.nl">Dorine Kat-Stronck</a>)
 * French (fr_FR) (thanks to Alain Thomas and Vincent Cibelli and Capronnier Luc)
 * Galician (gl_ES) (thanks to Paula Rios)
 * German (de_DE) (thanks to Hartung Thomas)
@@ -44,7 +44,7 @@ Contact Form allows you to add a feedback form to a post or a page in an easy ma
 * Italian (it_IT) (thanks to <a href="mailto:ilian@ultra-violet.it">Ilian Gagliardi</a>)
 * Japanese (ja) (thanks to Foken)
 * Norwegian (nb_NO) (thanks to Tore Hjartland)
-* Persian (fa_IR) (thanks to <a href="me@alirezaJamali.net">Alireza Jamali</a>, alirezajamali.net, <a href="akbari.mostafa@gmail.com">Mostafa Akbari Motlaq</a>)
+* Persian (fa_IR) (thanks to <a href="mailto:me@alirezaJamali.net">Alireza Jamali</a>, alirezajamali.net, <a href="mailto:akbari.mostafa@gmail.com">Mostafa Akbari Motlaq</a>)
 * Polish (pl_PL) (thanks to Jarek Spirydowicz)
 * Romanian (ro_RO) (thanks to George Bejan and Cosmin Berescu)
 * Russian (ru_RU)
@@ -54,7 +54,7 @@ Contact Form allows you to add a feedback form to a post or a page in an easy ma
 * Turkish (tr_TR) (thanks to <a href="mailto:d-bulent@hotmail.com ">Devrim Bulent Ibis</a>, www.devrimhoca.com)
 * Ukrainian (uk) (thanks to <a href="mailto:xxxxAndyxxxx@gmail.com">Andrew Yaschuk</a>)
 
-If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
+If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
 = Technical support =
 
@@ -113,12 +113,16 @@ Here is an example for the German language files.
 
 == Changelog ==
 
+= V3.44 - 16.05.2013 =
+* NEW : Added email adress as additiional form field.
+* Bugfix : We fixed the bug of adding an attachment.
+
 = V3.43 - 08.04.2013 =
 * Update : We updated the English text in the plugin file.
 * Bugfix : We fixed the bug of displaying phone error messages when a phone number field is not display.
 
 = V3.42 - 01.04.2013 =
-* Update : Serbian language file is updated.
+* Update : The Serbian language file is updated.
 * Bugfix : The bug after clicking submit, when site uses a custom port, is fixed.
 
 = V3.41 - 22.03.2013 =
@@ -310,11 +314,14 @@ Here is an example for the German language files.
 
 == Upgrade Notice ==
 
+= V3.44 =
+Added email adress as additiional form field. We fixed the bug of adding an attachment.
+
 = V3.43 =
 We updated the English text in the plugin file. We fixed the bug of displaying phone error messages when a phone number field is not display.
 
 = V3.42 =
-Serbian language file was updated. The bug after clicking submit, when site uses a custom port, was fixed.
+The Serbian language file was updated. The bug after clicking submit, when site uses a custom port, was fixed.
 
 = V3.41 =
 Added ability to change a label 'Send me a copy'. The bug of changing the message 'Action after email is sent' was fixed.
