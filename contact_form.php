@@ -1102,7 +1102,7 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 		if ( $cntctfrm_options['cntctfrm_select_email'] == 'user' ) {
 			if ( '3.3' > $wp_version && function_exists('get_userdatabylogin') && false !== $user = get_userdatabylogin( $cntctfrm_options['cntctfrm_user_email'] ) ) {
 				$to = $user->user_email;
-			} elseif ( false !== $user = get_user_by( 'login', $cntctfrm_options_submit['cntctfrm_user_email'] ) )
+			} elseif ( false !== $user = get_user_by( 'login', $cntctfrm_options['cntctfrm_user_email'] ) )
 				$to = $user->user_email;
 		} else {
 			$to = $cntctfrm_options['cntctfrm_custom_email'];
