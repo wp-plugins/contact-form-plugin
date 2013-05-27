@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 2.9
 Tested up to: 3.5.1
-Stable tag: 3.44
+Stable tag: 3.45
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -103,6 +103,12 @@ Here is an example for the German language files.
 
 5. If everything is done properly all lines will be in German in the admin panel and in the front-end.
 
+= How to add the contact form not in English? =
+
+1. Add a language in the block "Language settings for the field names in the form" on the plugin settings page.
+2. Mark the check box (if it's not marked yet) in the block  "Change the names of the contact form fields and error messages", choose the necessary tab and fill in the fields. Choose the necessary tab in the block "Action after email is sent" as well and fill in the field. Save the changes.
+3. You will see the shortcode under the tab with the necessary language. Please paste that shortcode to the page or post. 
+
 == Screenshots ==
 
 1. Contact Form display.
@@ -112,6 +118,11 @@ Here is an example for the German language files.
 5. Widget settings for using shortcode in the sidebar.
 
 == Changelog ==
+
+= V3.45 - 27.05.2013 =
+* Bugfix : The error related to use function 'get_userdatabylogin' instead 'get_user_by('login')' is fixed. 
+* Update : BWS plugins section is updated.
+* Update : We updated the Italian, the French and the Brazilian Portuguese language files in the plugin.
 
 = V3.44 - 16.05.2013 =
 * NEW : Added email adress as additiional form field.
@@ -313,6 +324,9 @@ Here is an example for the German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.45 =
+The error related to use function 'get_userdatabylogin' instead 'get_user_by('login')' is fixed. BWS plugins section is updated. We updated the Italian, the French and the Brazilian Portuguese language files in the plugin.
 
 = V3.44 =
 Added email adress as additiional form field. We fixed the bug of adding an attachment.

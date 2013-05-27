@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.44
+Version: 3.45
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -24,83 +24,133 @@ License: GPLv2 or later
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-if( ! function_exists( 'bws_add_menu_render' ) ) {
+if ( ! function_exists( 'bws_add_menu_render' ) ) {
 	function bws_add_menu_render() {
 		global $title;
 		$active_plugins = get_option('active_plugins');
-		$all_plugins		= get_plugins();
+		$all_plugins = get_plugins();
 
 		$array_activate = array();
 		$array_install	= array();
 		$array_recomend = array();
 		$count_activate = $count_install = $count_recomend = 0;
 		$array_plugins	= array(
-			array( 'captcha\/captcha.php', 'Captcha', 'http://wordpress.org/extend/plugins/captcha/', 'http://bestwebsoft.com/plugin/captcha-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Captcha+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=captcha.php' ), 
-			array( 'contact-form-plugin\/contact_form.php', 'Contact Form', 'http://wordpress.org/extend/plugins/contact-form-plugin/', 'http://bestwebsoft.com/plugin/contact-form/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Contact+Form+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=contact_form.php' ), 
-			array( 'facebook-button-plugin\/facebook-button-plugin.php', 'Facebook Like Button Plugin', 'http://wordpress.org/extend/plugins/facebook-button-plugin/', 'http://bestwebsoft.com/plugin/facebook-like-button-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Facebook+Like+Button+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=facebook-button-plugin.php' ), 
-			array( 'twitter-plugin\/twitter.php', 'Twitter Plugin', 'http://wordpress.org/extend/plugins/twitter-plugin/', 'http://bestwebsoft.com/plugin/twitter-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Twitter+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=twitter.php' ), 
-			array( 'portfolio\/portfolio.php', 'Portfolio', 'http://wordpress.org/extend/plugins/portfolio/', 'http://bestwebsoft.com/plugin/portfolio-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Portfolio+bestwebsoft&plugin-search-input=Search+Plugins', '' ),
-			array( 'gallery-plugin\/gallery-plugin.php', 'Gallery', 'http://wordpress.org/extend/plugins/gallery-plugin/', 'http://bestwebsoft.com/plugin/gallery-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Gallery+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', '' ),
-			array( 'adsense-plugin\/adsense-plugin.php', 'Google AdSense Plugin', 'http://wordpress.org/extend/plugins/adsense-plugin/', 'http://bestwebsoft.com/plugin/google-adsense-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Adsense+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=adsense-plugin.php' ),
-			array( 'custom-search-plugin\/custom-search-plugin.php', 'Custom Search Plugin', 'http://wordpress.org/extend/plugins/custom-search-plugin/', 'http://bestwebsoft.com/plugin/custom-search-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Custom+Search+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=custom_search.php' ),
-			array( 'quotes-and-tips\/quotes-and-tips.php', 'Quotes and Tips', 'http://wordpress.org/extend/plugins/quotes-and-tips/', 'http://bestwebsoft.com/plugin/quotes-and-tips/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Quotes+and+Tips+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=quotes-and-tips.php' ),
-			array( 'google-sitemap-plugin\/google-sitemap-plugin.php', 'Google sitemap plugin', 'http://wordpress.org/extend/plugins/google-sitemap-plugin/', 'http://bestwebsoft.com/plugin/google-sitemap-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Google+sitemap+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=google-sitemap-plugin.php' ),
-			array( 'updater\/updater.php', 'Updater', 'http://wordpress.org/extend/plugins/updater/', 'http://bestwebsoft.com/plugin/updater/', '/wp-admin/plugin-install.php?tab=search&s=updater+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=updater-options' )
+			array( 'captcha\/captcha.php', 'Captcha', 'http://bestwebsoft.com/plugin/captcha-plugin/', 'http://bestwebsoft.com/plugin/captcha-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Captcha+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=captcha.php' ), 
+			array( 'contact-form-plugin\/contact_form.php', 'Contact Form', 'http://bestwebsoft.com/plugin/contact-form/', 'http://bestwebsoft.com/plugin/contact-form/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Contact+Form+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=contact_form.php' ), 
+			array( 'facebook-button-plugin\/facebook-button-plugin.php', 'Facebook Like Button Plugin', 'http://bestwebsoft.com/plugin/facebook-like-button-plugin/', 'http://bestwebsoft.com/plugin/facebook-like-button-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Facebook+Like+Button+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=facebook-button-plugin.php' ), 
+			array( 'twitter-plugin\/twitter.php', 'Twitter Plugin', 'http://bestwebsoft.com/plugin/twitter-plugin/', 'http://bestwebsoft.com/plugin/twitter-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Twitter+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=twitter.php' ), 
+			array( 'portfolio\/portfolio.php', 'Portfolio', 'http://bestwebsoft.com/plugin/portfolio-plugin/', 'http://bestwebsoft.com/plugin/portfolio-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Portfolio+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=portfolio.php' ),
+			array( 'gallery-plugin\/gallery-plugin.php', 'Gallery', 'http://bestwebsoft.com/plugin/gallery-plugin/', 'http://bestwebsoft.com/plugin/gallery-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Gallery+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=gallery-plugin.php' ),
+			array( 'adsense-plugin\/adsense-plugin.php', 'Google AdSense Plugin', 'http://bestwebsoft.com/plugin/google-adsense-plugin/', 'http://bestwebsoft.com/plugin/google-adsense-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Adsense+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=adsense-plugin.php' ),
+			array( 'custom-search-plugin\/custom-search-plugin.php', 'Custom Search Plugin', 'http://bestwebsoft.com/plugin/custom-search-plugin/', 'http://bestwebsoft.com/plugin/custom-search-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Custom+Search+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=custom_search.php' ),
+			array( 'quotes-and-tips\/quotes-and-tips.php', 'Quotes and Tips', 'http://bestwebsoft.com/plugin/quotes-and-tips/', 'http://bestwebsoft.com/plugin/quotes-and-tips/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Quotes+and+Tips+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=quotes-and-tips.php' ),
+			array( 'google-sitemap-plugin\/google-sitemap-plugin.php', 'Google sitemap plugin', 'http://bestwebsoft.com/plugin/google-sitemap-plugin/', 'http://bestwebsoft.com/plugin/google-sitemap-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Google+sitemap+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=google-sitemap-plugin.php' ),
+			array( 'updater\/updater.php', 'Updater', 'http://bestwebsoft.com/plugin/updater-plugin/', 'http://bestwebsoft.com/plugin/updater-plugin/#download', '/wp-admin/plugin-install.php?tab=search&s=updater+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=updater-options' )
 		);
-		foreach($array_plugins as $plugins) {
-			if( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
-				$array_activate[$count_activate]['title'] = $plugins[1];
-				$array_activate[$count_activate]['link']	= $plugins[2];
-				$array_activate[$count_activate]['href']	= $plugins[3];
-				$array_activate[$count_activate]['url']	= $plugins[5];
+		foreach ( $array_plugins as $plugins ) {
+			if ( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
+				$array_activate[$count_activate]["title"] = $plugins[1];
+				$array_activate[$count_activate]["link"] = $plugins[2];
+				$array_activate[$count_activate]["href"] = $plugins[3];
+				$array_activate[$count_activate]["url"]	= $plugins[5];
 				$count_activate++;
-			}
-			else if( array_key_exists(str_replace("\\", "", $plugins[0]), $all_plugins) ) {
-				$array_install[$count_install]['title'] = $plugins[1];
-				$array_install[$count_install]['link']	= $plugins[2];
-				$array_install[$count_install]['href']	= $plugins[3];
+			} elseif ( array_key_exists(str_replace( "\\", "", $plugins[0]), $all_plugins ) ) {
+				$array_install[$count_install]["title"] = $plugins[1];
+				$array_install[$count_install]["link"]	= $plugins[2];
+				$array_install[$count_install]["href"]	= $plugins[3];
 				$count_install++;
-			}
-			else {
-				$array_recomend[$count_recomend]['title'] = $plugins[1];
-				$array_recomend[$count_recomend]['link']	= $plugins[2];
-				$array_recomend[$count_recomend]['href']	= $plugins[3];
-				$array_recomend[$count_recomend]['slug']	= $plugins[4];
+			} else {
+				$array_recomend[$count_recomend]["title"] = $plugins[1];
+				$array_recomend[$count_recomend]["link"] = $plugins[2];
+				$array_recomend[$count_recomend]["href"] = $plugins[3];
+				$array_recomend[$count_recomend]["slug"] = $plugins[4];
 				$count_recomend++;
 			}
 		}
-		?>
+		$array_activate_pro = array();
+		$array_install_pro	= array();
+		$array_recomend_pro = array();
+		$count_activate_pro = $count_install_pro = $count_recomend_pro = 0;
+		$array_plugins_pro	= array(
+			array( 'gallery-plugin-pro\/gallery-plugin-pro.php', 'Gallery Pro', 'http://bestwebsoft.com/plugin/gallery-pro/', 'http://bestwebsoft.com/plugin/gallery-pro/#purchase', 'admin.php?page=gallery-plugin-pro.php' )
+		);
+		foreach ( $array_plugins_pro as $plugins ) {
+			if ( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
+				$array_activate_pro[$count_activate_pro]["title"] = $plugins[1];
+				$array_activate_pro[$count_activate_pro]["link"] = $plugins[2];
+				$array_activate_pro[$count_activate_pro]["href"] = $plugins[3];
+				$array_activate_pro[$count_activate_pro]["url"]	= $plugins[4];
+				$count_activate_pro++;
+			} elseif( array_key_exists(str_replace( "\\", "", $plugins[0]), $all_plugins ) ) {
+				$array_install_pro[$count_install_pro]["title"] = $plugins[1];
+				$array_install_pro[$count_install_pro]["link"]	= $plugins[2];
+				$array_install_pro[$count_install_pro]["href"]	= $plugins[3];
+				$count_install_pro++;
+			} else {
+				$array_recomend_pro[$count_recomend_pro]["title"] = $plugins[1];
+				$array_recomend_pro[$count_recomend_pro]["link"] = $plugins[2];
+				$array_recomend_pro[$count_recomend_pro]["href"] = $plugins[3];
+				$count_recomend_pro++;
+			}
+		} ?>
 		<div class="wrap">
 			<div class="icon32 icon32-bws" id="icon-options-general"></div>
 			<h2><?php echo $title;?></h2>
+			<h3 style="color: red"><?php _e( 'Pro plugins', 'custom-searc' ); ?></h3>
+			<?php if( 0 < $count_activate_pro ) { ?>
+			<div style="padding-left:15px;">
+				<h4><?php _e( 'Activated plugins', 'custom-searc' ); ?></h4>
+				<?php foreach ( $array_activate_pro as $activate_plugin ) { ?>
+				<div style="float:left; width:200px;"><?php echo $activate_plugin["title"]; ?></div> <p><a href="<?php echo $activate_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a> <a href="<?php echo $activate_plugin["url"]; ?>"><?php echo __( "Settings", 'custom-searc' ); ?></a></p>
+				<?php } ?>
+			</div>
+			<?php } ?>
+			<?php if( 0 < $count_install_pro ) { ?>
+			<div style="padding-left:15px;">
+				<h4><?php _e( 'Installed plugins', 'custom-searc' ); ?></h4>
+				<?php foreach ( $array_install_pro as $install_plugin) { ?>
+				<div style="float:left; width:200px;"><?php echo $install_plugin["title"]; ?></div> <p><a href="<?php echo $install_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a></p>
+				<?php } ?>
+			</div>
+			<?php } ?>
+			<?php if( 0 < $count_recomend_pro ) { ?>
+			<div style="padding-left:15px;">
+				<h4><?php _e( 'Recommended plugins', 'custom-searc' ); ?></h4>
+				<?php foreach ( $array_recomend_pro as $recomend_plugin ) { ?>
+				<div style="float:left; width:200px;"><?php echo $recomend_plugin["title"]; ?></div> <p><a href="<?php echo $recomend_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a> <a href="<?php echo $recomend_plugin["href"]; ?>" target="_blank"><?php echo __( "Purchase", 'custom-searc' ); ?></a></p>
+				<?php } ?>
+			</div>
+			<?php } ?>
+			<br />
+			<h3 style="color: green"><?php _e( 'Free plugins', 'custom-searc' ); ?></h3>
 			<?php if( 0 < $count_activate ) { ?>
-			<div>
-				<h3><?php _e( 'Activated plugins', 'contact_form' ); ?></h3>
+			<div style="padding-left:15px;">
+				<h4><?php _e( 'Activated plugins', 'custom-searc' ); ?></h4>
 				<?php foreach( $array_activate as $activate_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $activate_plugin['title']; ?></div> <p><a href="<?php echo $activate_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'contact_form'); ?></a> <a href="<?php echo $activate_plugin['url']; ?>"><?php echo __( "Settings", 'contact_form'); ?></a></p>
+				<div style="float:left; width:200px;"><?php echo $activate_plugin["title"]; ?></div> <p><a href="<?php echo $activate_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a> <a href="<?php echo $activate_plugin["url"]; ?>"><?php echo __( "Settings", 'custom-searc' ); ?></a></p>
 				<?php } ?>
 			</div>
 			<?php } ?>
 			<?php if( 0 < $count_install ) { ?>
-			<div>
-				<h3><?php _e( 'Installed plugins', 'contact_form' ); ?></h3>
-				<?php foreach($array_install as $install_plugin) { ?>
-				<div style="float:left; width:200px;"><?php echo $install_plugin['title']; ?></div> <p><a href="<?php echo $install_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'contact_form'); ?></a></p>
+			<div style="padding-left:15px;">
+				<h4><?php _e( 'Installed plugins', 'custom-searc' ); ?></h4>
+				<?php foreach ( $array_install as $install_plugin ) { ?>
+				<div style="float:left; width:200px;"><?php echo $install_plugin["title"]; ?></div> <p><a href="<?php echo $install_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a></p>
 				<?php } ?>
 			</div>
 			<?php } ?>
 			<?php if( 0 < $count_recomend ) { ?>
-			<div>
-				<h3><?php _e( 'Recommended plugins', 'contact_form' ); ?></h3>
-				<?php foreach( $array_recomend as $recomend_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $recomend_plugin['title']; ?></div> <p><a href="<?php echo $recomend_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'contact_form'); ?></a> <a href="<?php echo $recomend_plugin['href']; ?>" target="_blank"><?php echo __( "Download", 'contact_form'); ?></a> <a class="install-now" href="<?php echo get_bloginfo( "url" ) . $recomend_plugin['slug']; ?>" title="<?php esc_attr( sprintf( __( 'Install %s' ), $recomend_plugin['title'] ) ) ?>" target="_blank"><?php echo __( 'Install now from wordpress.org', 'contact_form' ) ?></a></p>
+			<div style="padding-left:15px;">
+				<h4><?php _e( 'Recommended plugins', 'custom-searc' ); ?></h4>
+				<?php foreach ( $array_recomend as $recomend_plugin ) { ?>
+				<div style="float:left; width:200px;"><?php echo $recomend_plugin["title"]; ?></div> <p><a href="<?php echo $recomend_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a> <a href="<?php echo $recomend_plugin["href"]; ?>" target="_blank"><?php echo __( "Download", 'custom-searc' ); ?></a> <a class="install-now" href="<?php echo get_bloginfo( "url" ) . $recomend_plugin["slug"]; ?>" title="<?php esc_attr( sprintf( __( 'Install %s' ), $recomend_plugin["title"] ) ) ?>" target="_blank"><?php echo __( 'Install now from wordpress.org', 'custom-searc' ) ?></a></p>
 				<?php } ?>
-				<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please contact us via', 'contact_form' ); ?> <a href="http://support.bestwebsoft.com">http://support.bestwebsoft.com</a></span>
 			</div>
-			<?php } ?>
+			<?php } ?>	
+			<br />		
+			<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please contact us via', 'custom-searc' ); ?> <a href="http://support.bestwebsoft.com">http://support.bestwebsoft.com</a></span>
 		</div>
-		<?php
-	}
+	<?php }
 }
 
 // Add option page in admin menu
@@ -171,11 +221,11 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 			'cntctfrm_thank_text' => array( 'en' => __( "Thank you for contacting us.", 'contact_form' ) ),
 			'cntctfrm_redirect_url' => ''
 		);
-		if( ! get_option( 'cntctfrm_options' ) )
+		if ( ! get_option( 'cntctfrm_options' ) )
 			add_option( 'cntctfrm_options', $cntctfrm_option_defaults, '', 'yes' );
 
 		$cntctfrm_options = get_option( 'cntctfrm_options' );
-		if( empty( $cntctfrm_options['cntctfrm_language'] ) && ! is_array( $cntctfrm_options['cntctfrm_name_label'] ) ) {
+		if ( empty( $cntctfrm_options['cntctfrm_language'] ) && ! is_array( $cntctfrm_options['cntctfrm_name_label'] ) ) {
 			$cntctfrm_options['cntctfrm_name_label']				= array( 'en' => $cntctfrm_options['cntctfrm_name_label'] );
 			$cntctfrm_options['cntctfrm_address_label']				= array( 'en' => $cntctfrm_options['cntctfrm_address_label'] );
 			$cntctfrm_options['cntctfrm_email_label']				= array( 'en' => $cntctfrm_options['cntctfrm_email_label'] );
@@ -217,7 +267,7 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 // Add settings page in admin area
 if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 	function cntctfrm_settings_page() {
-		global $cntctfrm_options, $wpdb, $cntctfrm_option_defaults;
+		global $cntctfrm_options, $wpdb, $cntctfrm_option_defaults, $wp_version;
 
 		$userslogin = $wpdb->get_col( "SELECT user_login FROM  $wpdb->users ", 0 ); 
 
@@ -430,12 +480,12 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					$error .=__(  "If the 'Redirect to page' option is selected then the URL field should be in the following format", 'contact_form' )." <code>http://your_site/your_page</code>";
 					$cntctfrm_options['cntctfrm_action_after_send'] = 1;
 			}
-			if( 'user' == $cntctfrm_options_submit['cntctfrm_select_email'] ) {
-				if( function_exists('get_userdatabylogin') && false !== get_userdatabylogin( $cntctfrm_options_submit['cntctfrm_user_email'] ) ){
-				}
-				else if( false !== get_user_by( 'login', $cntctfrm_options_submit['cntctfrm_user_email'] ) ){
-				}
-				else {
+			if ( 'user' == $cntctfrm_options_submit['cntctfrm_select_email'] ) {
+				if ( '3.3' > $wp_version && function_exists('get_userdatabylogin') && false !== get_userdatabylogin( $cntctfrm_options_submit['cntctfrm_user_email'] ) ) {
+					//
+				} else if( false !== get_user_by( 'login', $cntctfrm_options_submit['cntctfrm_user_email'] ) ) {
+					//
+				} else {
 					$error .=__(  "Such user does not exist. Settings are not saved.", 'contact_form' );
 				}
 			}
@@ -444,13 +494,13 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					$error .= __( "Please enter a valid email address in the 'FROM' field. Settings are not saved.", 'contact_form' );
 				}
 			}
-			if( 'custom' == $cntctfrm_options_submit['cntctfrm_from_email'] ) {
+			if ( 'custom' == $cntctfrm_options_submit['cntctfrm_from_email'] ) {
 				if( $cntctfrm_options_submit['cntctfrm_custom_from_email'] == "" 
 					&& !preg_match( "/^((?:[a-z0-9']+(?:[a-z0-9\-_\.']+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})[, ]*)+$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_from_email'] ) ) ) {
 					$error .= __( "Please enter a valid email address in the 'FROM' field. Settings are not saved.", 'contact_form' );
 				}
 			}
-			if( $error == '' ){
+			if ( $error == '' ) {
 				update_option( 'cntctfrm_options', $cntctfrm_options, '', 'yes' );
 				$message = __( "Options saved.", 'contact_form' );
 			}
@@ -853,22 +903,22 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
 }
 
 if( ! function_exists( 'cntctfrm_check_and_send' ) ) {
-		function cntctfrm_check_and_send() {
-				global $cntctfrm_result;
-				$cntctfrm_options = get_option( 'cntctfrm_options' );
-				if( isset( $_POST['cntctfrm_contact_action'] ) ){
-					// Check all input data
-					$cntctfrm_result = cntctfrm_check_form();
-				}
-				// If it is good
-				if( true === $cntctfrm_result ) {
-					$_SESSION['cntctfrm_send_mail'] = true;
-					if( $cntctfrm_options['cntctfrm_action_after_send'] == 0 ){
-						wp_redirect( $cntctfrm_options['cntctfrm_redirect_url'] ); 
-						exit;
-					}
-				}
+	function cntctfrm_check_and_send() {
+		global $cntctfrm_result;
+		$cntctfrm_options = get_option( 'cntctfrm_options' );
+		if( isset( $_POST['cntctfrm_contact_action'] ) ){
+			// Check all input data
+			$cntctfrm_result = cntctfrm_check_form();
 		}
+		// If it is good
+		if( true === $cntctfrm_result ) {
+			$_SESSION['cntctfrm_send_mail'] = true;
+			if( $cntctfrm_options['cntctfrm_action_after_send'] == 0 ){
+				wp_redirect( $cntctfrm_options['cntctfrm_redirect_url'] ); 
+				exit;
+			}
+		}
+	}
 }
 
 // Check all input data
@@ -1030,7 +1080,7 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 // Send mail function
 if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 	function cntctfrm_send_mail() {
-		global $cntctfrm_options, $path_of_uploaded_file;
+		global $cntctfrm_options, $path_of_uploaded_file, $wp_version;
 		$to = "";
 
 		$name = isset( $_POST['cntctfrm_contact_name'] ) ? $_POST['cntctfrm_contact_name'] : "";
@@ -1047,23 +1097,21 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 		$message = stripslashes( strip_tags( preg_replace ( '/<[^>]*>/', '', preg_replace ( '/<script.*<\/[^>]*>/', '', $message ) ) ) ); 
 		$phone = stripslashes( strip_tags( preg_replace ( '/<[^>]*>/', '', preg_replace ( '/<script.*<\/[^>]*>/', '', $phone ) ) ) );  
 
-		if( isset( $_SESSION['cntctfrm_send_mail'] ) && $_SESSION['cntctfrm_send_mail'] == true )
+		if ( isset( $_SESSION['cntctfrm_send_mail'] ) && $_SESSION['cntctfrm_send_mail'] == true )
 			return true;
-		if( $cntctfrm_options['cntctfrm_select_email'] == 'user' ) {
-				if( function_exists('get_userdatabylogin') && false !== $user = get_userdatabylogin( $cntctfrm_options['cntctfrm_user_email'] ) ){
-					$to = $user->user_email;
-				}
-				else if( false !== $user = get_user_by( 'login', $cntctfrm_options_submit['cntctfrm_user_email'] ) )
-						$to = $user->user_email;
-		}
-		else {
+		if ( $cntctfrm_options['cntctfrm_select_email'] == 'user' ) {
+			if ( '3.3' > $wp_version && function_exists('get_userdatabylogin') && false !== $user = get_userdatabylogin( $cntctfrm_options['cntctfrm_user_email'] ) ) {
+				$to = $user->user_email;
+			} elseif ( false !== $user = get_user_by( 'login', $cntctfrm_options_submit['cntctfrm_user_email'] ) )
+				$to = $user->user_email;
+		} else {
 			$to = $cntctfrm_options['cntctfrm_custom_email'];
 		}
-		if( "" == $to ) {
+		if ( "" == $to ) {
 			// If email options are not certain choose admin email
 			$to = get_option("admin_email");
 		}
-		if( "" != $to ) {
+		if ( "" != $to ) {
 			$user_info_string = '';
 			$userdomain = '';
 			$form_action_url = '';
@@ -1076,9 +1124,9 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 				$form_action_url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 			}
 
-			if( $cntctfrm_options['cntctfrm_display_add_info'] == 1) {
+			if ( $cntctfrm_options['cntctfrm_display_add_info'] == 1) {
 				$userdomain = @gethostbyaddr($_SERVER['REMOTE_ADDR']);
-				if( $cntctfrm_options['cntctfrm_display_add_info'] == 1 ||
+				if ( $cntctfrm_options['cntctfrm_display_add_info'] == 1 ||
 						$cntctfrm_options['cntctfrm_display_sent_from'] == 1 ||
 						$cntctfrm_options['cntctfrm_display_coming_from'] == 1 ||
 						$cntctfrm_options['cntctfrm_display_user_agent'] == 1 ) {
@@ -1086,22 +1134,22 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 							<td><br /></td><td><br /></td>
 						</tr>';
 				}
-				if( $cntctfrm_options['cntctfrm_display_sent_from'] == 1) {
+				if ( $cntctfrm_options['cntctfrm_display_sent_from'] == 1) {
 					$user_info_string .= '<tr>
 							<td>'.__('Sent from (ip address)', 'contact_form').':</td><td>'.$_SERVER['REMOTE_ADDR']." ( ". $userdomain ." )".'</td>
 						</tr>';
 				}
-				if( $cntctfrm_options['cntctfrm_display_date_time'] == 1) {
+				if ( $cntctfrm_options['cntctfrm_display_date_time'] == 1) {
 					$user_info_string .= '<tr>
 							<td>'.__('Date/Time', 'contact_form').':</td><td>'.date_i18n( get_option( 'date_format' ).' '.get_option( 'time_format' ), strtotime( current_time( 'mysql' ) ) ).'</td>
 						</tr>';
 				}
-				if( $cntctfrm_options['cntctfrm_display_coming_from'] == 1) {
+				if ( $cntctfrm_options['cntctfrm_display_coming_from'] == 1) {
 					$user_info_string .= '<tr>
 							<td>'.__('Sent from (referer)', 'contact_form').':</td><td>'.$form_action_url.'</td>
 						</tr>';
 				}
-				if( $cntctfrm_options['cntctfrm_display_user_agent'] == 1) {
+				if ( $cntctfrm_options['cntctfrm_display_user_agent'] == 1) {
 					$user_info_string .= '<tr>
 							<td>'.__('Using (user agent)', 'contact_form').':</td><td>'.cntctfrm_clean_input($_SERVER['HTTP_USER_AGENT']).'</td>
 						</tr>';
@@ -1148,7 +1196,7 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 			</body>
 			</html>
 			';
-			if( $cntctfrm_options['cntctfrm_mail_method'] == 'wp-mail' ){
+			if ( $cntctfrm_options['cntctfrm_mail_method'] == 'wp-mail' ) {
 				// To send HTML mail, the Content-type header must be set
 				$headers  = 'MIME-Version: 1.0' . "\n";
 				$headers .= 'Content-type: text/html; charset=utf-8' . "\n";
@@ -1167,15 +1215,14 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 
 				// Mail it
 				return wp_mail( $to, $subject, $message_text, $headers, $attachments );
-			}
-			else{
-				if( $cntctfrm_options['cntctfrm_attachment'] == 1 && isset( $_FILES["cntctfrm_contact_attachment"]["tmp_name"] ) && $_FILES["cntctfrm_contact_attachment"]["tmp_name"] != "") {
+			} else{
+				if ( $cntctfrm_options['cntctfrm_attachment'] == 1 && isset( $_FILES["cntctfrm_contact_attachment"]["tmp_name"] ) && $_FILES["cntctfrm_contact_attachment"]["tmp_name"] != "") {
 					global $path_of_uploaded_file;
 					$headers  = "";
 					$message_block = $message;
 
 					// Additional headers
-				if( 'custom' == $cntctfrm_options['cntctfrm_from_email'] )
+				if ( 'custom' == $cntctfrm_options['cntctfrm_from_email'] )
 					$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '>' . "\n";
 				else
 					$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $email ). '>' . "\n";
@@ -1203,8 +1250,7 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 					"Content-Disposition: attachment;\n" . " filename=\"".basename($path_of_uploaded_file)."\"; size=".filesize($path_of_uploaded_file).";\n" .
 					"Content-Transfer-Encoding: base64\n\n" . chunk_split( base64_encode( $file ) ) . "\n\n";
 						$message_text .= $bound_last;
-				}
-				else {
+				} else {
 					// To send HTML mail, the Content-type header must be set
 					$headers  = 'MIME-Version: 1.0' . "\n";
 					$headers .= 'Content-type: text/html; charset=utf-8' . "\n";
@@ -1215,12 +1261,11 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 					else
 						$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.$email. '>' . "\n";
 				}
-				if( isset( $_POST['cntctfrm_contact_send_copy'] ) && $_POST['cntctfrm_contact_send_copy'] == 1 )
+				if ( isset( $_POST['cntctfrm_contact_send_copy'] ) && $_POST['cntctfrm_contact_send_copy'] == 1 )
 					@mail( $email, $subject, $message_text, $headers );
 
 				return @mail( $to, $subject , $message_text, $headers);
-			}
-			
+			}			
 		}
 		return false;
 	}
@@ -1288,8 +1333,11 @@ if ( ! function_exists ( 'cntctfrm_plugin_init' ) ) {
 if ( ! function_exists ( 'cntctfrm_admin_head' ) ) {
 	function cntctfrm_admin_head() {
 		wp_enqueue_style( 'cntctfrmStylesheet', plugins_url( 'css/style.css', __FILE__ ) );
-		wp_enqueue_script( 'cntctfrmScript', plugins_url( 'js/script.js', __FILE__ ) );
-		echo '<script type="text/javascript">var confirm_text = "'.__('Are you sure that you want to delete this language data?', 'contact_form').'"</script>';
+
+		if ( isset( $_REQUEST['page'] ) && $_REQUEST['page'] == 'contact_form.php' ) {
+			wp_enqueue_script( 'cntctfrmScript', plugins_url( 'js/script.js', __FILE__ ) );
+			echo '<script type="text/javascript">var confirm_text = "'.__('Are you sure that you want to delete this language data?', 'contact_form').'"</script>';
+		}
 	}
 }
 
