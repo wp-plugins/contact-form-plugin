@@ -105,5 +105,22 @@
 				});
 			}
 		});
+		$('.cntctfrm_language_tab_block').css('display', 'none');
+		$('.cntctfrm_language_tab_block_mini').css('display', 'block');		
+		$('.cntctfrm_language_tab_block_mini').on( 'click', function() {
+			if( $('.cntctfrm_language_tab_block').css('display') == 'none' ) {
+				$('.cntctfrm_language_tab_block').css('display', 'block');
+				$('.cntctfrm_language_tab_block_mini').css('background-position', '1px -3px');
+			}else{
+				$('.cntctfrm_language_tab_block').css('display', 'none');
+				$('.cntctfrm_language_tab_block_mini').css('background-position', '');
+			}
+		});
+		$('.cntctfrmpr_help_box').mouseover(function(){
+			$(this).children().css('display', 'block');
+		});
+		$('.cntctfrmpr_help_box').mouseout(function(){
+			$(this).children().css('display', 'none');
+		});
 	});
 })(jQuery);

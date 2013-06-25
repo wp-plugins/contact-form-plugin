@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 2.9
 Tested up to: 3.5.1
-Stable tag: 3.45
+Stable tag: 3.46
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,7 @@ Contact Form allows you to add a feedback form to a post or a page in an easy ma
 * Czech (cs_CZ) (thanks to Petr Zápotocký)
 * Danish (da_DK) (thanks to Mads Hannibal)
 * Dutch (nl_NL) (thanks  to <a href="mailto:ronald@hostingu.nl">HostingU, Ronald Verheul</a>, Jan Boeijink, <a href="mailto:info@katchy.nl">Dorine Kat-Stronck</a>)
+* Finnish (fi) (thanks to <a href="mailto:mikrotuki@sisuaxles.com">Mikrotuki</a>)
 * French (fr_FR) (thanks to Alain Thomas and Vincent Cibelli and Capronnier Luc)
 * Galician (gl_ES) (thanks to Paula Rios)
 * German (de_DE) (thanks to Hartung Thomas)
@@ -118,6 +119,11 @@ Here is an example for the German language files.
 5. Widget settings for using shortcode in the sidebar.
 
 == Changelog ==
+
+= V3.46 - 24.06.2013 =
+* NEW : The Finnish language file is added to the plugin.
+* Bugfix : We fixed the bug of display additional info in the email when email has an attachment.
+* NEW : Added html blocks.
 
 = V3.45 - 27.05.2013 =
 * Bugfix : The error related to use function 'get_userdatabylogin' instead 'get_user_by('login')' is fixed. 
@@ -324,6 +330,9 @@ Here is an example for the German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.46 =
+The Finnish language file is added to the plugin. We fixed the bug of display additional info in the email when email has an attachment. Added html blocks.
 
 = V3.45 =
 The error related to use function 'get_userdatabylogin' instead 'get_user_by('login')' is fixed. BWS plugins section is updated. We updated the Italian, the French and the Brazilian Portuguese language files in the plugin.
