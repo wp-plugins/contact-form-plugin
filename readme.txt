@@ -17,6 +17,8 @@ Contact Form allows you to add a feedback form to a post or a page in an easy ma
 <a href="http://wordpress.org/extend/plugins/contact-form-plugin/faq/" target="_blank">FAQ</a>
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
+<a href="http://bestwebsoft.com/plugin/contact-form-pro/" target="_blank">Upgrade to Pro Version</a>
+
 = Features =
 
 * Actions: You can choose where to send the messages - this can be any user and any email address.
@@ -117,6 +119,7 @@ Here is an example for the German language files.
 3. Contact Form display with additional fields.
 4. Plugin settings in WordPress admin panel with additional fields.
 5. Widget settings for using shortcode in the sidebar.
+6. Plugin extra settings in WordPress admin panel with additional fields.
 
 == Changelog ==
 
