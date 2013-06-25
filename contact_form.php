@@ -820,26 +820,11 @@ if ( ! function_exists( 'cntctfrm_settings_page_extra' ) ) {
 										<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_attachment" value="1" checked="checked"/>
 										<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_attachment"><?php _e( "Attachment", 'contact_form' ); ?></label>
 									</div>
-								<?php }
-								$all_plugins = get_plugins();
-								if ( is_multisite() ){
-									$active_plugins = (array) array_keys( get_site_option( 'active_sitewide_plugins', array() ) );
-									$active_plugins = array_merge( $active_plugins , get_option('active_plugins') );
-								} else {
-									$active_plugins = get_option('active_plugins');
-								}
-								if ( array_key_exists('captcha/captcha.php', $all_plugins ) ) {
-									if ( 0 < count( preg_grep( '/captcha\/captcha.php/', $active_plugins ) ) ) { ?>
-										<div>
-											<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_captcha" value="1" checked="checked" />
-											<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_captcha"><?php _e( "Captcha", 'contact_form' ); ?></label><span style="color: #888888;font-size: 10px;"><?php _e( '(powered by bestwebsoft.com)', 'contact_form' ); ?></span>
-										</div>
-									<?php } else { ?>
-										<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_captcha" value="1" /> <label for="cntctfrmpr_tooltip_display_captcha"><?php _e('Captcha', 'contact_form' ); ?></label> <span style="color: #888888;font-size: 10px;"><?php _e( '(powered by bestwebsoft.com)', 'contact_form' ); ?> <a href="<?php echo bloginfo("url"); ?>/wp-admin/plugins.php"><?php _e( 'Activate captcha', 'captcha' ); ?></a></span>
-									<?php }
-								} else { ?>
-									<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_captcha" value="1" /> <label for="cntctfrmpr_tooltip_display_captcha"><?php _e('Captcha', 'contact_form' ); ?></label> <span style="color: #888888;font-size: 10px;"><?php _e( '(powered by bestwebsoft.com)', 'contact_form' ); ?> <a href="http://bestwebsoft.com/plugin/captcha/"><?php _e( 'Download captcha', 'captcha' ); ?></a></span>
 								<?php } ?>
+								<div>
+									<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_captcha" value="1" />
+									<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_captcha"><?php _e( "Captcha", 'contact_form' ); ?></label><span style="color: #888888;font-size: 10px;"><?php _e( '(powered by bestwebsoft.com)', 'contact_form' ); ?></span>
+								</div>									
 							</td>
 						</tr>
 						<tr valign="top">
