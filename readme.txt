@@ -17,7 +17,7 @@ Contact Form allows you to add a feedback form to a post or a page in an easy ma
 <a href="http://wordpress.org/extend/plugins/contact-form-plugin/faq/" target="_blank">FAQ</a>
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
-<a href="http://bestwebsoft.com/plugin/contact-form-pro/" target="_blank">Upgrade to Pro Version</a>
+<a href="http://bestwebsoft.com/plugin/contact-form-pro/?k=4028655c87316c98ae9ac7ca1928067f" target="_blank">Upgrade to Pro Version</a>
 
 = Features =
 
