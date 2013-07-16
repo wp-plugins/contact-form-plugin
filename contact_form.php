@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.47
+Version: 3.48
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -597,7 +597,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
 					<th scope="row" style="width:200px;"><?php _e( "Enter the email address in the 'From' field", 'contact_form' ); ?></th>
 					<td colspan="2">
-						<input type="radio" id="cntctfrm_from_email" name="cntctfrm_from_email" value="user" <?php if( $cntctfrm_options['cntctfrm_from_email'] == 'user' ) echo "checked=\"checked\" "; ?>/> User email <span class="cntctfrm_info">(<?php _e( "The email address of the user who fills the form will be used in the field 'From'.", 'contact_form' ); ?>)</span><br />
+						<input type="radio" id="cntctfrm_from_email" name="cntctfrm_from_email" value="user" <?php if( $cntctfrm_options['cntctfrm_from_email'] == 'user' ) echo "checked=\"checked\" "; ?>/> <?php _e( "User email", 'contact_form' ); ?> <span class="cntctfrm_info">(<?php _e( "The email address of the user who fills the form will be used in the field 'From'.", 'contact_form' ); ?>)</span><br />
 						<input type="radio" id="cntctfrm_from_custom_email" name="cntctfrm_from_email" value="custom" <?php if($cntctfrm_options['cntctfrm_from_email'] == 'custom') echo "checked=\"checked\" "; ?>/> <input type="text" name="cntctfrm_custom_from_email" value="<?php echo $cntctfrm_options['cntctfrm_custom_from_email']; ?>" onfocus="document.getElementById('cntctfrm_from_custom_email').checked = true;" />
 						<span class="cntctfrm_info">(<?php _e( "This email address will be used in the 'From' field.", 'contact_form' ); ?>)</span>
 					</td>

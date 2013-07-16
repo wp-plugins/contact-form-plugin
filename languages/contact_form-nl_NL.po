@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-02 14:31+0300\n"
-"PO-Revision-Date: 2013-07-02 14:31+0300\n"
+"POT-Creation-Date: 2013-07-16 16:05+0300\n"
+"PO-Revision-Date: 2013-07-16 16:05+0300\n"
 "Last-Translator: \n"
 "Language-Team: Thomas Hartung, Dorine Kat-Stronck <thartung@adipositas-mm.de, info@katchy.nl>\n"
 "MIME-Version: 1.0\n"
@@ -302,6 +302,10 @@ msgstr "Verander de tekst voor 'VAN' veld van het email adres"
 #: contact_form.php:598
 msgid "Enter the email address in the 'From' field"
 msgstr "Kies het email adres voor 'Van' veld voor het versturen van de mail"
+
+#: contact_form.php:600
+msgid "User email"
+msgstr ""
 
 #: contact_form.php:600
 #, fuzzy

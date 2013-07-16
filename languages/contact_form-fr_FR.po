@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-02 14:42+0300\n"
-"PO-Revision-Date: 2013-07-02 14:42+0300\n"
+"POT-Creation-Date: 2013-07-16 16:04+0300\n"
+"PO-Revision-Date: 2013-07-16 16:04+0300\n"
 "Last-Translator: \n"
 "Language-Team: Luc Capronnier <lcapronnier@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -267,7 +267,7 @@ msgstr "Options supplémentaires"
 
 #: contact_form.php:577
 msgid "What to use?"
-msgstr "Quel utilisation?"
+msgstr "Quelle méthode d'envoie ?"
 
 #: contact_form.php:580
 msgid "Wp-mail"
@@ -292,6 +292,10 @@ msgstr "Modifier le texte pour le champ 'FROM' du courriel"
 #: contact_form.php:598
 msgid "Enter the email address in the 'From' field"
 msgstr "Sélectionner l'adresse e-mail pour le champ 'FROM' du courriel"
+
+#: contact_form.php:600
+msgid "User email"
+msgstr ""
 
 #: contact_form.php:600
 msgid "The email address of the user who fills the form will be used in the field 'From'."
@@ -349,14 +353,12 @@ msgid "(powered by bestwebsoft.com)"
 msgstr "(fourni par bestwebsoft.com)"
 
 #: contact_form.php:627
-#, fuzzy
 msgid "Activate captcha"
-msgstr "Plugin activé"
+msgstr "Activé le captcha"
 
 #: contact_form.php:630
-#, fuzzy
 msgid "Download captcha"
-msgstr "Téléchargement"
+msgstr "Télécharger le captcha"
 
 #: contact_form.php:635
 msgid "Required fields"
@@ -531,7 +533,7 @@ msgstr "Formulaire Pro de Contact | Options supplémentaires"
 
 #: contact_form.php:796
 msgid "This functionality is available in the Pro version of the plugin. For more details, please follow the link"
-msgstr ""
+msgstr "Cette fonctionalité est disponible dans le version Pro de cette extension. Pour plus de détails, merci de suivre ce lien"
 
 #: contact_form.php:803
 msgid "Errors output"
@@ -668,38 +670,36 @@ msgstr "Afficher avec les erreurs"
 #: contact_form.php:964
 #: contact_form.php:966
 msgid "Please enter your full name..."
-msgstr ""
+msgstr "Merci de saisir votre nom..."
 
 #: contact_form.php:977
 #: contact_form.php:979
 msgid "Please enter your address..."
-msgstr ""
+msgstr "Merci de saisir votre adresse..."
 
 #: contact_form.php:988
 #: contact_form.php:990
-#, fuzzy
 msgid "Please enter your email address..."
-msgstr "Utiliser cette adresse e-mail:"
+msgstr "Merci de saisir votre adresse e-mail..."
 
 #: contact_form.php:999
 #: contact_form.php:1001
 msgid "Please enter your phone number..."
-msgstr ""
+msgstr "Merci de saisir votre numéro de téléphone..."
 
 #: contact_form.php:1010
 #: contact_form.php:1012
 msgid "Please enter subject..."
-msgstr ""
+msgstr "Merci de saisir le sujet..."
 
 #: contact_form.php:1020
 #: contact_form.php:1022
-#, fuzzy
 msgid "Please enter your message..."
-msgstr "Aficher les messages d'erreur"
+msgstr "Merci de saisir votre message..."
 
 #: contact_form.php:1033
 msgid "Supported file types: HTML, TXT, CSS, GIF, PNG, JPEG, JPG, TIFF, BMP, AI, EPS, PS, RTF, PDF, DOC, DOCX, XLS, ZIP, RAR, WAV, MP3, PPT. Max file size: 2MB"
-msgstr ""
+msgstr "Types de fichiers autorisés: HTML, TXT, CSS, GIF, PNG, JPEG, JPG, TIFF, BMP, AI, EPS, PS, RTF, PDF, DOC, DOCX, XLS, ZIP, RAR, WAV, MP3, PPT. Taille maximum 2MB"
 
 #: contact_form.php:1102
 msgid "Sorry, email message could not be delivered."

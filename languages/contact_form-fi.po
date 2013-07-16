@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-02 14:30+0300\n"
-"PO-Revision-Date: 2013-07-02 14:30+0300\n"
+"POT-Creation-Date: 2013-07-16 16:04+0300\n"
+"PO-Revision-Date: 2013-07-16 16:04+0300\n"
 "Last-Translator: \n"
 "Language-Team: Martin Tonek, Joakim Lindskog, Maarten van den Driest <joakim@limewoodmedia.com, maarten@vandendriest.com>\n"
 "MIME-Version: 1.0\n"
@@ -301,6 +301,10 @@ msgstr "Vaihda teksti 'Lähettäjä'- kentästä"
 #: contact_form.php:598
 msgid "Enter the email address in the 'From' field"
 msgstr "Syötä sähköpostiosoite 'Lähettäjä'- kenttään"
+
+#: contact_form.php:600
+msgid "User email"
+msgstr ""
 
 #: contact_form.php:600
 msgid "The email address of the user who fills the form will be used in the field 'From'."

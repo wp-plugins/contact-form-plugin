@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 2.9
-Tested up to: 3.5.1
-Stable tag: 3.47
+Tested up to: 3.5.2
+Stable tag: 3.48
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,6 +33,7 @@ Contact Form allows you to add a feedback form to a post or a page in an easy ma
 * Bulgarian (bg_BG) (thanks to Martin Jekov)
 * European Portuguese (pt_PT) (thanks to <a href="mailto:cesarbsilva@gmail.com">César Silva</a>, www.clubetelemoveis.com )
 * Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:brenojac@gmail.com">Breno Jacinto</a>, www.iconis.org.br)
+* Catalan (ca) (thanks to <a href="mailto:kenneth@snollocer.net">Kenneth</a>)
 * Czech (cs_CZ) (thanks to Petr Zápotocký)
 * Danish (da_DK) (thanks to Mads Hannibal)
 * Dutch (nl_NL) (thanks  to <a href="mailto:ronald@hostingu.nl">HostingU, Ronald Verheul</a>, Jan Boeijink, <a href="mailto:info@katchy.nl">Dorine Kat-Stronck</a>)
@@ -122,6 +123,11 @@ Here is an example for the German language files.
 6. Plugin extra settings in WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.48 - 16.07.2013 =
+* NEW : The Catalan language file is added.
+* Update : The French language file is updated.
+* Update : We updated all functionality for wordpress 3.5.2.
 
 = V3.47 - 02.07.2013 =
 * NEW : The setting of displaying Captcha is added.
@@ -337,6 +343,9 @@ Here is an example for the German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.48 =
+The Catalan language file is added. The French language file is updated. We updated all functionality for wordpress 3.5.2.
 
 = V3.47 =
 The setting of displaying Captcha is added. The French language file is updated.
