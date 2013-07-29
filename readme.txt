@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 2.9
 Tested up to: 3.5.2
-Stable tag: 3.49
+Stable tag: 3.50
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,7 +32,7 @@ Contact Form allows you to add a feedback form to a post or a page in an easy ma
 * Belarusian (be_BY) (thanks to <a href="mailto:nullbsd@gmail.com">Sakałoŭ Alaksiej</a>)
 * Bulgarian (bg_BG) (thanks to Martin Jekov)
 * European Portuguese (pt_PT) (thanks to <a href="mailto:cesarbsilva@gmail.com">César Silva</a>, www.clubetelemoveis.com )
-* Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:brenojac@gmail.com">Breno Jacinto</a>, www.iconis.org.br)
+* Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:brenojac@gmail.com">Breno Jacinto</a>, www.iconis.org.br, <a href="mailto:wordpress@djio.com.br">DJIO</a>, www.djio.com.br)
 * Catalan (ca) (thanks to <a href="mailto:kenneth@snollocer.net">Kenneth</a>)
 * Czech (cs_CZ) (thanks to Petr Zápotocký)
 * Danish (da_DK) (thanks to Mads Hannibal)
@@ -123,6 +123,11 @@ Here is an example for the German language files.
 6. Plugin extra settings in WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.50 - 29.07.2013 =
+* NEW : Added an ability to use diffrent shortcodes.
+* Update : The Swedish language file is updated.
+* Update : The Brazilian Portuguese language file is updated.
 
 = V3.49 - 22.07.2013 =
 * NEW : Added an ability to view and send system information by mail.
@@ -346,6 +351,9 @@ Here is an example for the German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.50 =
+Added an ability to use diffrent shortcodes. The Swedish language file is updated. The Brazilian Portuguese language file is updated.
 
 = V3.49 =
 Added an ability to view and send system information by mail.

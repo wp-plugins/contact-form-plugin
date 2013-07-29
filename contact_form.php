@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.49
+Version: 3.50
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -757,7 +757,9 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 		<div class="clear"></div>
 		<form method="post" action="admin.php?page=contact_form.php">
 			<span style="margin-bottom:15px;">
-				<p><?php _e( "If you would like to add the Contact Form to your website, just copy and paste this shortcode to your post or page or widget:", 'contact_form' ); ?> [contact_form] or [contact_form lang=en]</p>
+				<p><?php _e( "If you would like to add the Contact Form to your website, just copy and paste this shortcode to your post or page or widget:", 'contact_form' ); ?> [contact_form] <?php _e( "or", 'contact_form' ); ?> [contact_form lang=en]<br />
+				<?php _e( "If have any problems with the standard shortcode [contact_form], you should use the shortcode", 'contact_form' ); ?> [bws_contact_form] (<?php _e( "or", 'contact_form' ); ?> [bws_contact_form lang=en]) <?php _e( "or", 'contact_form' ); ?> [bestwebsoft_contact_form] (<?php _e( "or", 'contact_form' ); ?> 
+[bestwebsoft_contact_form lang=en]). <?php _e( "They work the same way.", 'contact_form' ); ?></p>
 				<?php _e( "If you leave the fields empty, the messages will be sent to the email address specified during registration.", 'contact_form' ); ?>
 			</span>
 			<table class="form-table" style="width:auto;" >
@@ -788,15 +790,15 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					<th rowspan="2"><?php _e( 'What to use?', 'contact_form' ); ?></th>
 					<td colspan="2">
 						<input type='radio' name='cntctfrm_mail_method' value='wp-mail' <?php if( $cntctfrm_options['cntctfrm_mail_method'] == 'wp-mail' ) echo "checked=\"checked\" "; ?>/>
-						<?php _e( 'Wp-mail', 'mail-send' ); ?> 
-						<span  class="cntctfrm_info">(<?php _e( 'You can use the wp_mail function for mailing', 'mail_send' ); ?>)</span>
+						<?php _e( 'Wp-mail', 'contact_form' ); ?> 
+						<span  class="cntctfrm_info">(<?php _e( 'You can use the wp_mail function for mailing', 'contact_form' ); ?>)</span>
 					</td>
 				</tr>
 				<tr class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
 					<td colspan="2">
 						<input type='radio' name='cntctfrm_mail_method' value='mail' <?php if($cntctfrm_options['cntctfrm_mail_method'] == 'mail') echo "checked=\"checked\" "; ?>/>
-						<?php _e( 'Mail', 'mail-send' ); ?> 
-						<span  class="cntctfrm_info">(<?php _e( 'To send mail you can use the php mail function', 'mail_send' ); ?>)</span>
+						<?php _e( 'Mail', 'contact_form' ); ?> 
+						<span  class="cntctfrm_info">(<?php _e( 'To send mail you can use the php mail function', 'contact_form' ); ?>)</span>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
@@ -832,7 +834,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 							if ( 0 < count( preg_grep( '/captcha\/captcha.php/', $active_plugins ) ) ) { ?>
 								<div>
 									<input type="checkbox" name="cntctfrm_display_captcha" value="1" <?php if ( 1 == $cptch_options["cptch_contact_form"] ) echo "checked=\"checked\""; ?> />
-									<label for="cntctfrm_display_captcha"><?php _e( "Captcha", 'contact_form' ); ?></label><span style="color: #888888;font-size: 10px;"><?php _e( '(powered by bestwebsoft.com)', 'contact_form' ); ?></span>
+									<label for="cntctfrm_display_captcha"><?php _e( "Captcha", 'contact_form' ); ?></label> <span style="color: #888888;font-size: 10px;"><?php _e( '(powered by bestwebsoft.com)', 'contact_form' ); ?></span>
 								</div>
 							<?php } else { ?>
 								<input disabled="disabled" type="checkbox" name="cntctfrm_display_captcha" value="1" <?php if ( isset( $cptch_options["cptch_contact_form"] ) && 1 == $cptch_options["cptch_contact_form"] ) echo "checked=\"checked\""; ?> /> <label for="cntctfrm_display_captcha"><?php _e('Captcha', 'contact_form' ); ?></label> <span style="color: #888888;font-size: 10px;"><?php _e( '(powered by bestwebsoft.com)', 'contact_form' ); ?> <a href="<?php echo bloginfo("url"); ?>/wp-admin/plugins.php"><?php _e( 'Activate captcha', 'contact_form' ); ?></a></span>
@@ -916,7 +918,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 								<input type="text" name="cntctfrm_captcha_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_captcha_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Captcha field", 'contact_form' ); ?></span><br />
 								<input type="text" name="cntctfrm_form_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_form_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the whole form", 'contact_form' ); ?></span><br />
 							</div>
-							<span class="cntctfrm_info"><?php _e( "Use shortcode", 'contact_form' ); echo " [contact_form lang=en] or [contact_form] "; _e( "for this language", 'contact_form' ); ?></span>
+							<span class="cntctfrm_info"><?php _e( "Use shortcode", 'contact_form' ); echo " [bestwebsoft_contact_form lang=en] " . __( "or", 'contact_form' ) . " [bestwebsoft_contact_form] "; _e( "for this language", 'contact_form' ); ?></span>
 						</div>
 						<?php if( ! empty( $cntctfrm_options['cntctfrm_language'] ) ){ 
 							foreach( $cntctfrm_options['cntctfrm_language'] as $val ) { ?>
@@ -945,7 +947,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 										<input type="text" name="cntctfrm_captcha_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_captcha_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_captcha_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Captcha field", 'contact_form' ); ?></span><br />
 										<input type="text" name="cntctfrm_form_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_form_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_form_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the whole form", 'contact_form' ); ?></span><br />
 									</div>
-									<span class="cntctfrm_info"><?php _e( "Use shortcode", 'contact_form' ); echo " [contact_form lang=".$val."] "; _e( "for this language", 'contact_form' ); ?></span>
+									<span class="cntctfrm_info"><?php _e( "Use shortcode", 'contact_form' ); echo " [bestwebsoft_contact_form lang=".$val."] "; _e( "for this language", 'contact_form' ); ?></span>
 								</div>
 							<?php } 
 						} ?>
@@ -964,13 +966,13 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 						<div class="clear"></div>
 						<div class="cntctfrm_language_tab cntctfrm_tab_en" style=" padding: 5px 10px 5px 5px;">
 							<input type="text" name="cntctfrm_thank_text[en]" value="<?php echo $cntctfrm_options['cntctfrm_thank_text']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Text", 'contact_form' ); ?></span><br />
-							<span class="cntctfrm_info"><?php _e( "Use shortcode", 'contact_form' ); echo " [contact_form=en] or [contact_form] "; _e( "for this language", 'contact_form' ); ?></span>
+							<span class="cntctfrm_info"><?php _e( "Use shortcode", 'contact_form' ); echo " [bestwebsoft_contact_form=en] " . __( "or", 'contact_form' ) . " [bestwebsoft_contact_form] "; _e( "for this language", 'contact_form' ); ?></span>
 						</div>
 						<?php if( ! empty( $cntctfrm_options['cntctfrm_language'] ) ){ 
 							foreach( $cntctfrm_options['cntctfrm_language'] as $val ) { ?>
-								<div class="cntctfrm_language_tab hidden cntctfrm_tab_<?php echo $val; ?>">
+								<div class="cntctfrm_language_tab hidden cntctfrm_tab_<?php echo $val; ?>" style=" padding: 5px 10px 5px 5px;">
 									<input type="text" name="cntctfrm_thank_text[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_thank_text'][$val] ) ) echo $cntctfrm_options['cntctfrm_thank_text'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Text", 'contact_form' ); ?></span><br />
-									<span class="cntctfrm_info"><?php _e( "Use shortcode", 'contact_form' ); echo " [contact_form lang=".$val."] "; _e( "for this language", 'contact_form' ); ?></span>
+									<span class="cntctfrm_info"><?php _e( "Use shortcode", 'contact_form' ); echo " [bestwebsoft_contact_form lang=".$val."] "; _e( "for this language", 'contact_form' ); ?></span>
 								</div>
 							<?php } 
 						} ?>
@@ -1259,7 +1261,7 @@ if ( ! function_exists( 'cntctfrm_settings_page_extra' ) ) {
 						<?php _e( "If you would like to add the Contact Form to your website, just copy and paste this shortcode to your post or page or widget:", 'contact_form' ); ?><br/>
 						<div>
 							<code id="cntctfrmpr_shortcode_code">
-								[contact_form]
+								[bestwebsoft_contact_form]
 							</code>					
 						</div>
 					</div>
@@ -1992,6 +1994,8 @@ add_filter( 'plugin_action_links', 'cntctfrm_plugin_action_links',10,2);
 add_filter( 'plugin_row_meta', 'cntctfrm_register_plugin_links',10,2);
 
 add_shortcode( 'contact_form', 'cntctfrm_display_form' );
+add_shortcode( 'bws_contact_form', 'cntctfrm_display_form' );
+add_shortcode( 'bestwebsoft_contact_form', 'cntctfrm_display_form' );
 
 add_action( 'admin_menu', 'cntctfrm_admin_menu' );
 
