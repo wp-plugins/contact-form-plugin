@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 2.9
-Tested up to: 3.5.2
-Stable tag: 3.50
+Tested up to: 3.6
+Stable tag: 3.51
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -123,6 +123,12 @@ Here is an example for the German language files.
 6. Plugin extra settings in WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.51 - 05.08.2013 =
+* Update : The Brazilian Portuguese language file is updated.
+* Update : We updated all functionality for wordpress 3.6.
+* Bugfix : We fixed the email validation bug.
+* Update : We removed displaying of additional info in the copy of email to the sender.
 
 = V3.50 - 29.07.2013 =
 * NEW : Added an ability to use diffrent shortcodes.
@@ -351,6 +357,9 @@ Here is an example for the German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.51 =
+ The Brazilian Portuguese language file is updated. We updated all functionality for wordpress 3.6. We fixed the email validation bug. We removed displaying of additional info in the copy of email to the sender.
 
 = V3.50 =
 Added an ability to use diffrent shortcodes. The Swedish language file is updated. The Brazilian Portuguese language file is updated.

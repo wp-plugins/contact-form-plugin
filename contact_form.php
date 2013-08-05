@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.50
+Version: 3.51
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -202,7 +202,7 @@ if ( ! function_exists( 'bws_add_menu_render' ) ) {
 			 ( isset( $_REQUEST['bwsmn_form_submit_custom_email'] ) && check_admin_referer( plugin_basename(__FILE__), 'bwsmn_nonce_submit_custom_email' ) ) ) {
 			if ( isset( $_REQUEST['bwsmn_form_email'] ) ) {
 				$bwsmn_form_email = trim( $_REQUEST['bwsmn_form_email'] );
-				if( $bwsmn_form_email == "" || !preg_match( "/^((?:[a-z0-9']+(?:[a-z0-9\-_\.']+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})[, ]*)+$/i", $bwsmn_form_email ) ) {
+				if( $bwsmn_form_email == "" || !preg_match( "/^((?:[a-z0-9_']+(?:[a-z0-9\-_\.']+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})[, ]*)+$/i", $bwsmn_form_email ) ) {
 					$error = __( "Please enter a valid email address.", 'contact_form' );
 				} else {
 					$email = $bwsmn_form_email;
@@ -715,13 +715,13 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				}
 			}
 			else {
-				if( $cntctfrm_options_submit['cntctfrm_custom_email'] == "" || !preg_match( "/^((?:[a-z0-9']+(?:[a-z0-9\-_\.']+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})[, ]*)+$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_email'] ) ) ){
+				if( $cntctfrm_options_submit['cntctfrm_custom_email'] == "" || !preg_match( "/^((?:[a-z0-9_']+(?:[a-z0-9\-_\.']+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})[, ]*)+$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_email'] ) ) ){
 					$error .= __( "Please enter a valid email address in the 'FROM' field. Settings are not saved.", 'contact_form' );
 				}
 			}
 			if ( 'custom' == $cntctfrm_options_submit['cntctfrm_from_email'] ) {
 				if( $cntctfrm_options_submit['cntctfrm_custom_from_email'] == "" 
-					&& !preg_match( "/^((?:[a-z0-9']+(?:[a-z0-9\-_\.']+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})[, ]*)+$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_from_email'] ) ) ) {
+					&& !preg_match( "/^((?:[a-z0-9_']+(?:[a-z0-9\-_\.']+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})[, ]*)+$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_from_email'] ) ) ) {
 					$error .= __( "Please enter a valid email address in the 'FROM' field. Settings are not saved.", 'contact_form' );
 				}
 			}
@@ -918,7 +918,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 								<input type="text" name="cntctfrm_captcha_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_captcha_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Captcha field", 'contact_form' ); ?></span><br />
 								<input type="text" name="cntctfrm_form_error[en]" value="<?php echo $cntctfrm_options['cntctfrm_form_error']['en']; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the whole form", 'contact_form' ); ?></span><br />
 							</div>
-							<span class="cntctfrm_info"><?php _e( "Use shortcode", 'contact_form' ); echo " [bestwebsoft_contact_form lang=en] " . __( "or", 'contact_form' ) . " [bestwebsoft_contact_form] "; _e( "for this language", 'contact_form' ); ?></span>
+							<span class="cntctfrm_info" style="margin-left: 5px;"><?php _e( "Use shortcode", 'contact_form' ); echo " [bestwebsoft_contact_form lang=en] " . __( "or", 'contact_form' ) . " [bestwebsoft_contact_form] "; _e( "for this language", 'contact_form' ); ?></span>
 						</div>
 						<?php if( ! empty( $cntctfrm_options['cntctfrm_language'] ) ){ 
 							foreach( $cntctfrm_options['cntctfrm_language'] as $val ) { ?>
@@ -947,7 +947,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 										<input type="text" name="cntctfrm_captcha_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_captcha_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_captcha_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the Captcha field", 'contact_form' ); ?></span><br />
 										<input type="text" name="cntctfrm_form_error[<?php echo $val; ?>]" value="<?php if( isset( $cntctfrm_options['cntctfrm_form_error'][$val] ) ) echo $cntctfrm_options['cntctfrm_form_error'][$val]; ?>" /> <span class="cntctfrm_info"><?php _e( "Error message for the whole form", 'contact_form' ); ?></span><br />
 									</div>
-									<span class="cntctfrm_info"><?php _e( "Use shortcode", 'contact_form' ); echo " [bestwebsoft_contact_form lang=".$val."] "; _e( "for this language", 'contact_form' ); ?></span>
+									<span class="cntctfrm_info" style="margin-left: 5px;"><?php _e( "Use shortcode", 'contact_form' ); echo " [bestwebsoft_contact_form lang=".$val."] "; _e( "for this language", 'contact_form' ); ?></span>
 								</div>
 							<?php } 
 						} ?>
@@ -1521,7 +1521,7 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 			unset( $error_message['error_name'] );
 		if( $cntctfrm_options['cntctfrm_display_address_field'] == 1 && $cntctfrm_options['cntctfrm_required_address_field'] == 1 && "" != $address )
 			unset( $error_message['error_address'] );
-		if( $cntctfrm_options['cntctfrm_required_email_field'] == 1 && "" != $email && preg_match( "/^(?:[a-z0-9']+(?:[a-z0-9\-_\.']+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})$/i", trim( stripslashes( $email ) ) ) )
+		if( $cntctfrm_options['cntctfrm_required_email_field'] == 1 && "" != $email && preg_match( "/^(?:[a-z0-9_']+(?:[a-z0-9\-_\.']+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})$/i", trim( stripslashes( $email ) ) ) )
 			unset( $error_message['error_email'] );
 		if( $cntctfrm_options['cntctfrm_required_subject_field'] == 1 && "" != $subject )
 			unset( $error_message['error_subject'] );
@@ -1712,11 +1712,11 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 					<tr>
 						<td><br /></td><td><br /></td>
 					</tr>
-					'.$user_info_string.'
-				</table>
-			</body>
-			</html>
-			';
+					';
+			$message_text_for_user = $message_text . '</table></body></html>';
+
+			$message_text .= $user_info_string . '</table></body></html>';
+
 			if ( $cntctfrm_options['cntctfrm_mail_method'] == 'wp-mail' ) {
 				// To send HTML mail, the Content-type header must be set
 				$headers  = 'MIME-Version: 1.0' . "\n";
@@ -1732,7 +1732,7 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 				}
 
 				if( isset( $_POST['cntctfrm_contact_send_copy'] ) && $_POST['cntctfrm_contact_send_copy'] == 1 )
-					wp_mail( $email, $subject, $message_text, $headers, $attachments );
+					wp_mail( $email, $subject, $message_text_for_user, $headers, $attachments );
 
 				// Mail it
 				return wp_mail( $to, $subject, $message_text, $headers, $attachments );
@@ -1783,7 +1783,7 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 						$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.$email. '>' . "\n";
 				}
 				if ( isset( $_POST['cntctfrm_contact_send_copy'] ) && $_POST['cntctfrm_contact_send_copy'] == 1 )
-					@mail( $email, $subject, $message_text, $headers );
+					@mail( $email, $subject, $message_text_for_user, $headers );
 
 				return @mail( $to, $subject , $message_text, $headers);
 			}			
@@ -1850,13 +1850,18 @@ if ( ! function_exists ( 'cntctfrm_plugin_init' ) ) {
 	}
 } // end function cntctfrm_plugin_init
 
-
 if ( ! function_exists ( 'cntctfrm_admin_head' ) ) {
 	function cntctfrm_admin_head() {
+		global $wp_version;
+
 		wp_enqueue_style( 'cntctfrmStylesheet', plugins_url( 'css/style.css', __FILE__ ) );
 
 		if ( isset( $_REQUEST['page'] ) && ( $_REQUEST['page'] == 'contact_form.php' || $_REQUEST['page'] == 'contact_form_pro_extra.php' ) ) {
-			wp_enqueue_script( 'cntctfrmScript', plugins_url( 'js/script.js', __FILE__ ) );			
+			if ( $wp_version < 3.5 ) {
+				wp_enqueue_script( 'cntctfrmScript', plugins_url( 'js/script_wp_before_3.5.js', __FILE__ ) );	
+			} else {
+				wp_enqueue_script( 'cntctfrmprScript', plugins_url( 'js/script.js', __FILE__ ) );
+			}		
 			echo '<script type="text/javascript">var confirm_text = "'.__('Are you sure that you want to delete this language data?', 'contact_form').'"</script>';
 		}
 

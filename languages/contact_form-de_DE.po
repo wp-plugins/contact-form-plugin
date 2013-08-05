@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-29 17:31+0300\n"
-"PO-Revision-Date: 2013-07-29 17:31+0300\n"
+"PO-Revision-Date: 2013-08-05 13:32+0300\n"
 "Last-Translator: \n"
 "Language-Team: Thomas Hartung <thartung@adipositas-mm.de>\n"
 "MIME-Version: 1.0\n"
@@ -572,7 +572,7 @@ msgstr ""
 #: contact_form.php:1036
 #: contact_form.php:1688
 msgid "Name"
-msgstr "Nome"
+msgstr "Name"
 
 #: contact_form.php:852
 #, fuzzy
