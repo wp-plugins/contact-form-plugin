@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.51
+Version: 3.52
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -380,7 +380,7 @@ if( ! function_exists( 'cntctfrm_admin_menu' ) ) {
 // Register settings for plugin
 if( ! function_exists( 'cntctfrm_settings' ) ) {
 	function cntctfrm_settings() {
-		global $cntctfrm_options, $cntctfrm_option_defaults;
+		global $cntctfrm_options, $cntctfrm_option_defaults, $wpdb;
 
 		$cntctfrm_option_defaults = array(
 			'cntctfrm_user_email' => 'admin',
@@ -474,6 +474,31 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 			$cntctfrm_options['cntctfrm_send_copy_label']['en'] = __( "Send me a copy", 'contact_form' );
 
 		update_option( 'cntctfrm_options', $cntctfrm_options );
+
+		// create db table of fields list
+		$sql = "CREATE TABLE IF NOT EXISTS `" . $wpdb->prefix . "cntctfrm_field` (
+			id int NOT NULL AUTO_INCREMENT,							
+			name CHAR(100) NOT NULL,
+			UNIQUE KEY id (id)
+		);";
+		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+		dbDelta( $sql );
+		$fields = array( 'display_address_field',
+			'display_phone_field',
+			'attachment',
+			'attachment_explanations',
+			'send_copy',
+			'display_sent_from',
+			'display_date_time',
+			'display_coming_from',
+			'display_user_agent'
+		);
+		foreach ( $fields as $key => $value ) {
+			$db_row = $wpdb->get_row( "SELECT * FROM " . $wpdb->prefix . "cntctfrm_field WHERE `name` = '" . $value . "'", ARRAY_A );
+			if ( !isset( $db_row ) || empty( $db_row ) ) {
+				$wpdb->insert(  $wpdb->prefix . "cntctfrm_field", array( 'name' => $value ), array( '%s' ) );	
+			}
+		}
 	}
 }
 
@@ -821,8 +846,6 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 						<input type="checkbox" id="cntctfrm_display_address_field" name="cntctfrm_display_address_field" value="1" <?php if($cntctfrm_options['cntctfrm_display_address_field'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Address", 'contact_form' ); ?><br />
 						<input type="checkbox" id="cntctfrm_display_phone_field" name="cntctfrm_display_phone_field" value="1" <?php if($cntctfrm_options['cntctfrm_display_phone_field'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Phone", 'contact_form' ); ?><br />
 						<input type="checkbox" id="cntctfrm_attachment" name="cntctfrm_attachment" value="1" <?php if($cntctfrm_options['cntctfrm_attachment'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Attachment block", 'contact_form' ); ?> <span  class="cntctfrm_info">(<?php echo __( "Users can attach the following file formats", 'contact_form' ) . ": html, txt, css, gif, png, jpeg, jpg, tiff, bmp, ai, eps, ps, rtf, pdf, doc, docx, xls, zip, rar, wav, mp3, ppt"; ?>)</span><br />
-						<input type="checkbox" id="cntctfrm_attachment_explanations" name="cntctfrm_attachment_explanations" value="1" <?php if( $cntctfrm_options['cntctfrm_attachment_explanations'] == '1' && $cntctfrm_options['cntctfrm_attachment'] == '1' ) echo "checked=\"checked\" "; ?>/> <?php echo __( "Tips below the Attachment block", 'contact_form' ); ?><br />
-						<input type="checkbox" id="cntctfrm_send_copy" name="cntctfrm_send_copy" value="1" <?php if($cntctfrm_options['cntctfrm_send_copy'] == '1') echo "checked=\"checked\" "; ?>/> <?php _e( "Send me a copy block", 'contact_form' ); ?> <br />
 						<?php $all_plugins = get_plugins();
 						if ( is_multisite() ) {
 							$active_plugins = (array) array_keys( get_site_option( 'active_sitewide_plugins', array() ) );
@@ -842,6 +865,18 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 						} else { ?>
 							<input disabled="disabled" type="checkbox" name="cntctfrm_display_captcha" value="1" /> <label for="cntctfrm_display_captcha"><?php _e('Captcha', 'contact_form' ); ?></label> <span style="color: #888888;font-size: 10px;"><?php _e( '(powered by bestwebsoft.com)', 'contact_form' ); ?> <a href="http://bestwebsoft.com/plugin/captcha-plugin/"><?php _e( 'Download captcha', 'contact_form' ); ?></a></span>
 						<?php } ?>
+					</td>
+				</tr>
+				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
+					<th scope="row" style="width:200px;"><?php echo __( "Display tips below the Attachment block", 'contact_form' ); ?></th>
+					<td colspan="2">
+						<input type="checkbox" id="cntctfrm_attachment_explanations" name="cntctfrm_attachment_explanations" value="1" <?php if( $cntctfrm_options['cntctfrm_attachment_explanations'] == '1' && $cntctfrm_options['cntctfrm_attachment'] == '1' ) echo "checked=\"checked\" "; ?>/>
+					</td>
+				</tr>
+				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
+					<th scope="row" style="width:200px;"><?php _e( "Display 'Send me a copy' block", 'contact_form' ); ?> </th>
+					<td colspan="2">
+						<input type="checkbox" id="cntctfrm_send_copy" name="cntctfrm_send_copy" value="1" <?php if($cntctfrm_options['cntctfrm_send_copy'] == '1') echo "checked=\"checked\" "; ?>/>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
@@ -1286,12 +1321,12 @@ if( ! function_exists( 'cntctfrm_display_form' ) ) {
             $page_url = ( isset( $_SERVER["HTTPS"] ) && $_SERVER["HTTPS"] == "on" ? "https://" : "http://" ).$_SERVER["SERVER_NAME"].strip_tags( $_SERVER["REQUEST_URI"] );
 
 		// If contact form submited
-		$name = isset( $_POST['cntctfrm_contact_name'] ) ? $_POST['cntctfrm_contact_name'] : "";
-		$address = isset( $_POST['cntctfrm_contact_address'] ) ? $_POST['cntctfrm_contact_address'] : "";
-		$email = isset( $_POST['cntctfrm_contact_email'] ) ? stripslashes( $_POST['cntctfrm_contact_email'] ) : "";
-		$subject = isset( $_POST['cntctfrm_contact_subject'] ) ? $_POST['cntctfrm_contact_subject'] : "";
-		$message = isset( $_POST['cntctfrm_contact_message'] ) ? $_POST['cntctfrm_contact_message'] : "";
-		$phone = isset( $_POST['cntctfrm_contact_phone'] ) ? $_POST['cntctfrm_contact_phone'] : "";
+		$name = isset( $_POST['cntctfrm_contact_name'] ) ? htmlspecialchars( $_POST['cntctfrm_contact_name'] ) : "";
+		$address = isset( $_POST['cntctfrm_contact_address'] ) ? htmlspecialchars( $_POST['cntctfrm_contact_address'] ) : "";
+		$email = isset( $_POST['cntctfrm_contact_email'] ) ? htmlspecialchars( stripslashes( $_POST['cntctfrm_contact_email'] ) ) : "";
+		$subject = isset( $_POST['cntctfrm_contact_subject'] ) ? htmlspecialchars( $_POST['cntctfrm_contact_subject'] ) : "";
+		$message = isset( $_POST['cntctfrm_contact_message'] ) ? htmlspecialchars( $_POST['cntctfrm_contact_message'] ) : "";
+		$phone = isset( $_POST['cntctfrm_contact_phone'] ) ? htmlspecialchars( $_POST['cntctfrm_contact_phone'] ) : "";
 
 		$name = strip_tags( preg_replace ( '/<[^>]*>/', '', preg_replace ( '/<script.*<\/[^>]*>/', '', $name ) ) );
 		$address = strip_tags( preg_replace ( '/<[^>]*>/', '', preg_replace ( '/<script.*<\/[^>]*>/', '', $address ) ) );
@@ -1456,12 +1491,12 @@ if( ! function_exists( 'cntctfrm_check_form' ) ) {
 		// Error messages array
 		$error_message = array();
 
-		$name = isset( $_POST['cntctfrm_contact_name'] ) ? $_POST['cntctfrm_contact_name'] : "";
-		$address = isset( $_POST['cntctfrm_contact_address'] ) ? $_POST['cntctfrm_contact_address'] : "";
-		$email = isset( $_POST['cntctfrm_contact_email'] ) ? stripslashes( $_POST['cntctfrm_contact_email'] ) : "";
-		$subject = isset( $_POST['cntctfrm_contact_subject'] ) ? $_POST['cntctfrm_contact_subject'] : "";
-		$message = isset( $_POST['cntctfrm_contact_message'] ) ? $_POST['cntctfrm_contact_message'] : "";
-		$phone = isset( $_POST['cntctfrm_contact_phone'] ) ? $_POST['cntctfrm_contact_phone'] : "";
+		$name = isset( $_POST['cntctfrm_contact_name'] ) ?  htmlspecialchars( $_POST['cntctfrm_contact_name'] ) : "";
+		$address = isset( $_POST['cntctfrm_contact_address'] ) ? htmlspecialchars( $_POST['cntctfrm_contact_address'] ) : "";
+		$email = isset( $_POST['cntctfrm_contact_email'] ) ? htmlspecialchars( stripslashes( $_POST['cntctfrm_contact_email'] ) ) : "";
+		$subject = isset( $_POST['cntctfrm_contact_subject'] ) ? htmlspecialchars( $_POST['cntctfrm_contact_subject'] ) : "";
+		$message = isset( $_POST['cntctfrm_contact_message'] ) ? htmlspecialchars( $_POST['cntctfrm_contact_message'] ) : "";
+		$phone = isset( $_POST['cntctfrm_contact_phone'] ) ? htmlspecialchars( $_POST['cntctfrm_contact_phone'] ) : "";
 
 		$name = strip_tags( preg_replace ( '/<[^>]*>/', '', preg_replace ( '/<script.*<\/[^>]*>/', '', $name ) ) ); 
 		$address = strip_tags( preg_replace ( '/<[^>]*>/', '', preg_replace ( '/<script.*<\/[^>]*>/', '', $address ) ) ); 
