@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 2.9
 Tested up to: 3.6
-Stable tag: 3.52
+Stable tag: 3.53
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,7 @@ Contact Form allows you to add a feedback form to a post or a page in an easy ma
 * Romanian (ro_RO) (thanks to George Bejan and Cosmin Berescu)
 * Russian (ru_RU)
 * Serbian (sr_RS) (thanks to Georgijevic Team, www.georgijevic.info)
+* Slovak (sk_SK) (thanks to <a href="mailto:book.ing@zoznam.sk">Book Ing</a>)
 * Spanish (es_ES) (thanks to Jesús Parra)
 * Swedish (sv_SE) (thanks to Martin Tonek, <a href="mailto:joakim@limewoodmedia.com">Joakim Lindskog</a>, <a href="mailto:maarten@vandendriest.com">Maarten van den Driest</a> - www.crossanddot.nl)
 * Turkish (tr_TR) (thanks to <a href="mailto:d-bulent@hotmail.com ">Devrim Bulent Ibis</a>, www.devrimhoca.com)
@@ -123,6 +124,13 @@ Here is an example for the German language files.
 6. Plugin extra settings in WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.53 - 20.08.2013 =
+* Bugfix : We fixed the bug related to 'docx' mime type.
+* Update : We changed plugin settings page displaying.
+* NEW : Added an ability to delete an attachment file from the server after the email is sent.
+* NEW : The Slovak language file is added.
+* Update : The French language file is updated.
 
 = V3.52 - 13.08.2013 =
 * Update : The Japanese language file is updated.
@@ -361,6 +369,9 @@ Here is an example for the German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.53 =
+We fixed the bug related to 'docx' mime type. We changed plugin settings page displaying. Added an ability to delete an attachment file from the server after the email is sent. The Slovak language file is added. The French language file is updated.
 
 = V3.52 =
 The Japanese language file is updated. We fixed the bug related to XSS attack.
