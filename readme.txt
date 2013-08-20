@@ -130,7 +130,7 @@ Here is an example for the German language files.
 * Update : We changed plugin settings page displaying.
 * NEW : Added an ability to delete an attachment file from the server after the email is sent.
 * NEW : The Slovak language file is added.
-* Update : The French language file is updated.
+* Update : The French language file is updated. 
 
 = V3.52 - 13.08.2013 =
 * Update : The Japanese language file is updated.
