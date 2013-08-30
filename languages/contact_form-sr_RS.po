@@ -1,0 +1,826 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: contact_form\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-30 13:52+0300\n"
+"PO-Revision-Date: 2013-08-30 13:52+0300\n"
+"Last-Translator: \n"
+"Language-Team: Georgijevic Team <http://www.georgijevic.info>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sr_RS\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: contact_form.php:32
+#: contact_form.php:445
+#, fuzzy
+msgid "Contact Form Settings"
+msgstr "Opcije Kontakt Forme"
+
+#: contact_form.php:32
+msgid "Contact Form"
+msgstr "Kontakt Forma"
+
+#: contact_form.php:33
+#, fuzzy
+msgid "Contact Form Pro Extra Settings"
+msgstr "Opcije Kontakt Forme"
+
+#: contact_form.php:33
+#: contact_form.php:724
+#, fuzzy
+msgid "Contact Form Pro"
+msgstr "Kontakt Forma"
+
+#: contact_form.php:72
+#: contact_form.php:613
+#: contact_form.php:642
+msgid "Name:"
+msgstr "Ime:"
+
+#: contact_form.php:73
+#: contact_form.php:614
+#: contact_form.php:643
+#, fuzzy
+msgid "Address:"
+msgstr "E-mail Adresa:"
+
+#: contact_form.php:74
+#: contact_form.php:615
+#: contact_form.php:644
+msgid "Email Address:"
+msgstr "E-mail Adresa:"
+
+#: contact_form.php:75
+#: contact_form.php:616
+#: contact_form.php:645
+msgid "Phone number:"
+msgstr "Broj telefona"
+
+#: contact_form.php:76
+#: contact_form.php:617
+#: contact_form.php:646
+msgid "Subject:"
+msgstr "Tema:"
+
+#: contact_form.php:77
+#: contact_form.php:618
+#: contact_form.php:647
+msgid "Message:"
+msgstr "Poruka:"
+
+#: contact_form.php:78
+#: contact_form.php:619
+#: contact_form.php:648
+msgid "Attachment:"
+msgstr "Priveži fajl:"
+
+#: contact_form.php:79
+#: contact_form.php:135
+#: contact_form.php:620
+#: contact_form.php:649
+msgid "Send me a copy"
+msgstr "Pošalji mi kopiju"
+
+#: contact_form.php:80
+#: contact_form.php:621
+#: contact_form.php:650
+msgid "Submit"
+msgstr "Podnesi"
+
+#: contact_form.php:81
+msgid "Your name is required."
+msgstr "Vaše ime je potrebno."
+
+#: contact_form.php:82
+#, fuzzy
+msgid "Address is required."
+msgstr "Ispravna e-mail adresa potrebna."
+
+#: contact_form.php:83
+#, fuzzy
+msgid "A valid email address is required."
+msgstr "Ispravna e-mail adresa potrebna."
+
+#: contact_form.php:84
+#: contact_form.php:130
+#: contact_form.php:133
+msgid "Phone number is required."
+msgstr "Broj telefona je potreban."
+
+#: contact_form.php:85
+#: contact_form.php:129
+#: contact_form.php:132
+msgid "Subject is required."
+msgstr "Tekst Teme je potreban."
+
+#: contact_form.php:86
+#: contact_form.php:128
+#: contact_form.php:131
+msgid "Message text is required."
+msgstr "Tekst poruke je potreban."
+
+#: contact_form.php:87
+msgid "File format is not valid."
+msgstr "Privezak ne radi"
+
+#: contact_form.php:88
+msgid "File upload error."
+msgstr ""
+
+#: contact_form.php:89
+msgid "The file could not be uploaded."
+msgstr ""
+
+#: contact_form.php:90
+msgid "This file is too large."
+msgstr ""
+
+#: contact_form.php:91
+msgid "Please fill out the CAPTCHA."
+msgstr "Molimo vas popunite CAPTCHA."
+
+#: contact_form.php:92
+msgid "Please make corrections below and try again."
+msgstr "Molimo vas da izvršite izmene ispod i pokušate ponovo."
+
+#: contact_form.php:94
+msgid "Thank you for contacting us."
+msgstr "Hvala što ste nas kontaktirali."
+
+#: contact_form.php:400
+msgid "If the 'Redirect to page' option is selected then the URL field should be in the following format"
+msgstr "Ako opcija 'Prosledi na stranu' je izabrana onda polje za URL možete popuniti u sledećem formatu"
+
+#: contact_form.php:409
+msgid "Such user does not exist. Settings are not saved."
+msgstr "Takav korisnik ne postoji. Podešavanja nisu sačuvana"
+
+#: contact_form.php:414
+#: contact_form.php:420
+#, fuzzy
+msgid "Please enter a valid email address in the 'FROM' field. Settings are not saved."
+msgstr "Molim Vas unesite ispravan mejl u polje 'OD'. Podešavanja nisu sačuvana."
+
+#: contact_form.php:425
+#, fuzzy
+msgid "Settings saved."
+msgstr "Opcije sačuvane"
+
+#: contact_form.php:449
+#: contact_form.php:718
+#: contact_form.php:1525
+#: contact_form.php:1536
+msgid "Settings"
+msgstr "Podešavanja"
+
+#: contact_form.php:450
+#: contact_form.php:719
+#, fuzzy
+msgid "Extra settings"
+msgstr "Podešavanja"
+
+#: contact_form.php:455
+#: contact_form.php:975
+msgid "If you would like to add the Contact Form to your website, just copy and paste this shortcode to your post or page or widget:"
+msgstr "Ako želite da dodate Kontakt Formu na vaš veb sajt, jednostavno iskopirajte ovaj kratak kod na vašu stranu, članak ili vidžet:"
+
+#: contact_form.php:455
+#: contact_form.php:456
+#: contact_form.php:635
+#: contact_form.php:683
+msgid "or"
+msgstr ""
+
+#: contact_form.php:456
+msgid "If have any problems with the standard shortcode [contact_form], you should use the shortcode"
+msgstr ""
+
+#: contact_form.php:457
+msgid "They work the same way."
+msgstr ""
+
+#: contact_form.php:458
+msgid "If you leave the fields empty, the messages will be sent to the email address specified during registration."
+msgstr "Ako je polje za podatke ispod prazno tada će poruka biti poslata na adresu koja je navedena prilikom registracije."
+
+#: contact_form.php:462
+msgid "The user's email address:"
+msgstr "Koristi mejl wordpress korisnika:"
+
+#: contact_form.php:466
+msgid "Create a username"
+msgstr "Odaberi korisničko ime"
+
+#: contact_form.php:471
+msgid "Enter a username of the person who should get the messages from the contact form."
+msgstr "Podesi ime korisnika koji će primiti poruku sa ove kontakt forme."
+
+#: contact_form.php:475
+msgid "Use this email address:"
+msgstr "Koristi ovaj mejl:"
+
+#: contact_form.php:478
+msgid "Enter the email address you want the messages forwarded to."
+msgstr "Podesi mejl adresu koja će biti korišćena za prijem poruka."
+
+#: contact_form.php:482
+msgid "Additional options"
+msgstr "Dodatne opcije"
+
+#: contact_form.php:485
+msgid "What to use?"
+msgstr "Šta koristite?"
+
+#: contact_form.php:488
+msgid "Wp-mail"
+msgstr "Wp-mail"
+
+#: contact_form.php:489
+msgid "You can use the wp_mail function for mailing"
+msgstr "Da biste poslali mejl možete koristiti wordpress-ovu wp_mail funkciju"
+
+#: contact_form.php:495
+msgid "Mail"
+msgstr "Mail"
+
+#: contact_form.php:496
+msgid "To send mail you can use the php mail function"
+msgstr "Da biste poslali mejl možete koristiti php mail funkciju"
+
+#: contact_form.php:500
+#, fuzzy
+msgid "Change text of the 'FROM' field"
+msgstr "Promeni tekst 'OD' polja u kontakt formi"
+
+#: contact_form.php:506
+msgid "Enter the email address in the 'From' field"
+msgstr "Unesi mejl adresu u polje 'OD'"
+
+#: contact_form.php:508
+msgid "User email"
+msgstr ""
+
+#: contact_form.php:508
+#, fuzzy
+msgid "The email address of the user who fills the form will be used in the field 'From'."
+msgstr "Mejl adresa korisnika koji je popunio polja će se koristiti u polju 'OD'"
+
+#: contact_form.php:510
+msgid "This email address will be used in the 'From' field."
+msgstr "Ova mejl adresa će biti korišćena u polju 'OD'"
+
+#: contact_form.php:514
+#, fuzzy
+msgid "Display fields"
+msgstr "Prikaži tekst"
+
+#: contact_form.php:516
+#: contact_form.php:565
+#: contact_form.php:755
+#: contact_form.php:1406
+#, fuzzy
+msgid "Address"
+msgstr "E-mail Adresa:"
+
+#: contact_form.php:517
+#: contact_form.php:567
+#: contact_form.php:1414
+msgid "Phone"
+msgstr "Broj telefona"
+
+#: contact_form.php:518
+#, fuzzy
+msgid "Attachment block"
+msgstr "Prikaži blok privezaka"
+
+#: contact_form.php:518
+msgid "Users can attach the following file formats"
+msgstr "Korisnici mogu privezivati fajlove sledećih tipova"
+
+#: contact_form.php:530
+#: contact_form.php:533
+#: contact_form.php:536
+#: contact_form.php:784
+msgid "Captcha"
+msgstr ""
+
+#: contact_form.php:530
+#: contact_form.php:533
+#: contact_form.php:536
+msgid "(powered by"
+msgstr ""
+
+#: contact_form.php:533
+#, fuzzy
+msgid "Activate captcha"
+msgstr "Aktivni dodaci"
+
+#: contact_form.php:536
+#, fuzzy
+msgid "Download captcha"
+msgstr "Preuzmi"
+
+#: contact_form.php:541
+#, fuzzy
+msgid "Display tips below the Attachment block"
+msgstr "Prikaži objašnjenja posle bloka Privezaka"
+
+#: contact_form.php:550
+msgid "Delete an attachment file from the server after the email is sent"
+msgstr ""
+
+#: contact_form.php:556
+#, fuzzy
+msgid "Display 'Send me a copy' block"
+msgstr "Prikaži Pošalji mi kopiju blok"
+
+#: contact_form.php:562
+msgid "Required fields"
+msgstr "Zahtevana polja"
+
+#: contact_form.php:564
+#: contact_form.php:750
+#: contact_form.php:1401
+msgid "Name"
+msgstr "Ime"
+
+#: contact_form.php:566
+#, fuzzy
+msgid "Email Address"
+msgstr "E-mail Adresa:"
+
+#: contact_form.php:568
+#: contact_form.php:770
+#: contact_form.php:1417
+msgid "Subject"
+msgstr "Tema"
+
+#: contact_form.php:569
+#: contact_form.php:774
+#: contact_form.php:1420
+msgid "Message"
+msgstr "Poruka"
+
+#: contact_form.php:573
+#, fuzzy
+msgid "Display additional info in the email"
+msgstr "Prikaži dodatne informacije u mejlu"
+
+#: contact_form.php:578
+#: contact_form.php:1373
+msgid "Sent from (ip address)"
+msgstr "Poslato sa (ip adresa)"
+
+#: contact_form.php:578
+#, fuzzy
+msgid "Example: Sent from (IP address):\t127.0.0.1"
+msgstr "Poslato sa (ip adresa)"
+
+#: contact_form.php:579
+#: contact_form.php:1378
+msgid "Date/Time"
+msgstr "Datum/Vreme"
+
+#: contact_form.php:579
+msgid "Example: Date/Time:\tAugust 19, 2013 8:50 pm"
+msgstr ""
+
+#: contact_form.php:580
+#: contact_form.php:1383
+msgid "Sent from (referer)"
+msgstr "Poslato od (prosleđivač)"
+
+#: contact_form.php:580
+msgid "Example: Sent from (referer):\thttp://bestwebsoft.com/contacts/contact-us/"
+msgstr ""
+
+#: contact_form.php:581
+#: contact_form.php:1388
+msgid "Using (user agent)"
+msgstr "Koristi (user agent)"
+
+#: contact_form.php:581
+msgid "Example: Using (user agent):\tMozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.95 Safari/537.36"
+msgstr ""
+
+#: contact_form.php:585
+msgid "Language settings for the field names in the form"
+msgstr "Podešavanja jezika za polje imena u obrascu"
+
+#: contact_form.php:594
+#, fuzzy
+msgid "Add a language"
+msgstr "Dodaj jezik"
+
+#: contact_form.php:598
+msgid "Change the names of the contact form fields and error messages"
+msgstr "Promeni oznaku za polja u kontakt formi i poruku greške"
+
+#: contact_form.php:603
+#: contact_form.php:674
+msgid "English"
+msgstr "Engleski"
+
+#: contact_form.php:622
+#: contact_form.php:651
+msgid "Error message for the Name field"
+msgstr "Poruka greške za polje Ime"
+
+#: contact_form.php:623
+#: contact_form.php:652
+#, fuzzy
+msgid "Error message for the Address field"
+msgstr "Poruka greške za polje Poruka"
+
+#: contact_form.php:624
+#: contact_form.php:653
+msgid "Error message for the Email field"
+msgstr "Poruka greške za polje imejl"
+
+#: contact_form.php:625
+#: contact_form.php:654
+msgid "Error message for the Phone field"
+msgstr "Poruka greške za polje Broj telefona"
+
+#: contact_form.php:626
+#: contact_form.php:655
+msgid "Error message for the Subject field"
+msgstr "Poruka greške za polje Tema"
+
+#: contact_form.php:627
+#: contact_form.php:656
+msgid "Error message for the Message field"
+msgstr "Poruka greške za polje Poruka"
+
+#: contact_form.php:628
+#: contact_form.php:657
+#, fuzzy
+msgid "Error message about the file type for the Attachment field"
+msgstr "Poruka greške za polje Privezaka"
+
+#: contact_form.php:629
+#: contact_form.php:658
+#, fuzzy
+msgid "Error message while uploading a file for the Attachment field to the server"
+msgstr "Poruka greške za polje Privezaka"
+
+#: contact_form.php:630
+#: contact_form.php:659
+#, fuzzy
+msgid "Error message while moving the file for the Attachment field"
+msgstr "Poruka greške za polje Privezaka"
+
+#: contact_form.php:631
+#: contact_form.php:660
+#, fuzzy
+msgid "Error message when file size limit for the Attachment field is exceeded"
+msgstr "Poruka greške za polje Privezaka"
+
+#: contact_form.php:632
+#: contact_form.php:661
+msgid "Error message for the Captcha field"
+msgstr "Poruka greške za polje Kapča"
+
+#: contact_form.php:633
+#: contact_form.php:662
+msgid "Error message for the whole form"
+msgstr "Poruka greške za ceo obrazac"
+
+#: contact_form.php:635
+#: contact_form.php:664
+#: contact_form.php:683
+#: contact_form.php:689
+msgid "Use shortcode"
+msgstr "Koristi prečicu"
+
+#: contact_form.php:635
+#: contact_form.php:664
+#: contact_form.php:683
+#: contact_form.php:689
+msgid "for this language"
+msgstr "za ovaj jezik"
+
+#: contact_form.php:671
+msgid "Action after email is sent"
+msgstr "Akcija posle poslatog mejla"
+
+#: contact_form.php:673
+msgid "Display text"
+msgstr "Prikaži tekst"
+
+#: contact_form.php:682
+#: contact_form.php:688
+msgid "Text"
+msgstr "Tekst"
+
+#: contact_form.php:695
+msgid "Redirect to the page"
+msgstr "Preusmeri na stranu"
+
+#: contact_form.php:696
+msgid "Url"
+msgstr "Url"
+
+#: contact_form.php:701
+#: contact_form.php:876
+msgid "Save Changes"
+msgstr "Sačuvaj izmene"
+
+#: contact_form.php:716
+#, fuzzy
+msgid "Contact Form Pro | Extra Settings"
+msgstr "Opcije Kontakt Forme"
+
+#: contact_form.php:723
+msgid "This functionality is available in the Pro version of the plugin. For more details, please follow the link"
+msgstr ""
+
+#: contact_form.php:730
+msgid "Errors output"
+msgstr ""
+
+#: contact_form.php:733
+msgid "Display error messages"
+msgstr ""
+
+#: contact_form.php:734
+msgid "Color of the input field errors."
+msgstr ""
+
+#: contact_form.php:735
+#, fuzzy
+msgid "Display error messages & color of the input field errors"
+msgstr "Poruka greške za polje Tema"
+
+#: contact_form.php:740
+msgid "Add placeholder to the input blocks"
+msgstr ""
+
+#: contact_form.php:746
+#, fuzzy
+msgid "Add tooltips"
+msgstr "Dodatne opcije"
+
+#: contact_form.php:760
+#, fuzzy
+msgid "Email address"
+msgstr "E-mail Adresa:"
+
+#: contact_form.php:765
+#, fuzzy
+msgid "Phone Number"
+msgstr "Broj telefona"
+
+#: contact_form.php:779
+#, fuzzy
+msgid "Attachment"
+msgstr "Priveži fajl:"
+
+#: contact_form.php:784
+msgid "(powered by bestwebsoft.com)"
+msgstr ""
+
+#: contact_form.php:789
+#, fuzzy
+msgid "Style options"
+msgstr "Dodatne opcije"
+
+#: contact_form.php:792
+msgid "Text color"
+msgstr ""
+
+#: contact_form.php:795
+#: contact_form.php:800
+#: contact_form.php:810
+#: contact_form.php:815
+#: contact_form.php:820
+#: contact_form.php:825
+#: contact_form.php:835
+#: contact_form.php:840
+#: contact_form.php:846
+#: contact_form.php:857
+#: contact_form.php:862
+#: contact_form.php:867
+msgid "Default"
+msgstr ""
+
+#: contact_form.php:797
+msgid "Label text color"
+msgstr ""
+
+#: contact_form.php:802
+msgid "Placeholder color"
+msgstr ""
+
+#: contact_form.php:807
+msgid "Errors color"
+msgstr ""
+
+#: contact_form.php:812
+msgid "Error text color"
+msgstr ""
+
+#: contact_form.php:817
+msgid "Background color of the input field errors"
+msgstr ""
+
+#: contact_form.php:822
+msgid "Border color of the input field errors"
+msgstr ""
+
+#: contact_form.php:827
+msgid "Placeholder color of the input field errors"
+msgstr ""
+
+#: contact_form.php:832
+msgid "Input fields"
+msgstr ""
+
+#: contact_form.php:837
+msgid "Input fields background color"
+msgstr ""
+
+#: contact_form.php:842
+msgid "Text fields color"
+msgstr ""
+
+#: contact_form.php:844
+msgid "Border width in px, numbers only"
+msgstr ""
+
+#: contact_form.php:848
+#: contact_form.php:869
+msgid "Border color"
+msgstr ""
+
+#: contact_form.php:853
+#, fuzzy
+msgid "Submit button"
+msgstr "Podnesi"
+
+#: contact_form.php:855
+msgid "Width in px, numbers only"
+msgstr ""
+
+#: contact_form.php:859
+msgid "Button color"
+msgstr ""
+
+#: contact_form.php:864
+msgid "Button text color"
+msgstr ""
+
+#: contact_form.php:880
+#, fuzzy
+msgid "Contact Form Pro | Preview"
+msgstr "Kontakt Forma"
+
+#: contact_form.php:883
+msgid "Show with errors"
+msgstr ""
+
+#: contact_form.php:891
+#: contact_form.php:893
+msgid "Please enter your full name..."
+msgstr ""
+
+#: contact_form.php:904
+#: contact_form.php:906
+msgid "Please enter your address..."
+msgstr ""
+
+#: contact_form.php:915
+#: contact_form.php:917
+#, fuzzy
+msgid "Please enter your email address..."
+msgstr "Koristi ovaj mejl:"
+
+#: contact_form.php:926
+#: contact_form.php:928
+msgid "Please enter your phone number..."
+msgstr ""
+
+#: contact_form.php:937
+#: contact_form.php:939
+msgid "Please enter subject..."
+msgstr ""
+
+#: contact_form.php:947
+#: contact_form.php:949
+msgid "Please enter your message..."
+msgstr ""
+
+#: contact_form.php:960
+msgid "Supported file types: HTML, TXT, CSS, GIF, PNG, JPEG, JPG, TIFF, BMP, AI, EPS, PS, RTF, PDF, DOC, DOCX, XLS, ZIP, RAR, WAV, MP3, PPT. Max file size: 2MB"
+msgstr ""
+
+#: contact_form.php:1029
+msgid "Sorry, email message could not be delivered."
+msgstr "Izvinite, vaš mejl nije mogao biti dostavljen."
+
+#: contact_form.php:1113
+msgid "You can attach the following file formats"
+msgstr "Možete privezati fajlove sledećih tipova"
+
+#: contact_form.php:1396
+msgid "Contact from"
+msgstr "Kontakt forma"
+
+#: contact_form.php:1409
+msgid "Email"
+msgstr "Email"
+
+#: contact_form.php:1423
+msgid "Site"
+msgstr "Sajt"
+
+#: contact_form.php:1478
+msgid "If you can see this MIME, it means that the MIME type is not supported by your email client!"
+msgstr "Ako možete da vidite ovaj MIME to znači da vaš klijent ne prihvata MIME tipove!"
+
+#: contact_form.php:1537
+msgid "FAQ"
+msgstr "FAQ"
+
+#: contact_form.php:1538
+msgid "Support"
+msgstr "Podrška"
+
+#: contact_form.php:1597
+msgid "Are you sure that you want to delete this language data?"
+msgstr "Da li ste sigurni da želite da obrišete podatke jezika?"
+
+#, fuzzy
+#~ msgid "Memory usage"
+#~ msgstr "Poruka"
+
+#, fuzzy
+#~ msgid "Site URL"
+#~ msgstr "Sajt"
+
+#, fuzzy
+#~ msgid "Please enter a valid email address."
+#~ msgstr "Koristi ovaj mejl:"
+
+#, fuzzy
+#~ msgid "Pro plugins"
+#~ msgstr "BWS Dodaci"
+#~ msgid "Activated plugins"
+#~ msgstr "Aktivni dodaci"
+#~ msgid "Read more"
+#~ msgstr "Čitaj više"
+#~ msgid "Installed plugins"
+#~ msgstr "Instalirani dodaci"
+#~ msgid "Recommended plugins"
+#~ msgstr "Preporučeni dodaci"
+
+#, fuzzy
+#~ msgid "Free plugins"
+#~ msgstr "Preporučeni dodaci"
+#~ msgid "Download"
+#~ msgstr "Preuzmi"
+#~ msgid "Install %s"
+#~ msgstr "Instaliraj %s"
+#~ msgid "Install now from wordpress.org"
+#~ msgstr "Instaliraj sa wordpress.org"
+
+#, fuzzy
+#~ msgid "If you have any questions, please contact us via"
+#~ msgstr ""
+#~ "Ako imate bilo kakva pitanja, kontaktirajte na mejl plugin@bestwebsoft."
+#~ "com ili popunite kontakt formu na našem sajtu"
+
+#, fuzzy
+#~ msgid "Active Plugins"
+#~ msgstr "Aktivni dodaci"
+
+#, fuzzy
+#~ msgid "Inactive Plugins"
+#~ msgstr "Aktivni dodaci"
+
+#, fuzzy
+#~ msgid "Send to support"
+#~ msgstr "Podrška"
+#~ msgid "Contact Form Options"
+#~ msgstr "Opcije Kontakt Forme"
+#~ msgid "Display Attachment tips"
+#~ msgstr "Prikaži objašnjenja privezaka"
+
+#, fuzzy
+#~ msgid "Display a phone number field"
+#~ msgstr "Prikaži polje broja telefona"
+#~ msgid "Please enter a valid email address. Settings are not saved."
+#~ msgstr "Molim Vas unesite ispravan mejl. Podešavanja nisu sačuvana."
+#~ msgid "E-Mail Address"
+#~ msgstr "E-mail Adresa"
+#~ msgid "E-Mail Addresse:"
+#~ msgstr "E-mail adresa:"
+#~ msgid "Install Now"
+#~ msgstr "Instaliraj Sada"
+
