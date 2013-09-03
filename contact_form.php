@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.54
+Version: 3.55
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -271,13 +271,25 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 
 				$cntctfrm_options_submit['cntctfrm_delete_attached_file'] = isset( $_POST['cntctfrm_delete_attached_file']) ? $_POST['cntctfrm_delete_attached_file'] : 0;
 
-				if ( get_option( 'cptch_options' ) && isset( $_POST['cntctfrm_display_captcha'] ) ) {
-					$cptch_options['cptch_contact_form'] = 1;
-					update_option( 'cptch_options', $cptch_options, '', 'yes' );
-				} elseif ( get_option( 'cptch_options' ) ) {
-					$cptch_options['cptch_contact_form'] = 0;
-					update_option( 'cptch_options', $cptch_options, '', 'yes' );
-				}					
+				if ( isset( $_POST['cntctfrm_display_captcha'] ) ) {
+					if ( get_option( 'cptch_options' ) ) {
+						$cptch_options['cptch_contact_form'] = 1;
+						update_option( 'cptch_options', $cptch_options, '', 'yes' );
+					}
+					if ( get_option( 'cptchpr_options' ) ) {
+						$cptchpr_options['cptchpr_contact_form'] = 1;
+						update_option( 'cptchpr_options', $cptchpr_options, '', 'yes' );
+					}
+				} else {
+					if ( get_option( 'cptch_options' ) ) {
+						$cptch_options['cptch_contact_form'] = 0;
+						update_option( 'cptch_options', $cptch_options, '', 'yes' );
+					}
+					if ( get_option( 'cptchpr_options' ) ) {
+						$cptchpr_options['cptchpr_contact_form'] = 0;
+						update_option( 'cptchpr_options', $cptchpr_options, '', 'yes' );
+					}
+				}			
 				
 				$cntctfrm_options_submit['cntctfrm_required_name_field']		= isset( $_POST['cntctfrm_required_name_field']) ? 1 : 0;
 				if ( $cntctfrm_options_submit['cntctfrm_display_address_field'] == 0 ) {
@@ -523,17 +535,17 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 						} else {
 							$active_plugins = get_option('active_plugins');
 						}
-						if ( array_key_exists('captcha/captcha.php', $all_plugins ) ) {
-							if ( 0 < count( preg_grep( '/captcha\/captcha.php/', $active_plugins ) ) ) { ?>
+						if ( array_key_exists( 'captcha/captcha.php', $all_plugins ) || array_key_exists( 'captcha-pro/captcha_pro.php', $all_plugins ) ) {
+							if ( 0 < count( preg_grep( '/captcha\/captcha.php/', $active_plugins ) ) || 0 < count( preg_grep( '/captcha-pro\/captcha_pro.php/', $active_plugins ) ) ) { ?>
 								<div>
-									<input type="checkbox" name="cntctfrm_display_captcha" value="1" <?php if ( 1 == $cptch_options["cptch_contact_form"] ) echo "checked=\"checked\""; ?> />
-									<label for="cntctfrm_display_captcha"><?php _e( "Captcha", 'contact_form' ); ?></label> <span style="color: #888888;font-size: 10px;"><?php _e( '(powered by', 'contact_form' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>)</span>
+									<input type="checkbox" name="cntctfrm_display_captcha" value="1" <?php if ( ( isset( $cptch_options ) && 1 == $cptch_options["cptch_contact_form"] ) || ( isset( $cptchpr_options ) && 1 == $cptchpr_options["cptchpr_contact_form"] ) ) echo "checked=\"checked\""; ?> />
+									<label for="cntctfrm_display_captcha"><?php _e( "Captcha", 'contact_form' ); ?></label> <span style="color: #888888;font-size: 10px;">(<?php _e( 'powered by', 'contact_form' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>)</span>
 								</div>
 							<?php } else { ?>
-								<input disabled="disabled" type="checkbox" name="cntctfrm_display_captcha" value="1" <?php if ( isset( $cptch_options["cptch_contact_form"] ) && 1 == $cptch_options["cptch_contact_form"] ) echo "checked=\"checked\""; ?> /> <label for="cntctfrm_display_captcha"><?php _e( 'Captcha', 'contact_form' ); ?></label> <span style="color: #888888;font-size: 10px;"><?php _e( '(powered by', 'contact_form' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>) <a href="<?php echo bloginfo("url"); ?>/wp-admin/plugins.php"><?php _e( 'Activate captcha', 'contact_form' ); ?></a></span>
+								<input disabled="disabled" type="checkbox" name="cntctfrm_display_captcha" value="1" <?php if ( ( isset( $cptch_options ) && 1 == $cptch_options["cptch_contact_form"] ) || ( isset( $cptchpr_options ) && 1 == $cptchpr_options["cptchpr_contact_form"] ) ) echo "checked=\"checked\""; ?> /> <label for="cntctfrm_display_captcha"><?php _e( 'Captcha', 'contact_form' ); ?></label> <span style="color: #888888;font-size: 10px;">(<?php _e( 'powered by', 'contact_form' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>) <a href="<?php echo bloginfo("url"); ?>/wp-admin/plugins.php"><?php _e( 'Activate captcha', 'contact_form' ); ?></a></span>
 							<?php }
 						} else { ?>
-							<input disabled="disabled" type="checkbox" name="cntctfrm_display_captcha" value="1" /> <label for="cntctfrm_display_captcha"><?php _e('Captcha', 'contact_form' ); ?></label> <span style="color: #888888;font-size: 10px;"><?php _e( '(powered by', 'contact_form' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>) <a href="http://bestwebsoft.com/plugin/captcha-pro/"><?php _e( 'Download captcha', 'contact_form' ); ?></a></span>
+							<input disabled="disabled" type="checkbox" name="cntctfrm_display_captcha" value="1" /> <label for="cntctfrm_display_captcha"><?php _e( 'Captcha', 'contact_form' ); ?></label> <span style="color: #888888;font-size: 10px;">(<?php _e( 'powered by', 'contact_form' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>) <a href="http://bestwebsoft.com/plugin/captcha-pro/"><?php _e( 'Download captcha', 'contact_form' ); ?></a></span>
 						<?php } ?>
 					</td>
 				</tr>
