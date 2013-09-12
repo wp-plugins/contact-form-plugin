@@ -279,7 +279,7 @@ if ( ! function_exists( 'bws_add_menu_render' ) ) {
 			<?php } ?>	
 			<br />		
 			<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please contact us via', 'bestwebsoft' ); ?> <a href="http://support.bestwebsoft.com">http://support.bestwebsoft.com</a></span>
-			<div id="poststuff" class="bws_system_info_mata_box">
+			<div id="poststuff" class="bws_system_info_meta_box">
 				<div class="postbox">
 					<div class="handlediv" title="Click to toggle">
 						<br>

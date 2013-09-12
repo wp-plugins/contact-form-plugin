@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 3.0
 Tested up to: 3.6
-Stable tag: 3.55
+Stable tag: 3.56
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,8 @@ Add Contact Form to your WordPress website.
 
 == Description ==
 
-Contact Form allows you to add a feedback form to a post or a page in an easy manner.
+The Contact Form plugin allows you to implement a feedback form to a web-page or a post in no time. It is an extremely easy form, that doesn’t require any additional settings, though there are some available options. All you need is just to activate the plugin and insert the shortcode [bestwebsoft_contact_form] into the text.
+There is also a premium version of the plugin with more useful features available.
 
 <a href="http://wordpress.org/extend/plugins/contact-form-plugin/faq/" target="_blank">FAQ</a>
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
@@ -124,6 +125,10 @@ Here is an example for the German language files.
 6. Plugin extra settings in WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.56 - 12.09.2013 =
+* Bugfix : We fixed the bug related to manage languages on the plugin settings page.
+* Update : The Ukrainian language file is updated.
 
 = V3.55 - 03.09.2013 =
 * NEW : Compatibility with Captcha Pro.
@@ -376,6 +381,9 @@ Here is an example for the German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.56 =
+We fixed the bug related to manage languages on the plugin settings page. The Ukrainian language file is updated.
 
 = V3.55 =
 Compatibility with Captcha Pro.

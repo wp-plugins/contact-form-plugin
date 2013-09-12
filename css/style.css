@@ -16,7 +16,7 @@
 #toplevel_page_bws_plugins .wp-submenu .wp-first-item, .cntctfrm_hidden {
 	display:none;
 }
-.bws_system_info_mata_box {
+.bws_system_info_meta_box {
     width: 850px;
 }
 .bws_system_info {
@@ -182,10 +182,7 @@
     background: #EAEAEA;
 }
 .cntctfrmpr_pro_version_tooltip:before {
-    border-color: #FFFFFF transparent transparent transparent;
-    border-style: solid;
-    border-width: 10px;
-    content: "";
+    content: url("../images/arrow.png");
     height: 0;
     left: 10px;
     position: absolute;

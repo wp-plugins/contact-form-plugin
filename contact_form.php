@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.55
+Version: 3.56
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -173,7 +173,9 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 	function cntctfrm_settings_page() {
 		global $cntctfrm_options, $wpdb, $cntctfrm_option_defaults, $wp_version;
-		
+
+		$plugin_info = get_plugin_data( __FILE__ );
+
 		if ( get_option( 'cptch_options' ) )
 			$cptch_options = get_option( 'cptch_options' );
 
@@ -420,8 +422,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				} else {
 					$error .=__(  "Such user does not exist. Settings are not saved.", 'contact_form' );
 				}
-			}
-			else {
+			} else {
 				if( $cntctfrm_options_submit['cntctfrm_custom_email'] == "" || !preg_match( "/^((?:[a-z0-9_']+(?:[a-z0-9\-_\.']+)?@[a-z0-9]+(?:[a-z0-9\-\.]+)?\.[a-z]{2,5})[, ]*)+$/i", trim( $cntctfrm_options_submit['cntctfrm_custom_email'] ) ) ){
 					$error .= __( "Please enter a valid email address in the 'FROM' field. Settings are not saved.", 'contact_form' );
 				}
@@ -545,7 +546,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 								<input disabled="disabled" type="checkbox" name="cntctfrm_display_captcha" value="1" <?php if ( ( isset( $cptch_options ) && 1 == $cptch_options["cptch_contact_form"] ) || ( isset( $cptchpr_options ) && 1 == $cptchpr_options["cptchpr_contact_form"] ) ) echo "checked=\"checked\""; ?> /> <label for="cntctfrm_display_captcha"><?php _e( 'Captcha', 'contact_form' ); ?></label> <span style="color: #888888;font-size: 10px;">(<?php _e( 'powered by', 'contact_form' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>) <a href="<?php echo bloginfo("url"); ?>/wp-admin/plugins.php"><?php _e( 'Activate captcha', 'contact_form' ); ?></a></span>
 							<?php }
 						} else { ?>
-							<input disabled="disabled" type="checkbox" name="cntctfrm_display_captcha" value="1" /> <label for="cntctfrm_display_captcha"><?php _e( 'Captcha', 'contact_form' ); ?></label> <span style="color: #888888;font-size: 10px;">(<?php _e( 'powered by', 'contact_form' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>) <a href="http://bestwebsoft.com/plugin/captcha-pro/"><?php _e( 'Download captcha', 'contact_form' ); ?></a></span>
+							<input disabled="disabled" type="checkbox" name="cntctfrm_display_captcha" value="1" /> <label for="cntctfrm_display_captcha"><?php _e( 'Captcha', 'contact_form' ); ?></label> <span style="color: #888888;font-size: 10px;">(<?php _e( 'powered by', 'contact_form' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>) <a href="http://bestwebsoft.com/plugin/captcha-pro/?k=19ac1e9b23bea947cfc4a9b8e3326c03&pn=77&v=<?php echo $plugin_info["Version"]; ?>"><?php _e( 'Download captcha', 'contact_form' ); ?></a></span>
 						<?php } ?>
 					</td>
 				</tr>
@@ -722,7 +723,9 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 // Add settings page in admin area
 if ( ! function_exists( 'cntctfrm_settings_page_extra' ) ) {
 	function cntctfrm_settings_page_extra() {
-		global $wpdb, $wp_version, $cntctfrm_options; ?>
+		global $wpdb, $wp_version, $cntctfrm_options; 
+		$plugin_info = get_plugin_data( __FILE__ );
+		?>
 		<div class="wrap">
 			<div class="icon32 icon32-bws" id="icon-options-general"></div>
 			<h2><?php _e( "Contact Form Pro | Extra Settings", 'contact_form' ); ?></h2>
@@ -733,7 +736,7 @@ if ( ! function_exists( 'cntctfrm_settings_page_extra' ) ) {
 			<div class="clear"></div>
 			<div class="cntctfrmpr_pro_version_tooltip">
 				<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'contact_form' ); ?>
-				<a title="Contact Form Pro" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-pro/?k=<?php echo md5('banner_wp_admin/plugin_settings_contact_form' ); ?>"> <?php _e( 'Contact Form Pro', 'contact_form' ); ?></a>
+				<a title="Contact Form Pro" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-pro/?k=697c5e74f39779ce77850e11dbe21962&pn=77&v=<?php echo $plugin_info["Version"]; ?>"> <?php _e( 'Contact Form Pro', 'contact_form' ); ?></a>
 				</div>
 			<div id="cntctfrmpr_pro_version">
 				<div id="cntctfrmpr_left_table">
@@ -1703,7 +1706,8 @@ if ( ! function_exists ( 'cntctfrm_delete_options' ) ) {
 }
 if ( ! function_exists ( 'cntctfrm_plugin_banner' ) ) {
 	function cntctfrm_plugin_banner() {
-		global $hook_suffix;			
+		global $hook_suffix;
+		$plugin_info = get_plugin_data( __FILE__ );			
 		if ( $hook_suffix == 'plugins.php' ) {              
 	       	echo '<div class="updated" style="padding: 0; margin: 0; border: none; background: none;">
 	       		<script type="text/javascript" src="'.plugins_url( 'js/jquery.cookie.js', __FILE__ ).'"></script>
@@ -1728,7 +1732,7 @@ if ( ! function_exists ( 'cntctfrm_plugin_banner' ) ) {
 						It’s time to upgrade your <strong>Contact Form plugin</strong> to <strong>PRO</strong> version!<br />
 						<span>Extend standard plugin functionality with new great options.</span>
 					</div> 
-					<a class="button cntctfrm_button" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-pro/?k=' . md5('banner_wp_admin/plugins_contact_form' ) . '">Learn More</a>		
+					<a class="button cntctfrm_button" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-pro/?k=f575dc39cba54a9de88df346eed52101&pn=77&v=' . $plugin_info["Version"] . '">Learn More</a>		
 				</div>  
 			</div>';      
 		}
