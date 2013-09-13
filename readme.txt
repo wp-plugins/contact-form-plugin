@@ -27,6 +27,13 @@ There is also a premium version of the plugin with more useful features availabl
 * Actions: You can add a field for sending a copy of the message to the user who fills out the contact form. A copy will be sent to the email address specified while filling out the contact form.
 * Label: Ability to change a label when the fields are displayed.
 
+= Recommended Plugins =
+
+The author of the Contact Form also recommends the following plugins:
+
+* <a href="http://wordpress.org/plugins/captcha/">Captcha</a> - The Captcha plugin allows you to implement a super security captcha form into web forms. It protects your website from spam by means of math logic, easily understood by human beings. This captcha can be used for login, registration, password recovery, comments forms.
+There is also a premium version of the plugin - <a href="http://bestwebsoft.com/plugin/captcha-pro/">Captcha Pro</a>, allowing compatibility with BuddyPress (Registration form, Comments form, "Create a Group" form).
+
 = Translation =
 
 * Arabic (ar) (thanks to Hammad Alshammari (ABU HATIM), www.abuhatim.net)
