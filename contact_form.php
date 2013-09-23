@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.56
+Version: 3.57
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -1710,7 +1710,7 @@ if ( ! function_exists ( 'cntctfrm_plugin_banner' ) ) {
 		$plugin_info = get_plugin_data( __FILE__ );			
 		if ( $hook_suffix == 'plugins.php' ) {              
 	       	echo '<div class="updated" style="padding: 0; margin: 0; border: none; background: none;">
-	       		<script type="text/javascript" src="'.plugins_url( 'js/jquery.cookie.js', __FILE__ ).'"></script>
+	       		<script type="text/javascript" src="'.plugins_url( 'js/c_o_o_k_i_e.js', __FILE__ ).'"></script>
 				<script type="text/javascript">		
 					(function($){
 						$(document).ready(function(){		

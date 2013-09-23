@@ -115,7 +115,7 @@
 					$('.cntctfrm_change_label_block .cntctfrm_label_language_tab').removeClass('cntctfrm_active').first().addClass('cntctfrm_active');
 					$('.cntctfrm_action_after_send_block .cntctfrm_label_language_tab').removeClass('cntctfrm_active').first().addClass('cntctfrm_active');
 					$('.cntctfrm_change_label_block .cntctfrm_language_tab').addClass('hidden').first().removeClass('hidden');
-					$('.cntctfrm_action_after_send_block .cntctfrm_language_tab').addClass('hidden').first().removeClass('hidden');
+					$('.cntctfrm_action_after_send_block .cntctfrm_language_tab').addClass('hidden').first().removeClass('hidden'); 
 				},						
 				error: function( request, status, error ) {
 					alert( error + request.status );

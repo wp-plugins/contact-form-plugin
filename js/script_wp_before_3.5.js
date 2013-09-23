@@ -91,13 +91,13 @@
 					type: "POST",
 					data: "action=cntctfrm_remove_language&lang="+lang,
 					success: function(result) {
-						$('.cntctfrm_active, .cntctfrm_tab_'+lang).each(function(){
+						$('#cntctfrm_label_'+lang+', #cntctfrm_text_'+lang+', .cntctfrm_tab_'+lang).each(function(){
 							$(this).remove();
 						});
-						$('.cntctfrm_change_label_block .cntctfrm_label_language_tab').first().addClass('cntctfrm_active');
-						$('.cntctfrm_action_after_send_block .cntctfrm_label_language_tab').first().addClass('cntctfrm_active');
-						$('.cntctfrm_change_label_block .cntctfrm_language_tab').first().removeClass('hidden');
-						$('.cntctfrm_action_after_send_block .cntctfrm_language_tab').first().removeClass('hidden');
+					$('.cntctfrm_change_label_block .cntctfrm_label_language_tab').removeClass('cntctfrm_active').first().addClass('cntctfrm_active');
+					$('.cntctfrm_action_after_send_block .cntctfrm_label_language_tab').removeClass('cntctfrm_active').first().addClass('cntctfrm_active');
+					$('.cntctfrm_change_label_block .cntctfrm_language_tab').addClass('hidden').first().removeClass('hidden');
+					$('.cntctfrm_action_after_send_block .cntctfrm_language_tab').addClass('hidden').first().removeClass('hidden');
 					},						
 					error: function( request, status, error ) {
 						alert( error + request.status );

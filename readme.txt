@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 3.0
-Tested up to: 3.6
-Stable tag: 3.56
+Tested up to: 3.6.1
+Stable tag: 3.57
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -132,6 +132,10 @@ Here is an example for the German language files.
 6. Plugin extra settings in WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.57 - 23.09.2013 =
+* Update : The French language file is updated.
+* Update : We updated all functionality for wordpress 3.6.1.
 
 = V3.56 - 12.09.2013 =
 * Bugfix : We fixed the bug related to manage languages on the plugin settings page.
@@ -388,6 +392,9 @@ Here is an example for the German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.57 =
+The French language file is updated. We updated all functionality for wordpress 3.6.1.
 
 = V3.56 =
 We fixed the bug related to manage languages on the plugin settings page. The Ukrainian language file is updated.
