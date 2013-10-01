@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.57
+Version: 3.58
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -40,7 +40,7 @@ if( ! function_exists( 'cntctfrm_admin_menu' ) ) {
 // Register settings for plugin
 if( ! function_exists( 'cntctfrm_settings' ) ) {
 	function cntctfrm_settings() {
-		global $cntctfrm_options, $cntctfrm_option_defaults, $wpdb;
+		global $wpmu, $cntctfrm_options, $cntctfrm_option_defaults, $wpdb;
 
 		$cntctfrm_option_defaults = array(
 			'cntctfrm_user_email' => 'admin',
@@ -53,6 +53,7 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 			'cntctfrm_attachment_explanations' => 1,
 			'cntctfrm_send_copy' => 0,
 			'cntctfrm_from_field' => get_bloginfo( 'name' ),
+			'cntctfrm_select_from_field' => 'custom',
 			'cntctfrm_display_phone_field' => 0,
 			'cntctfrm_display_address_field' => 0,
 			'cntctfrm_required_name_field' => 1,
@@ -95,8 +96,22 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 			'cntctfrm_redirect_url' => '',
 			'cntctfrm_delete_attached_file' => '0'
 		);
-		if ( ! get_option( 'cntctfrm_options' ) )
-			add_option( 'cntctfrm_options', $cntctfrm_option_defaults, '', 'yes' );
+
+		// install the option defaults
+		if ( 1 == $wpmu ) {
+			if ( !get_site_option( 'cntctfrm_options' ) ) {
+				add_site_option( 'cntctfrm_options', $cntctfrm_option_defaults, '', 'yes' );
+			}
+		} else {
+			if( !get_option( 'cntctfrm_options' ) )
+				add_option( 'cntctfrm_options', $cntctfrm_option_defaults, '', 'yes' );
+		}
+
+		// get options from the database
+		if ( 1 == $wpmu )
+			$cntctfrm_options = get_site_option( 'cntctfrm_options' ); // get options from the database
+		else
+			$cntctfrm_options = get_option( 'cntctfrm_options' );// get options from the database
 
 		$cntctfrm_options = get_option( 'cntctfrm_options' );
 		if ( empty( $cntctfrm_options['cntctfrm_language'] ) && ! is_array( $cntctfrm_options['cntctfrm_name_label'] ) ) {
@@ -124,15 +139,6 @@ if( ! function_exists( 'cntctfrm_settings' ) ) {
 			$cntctfrm_options['cntctfrm_form_error']				= array( 'en' => $cntctfrm_option_defaults['cntctfrm_form_error']['en'] );
 		}
 		$cntctfrm_options = array_merge( $cntctfrm_option_defaults, $cntctfrm_options );
-
-		if ( $cntctfrm_options['cntctfrm_subject_error']['en'] == __( "Message text is required.", 'contact_form' ) )
-			$cntctfrm_options['cntctfrm_subject_error']['en'] = __( "Subject is required.", 'contact_form' );
-		if ( $cntctfrm_options['cntctfrm_message_error']['en'] == __( "Phone number is required.", 'contact_form' ) )
-			$cntctfrm_options['cntctfrm_message_error']['en'] = __( "Message text is required.", 'contact_form' );
-		if ( $cntctfrm_options['cntctfrm_phone_error']['en'] == __( "Subject is required.", 'contact_form' ) )
-			$cntctfrm_options['cntctfrm_phone_error']['en'] = __( "Phone number is required.", 'contact_form' );
-		if ( $cntctfrm_options['cntctfrm_send_copy_label']['en'] == NULL )
-			$cntctfrm_options['cntctfrm_send_copy_label']['en'] = __( "Send me a copy", 'contact_form' );
 
 		update_option( 'cntctfrm_options', $cntctfrm_options );
 
@@ -195,6 +201,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				$cntctfrm_options_submit['cntctfrm_attachment_explanations']	= 1;
 				$cntctfrm_options_submit['cntctfrm_send_copy']					= 0;
 				$cntctfrm_options_submit['cntctfrm_from_field']					= get_bloginfo( 'name' );
+				$cntctfrm_options_submit['cntctfrm_select_from_field']			= 'custom';
 				$cntctfrm_options_submit['cntctfrm_display_address_field']		= 0;
 				$cntctfrm_options_submit['cntctfrm_display_phone_field']		= 0;				
 				$cntctfrm_options_submit['cntctfrm_required_name_field']		= 1;
@@ -265,6 +272,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				
 				$cntctfrm_options_submit['cntctfrm_mail_method']				= $_POST['cntctfrm_mail_method'];
 				$cntctfrm_options_submit['cntctfrm_from_field']					= $_POST['cntctfrm_from_field'];
+				$cntctfrm_options_submit['cntctfrm_select_from_field']			= $_POST['cntctfrm_select_from_field'];
 				$cntctfrm_options_submit['cntctfrm_display_address_field']		= isset( $_POST['cntctfrm_display_address_field']) ? 1 : 0;
 				$cntctfrm_options_submit['cntctfrm_display_phone_field']		= isset( $_POST['cntctfrm_display_phone_field']) ? 1 : 0;
 				$cntctfrm_options_submit['cntctfrm_attachment']					= isset( $_POST['cntctfrm_attachment']) ? $_POST['cntctfrm_attachment'] : 0;
@@ -491,6 +499,18 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 						<span class="cntctfrm_info"><?php _e( "Enter the email address you want the messages forwarded to.", 'contact_form' ); ?></span>
 					</td>
 				</tr>
+				<tr valign="top" id="cntctfrmpr_pro_version">
+					<th scope="row" style="width:200px;"><?php _e( "Add department selectbox to the contact form:", 'contact_form_pro' ); ?></th>
+					<td colspan="2">
+						<div class="cntctfrmpr_pro_version_tooltip_settings">
+							<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'contact_form' ); ?>
+							<a title="Contact Form Pro" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-pro/?k=697c5e74f39779ce77850e11dbe21962&pn=77&v=<?php echo $plugin_info["Version"]; ?>"> <?php _e( 'Contact Form Pro', 'contact_form' ); ?></a>
+						</div>
+						<input type="radio" id="cntctfrmpr_select_email_department" name="cntctfrmpr_select_email" value="departments" disabled="disabled" /> 
+						<div class="cntctfrmpr_department_table"><img src="<?php echo plugins_url( 'images/pro_screen_1.png', __FILE__ ); ?>" alt="" /></div>	
+
+					</td>
+				</tr>				
 				<tr valign="top">
 					<th colspan="3" scope="row" style="width:200px;"><input type="checkbox" id="cntctfrm_additions_options" name="cntctfrm_additions_options" value="1" <?php if($cntctfrm_options['cntctfrm_additions_options'] == '1') echo "checked=\"checked\" "; ?> /> <?php _e( "Additional options", 'contact_form' ); ?></th>
 				</tr>
@@ -509,14 +529,16 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 						<span  class="cntctfrm_info">(<?php _e( 'To send mail you can use the php mail function', 'contact_form' ); ?>)</span>
 					</td>
 				</tr>
-				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
-					<th scope="row" style="width:200px;"><?php _e( "Change text of the 'FROM' field", 'contact_form' ); ?></th>
+				<tr valign="top" class="cntctfrm_additions_block <?php if ( $cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
+					<th scope="row" style="width:200px;"><?php _e( "The text in the 'From' field", 'contact_form' ); ?></th>
 					<td colspan="2">
-						<input type="text" style="width:200px;" name="cntctfrm_from_field" value="<?php echo stripslashes( $cntctfrm_options['cntctfrm_from_field'] ); ?>" /><br />
+						<input type="radio" id="cntctfrm_select_from_field" name="cntctfrm_select_from_field" value="user_name" <?php if ( $cntctfrm_options['cntctfrm_select_from_field'] == 'user_name') echo "checked=\"checked\" "; ?>/> <?php _e( "User name", 'contact_form' ); ?> <span class="cntctfrm_info">(<?php _e( "The name of the user who fills the form will be used in the field 'From'.", 'contact_form' ); ?>)</span><br/>
+						<input type="radio" id="cntctfrm_select_from_field" name="cntctfrm_select_from_field" value="custom" <?php if ( $cntctfrm_options['cntctfrm_select_from_field'] == 'custom') echo "checked=\"checked\" "; ?>/>
+						<input type="text" style="width:200px;" name="cntctfrm_from_field" value="<?php echo stripslashes( $cntctfrm_options['cntctfrm_from_field'] ); ?>" /> <span  class="cntctfrm_info">(<?php _e( "This text will be used in the 'FROM' field", 'contact_form' ); ?>)</span>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
-					<th scope="row" style="width:200px;"><?php _e( "Enter the email address in the 'From' field", 'contact_form' ); ?></th>
+					<th scope="row" style="width:200px;"><?php _e( "The email address in the 'From' field", 'contact_form' ); ?></th>
 					<td colspan="2">
 						<input type="radio" id="cntctfrm_from_email" name="cntctfrm_from_email" value="user" <?php if( $cntctfrm_options['cntctfrm_from_email'] == 'user' ) echo "checked=\"checked\" "; ?>/> <?php _e( "User email", 'contact_form' ); ?> <span class="cntctfrm_info">(<?php _e( "The email address of the user who fills the form will be used in the field 'From'.", 'contact_form' ); ?>)</span><br />
 						<input type="radio" id="cntctfrm_from_custom_email" name="cntctfrm_from_email" value="custom" <?php if($cntctfrm_options['cntctfrm_from_email'] == 'custom') echo "checked=\"checked\" "; ?>/> <input type="text" name="cntctfrm_custom_from_email" value="<?php echo $cntctfrm_options['cntctfrm_custom_from_email']; ?>" onfocus="document.getElementById('cntctfrm_from_custom_email').checked = true;" />
@@ -737,7 +759,7 @@ if ( ! function_exists( 'cntctfrm_settings_page_extra' ) ) {
 			<div class="cntctfrmpr_pro_version_tooltip">
 				<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'contact_form' ); ?>
 				<a title="Contact Form Pro" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-pro/?k=697c5e74f39779ce77850e11dbe21962&pn=77&v=<?php echo $plugin_info["Version"]; ?>"> <?php _e( 'Contact Form Pro', 'contact_form' ); ?></a>
-				</div>
+			</div>
 			<div id="cntctfrmpr_pro_version">
 				<div id="cntctfrmpr_left_table">
 					<table class="form-table" style="width:auto;" >
@@ -1475,11 +1497,17 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 					$headers  = "";
 					$message_block = $message_text;
 
+					if ( 'custom' == $cntctfrm_options['cntctfrm_select_from_field'] )
+						$from_field_name = stripslashes( $cntctfrm_options['cntctfrm_from_field'] );
+					else
+						$from_field_name = $name;
+
 					// Additional headers
-				if ( 'custom' == $cntctfrm_options['cntctfrm_from_email'] )
-					$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '>' . "\n";
-				else
-					$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $email ). '>' . "\n";
+					if ( 'custom' == $cntctfrm_options['cntctfrm_from_email'] )
+						$headers .= 'From: '.$from_field_name.' <'.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '>' . "\n";
+					else
+						$headers .= 'From: '.$from_field_name.' <'.stripslashes( $email ). '>' . "\n";
+
 
 					$bound_text = 	"jimmyP123";
 		 
@@ -1509,11 +1537,16 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 					$headers  = 'MIME-Version: 1.0' . "\n";
 					$headers .= 'Content-type: text/html; charset=utf-8' . "\n";
 
+					if ( 'custom' == $cntctfrm_options['cntctfrm_select_from_field'] )
+						$from_field_name = stripslashes( $cntctfrm_options['cntctfrm_from_field'] );
+					else
+						$from_field_name = $name;
+
 					// Additional headers
 					if( 'custom' == $cntctfrm_options['cntctfrm_from_email'] )
-						$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '>' . "\n";
+						$headers .= 'From: '.$from_field_name.' <'.stripslashes( $cntctfrm_options['cntctfrm_custom_from_email'] ). '>' . "\n";
 					else
-						$headers .= 'From: '.stripslashes( $cntctfrm_options['cntctfrm_from_field'] ).' <'.$email. '>' . "\n";
+						$headers .= 'From: '.$from_field_name.' <'.$email. '>' . "\n";
 				}
 				if ( isset( $_POST['cntctfrm_contact_send_copy'] ) && $_POST['cntctfrm_contact_send_copy'] == 1 )
 					@mail( $email, $subject, $message_text_for_user, $headers );
@@ -1626,7 +1659,14 @@ if ( ! function_exists ( 'cntctfrm_wp_head' ) ) {
 if ( ! function_exists ( 'cntctfrm_email_name_filter' ) ) {
 	function cntctfrm_email_name_filter( $data ){
 		global $cntctfrm_options;
-		if ( isset( $cntctfrm_options['cntctfrm_from_field'] ) && trim( $cntctfrm_options['cntctfrm_from_field'] ) != "" )
+		if ( isset( $_POST['cntctfrm_contact_name'] ) && 'custom' != $cntctfrm_options['cntctfrm_select_from_field'] ) {
+			$name = stripslashes( strip_tags( preg_replace ( '/<[^>]*>/', '', preg_replace ( '/<script.*<\/[^>]*>/', '', trim( $_POST['cntctfrm_contact_name'] ) ) ) ) ); 
+			if ( $name != '' )
+				return $name;
+			else
+				return $data;
+
+		} elseif ( isset( $cntctfrm_options['cntctfrm_from_field'] ) && trim( $cntctfrm_options['cntctfrm_from_field'] ) != "" )
 			return stripslashes( $cntctfrm_options['cntctfrm_from_field'] );
 		else
 			return $data;

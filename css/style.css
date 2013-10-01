@@ -19,6 +19,9 @@
 .bws_system_info_meta_box {
     width: 850px;
 }
+.bws_system_info_meta_box .hndle {
+    cursor: pointer;
+}
 .bws_system_info {
     float: left;
     margin-right: 10px;
@@ -201,6 +204,27 @@
     position: absolute;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
+.cntctfrmpr_pro_version_tooltip_settings:before {
+    content: url("../images/arrow.png");
+    height: 0;
+    left: 10px;
+    position: absolute;
+    top: 59px;
+    width: 0;
+}
+.cntctfrmpr_pro_version_tooltip_settings {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #AAAAAA;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.1);
+    float: right;
+    left: 800px;
+    padding: 10px;
+    position: absolute;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    height: 40px;
+    width: 555px;
+}
 .cntctfrm_message {
     min-width:800px;
     border:1px solid #1b6394;
@@ -262,4 +286,10 @@
     float: left;
     margin: 4px 0 0 4px;
     cursor: pointer;
+}
+.cntctfrmpr_department_table > img {
+    margin: -21px 17px 0;
+}
+#cntctfrmpr_pro_version > td {
+    width: 900px;
 }
