@@ -9,6 +9,6 @@
 			} else {
 				$('.bws_system_info_meta_box .inside').css('display','block');
 			}					
-		});
+		});	
 	});
 })(jQuery);
