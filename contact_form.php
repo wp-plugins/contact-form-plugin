@@ -4,7 +4,7 @@ Plugin Name: Contact Form Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.59
+Version: 3.60
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -1257,7 +1257,9 @@ if ( ! function_exists( 'cntctfrm_check_form' ) ) {
 				'TIFF'=>'image/tiff',
 				'tiff'=>'image/tiff',
 				'tif'=>'image/tiff',
+				'TIF'=>'image/tiff',
 				'bmp'=>'image/x-ms-bmp',
+				'BMP'=>'image/x-ms-bmp',
 				'ai'=>'application/postscript',
 				'eps'=>'application/postscript',
 				'ps'=>'application/postscript',
@@ -1291,7 +1293,7 @@ if ( ! function_exists( 'cntctfrm_check_form' ) ) {
 			$error_message['error_captcha'] = $cntctfrm_options['cntctfrm_captcha_error'][ $language ];
 		if ( isset( $_FILES["cntctfrm_contact_attachment"]["tmp_name"] ) && $_FILES["cntctfrm_contact_attachment"]["tmp_name"] != "" ) {
 			if( is_multisite() ){
-				if( defined('UPLOADS') ) {
+				if ( defined('UPLOADS') ) {
 					if( ! is_dir( ABSPATH . UPLOADS ) ) {
 						wp_mkdir_p( ABSPATH . UPLOADS );
 					}
@@ -1301,6 +1303,12 @@ if ( ! function_exists( 'cntctfrm_check_form' ) ) {
 						wp_mkdir_p( BLOGUPLOADDIR );
 					}
 					$path_of_uploaded_file = BLOGUPLOADDIR . $_FILES["cntctfrm_contact_attachment"]["name"];
+				} else {
+					$uploads = wp_upload_dir();
+					if ( ! isset( $uploads['path'] ) && isset ( $uploads['error'] ) )
+						$error_message['error_attachment'] = $uploads['error'];
+					else
+						$path_of_uploaded_file = $uploads['path'] . "/" . $_FILES["cntctfrm_contact_attachment"]["name"];
 				}
 			} else {
 				$uploads = wp_upload_dir();
@@ -1315,6 +1323,7 @@ if ( ! function_exists( 'cntctfrm_check_form' ) ) {
 			if ( array_key_exists ( $path_info['extension'], $mime_type ) ) {
 				if ( is_uploaded_file( $tmp_path ) ) {					
 					if ( move_uploaded_file( $tmp_path, $path_of_uploaded_file ) ) {
+						do_action( 'cntctfrm_get_attachment_data', $path_of_uploaded_file );
 						unset( $error_message['error_attachment'] );
 					} else {
 						$letter_upload_max_size = substr( ini_get('upload_max_filesize'), -1);
@@ -1350,6 +1359,7 @@ if ( ! function_exists( 'cntctfrm_check_form' ) ) {
 			unset( $error_message['error_form'] );
 			// If all is good - send mail
 			$cntctfrm_result = cntctfrm_send_mail();
+			do_action( 'cntctfrm_check_dispatch', $cntctfrm_result );
 		}
 		return $cntctfrm_result;
 	}
@@ -1367,6 +1377,7 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 		$subject = isset( $_POST['cntctfrm_contact_subject'] ) ? $_POST['cntctfrm_contact_subject'] : "";
 		$message = isset( $_POST['cntctfrm_contact_message'] ) ? $_POST['cntctfrm_contact_message'] : "";
 		$phone = isset( $_POST['cntctfrm_contact_phone'] ) ? $_POST['cntctfrm_contact_phone'] : "";
+		$user_agent = cntctfrm_clean_input( $_SERVER['HTTP_USER_AGENT'] );
 
 		$name = stripslashes( strip_tags( preg_replace ( '/<[^>]*>/', '', preg_replace ( '/<script.*<\/[^>]*>/', '', $name ) ) ) ); 
 		$address = stripslashes( strip_tags( preg_replace ( '/<[^>]*>/', '', preg_replace ( '/<script.*<\/[^>]*>/', '', $address ) ) ) ); 
@@ -1429,7 +1440,7 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 				}
 				if ( $cntctfrm_options['cntctfrm_display_user_agent'] == 1) {
 					$user_info_string .= '<tr>
-							<td>'.__('Using (user agent)', 'contact_form').':</td><td>'.cntctfrm_clean_input($_SERVER['HTTP_USER_AGENT']).'</td>
+							<td>'.__('Using (user agent)', 'contact_form').':</td><td>'.$user_agent.'</td>
 						</tr>';
 				}
 			}
@@ -1473,6 +1484,8 @@ if( ! function_exists( 'cntctfrm_send_mail' ) ) {
 			$message_text_for_user = $message_text . '</table></body></html>';
 
 			$message_text .= $user_info_string . '</table></body></html>';
+
+			do_action( 'cntctfrm_get_mail_data', $to, $name, $email, $address, $phone, $subject, $message, $form_action_url, $user_agent, $userdomain );
 
 			if ( $cntctfrm_options['cntctfrm_mail_method'] == 'wp-mail' ) {
 				// To send HTML mail, the Content-type header must be set

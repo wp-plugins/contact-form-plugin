@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 3.0
 Tested up to: 3.6.1
-Stable tag: 3.59
+Stable tag: 3.60
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -132,6 +132,10 @@ Here is an example for the German language files.
 6. Plugin extra settings in WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.60 - 18.10.2013 =
+* NEW : Compatibility with plugin Contact Form To DB.
+* Bugfix : We fixed the bug of uploading attachment in multisite.
 
 = V3.59 - 11.10.2013 =
 * NEW : Ability to not display asterisk near required fields.
@@ -399,6 +403,9 @@ Here is an example for the German language files.
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.60 =
+Compatibility with plugin Contact Form To DB. We fixed the bug of uploading attachment in multisite.
 
 = V3.59 =
 Ability to not display asterisk near required fields.
