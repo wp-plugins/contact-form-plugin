@@ -4,7 +4,8 @@
 .admin-color-classic #adminmenu #toplevel_page_bws_plugins div.wp-menu-image {
 	background: url("../images/icon_16_b.png") no-repeat scroll center center transparent;
 }
-#adminmenu #toplevel_page_bws_plugins:hover div.wp-menu-image,#adminmenu #toplevel_page_bws_plugins.wp-has-current-submenu div.wp-menu-image {
+#adminmenu #toplevel_page_bws_plugins:hover div.wp-menu-image,
+#adminmenu #toplevel_page_bws_plugins.wp-has-current-submenu div.wp-menu-image {
 	background: url("../images/icon_16_c.png") no-repeat scroll center center transparent;
 }	
 .wrap #icon-options-general.icon32-bws {
@@ -20,7 +21,7 @@
     width: 850px;
 }
 .bws_system_info_meta_box .hndle {
-    cursor: pointer;
+    cursor: pointer !important;
 }
 .bws_system_info {
     float: left;
@@ -35,10 +36,13 @@
 .bws_system_info tbody td {
     border-bottom: 1px solid #DFDFDF;
 }
-
-.bws-plugins_page_contact_form input[type="checkbox"], .bws-plugins_page_contact_form input[type="radio"]{
-    position:relative;
-    top:-2px
+/*
+* styles for settings page
+*/
+.bws-plugins_page_contact_form input[type="checkbox"],
+.bws-plugins_page_contact_form input[type="radio"] {
+    position: relative;
+    top: -2px
 }
 #cntctfrm_contact_form input.text, 
 #cntctfrm_contact_form textarea,
@@ -46,12 +50,12 @@
 #cntctfrm_contact_name, 
 #cntctfrm_contact_email,
 #cntctfrm_contact_subject {
-    width:320px;
+    width: 320px;
 }
 .cntctfrm_info {
 	color: rgb(136, 136, 136); 
 	font-size: 10px;
-	clear:both;
+	clear: both;
 }
 #cntctfrm_contact_attachment {
 	margin-bottom:0;
@@ -59,11 +63,12 @@
 .cntctfrm_change_label_block input, .cntctfrm_action_after_send_block input {
 	margin: 1px 0;
 }
-.cntctfrm_change_label_block input[type="text"], .cntctfrm_action_after_send_block input[type="text"] {
+.cntctfrm_change_label_block input[type="text"],
+.cntctfrm_action_after_send_block input[type="text"] {
 	width: 300px;
 }
 .cntctfrm_action_after_send_block  input[type="text"] {
-	width:250px;
+	width: 250px;
 }
 .widget-container #cntctfrm_contact_form input.text, 
 .widget-container #cntctfrm_contact_form textarea, 
@@ -76,25 +81,25 @@
 .textwidget #cntctfrm_contact_message, 
 .textwidgetr #cntctfrm_contact_name, 
 .textwidget #cntctfrm_contact_email, 
-.textwidget #cntctfrm_contact_subject{
+.textwidget #cntctfrm_contact_subject {
     width: 200px !important;
 }
-.cntctfrm_label_language_tab{
+.cntctfrm_label_language_tab {
 	float: left;
-	padding:2px 5px;
+	padding: 2px 5px;
 	border-radius: 4px 4px 0px 0px;
-    border:1px solid #DFDFDF;
+    border: 1px solid #DFDFDF;
 	background: url("../images/gray-grad.png") repeat-x scroll left top #DFDFDF;
 	cursor: pointer;
-	margin-right:3px;
+	margin-right: 3px;
 }
-.cntctfrm_language_tab{
-	border:1px solid #DFDFDF;
+.cntctfrm_language_tab {
+	border: 1px solid #DFDFDF;
 }
-.cntctfrm_active{
-	color:#21759B;
+.cntctfrm_active {
+	color: #21759B;
 }
-.cntctfrm_delete{
+.cntctfrm_delete {
 	color: red;
     display: block;
     float: right;
@@ -117,7 +122,7 @@
 }
 #cntctfrmpr_pro_version {
 	background: none repeat scroll 0 0 #E0E0E0;
-    border: 1px solid #AAAAAA;
+    border: 1px solid #AAA;
     padding-left: 10px;
     margin-top: 50px;
 }
@@ -143,7 +148,7 @@
 .cntctfrmpr_hidden_help_text {
     background: #F4F4F4;
     border: 1px solid #DCDCDC;
-    border-radius: 4px 4px 4px 4px;
+    border-radius: 4px;
     left: 40px;
     padding: 5px 10px;
     position: absolute;
@@ -158,7 +163,7 @@
 }
 #cntctfrmpr_right_table #cntctfrmpr_contact_form input.text, 
 #cntctfrmpr_right_table #cntctfrmpr_contact_form textarea {
-	width:320px;
+	width: 320px;
 	float: left;
 }
 #cntctfrmpr_contact_form div {
@@ -167,7 +172,7 @@
 .cntctfrmpr_info {
 	color: rgb(136, 136, 136); 
 	font-size: 10px;
-	clear:both;
+	clear: both;
 }
 #cntctfrmpr_shortcode {
     width: 330px;
@@ -184,6 +189,9 @@
     white-space:nowrap;
     background: #EAEAEA;
 }
+/*
+* styles for pro_version settings, banner and tooltip 
+*/
 .cntctfrmpr_pro_version_tooltip:before {
     content: url("../images/arrow.png");
     height: 0;
@@ -193,9 +201,9 @@
     width: 0;
 }
 .cntctfrmpr_pro_version_tooltip {
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #AAAAAA;
-    border-radius: 5px 5px 5px 5px;
+    background: none repeat scroll 0 0 #FFF;
+    border: 1px solid #AAA;
+    border-radius: 5px;
     box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.1);
     float: right;
     height: 20px;
@@ -213,9 +221,9 @@
     width: 0;
 }
 .cntctfrmpr_pro_version_tooltip_settings {
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #AAAAAA;
-    border-radius: 5px 5px 5px 5px;
+    background: none repeat scroll 0 0 #FFF;
+    border: 1px solid #AAA;
+    border-radius: 5px;
     box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.1);
     float: right;
     left: 800px;
@@ -226,19 +234,19 @@
     width: 555px;
 }
 .cntctfrm_message {
-    min-width:800px;
-    border:1px solid #1b6394;
-    padding:5px;
-    margin:12px 0;
-    background:#2484c6;
-    -moz-border-radius:3px;
-    border-radius:3px;
-    -webkit-border-radius:3px;
-    position:relative;
-    overflow:hidden
+    min-width: 800px;
+    border: 1px solid #1b6394;
+    padding: 5px;
+    margin: 12px 0;
+    background: #2484c6;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    position: relative;
+    overflow: hidden
 }
 .cntctfrm_message .cntctfrm_text {
-    color:#FFF;
+    color: #FFF;
     font-size: 15px;
     line-height: 26px;
     margin-top: 8px;
@@ -248,34 +256,34 @@
     font-size: 12px;
     opacity: 0.7;
 }
-.cntctfrm_message .cntctfrm_button{
+.cntctfrm_message .cntctfrm_button {
     float: right;
-    border:1px solid #14496d; 
-    font-size:14px;
+    border: 1px solid #14496d; 
+    font-size: 14px;
     margin: 10px;
-    padding:12px 0;
-    color:#FFF;
+    padding: 12px 0;
+    color: #FFF;
     text-shadow: 0 1px 3px #2483c5;
     font-weight: bold;
-    background:#17537e;
-    -moz-border-radius:3px;
-    border-radius:3px;
-    -webkit-border-radius:3px;
-    text-decoration:none;
+    background: #17537e;
+    -moz-border-radius : 3px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    text-decoration: none;
     height: 50px;
     text-align: center;
     width: 147px;
-    -moz-box-shadow:0px 1px 1px 0 #3e7aa3 inset;
-    -webkit-box-shadow:0px 1px 1px 0 #3e7aa3 inset;
-    box-shadow:0px 1px 1px 0 #3e7aa3 inset;
+    -moz-box-shadow: 0px 1px 1px 0 #3e7aa3 inset;
+    -webkit-box-shadow: 0px 1px 1px 0 #3e7aa3 inset;
+    box-shadow: 0px 1px 1px 0 #3e7aa3 inset;
 }
 .cntctfrm_message .cntctfrm_button:hover,
 .cntctfrm_message .cntctfrm_button:focus {    
-    background:#2b9eed;
-    color:#FFF;
-    border:1px solid #1d6ca1;
-    -moz-box-shadow:0px 1px 1px 0 #4bacf0 inset;
-    -webkit-box-shadow:0px 1px 1px 0 #4bacf0 inset;
+    background: #2b9eed;
+    color: #FFF;
+    border: 1px solid #1d6ca1;
+    -moz-box-shadow: 0px 1px 1px 0 #4bacf0 inset;
+    -webkit-box-shadow: 0px 1px 1px 0 #4bacf0 inset;
     box-shadow: 0px 1px 1px 0 #4bacf0 inset;
 }
 .cntctfrm_message .cntctfrm_icon {
