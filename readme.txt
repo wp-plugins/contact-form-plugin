@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 3.0
-Tested up to: 3.7
-Stable tag: 3.61
+Tested up to: 3.7.1
+Stable tag: 3.62
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,7 @@ Add Contact Form to your WordPress website.
 The Contact Form plugin allows you to implement a feedback form to a web-page or a post in no time. It is an extremely easy form, that doesn’t require any additional settings, though there are some available options. All you need is just to activate the plugin and insert the shortcode [bestwebsoft_contact_form] into the text.
 There is also a premium version of the plugin with more useful features available.
 
-<a href="http://wordpress.org/extend/plugins/contact-form-plugin/faq/" target="_blank">FAQ</a>
+<a href="http://wordpress.org/plugins/contact-form-plugin/faq/" target="_blank">FAQ</a>
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
 <a href="http://bestwebsoft.com/plugin/contact-form-pro/?k=4028655c87316c98ae9ac7ca1928067f" target="_blank">Upgrade to Pro Version</a>
@@ -32,7 +32,7 @@ There is also a premium version of the plugin with more useful features availabl
 The author of the Contact Form also recommends the following plugins:
 
 * <a href="http://wordpress.org/plugins/captcha/">Captcha</a> - The Captcha plugin allows you to implement a super security captcha form into web forms. It protects your website from spam by means of math logic, easily understood by human beings. This captcha can be used for login, registration, password recovery, comments forms.
-There is also a premium version of the plugin - <a href="http://bestwebsoft.com/plugin/captcha-pro/?k=45dcf2a5ccd70a7fc8606f8030730ac7">Captcha Pro</a>, allowing compatibility with BuddyPress (Registration form, Comments form, "Create a Group" form).
+There is also a premium version of the plugin - <a href="http://bestwebsoft.com/plugin/captcha-pro/?k=45dcf2a5ccd70a7fc8606f8030730ac7">Captcha Pro</a>, allowing compatibility with BuddyPress (Registration form, Comments form, "Create a Group" form) and Contact Form 7.
 * <a href="http://wordpress.org/plugins/updater/">Updater</a> - This plugin updates WordPress core and the plugins to the recent versions. You can also use the auto mode or manual mode for updating and set email notifications.
 There is also a premium version of the plugin <a href="http://bestwebsoft.com/plugin/updater-pro/?k=982fae837f4c6e3b152183537448dbca">Updater Pro</a> with more useful features available. It allows to update plugins and WordPress core on several websites. It can make backup of all your files and database before updating.
 * <a href="http://wordpress.org/plugins/contact-form-to-db/">Contact Form To DB</a> - This plugin is an exclusive add-on for the Contact Form plugin by BestWebSof. The plugin provides a unique opportunity to manage messages sent from your site via the contact form. Please pay attention, that this plugin is an add-on ONLY for Contact Form plugin by BestWebSoft, that's why it will not work with any other contact form plugins.
@@ -144,6 +144,11 @@ Note: If the Contact Form sends letters, but you don't receive them, you can ins
 6. Plugin extra settings in WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.62 - 1.11.2013 =
+* NEW : Add checking installed wordpress version.
+* Update : Activation of radio button or checkbox by clicking on its label.
+* Update : We updated all functionality for wordpress 3.7.1.
 
 = V3.61 - 25.10.2013 =
 * NEW : Add option for saving emails into the DataBase.
@@ -420,6 +425,9 @@ Note: If the Contact Form sends letters, but you don't receive them, you can ins
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.62 =
+Add checking installed wordpress version. Activation of radio button or checkbox by clicking on its label. We updated all functionality for wordpress 3.7.1.
 
 = V3.61 =
 Add option for saving emails into the DataBase. File format according JavaScript and CSS Coding Standards. We updated all functionality for wordpress 3.7.
