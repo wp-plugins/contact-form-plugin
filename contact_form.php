@@ -4,7 +4,7 @@ Plugin Name: Contact Form
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.62
+Version: 3.63
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -579,7 +579,11 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					</td>
 				</tr>			
 				<tr valign="top">
-					<th colspan="3" scope="row" style="width:200px;"><input type="checkbox" id="cntctfrm_additions_options" name="cntctfrm_additions_options" value="1" <?php if($cntctfrm_options['cntctfrm_additions_options'] == '1') echo "checked=\"checked\" "; ?> /> <?php _e( "Additional options", 'contact_form' ); ?></th>
+					<th scope="row" style="width:200px;"><label><input type="checkbox" id="cntctfrm_additions_options" name="cntctfrm_additions_options" value="1" <?php if($cntctfrm_options['cntctfrm_additions_options'] == '1') echo "checked=\"checked\" "; ?> /> <?php _e( "Additional options", 'contact_form' ); ?></label></th>
+					<td colspan="2">
+						<input id="cntctfrm_show_additional_settings" type="button" class="button-small button" value="<?php _e( "Show", 'contact_form' ); ?>" style="display: none;">
+						<input id="cntctfrm_hide_additional_settings" type="button" class="button-small button" value="<?php _e( "Hide", 'contact_form' ); ?>" style="display: none;">
+					</td>
 				</tr>
 				<tr class="cntctfrm_additions_block <?php if($cntctfrm_options['cntctfrm_additions_options'] == '0') echo "cntctfrm_hidden"; ?>">
 					<th scope="row" style="width:200px;"><?php _e( 'What to use?', 'contact_form' ); ?></th>
@@ -1826,7 +1830,8 @@ if ( ! function_exists ( 'cntctfrm_delete_options' ) ) {
 if ( ! function_exists ( 'cntctfrm_plugin_banner' ) ) {
 	function cntctfrm_plugin_banner() {
 		global $hook_suffix;
-		$plugin_info = get_plugin_data( __FILE__ );			
+		$plugin_info = get_plugin_data( __FILE__ );	
+		$all_plugins = get_plugins();		
 		if ( $hook_suffix == 'plugins.php' ) {              
 	       	echo '<div class="updated" style="padding: 0; margin: 0; border: none; background: none;">
 	       		<script type="text/javascript" src="' . plugins_url( 'js/c_o_o_k_i_e.js', __FILE__ ) . '"></script>
@@ -1862,17 +1867,20 @@ if ( ! function_exists ( 'cntctfrm_plugin_banner' ) ) {
 						<span>Extend standard plugin functionality with new great options.</span>
 					</div> 
 					<a class="button cntctfrm_button" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-pro/?k=f575dc39cba54a9de88df346eed52101&pn=77&v=' . $plugin_info["Version"] . '">Learn More</a>		
-				</div>
-				<div class="cntctfrm_message_for_ctfrmtdb">
-					<img class="cntctfrm_for_ctfrmtdb_close_icon" title="" src="' . plugins_url( 'images/close_banner.png', __FILE__ ) . '" alt=""/>
-					<img class="cntctfrm_icon" title="" src="' . plugins_url( 'images/banner_for_ctfrmtdb.png', __FILE__ ) . '" alt=""/>
-					<div class="cntctfrm_text">
-						<strong>Contact Form to DB</strong> allows to store your messages to the database.<br />
-						<span>Manage messages that have been sent from your website.</span>
-					</div> 
-					<a class="button cntctfrm_button" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-pro/?k=f575dc39cba54a9de88df346eed52101&pn=77&v=' . $plugin_info["Version"] . '">Learn More</a>		
-				</div> 
-			</div>';      
+				</div>';
+										
+				if ( !array_key_exists( 'contact-form-to-db/contact_form_to_db.php', $all_plugins ) && !array_key_exists( 'contact-form-to-db-pro/contact_form_to_db_pro.php', $all_plugins ) ) {
+					echo '<div class="cntctfrm_message_for_ctfrmtdb">
+						<img class="cntctfrm_for_ctfrmtdb_close_icon" title="" src="' . plugins_url( 'images/close_banner.png', __FILE__ ) . '" alt=""/>
+						<img class="cntctfrm_icon" title="" src="' . plugins_url( 'images/banner_for_ctfrmtdb.png', __FILE__ ) . '" alt=""/>
+						<div class="cntctfrm_text">
+							<strong>Contact Form to DB</strong> allows to store your messages to the database.<br />
+							<span>Manage messages that have been sent from your website.</span>
+						</div> 
+						<a class="button cntctfrm_button" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-to-db-pro/?k=6ebf0743736411607343ad391dc3b436&pn=77&v=' . $plugin_info["Version"] . '">Learn More</a>		
+					</div>';
+				}
+			echo '</div>';      
 		}
 	}
 }

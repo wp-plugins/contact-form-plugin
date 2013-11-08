@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 3.0
 Tested up to: 3.7.1
-Stable tag: 3.62
+Stable tag: 3.63
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -144,6 +144,10 @@ Note: If the Contact Form sends letters, but you don't receive them, you can ins
 6. Plugin extra settings in WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.63 - 8.11.2013 =
+* Update : The French language file is updated.
+* NEW : Add hide-button for the settings page.
 
 = V3.62 - 1.11.2013 =
 * NEW : Add checking installed wordpress version.
@@ -425,6 +429,9 @@ Note: If the Contact Form sends letters, but you don't receive them, you can ins
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.63 =
+The French language file is updated. Add hide-button for the settings page
 
 = V3.62 =
 Add checking installed wordpress version. Activation of radio button or checkbox by clicking on its label. We updated all functionality for wordpress 3.7.1.
