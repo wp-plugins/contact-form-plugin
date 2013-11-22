@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-22 15:10+0300\n"
-"PO-Revision-Date: 2013-11-22 15:10+0300\n"
+"POT-Creation-Date: 2013-11-22 15:40+0300\n"
+"PO-Revision-Date: 2013-11-22 15:41+0300\n"
 "Last-Translator: \n"
 "Language-Team: Luc Capronnier <lcapronnier@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -15,6 +15,8 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2;plural=n>2;\n"
 "X-Generator: Poedit 1.5.7\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: contact_form.php:32
@@ -112,7 +114,7 @@ msgstr "Le numéro de téléphone est obligatoire."
 
 #: contact_form.php:88
 msgid "Subject is required."
-msgstr "Sujet obligatoire."
+msgstr "Le sujet est obligatoire."
 
 #: contact_form.php:89
 msgid "Message text is required."
@@ -120,7 +122,7 @@ msgstr "Un message est obligatoire."
 
 #: contact_form.php:90
 msgid "File format is not valid."
-msgstr "La pièce-jointe n'est pas valide."
+msgstr "Le type de pièce-jointe n'est pas valide."
 
 #: contact_form.php:91
 msgid "File upload error."
@@ -168,16 +170,16 @@ msgstr "Si l'ioption 'Rediriger vers la page' est positionnée, alors le champ U
 
 #: contact_form.php:490
 msgid "Such user does not exist. Settings are not saved."
-msgstr "Cet utilisateur est inconnu. Les modifications ne sont pas sauvegardées."
+msgstr "Cet utilisateur est inconnu. Les modifications ne sont pas enregistrées."
 
 #: contact_form.php:494
 #: contact_form.php:500
 msgid "Please enter a valid email address in the 'FROM' field. Settings are not saved."
-msgstr "Merci de saisir une adresse e-mail valide pour le 'FROM'. Les modifications ne sont pas sauvegardées."
+msgstr "Merci de saisir une adresse e-mail valide pour le 'FROM'. Les modifications ne sont pas enregistrées."
 
 #: contact_form.php:505
 msgid "Settings saved."
-msgstr "Options sauvegardées."
+msgstr "Options enregistrées."
 
 #: contact_form.php:529
 #: contact_form.php:844
@@ -217,7 +219,7 @@ msgstr "Si les champs ci-dessous ne sont pas renseignés le message sera envoyé
 
 #: contact_form.php:542
 msgid "The user's email address:"
-msgstr "Utiliser l'e-mail du compte wordpress:"
+msgstr "Utiliser l'e-mail du compte WordPress :"
 
 #: contact_form.php:546
 msgid "Create a username"
@@ -268,11 +270,11 @@ msgstr "Options supplémentaires"
 
 #: contact_form.php:597
 msgid "Show"
-msgstr ""
+msgstr "Montrer"
 
 #: contact_form.php:598
 msgid "Hide"
-msgstr ""
+msgstr "Cacher"
 
 #: contact_form.php:602
 msgid "What to use?"
@@ -284,7 +286,7 @@ msgstr "Wp-mail"
 
 #: contact_form.php:605
 msgid "You can use the wp_mail function for mailing"
-msgstr "Pour envoyer l'e-mail, vous pouvez utiliser la fonction wp_mail de wordpress"
+msgstr "Pour envoyer l'e-mail, vous pouvez utiliser la fonction wp_mail de WordPress "
 
 #: contact_form.php:607
 msgid "Mail"
@@ -378,11 +380,11 @@ msgstr "Afficher les explications après le bloc des pièces jointes"
 
 #: contact_form.php:663
 msgid "Delete an attachment file from the server after the email is sent"
-msgstr "Supprimer un fichier joint sur le serveur après l'envoie de l'e-mail"
+msgstr "Supprimer le fichier joint sur le serveur après l'envoie de l'e-mail"
 
 #: contact_form.php:669
 msgid "Display 'Send me a copy' block"
-msgstr "Afficher le bloc \"S'envoyer une copie\""
+msgstr "Afficher le bloc \"M'envoyer une copie\""
 
 #: contact_form.php:678
 msgid "Required fields"
@@ -411,9 +413,8 @@ msgid "Message"
 msgstr "Message"
 
 #: contact_form.php:689
-#, fuzzy
 msgid "Required symbol"
-msgstr "Champs obligatoires"
+msgstr "Symbol obligatoire"
 
 #: contact_form.php:695
 msgid "Display additional info in the email"
@@ -474,9 +475,8 @@ msgstr "Anglais"
 
 #: contact_form.php:742
 #: contact_form.php:772
-#, fuzzy
 msgid "Tips below the Attachment block"
-msgstr "Afficher les explications après le bloc des pièces jointes"
+msgstr "Afficher les explications en-dessous du bloc des pièces jointes"
 
 #: contact_form.php:745
 #: contact_form.php:775
@@ -576,7 +576,7 @@ msgstr "Url"
 #: contact_form.php:825
 #: contact_form.php:1002
 msgid "Save Changes"
-msgstr "Sauvegarder les modifications"
+msgstr "Enregistrer les modifications"
 
 #: contact_form.php:842
 msgid "Contact Form Pro | Extra Settings"
@@ -780,10 +780,6 @@ msgstr "Support"
 msgid "Are you sure that you want to delete this language data?"
 msgstr "Etes vous sûr de vouloir supprimer cette langue ?"
 
-#~ msgid "Display the asterisk near required fields"
-#~ msgstr "Afficher une étoile à côté des champs obligatoires"
-#~ msgid "You can attach the following file formats"
-#~ msgstr "Vous pouvez joindre des fichiers aux formats suivants"
 #~ msgid "Not set"
 #~ msgstr "Not set"
 #~ msgid "On"
@@ -878,6 +874,10 @@ msgstr "Etes vous sûr de vouloir supprimer cette langue ?"
 #~ msgstr "Envoyé au support"
 #~ msgid "Send to custom email &#187;"
 #~ msgstr "Envoyer un e-mail spécifique &#187;"
+#~ msgid "Display the asterisk near required fields"
+#~ msgstr "Afficher une étoile à côté des champs obligatoires"
+#~ msgid "You can attach the following file formats"
+#~ msgstr "Vous pouvez joindre des fichiers aux formats suivants"
 #~ msgid "Display Attachment tips"
 #~ msgstr "Afficher les explications sur les pièces jointes"
 #~ msgid "Please enter a valid email address. Settings are not saved."

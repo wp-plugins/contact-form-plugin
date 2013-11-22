@@ -559,7 +559,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 					</td>
 				</tr>
 				<tr valign="top" id="cntctfrmpr_pro_version">
-					<th scope="row" style="width:200px;"><?php _e( "Add department selectbox to the contact form:", 'contact_form_pro' ); ?></th>
+					<th scope="row" style="width:200px;"><?php _e( "Add department selectbox to the contact form:", 'contact_form' ); ?></th>
 					<td colspan="2">
 						<div class="cntctfrmpr_pro_version_tooltip_settings">
 							<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'contact_form' ); ?>
@@ -648,6 +648,17 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 							<label><input disabled="disabled" type="checkbox" name="cntctfrm_display_captcha" value="1" /> 
 							<?php _e( 'Captcha', 'contact_form' ); ?></label> <span style="color: #888888;font-size: 10px;">(<?php _e( 'powered by', 'contact_form' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>) <a href="http://bestwebsoft.com/plugin/captcha-pro/?k=19ac1e9b23bea947cfc4a9b8e3326c03&pn=77&v=<?php echo $plugin_info["Version"]; ?>"><?php _e( 'Download captcha', 'contact_form' ); ?></a></span>
 						<?php } ?>
+					</td>
+				</tr>
+				<tr valign="top" class="cntctfrm_additions_block <?php if ( $cntctfrm_options['cntctfrm_additions_options'] == '0' ) echo "cntctfrm_hidden"; ?>">
+					<th scope="row" style="width:200px;"></th>
+					<td colspan="2" id="cntctfrmpr_pro_version">
+						<div class="cntctfrmpr_pro_version_tooltip_settings" style="margin-top: -30px;">
+							<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'contact_form' ); ?>
+							<a title="Contact Form Pro" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-pro/?k=697c5e74f39779ce77850e11dbe21962&pn=77&v=<?php echo $plugin_info["Version"]; ?>"> <?php _e( 'Contact Form Pro', 'contact_form' ); ?></a>
+						</div>	
+						<label><input disables="disabled" id="cntctfrmpr_display_privacy_check" type="checkbox" value="1" name="cntctfrmpr_display_privacy_check"> <?php _e( 'Privacy checkbox', 'contact_form' ); ?></label> <span class="cntctfrmpr_info">(<?php _e( 'Required checkbox for submitting the form', 'contact_form' ); ?>)</span><br />
+						<label><input disables="disabled" id="cntctfrmpr_display_optional_check" type="checkbox" value="1" name="cntctfrmpr_display_optional_check"> <?php _e( 'Optional checkbox', 'contact_form' ); ?></label> <span class="cntctfrmpr_info">(<?php _e( 'Optional checkbox, the results of which will be displayed in email', 'contact_form' ); ?>)</span><br />
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if ( $cntctfrm_options['cntctfrm_additions_options'] == '0' ) echo "cntctfrm_hidden"; ?>">
