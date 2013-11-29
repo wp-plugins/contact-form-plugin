@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 3.0
 Tested up to: 3.7.1
-Stable tag: 3.65
+Stable tag: 3.66
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,6 +73,8 @@ We can fix some things for free for the users who provide translation of our plu
 3. You can adjust the necessary settings using your WordPress admin panel in "Settings" > "Contact Form".
 4. Create a page or a post and insert the shortcode [bestwebsoft_contact_form] into the text.
 
+<a href="http://bestwebsoft.com/wp-content/uploads/manual/wp_plugin/contact_form/Contact_Form-Installation_step-by-step_Instruction.pdf" target="_blank">View Contact Form Installation step-by-step Instruction</a>.
+
 == Frequently Asked Questions ==
 
 = Where can I find the settings to adjust the plugin work after activation? =
@@ -129,6 +131,10 @@ Note: If the Contact Form sends letters, but you don't receive them, you can ins
 6. Plugin extra settings in WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.66 - 29.11.2013 =
+* NEW : Ability to not use name field.
+* NEW : We added mime types for .aar and .sce files.
 
 = V3.65 - 22.11.2013 =
 * Bugfix : We fixed the bug related to use html-special chars.
@@ -422,6 +428,9 @@ Note: If the Contact Form sends letters, but you don't receive them, you can ins
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.66 =
+Ability to not use name field. We added mime types for .aar and .sce files.
 
 = V3.65 =
 We fixed the bug related to use html-special chars. BWS plugins section is updated.
