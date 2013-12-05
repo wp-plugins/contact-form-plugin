@@ -76,7 +76,7 @@ We can fix some things for free for the users who provide translation of our plu
 3. You can adjust the necessary settings using your WordPress admin panel in "Settings" > "Contact Form".
 4. Create a page or a post and insert the shortcode [bestwebsoft_contact_form] into the text.
 
-<a href="http://bestwebsoft.com/wp-content/uploads/manual/wp_plugin/contact_form/Contact_Form-Installation_step-by-step_Instruction.pdf" target="_blank"View a PDF version of Step-by-step Instruction on Contact Form Installation</a>.
+<a href="http://bestwebsoft.com/wp-content/uploads/manual/wp_plugin/contact_form/Contact_Form-Installation_step-by-step_Instruction.pdf" target="_blank">View a PDF version of Step-by-step Instruction on Contact Form Installation</a>.
 
 http://www.youtube.com/watch?v=fgAH8XDXtgA
 
@@ -441,7 +441,7 @@ Note: If the Contact Form sends letters, but you don't receive them, you can ins
 == Upgrade Notice ==
 
 = V3.67 =
-Ability to send email in plain format. A notice when changing settings on the plugin's settings page was added. The Ukrainian language file is updated. Screenshots are updated
+Ability to send email in plain format. A notice when changing settings on the plugin's settings page was added. The Ukrainian language file is updated. Screenshots are updated.
 
 = V3.66 =
 Ability to not use name field. We added mime types for .aar and .sce files.
