@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 3.0
 Tested up to: 3.7.1
-Stable tag: 3.66
+Stable tag: 3.67
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,10 @@ Add Contact Form to your WordPress website.
 The Contact Form plugin allows you to implement a feedback form to a web-page or a post in no time. It is an extremely easy form, that doesn’t require any additional settings, though there are some available options. All you need is just to activate the plugin and insert the shortcode [bestwebsoft_contact_form] into the text.
 There is also a premium version of the plugin with more useful features available.
 
+<a href="http://www.youtube.com/watch?v=fgAH8XDXtgA" target="_blank">Video instruction on Installation</a>
+
 <a href="http://wordpress.org/plugins/contact-form-plugin/faq/" target="_blank">FAQ</a>
+
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
 <a href="http://bestwebsoft.com/plugin/contact-form-pro/?k=4028655c87316c98ae9ac7ca1928067f" target="_blank">Upgrade to Pro Version</a>
@@ -73,7 +76,9 @@ We can fix some things for free for the users who provide translation of our plu
 3. You can adjust the necessary settings using your WordPress admin panel in "Settings" > "Contact Form".
 4. Create a page or a post and insert the shortcode [bestwebsoft_contact_form] into the text.
 
-<a href="http://bestwebsoft.com/wp-content/uploads/manual/wp_plugin/contact_form/Contact_Form-Installation_step-by-step_Instruction.pdf" target="_blank">View Contact Form Installation step-by-step Instruction</a>.
+<a href="http://bestwebsoft.com/wp-content/uploads/manual/wp_plugin/contact_form/Contact_Form-Installation_step-by-step_Instruction.pdf" target="_blank"View a PDF version of Step-by-step Instruction on Contact Form Installation</a>.
+
+http://www.youtube.com/watch?v=fgAH8XDXtgA
 
 == Frequently Asked Questions ==
 
@@ -131,6 +136,12 @@ Note: If the Contact Form sends letters, but you don't receive them, you can ins
 6. Plugin extra settings in WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.67 - 05.12.2013 =
+* NEW : Ability to send email in plain format.
+* NEW : A notice when changing settings on the plugin's settings page was added. 
+* Update : The Ukrainian language file is updated.
+* Update : Screenshots are updated.
 
 = V3.66 - 29.11.2013 =
 * NEW : Ability to not use name field.
@@ -428,6 +439,9 @@ Note: If the Contact Form sends letters, but you don't receive them, you can ins
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.67 =
+Ability to send email in plain format. A notice when changing settings on the plugin's settings page was added. The Ukrainian language file is updated. Screenshots are updated
 
 = V3.66 =
 Ability to not use name field. We added mime types for .aar and .sce files.

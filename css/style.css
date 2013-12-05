@@ -134,7 +134,7 @@
 	width: 500px;
 	float: left;
 }
-.cntctfrmpr_help_box {
+.cntctfrm_help_box {
     background-image: url("../images/tooltip_icons.png");
     background-repeat: no-repeat;
     cursor: pointer;
@@ -145,7 +145,7 @@
     width: 29px;
     clear: none !important;
 }
-.cntctfrmpr_hidden_help_text {
+.cntctfrm_hidden_help_text {
     background: #F4F4F4;
     border: 1px solid #DCDCDC;
     border-radius: 4px;
@@ -154,8 +154,9 @@
     position: absolute;
     width: 240px;
     line-height: 1.5;
+    z-index: 10;
 }
-.cntctfrmpr_hidden_help_text:before {
+.cntctfrm_hidden_help_text:before {
     content: url("../images/help.png");
     left: -10px;
     position: absolute;

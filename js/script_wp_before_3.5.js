@@ -137,11 +137,24 @@
 				$( '.cntctfrm_language_tab_block_mini' ).css( 'background-position', '' );
 			}
 		});
-		$( '.cntctfrmpr_help_box' ).mouseover( function() {
+		$( '.cntctfrm_help_box' ).mouseover( function() {
 			$( this ).children().css( 'display', 'block' );
 		});
-		$( '.cntctfrmpr_help_box' ).mouseout( function() {
+		$( '.cntctfrm_help_box' ).mouseout( function() {
 			$( this ).children().css( 'display', 'none' );
+		});
+
+		/* add notice about changing in the settings page */
+		$( '#cntctfrm_settings_form input' ).bind( "change click select", function() {
+			if ( $( this ).attr( 'id' ) != 'cntctfrm_hide_additional_settings' && $( this ).attr( 'id' ) != 'cntctfrm_show_additional_settings' && $( this ).attr( 'type' ) != 'submit' ) {
+				$( '.updated.fade' ).css( 'display', 'none' );
+				$( '#cntctfrm_settings_notice' ).css( 'display', 'block' );
+			};
+		});
+		$( 'select[name="cntctfrm_user_email"]').focus( function() {
+			$('#cntctfrm_select_email_user').attr( 'checked', 'checked' );
+			$( '.updated.fade' ).css( 'display', 'none' );
+			$( '#cntctfrm_settings_notice' ).css( 'display', 'block' );
 		});
 	});
 })(jQuery);
