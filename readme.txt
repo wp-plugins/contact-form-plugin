@@ -15,6 +15,8 @@ Add Contact Form to your WordPress website.
 The Contact Form plugin allows you to implement a feedback form to a web-page or a post in no time. It is an extremely easy form, that doesn’t require any additional settings, though there are some available options. All you need is just to activate the plugin and insert the shortcode [bestwebsoft_contact_form] into the text.
 There is also a premium version of the plugin with more useful features available.
 
+http://www.youtube.com/watch?v=_axsV-3cqiA&list=UU5L2rnrf7WCd8GaqsZvnJOw
+
 <a href="http://www.youtube.com/watch?v=fgAH8XDXtgA" target="_blank">Video instruction on Installation</a>
 
 <a href="http://wordpress.org/plugins/contact-form-plugin/faq/" target="_blank">FAQ</a>
@@ -115,7 +117,7 @@ Here is an example for the German language files.
 = How to add the contact form not in English? =
 
 1. Add a language in the block "Language settings for the field names in the form" on the plugin settings page.
-2. Mark the check box (if it's not marked yet) in the block  "Change the names of the contact form fields and error messages", choose the necessary tab and fill in the fields. Choose the necessary tab in the block "Action after email is sent" as well and fill in the field. Save the changes.
+2. Mark the check box (if it's not marked yet) in the block  "Change the names of the contact form fields and error messages", choose the necessary tab,click the twistie to expand the list of the fields and fill in the fields. Choose the necessary tab in the block "Action after email is sent" as well and fill in the field. Save the changes.
 3. You will see the shortcode under the tab with the necessary language. Please paste that shortcode to the page or post. 
 
 = I'm not receiving messages from Contact Form OR The plugin does not send an email - "Sorry, email message could not be delivered." =
