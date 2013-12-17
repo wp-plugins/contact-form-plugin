@@ -1,14 +1,24 @@
-#adminmenu #toplevel_page_bws_plugins div.wp-menu-image,
-.admin-color-classic #adminmenu #toplevel_page_bws_plugins div.wp-menu-image,
+#adminmenu #toplevel_page_bws_plugins div.wp-menu-image {
+	background: url("../images/icon_16.png") no-repeat scroll center center transparent;
+}
+.admin-color-classic #adminmenu #toplevel_page_bws_plugins div.wp-menu-image {
+	background: url("../images/icon_16_b.png") no-repeat scroll center center transparent;
+}
 #adminmenu #toplevel_page_bws_plugins:hover div.wp-menu-image,
 #adminmenu #toplevel_page_bws_plugins.wp-has-current-submenu div.wp-menu-image {
-    background: url("../images/icon_16_single.png") no-repeat scroll center center transparent;
+	background: url("../images/icon_16_c.png") no-repeat scroll center center transparent;
+}	
+.wrap #icon-options-general.icon32-bws {
+	background: url("../images/icon_36.png") no-repeat scroll left top transparent;
+}
+.admin-color-classic .wrap #icon-options-general.icon32-bws {
+	background: url("../images/icon_36_b.png") no-repeat scroll left top transparent;
 }
 #toplevel_page_bws_plugins .wp-submenu .wp-first-item, .cntctfrm_hidden {
-    display:none;
+	display:none;
 }
 .bws_system_info_meta_box {
-    max-width: 850px;
+    width: 850px;
 }
 .bws_system_info_meta_box .hndle {
     cursor: pointer !important;
@@ -16,7 +26,7 @@
 .bws_system_info {
     float: left;
     margin-right: 10px;
-    max-width: 400px;
+    width: 400px;
 }
 .bws_system_info th {
     padding: 10px 0;
@@ -126,12 +136,6 @@
 .cntctfrm_language_tab_block {
     padding: 5px 10px 5px 5px;
 }
-#cntctfrmpr_pro_version {
-	background: none repeat scroll 0 0 #E0E0E0;
-    border: 1px solid #AAA;
-    padding-left: 10px;
-    margin-top: 50px;
-}
 #cntctfrmpr_left_table {
 	margin-right: 30px;
 	float: left;
@@ -239,8 +243,11 @@ td.bws_pro_version {
     padding: 5px;
     margin: 12px 0;
     background: #2484c6;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
     position: relative;
-    overflow: hidden;
+    overflow: hidden
 }
 .cntctfrm_message .cntctfrm_text {
     color: #FFF;
@@ -298,8 +305,11 @@ td.bws_pro_version {
     padding: 5px;
     margin: 12px 0;
     background: #2484c6;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
     position: relative;
-    overflow: hidden;
+    overflow: hidden
 }
 .cntctfrm_message_for_ctfrmtdb .cntctfrm_text {
     color: #FFF;

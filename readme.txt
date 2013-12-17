@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 3.0
-Tested up to: 3.7.1
-Stable tag: 3.67
+Tested up to: 3.8
+Stable tag: 3.68
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,7 +75,7 @@ We can fix some things for free for the users who provide translation of our plu
 
 1. Upload the `Contact Form` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin using the 'Plugins' menu in your WordPress admin panel.
-3. You can adjust the necessary settings using your WordPress admin panel in "Settings" > "Contact Form".
+3. You can adjust the necessary settings using your WordPress admin panel in "BWS Plugins" > "Contact Form".
 4. Create a page or a post and insert the shortcode [bestwebsoft_contact_form] into the text.
 
 <a href="http://bestwebsoft.com/wp-content/uploads/manual/wp_plugin/contact_form/Contact_Form-Installation_step-by-step_Instruction.pdf" target="_blank">View a PDF version of Step-by-step Instruction on Contact Form Installation</a>.
@@ -138,6 +138,10 @@ Note: If the Contact Form sends letters, but you don't receive them, you can ins
 6. Plugin extra settings in WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.68 - 17.12.2013 =
+* Update : We updated all functionality for wordpress 3.8.
+* Update : We changed capability to 'manage_options' for the plugins settings pages.
 
 = V3.67 - 05.12.2013 =
 * NEW : Ability to send email in plain format.
@@ -441,6 +445,9 @@ Note: If the Contact Form sends letters, but you don't receive them, you can ins
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.68 =
+We updated all functionality for wordpress 3.8. We changed capability to 'manage_options' for the plugins settings pages.
 
 = V3.67 =
 Ability to send email in plain format. A notice when changing settings on the plugin's settings page was added. The Ukrainian language file is updated. Screenshots are updated.

@@ -4,7 +4,7 @@ Plugin Name: Contact Form
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.67
+Version: 3.68
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -28,9 +28,9 @@ require_once( dirname( __FILE__ ) . '/bws_menu/bws_menu.php' );
 // Add option page in admin menu
 if( ! function_exists( 'cntctfrm_admin_menu' ) ) {
 	function cntctfrm_admin_menu() {
-		add_menu_page( 'BWS Plugins', 'BWS Plugins', 'edit_themes', 'bws_plugins', 'bws_add_menu_render', plugins_url( "images/px.png", __FILE__ ), 1001 ); 
-		add_submenu_page('bws_plugins', __( 'Contact Form Settings', 'contact_form' ), __( 'Contact Form', 'contact_form' ), 'edit_themes', "contact_form.php", 'cntctfrm_settings_page');
-		add_submenu_page('contact_form.php', __( 'Contact Form Pro Extra Settings', 'contact_form' ), __( 'Contact Form Pro', 'contact_form' ), 'edit_themes', "contact_form_pro_extra.php", 'cntctfrm_settings_page_extra');
+		add_menu_page( 'BWS Plugins', 'BWS Plugins', 'manage_options', 'bws_plugins', 'bws_add_menu_render', plugins_url( "images/px.png", __FILE__ ), 1001 ); 
+		add_submenu_page('bws_plugins', __( 'Contact Form Settings', 'contact_form' ), __( 'Contact Form', 'contact_form' ), 'manage_options', "contact_form.php", 'cntctfrm_settings_page');
+		add_submenu_page('contact_form.php', __( 'Contact Form Pro Extra Settings', 'contact_form' ), __( 'Contact Form Pro', 'contact_form' ), 'manage_options', "contact_form_pro_extra.php", 'cntctfrm_settings_page_extra');
 
 		//call register settings function
 		add_action( 'admin_init', 'cntctfrm_settings' );
@@ -551,7 +551,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 [bestwebsoft_contact_form lang=en]). <?php _e( "They work the same way.", 'contact_form' ); ?></p>
 				<?php _e( "If you leave the fields empty, the messages will be sent to the email address specified during registration.", 'contact_form' ); ?>
 			</span>
-			<table class="form-table" style="width:auto;" >
+			<table class="form-table" style="width:auto;">
 				<tr valign="top">
 					<th scope="row" style="width:200px;"><?php _e( "The user's email address:", 'contact_form' ); ?> </th>
 					<td colspan="2" style="width:750px;">
@@ -572,17 +572,28 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 						<span class="cntctfrm_info"><?php _e( "Enter the email address you want the messages forwarded to.", 'contact_form' ); ?></span>
 					</td>
 				</tr>
-				<tr valign="top" id="cntctfrmpr_pro_version">
+			</table>
+			<table class="form-table bws_pro_version" style="width:auto;">
+				<tr valign="top">
 					<th scope="row" style="width:200px;"><?php _e( "Add department selectbox to the contact form:", 'contact_form' ); ?></th>
 					<td colspan="2">
-						<div class="cntctfrmpr_pro_version_tooltip_settings">
-							<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'contact_form' ); ?>
-							<a title="Contact Form Pro" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-pro/?k=697c5e74f39779ce77850e11dbe21962&pn=77&v=<?php echo $plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"> <?php _e( 'Contact Form Pro', 'contact_form' ); ?></a>
-						</div>
 						<input type="radio" id="cntctfrmpr_select_email_department" name="cntctfrmpr_select_email" value="departments" disabled="disabled" /> 
 						<div class="cntctfrmpr_department_table"><img src="<?php echo plugins_url( 'images/pro_screen_1.png', __FILE__ ); ?>" alt="" /></div>
 					</td>
 				</tr>
+				<tr valign="top">
+					<th scope="row" colspan="2">
+						* <?php _e( 'If you upgrade to Pro version all your settings will be saved.', 'contact_form' ); ?>
+					</th>
+				</tr>
+				<tr valign="top" class="bws_pro_version_tooltip">
+					<th scope="row" colspan="2">
+						<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'contact_form' ); ?>
+						<a title="Contact Form Pro" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-pro/?k=697c5e74f39779ce77850e11dbe21962&pn=77&v=<?php echo $plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"> <?php _e( 'Contact Form Pro', 'contact_form' ); ?></a>
+					</th>
+				</tr>
+			</table>
+			<table class="form-table" style="width:auto;">
 				<tr valign="top">
 					<th scope="row" style="width:200px;"><?php _e( "Save emails to the database", 'contact_form' ); ?> </th>
 					<td colspan="2">
@@ -689,12 +700,7 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 						<td><?php _e( "Phone number", 'contact_form' ); ?></td>
 						<td><input type="checkbox" id="cntctfrm_display_phone_field" name="cntctfrm_display_phone_field" value="1" <?php if ( $cntctfrm_options['cntctfrm_display_phone_field'] == '1' ) echo "checked=\"checked\" "; ?>/></td>
 						<td><input type="checkbox" id="cntctfrm_required_phone_field" name="cntctfrm_required_phone_field" value="1" <?php if ( $cntctfrm_options['cntctfrm_required_phone_field'] == '1' ) echo "checked=\"checked\" "; ?>/></td>
-						<td>
-							<div class="cntctfrmpr_pro_version_tooltip_settings">
-								<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'contact_form' ); ?>
-								<a title="Contact Form Pro" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-pro/?k=697c5e74f39779ce77850e11dbe21962&pn=77&v=<?php echo $plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"> <?php _e( 'Contact Form Pro', 'contact_form' ); ?></a>
-							</div>
-						</td>
+						<td></td>
 						<td></td>
 						<td></td>
 					</tr>
@@ -702,17 +708,26 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 						<td><?php _e( "Subject", 'contact_form' ); ?></td>
 						<td></td>
 						<td><input type="checkbox" id="cntctfrm_required_subject_field" name="cntctfrm_required_subject_field" value="1" <?php if ( $cntctfrm_options['cntctfrm_required_subject_field'] == '1' ) echo "checked=\"checked\" "; ?>/></td>
-						<td id="cntctfrmpr_pro_version"><input class="subject" disabled="disabled" type="checkbox" name="cntctfrmpr_visible_subject" value="1" /></td>
-						<td id="cntctfrmpr_pro_version"><input class="subject" disabled="disabled" type="checkbox" name="cntctfrmpr_disabled_subject" value="1" /></td>						
-						<td id="cntctfrmpr_pro_version"><input class="subject" disabled="disabled" type="text" name="cntctfrmpr_default_subject" value="" /></td>
+						<td class="bws_pro_version"><input class="subject" disabled="disabled" type="checkbox" name="cntctfrmpr_visible_subject" value="1" /></td>
+						<td class="bws_pro_version"><input class="subject" disabled="disabled" type="checkbox" name="cntctfrmpr_disabled_subject" value="1" /></td>						
+						<td class="bws_pro_version"><input class="subject" disabled="disabled" type="text" name="cntctfrmpr_default_subject" value="" /></td>
 					</tr>
 					<tr valign="top">
 						<td><?php _e( "Message", 'contact_form' ); ?></td>
 						<td></td>
 						<td><input type="checkbox" id="cntctfrm_required_message_field" name="cntctfrm_required_message_field" value="1" <?php if ( $cntctfrm_options['cntctfrm_required_message_field'] == '1' ) echo "checked=\"checked\" "; ?>/></td>						
-						<td id="cntctfrmpr_pro_version"><input class="message" disabled="disabled" type="checkbox" name="cntctfrmpr_visible_message" value="1" /></td>
-						<td id="cntctfrmpr_pro_version"><input class="message" disabled="disabled" disabled="disabled" type="checkbox" name="cntctfrmpr_disabled_message" value="1" /></td>						
-						<td id="cntctfrmpr_pro_version"><input class="message" disabled="disabled" type="text" name="cntctfrmpr_default_message" value="" /></td>
+						<td class="bws_pro_version"><input class="message" disabled="disabled" type="checkbox" name="cntctfrmpr_visible_message" value="1" /></td>
+						<td class="bws_pro_version"><input class="message" disabled="disabled" disabled="disabled" type="checkbox" name="cntctfrmpr_disabled_message" value="1" /></td>						
+						<td class="bws_pro_version"><input class="message" disabled="disabled" type="text" name="cntctfrmpr_default_message" value="" /></td>
+					</tr>
+					<tr valign="top">
+						<td></td>
+						<td></td>
+						<td></td>
+						<td colspan="3" class="bws_pro_version_tooltip"> 
+							<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'contact_form' ); ?>
+							<a title="Contact Form Pro" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-pro/?k=697c5e74f39779ce77850e11dbe21962&pn=77&v=<?php echo $plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"> <?php _e( 'Contact Form Pro', 'contact_form' ); ?></a>
+						</td>
 					</tr>
 					<tr valign="top">
 						<td>
@@ -773,13 +788,16 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if ( $cntctfrm_options['cntctfrm_additions_options'] == '0' ) echo "cntctfrm_hidden"; ?>">
 					<th scope="row" style="width:200px;"></th>
-					<td colspan="3" id="cntctfrmpr_pro_version">
-						<div class="cntctfrmpr_pro_version_tooltip_settings" style="margin-top: -30px;">
-							<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'contact_form' ); ?>
-							<a title="Contact Form Pro" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-pro/?k=697c5e74f39779ce77850e11dbe21962&pn=77&v=<?php echo $plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"> <?php _e( 'Contact Form Pro', 'contact_form' ); ?></a>
-						</div>	
+					<td colspan="3" class="bws_pro_version">
 						<label><input disabled="disabled" type="checkbox" value="1" name="cntctfrmpr_display_privacy_check"> <?php _e( 'Agreement checkbox', 'contact_form' ); ?></label> <span style="color: #888888;font-size: 10px;">(<?php _e( 'Required checkbox for submitting the form', 'contact_form' ); ?>)</span><br />
 						<label><input disabled="disabled" type="checkbox" value="1" name="cntctfrmpr_display_optional_check"> <?php _e( 'Optional checkbox', 'contact_form' ); ?></label> <span style="color: #888888;font-size: 10px;">(<?php _e( 'Optional checkbox, the results of which will be displayed in email', 'contact_form' ); ?>)</span><br />
+					</td>					
+				</tr>
+				<tr valign="top" class="cntctfrm_additions_block <?php if ( $cntctfrm_options['cntctfrm_additions_options'] == '0' ) echo "cntctfrm_hidden"; ?>">
+					<th></th>
+					<td colspan="3" class="bws_pro_version_tooltip"> 
+						<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'contact_form' ); ?>
+						<a title="Contact Form Pro" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-pro/?k=697c5e74f39779ce77850e11dbe21962&pn=77&v=<?php echo $plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"> <?php _e( 'Contact Form Pro', 'contact_form' ); ?></a>
 					</td>
 				</tr>
 				<tr valign="top" class="cntctfrm_additions_block <?php if ( $cntctfrm_options['cntctfrm_additions_options'] == '0' ) echo "cntctfrm_hidden"; ?>">
@@ -927,6 +945,16 @@ if( ! function_exists( 'cntctfrm_settings_page' ) ) {
 			</p>
 			<?php wp_nonce_field( plugin_basename(__FILE__), 'cntctfrm_nonce_name' ); ?>
 		</form>
+		<div class="bws-plugin-reviews">
+			<div class="bws-plugin-reviews-rate">
+			<?php _e( 'If you enjoy our plugin, please give it 5 stars on WordPress', 'contact_form' ); ?>:<br/>
+			<a href="http://wordpress.org/support/view/plugin-reviews/contact-form-plugin" target="_blank" title="Contact Form reviews"><?php _e( 'Rate the plugin', 'contact_form' ); ?></a><br/>
+			</div>
+			<div class="bws-plugin-reviews-support">
+			<?php _e( 'If there is something wrong about it, please contact us', 'contact_form' ); ?>:<br/>
+			<a href="http://support.bestwebsoft.com">http://support.bestwebsoft.com</a>
+			</div>
+		</div>		
 	</div>
 	<?php 
 	}
@@ -946,270 +974,275 @@ if ( ! function_exists( 'cntctfrm_settings_page_extra' ) ) {
 				<li><a class="current" href="admin.php?page=contact_form_pro_extra.php"><?php _e( 'Extra settings', 'contact_form' ); ?></a></li>
 			</ul>
 			<div class="clear"></div>
-			<div class="cntctfrmpr_pro_version_tooltip">
-				<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'contact_form' ); ?>
-				<a title="Contact Form Pro" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-pro/?k=697c5e74f39779ce77850e11dbe21962&pn=77&v=<?php echo $plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"> <?php _e( 'Contact Form Pro', 'contact_form' ); ?></a>
+			<div id="cntctfrmpr_left_table">
+				<table class="form-table bws_pro_version" style="width:auto;" >
+					<tr class="bws_pro_version_tooltip">
+						<th scope="row" colspan="2">
+							<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'contact_form' ); ?>
+							<a title="Contact Form Pro" target="_blank" href="http://bestwebsoft.com/plugin/contact-form-pro/?k=697c5e74f39779ce77850e11dbe21962&pn=77&v=<?php echo $plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>"> <?php _e( 'Contact Form Pro', 'contact_form' ); ?></a>
+						</th>
+					</tr>
+					<tr valign="top">
+						<th scope="row" style="width:200px;"><?php _e( "Errors output", 'contact_form' ); ?></th>
+						<td colspan="2">
+							<select name="cntctfrmpr_error_displaying">
+								<option value="labels"><?php _e( "Display error messages", 'contact_form' ); ?></option>
+								<option value="input_colors"><?php _e( "Color of the input field errors.", 'contact_form' ); ?></option>
+								<option value="both" selected="selected"><?php _e( "Display error messages & color of the input field errors", 'contact_form' ); ?></option>
+							</select>
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row" style="width:200px;"><?php _e( "Add placeholder to the input blocks", 'contact_form' ); ?></th>
+						<td colspan="2">
+							<input disabled='disabled' type="checkbox" name="cntctfrmpr_placeholder" value="1" checked="checked"/>
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row" style="width:200px;"><?php _e( "Add tooltips", 'contact_form' ); ?></th>
+						<td colspan="2">
+							<div>
+								<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_name" value="1" checked="checked"/>
+								<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_name"><?php _e( "Name", 'contact_form' ); ?></label>
+							</div>
+							<?php if ( $cntctfrm_options['cntctfrm_display_address_field'] == '1' ) { ?>
+								<div>
+									<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_address" value="1" checked="checked"/>
+									<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_address"><?php _e( "Address", 'contact_form' ); ?></label>
+								</div>
+							<?php } ?>
+							<div>
+								<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_email" value="1" checked="checked"/>
+								<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_email"><?php _e( "Email address", 'contact_form' ); ?></label>
+							</div>
+							<?php if ( $cntctfrm_options['cntctfrm_display_phone_field'] == '1' ) { ?>
+								<div>
+									<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_phone" value="1" checked="checked"/>
+									<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_phone"><?php _e( "Phone Number", 'contact_form' ); ?></label>
+								</div>
+							<?php } ?>
+							<div>
+								<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_subject" value="1" checked="checked"/>
+								<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_subject"><?php _e( "Subject", 'contact_form' ); ?></label>
+							</div>
+							<div>
+								<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_message" value="1" checked="checked"/>
+								<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_message"><?php _e( "Message", 'contact_form' ); ?></label>
+							</div>
+							<?php if ( $cntctfrm_options['cntctfrm_attachment_explanations'] == '1' ) { ?>
+								<div>
+									<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_attachment" value="1" checked="checked"/>
+									<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_attachment"><?php _e( "Attachment", 'contact_form' ); ?></label>
+								</div>
+							<?php } ?>
+							<div>
+								<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_captcha" value="1" />
+								<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_captcha"><?php _e( "Captcha", 'contact_form' ); ?></label><span style="color: #888888;font-size: 10px;"><?php _e( '(powered by bestwebsoft.com)', 'contact_form' ); ?></span>
+							</div>									
+						</td>
+					</tr>
+					<tr valign="top">
+						<th colspan="3" scope="row" style="width:200px;"><input disabled='disabled' type="checkbox" id="cntctfrmpr_style_options" name="cntctfrmpr_style_options" value="1" checked="checked" /> <?php _e( "Style options", 'contact_form' ); ?></th>
+					</tr>				
+					<tr valign="top" class="cntctfrmpr_style_block <?php if ( $cntctfrm_options['style_options'] == '0') echo "cntctfrmpr_hidden"; ?>">
+						<th scope="row" style="width:200px;"><?php _e( "Text color", 'contact_form' ); ?></th>
+						<td colspan="2">
+							<div>
+								<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
+								<input disabled='disabled' type="text" name="cntctfrmpr_label_color" value="" class="cntctfrmpr_colorPicker" />
+								<?php _e( 'Label text color', 'contact_form' ); ?>
+							</div>
+							<div>
+								<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
+								<input disabled='disabled' type="text" name="cntctfrmpr_input_placeholder_color" value="" class="cntctfrmpr_colorPicker" />
+								<?php _e( "Placeholder color", 'contact_form' ); ?>
+							</div>
+						</td>
+					</tr>
+					<tr valign="top" class="cntctfrmpr_style_block">
+						<th scope="row" style="width:200px;"><?php _e( "Errors color", 'contact_form' ); ?></th>
+						<td colspan="2">
+							<div>
+								<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
+								<input disabled='disabled' type="text" name="cntctfrmpr_error_color" value="" class="cntctfrmpr_colorPicker" />
+								<?php _e( 'Error text color', 'contact_form' ); ?>
+							</div>
+							<div>
+								<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
+								<input disabled='disabled' type="text" name="cntctfrmpr_error_input_color" value="" class="cntctfrmpr_colorPicker" />
+								<?php _e( 'Background color of the input field errors', 'contact_form' ); ?>
+							</div>
+							<div>
+								<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
+								<input disabled='disabled' type="text" name="cntctfrmpr_error_input_border_color" value="" class="cntctfrmpr_colorPicker" />
+								<?php _e( 'Border color of the input field errors', 'contact_form' ); ?>
+							</div>
+							<div>
+								<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" id="" value="<?php _e('Default', 'contact_form'); ?>" />
+								<input disabled='disabled' type="text" name="cntctfrmpr_input_placeholder_error_color" value="" class="cntctfrmpr_colorPicker " />
+								<?php _e( "Placeholder color of the input field errors", 'contact_form' ); ?>
+							</div>
+						</td>
+					</tr>					
+					<tr valign="top" class="cntctfrmpr_style_block">
+						<th scope="row" style="width:200px;"><?php _e( "Input fields", 'contact_form' ); ?></th>
+						<td colspan="2">
+							<div>
+								<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" id="" value="<?php _e('Default', 'contact_form'); ?>" />
+								<input disabled='disabled' type="text" name="cntctfrmpr_input_background" value="" class="cntctfrmpr_colorPicker" />
+								<?php _e( "Input fields background color", 'contact_form' ); ?>
+							</div>
+							<div>
+								<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
+								<input disabled='disabled' type="text" name="cntctfrmpr_input_color" value="" class="cntctfrmpr_colorPicker" />
+								<?php _e( "Text fields color", 'contact_form' ); ?>
+							</div>
+							<input disabled='disabled' style="margin-left: 66px;" size="8" type="text" value="" name="cntctfrmpr_border_input_width" /> <?php _e( 'Border width in px, numbers only', 'contact_form' ); ?><br />
+							<div>
+								<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />								
+								<input disabled='disabled' type="text" name="cntctfrmpr_border_input_color" value="" class="cntctfrmpr_colorPicker" />
+								 <?php _e( 'Border color', 'contact_form' ); ?>
+							</div>
+						</td>
+					</tr>
+					<tr valign="top" class="cntctfrmpr_style_block">
+						<th scope="row" style="width:200px;"><?php _e( "Submit button", 'contact_form' ); ?></th>
+						<td colspan="2">
+							<input disabled='disabled' style="margin-left: 66px;" size="8" type="text" value="" name="cntctfrmpr_button_width" /> <?php _e( 'Width in px, numbers only', 'contact_form' ); ?><br />
+							<div>
+								<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
+								<input disabled='disabled' type="text" name="cntctfrmpr_button_backgroud" value="" class="cntctfrmpr_colorPicker" />
+								 <?php _e( 'Button color', 'contact_form' ); ?>
+							</div>
+							<div>
+								<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
+								<input disabled='disabled' type="text" name="cntctfrmpr_button_color" value="" class="cntctfrmpr_colorPicker" />
+								<?php _e( "Button text color", 'contact_form' ); ?>
+							</div>
+							<div>
+								<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
+								<input disabled='disabled' type="text" name="cntctfrmpr_border_button_color" value="" class="cntctfrmpr_colorPicker" />
+								 <?php _e( 'Border color', 'contact_form' ); ?>
+							</div>
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row" colspan="2">
+							* <?php _e( 'If you upgrade to Pro version all your settings will be saved.', 'contact_form' ); ?>
+						</th>
+					</tr>				
+				</table>    
+				<input type="hidden" name="cntctfrmpr_form_submit" value="submit" />
+				<p class="submit">
+					<input disabled='disabled' type="button" class="button-primary" value="<?php _e('Save Changes') ?>" />
+				</p>
 			</div>
-			<div id="cntctfrmpr_pro_version">
-				<div id="cntctfrmpr_left_table">
-					<table class="form-table" style="width:auto;" >
-						<tr valign="top">
-							<th scope="row" style="width:200px;"><?php _e( "Errors output", 'contact_form' ); ?></th>
-							<td colspan="2">
-								<select name="cntctfrmpr_error_displaying">
-									<option value="labels"><?php _e( "Display error messages", 'contact_form' ); ?></option>
-									<option value="input_colors"><?php _e( "Color of the input field errors.", 'contact_form' ); ?></option>
-									<option value="both" selected="selected"><?php _e( "Display error messages & color of the input field errors", 'contact_form' ); ?></option>
-								</select>
-							</td>
-						</tr>
-						<tr valign="top">
-							<th scope="row" style="width:200px;"><?php _e( "Add placeholder to the input blocks", 'contact_form' ); ?></th>
-							<td colspan="2">
-								<input disabled='disabled' type="checkbox" name="cntctfrmpr_placeholder" value="1" checked="checked"/>
-							</td>
-						</tr>
-						<tr valign="top">
-							<th scope="row" style="width:200px;"><?php _e( "Add tooltips", 'contact_form' ); ?></th>
-							<td colspan="2">
-								<div>
-									<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_name" value="1" checked="checked"/>
-									<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_name"><?php _e( "Name", 'contact_form' ); ?></label>
-								</div>
-								<?php if ( $cntctfrm_options['cntctfrm_display_address_field'] == '1' ) { ?>
-									<div>
-										<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_address" value="1" checked="checked"/>
-										<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_address"><?php _e( "Address", 'contact_form' ); ?></label>
-									</div>
-								<?php } ?>
-								<div>
-									<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_email" value="1" checked="checked"/>
-									<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_email"><?php _e( "Email address", 'contact_form' ); ?></label>
-								</div>
-								<?php if ( $cntctfrm_options['cntctfrm_display_phone_field'] == '1' ) { ?>
-									<div>
-										<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_phone" value="1" checked="checked"/>
-										<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_phone"><?php _e( "Phone Number", 'contact_form' ); ?></label>
-									</div>
-								<?php } ?>
-								<div>
-									<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_subject" value="1" checked="checked"/>
-									<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_subject"><?php _e( "Subject", 'contact_form' ); ?></label>
-								</div>
-								<div>
-									<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_message" value="1" checked="checked"/>
-									<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_message"><?php _e( "Message", 'contact_form' ); ?></label>
-								</div>
-								<?php if ( $cntctfrm_options['cntctfrm_attachment_explanations'] == '1' ) { ?>
-									<div>
-										<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_attachment" value="1" checked="checked"/>
-										<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_attachment"><?php _e( "Attachment", 'contact_form' ); ?></label>
-									</div>
-								<?php } ?>
-								<div>
-									<input disabled='disabled' type="checkbox" name="cntctfrmpr_tooltip_display_captcha" value="1" />
-									<label class="cntctfrmpr_tooltip_label" for="cntctfrmpr_tooltip_display_captcha"><?php _e( "Captcha", 'contact_form' ); ?></label><span style="color: #888888;font-size: 10px;"><?php _e( '(powered by bestwebsoft.com)', 'contact_form' ); ?></span>
-								</div>									
-							</td>
-						</tr>
-						<tr valign="top">
-							<th colspan="3" scope="row" style="width:200px;"><input disabled='disabled' type="checkbox" id="cntctfrmpr_style_options" name="cntctfrmpr_style_options" value="1" checked="checked" /> <?php _e( "Style options", 'contact_form' ); ?></th>
-						</tr>				
-						<tr valign="top" class="cntctfrmpr_style_block <?php if ( $cntctfrm_options['style_options'] == '0') echo "cntctfrmpr_hidden"; ?>">
-							<th scope="row" style="width:200px;"><?php _e( "Text color", 'contact_form' ); ?></th>
-							<td colspan="2">
-								<div>
-									<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
-									<input disabled='disabled' type="text" name="cntctfrmpr_label_color" value="" class="cntctfrmpr_colorPicker" />
-									<?php _e( 'Label text color', 'contact_form' ); ?>
-								</div>
-								<div>
-									<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
-									<input disabled='disabled' type="text" name="cntctfrmpr_input_placeholder_color" value="" class="cntctfrmpr_colorPicker" />
-									<?php _e( "Placeholder color", 'contact_form' ); ?>
-								</div>
-							</td>
-						</tr>
-						<tr valign="top" class="cntctfrmpr_style_block">
-							<th scope="row" style="width:200px;"><?php _e( "Errors color", 'contact_form' ); ?></th>
-							<td colspan="2">
-								<div>
-									<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
-									<input disabled='disabled' type="text" name="cntctfrmpr_error_color" value="" class="cntctfrmpr_colorPicker" />
-									<?php _e( 'Error text color', 'contact_form' ); ?>
-								</div>
-								<div>
-									<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
-									<input disabled='disabled' type="text" name="cntctfrmpr_error_input_color" value="" class="cntctfrmpr_colorPicker" />
-									<?php _e( 'Background color of the input field errors', 'contact_form' ); ?>
-								</div>
-								<div>
-									<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
-									<input disabled='disabled' type="text" name="cntctfrmpr_error_input_border_color" value="" class="cntctfrmpr_colorPicker" />
-									<?php _e( 'Border color of the input field errors', 'contact_form' ); ?>
-								</div>
-								<div>
-									<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" id="" value="<?php _e('Default', 'contact_form'); ?>" />
-									<input disabled='disabled' type="text" name="cntctfrmpr_input_placeholder_error_color" value="" class="cntctfrmpr_colorPicker " />
-									<?php _e( "Placeholder color of the input field errors", 'contact_form' ); ?>
-								</div>
-							</td>
-						</tr>					
-						<tr valign="top" class="cntctfrmpr_style_block">
-							<th scope="row" style="width:200px;"><?php _e( "Input fields", 'contact_form' ); ?></th>
-							<td colspan="2">
-								<div>
-									<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" id="" value="<?php _e('Default', 'contact_form'); ?>" />
-									<input disabled='disabled' type="text" name="cntctfrmpr_input_background" value="" class="cntctfrmpr_colorPicker" />
-									<?php _e( "Input fields background color", 'contact_form' ); ?>
-								</div>
-								<div>
-									<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
-									<input disabled='disabled' type="text" name="cntctfrmpr_input_color" value="" class="cntctfrmpr_colorPicker" />
-									<?php _e( "Text fields color", 'contact_form' ); ?>
-								</div>
-								<input style="margin-left: 66px;" size="8" type="text" value="" name="cntctfrmpr_border_input_width" /> <?php _e( 'Border width in px, numbers only', 'contact_form' ); ?><br />
-								<div>
-									<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />								
-									<input disabled='disabled' type="text" name="cntctfrmpr_border_input_color" value="" class="cntctfrmpr_colorPicker" />
-									 <?php _e( 'Border color', 'contact_form' ); ?>
-								</div>
-							</td>
-						</tr>
-						<tr valign="top" class="cntctfrmpr_style_block">
-							<th scope="row" style="width:200px;"><?php _e( "Submit button", 'contact_form' ); ?></th>
-							<td colspan="2">
-								<input style="margin-left: 66px;" size="8" type="text" value="" name="cntctfrmpr_button_width" /> <?php _e( 'Width in px, numbers only', 'contact_form' ); ?><br />
-								<div>
-									<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
-									<input disabled='disabled' type="text" name="cntctfrmpr_button_backgroud" value="" class="cntctfrmpr_colorPicker" />
-									 <?php _e( 'Button color', 'contact_form' ); ?>
-								</div>
-								<div>
-									<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
-									<input disabled='disabled' type="text" name="cntctfrmpr_button_color" value="" class="cntctfrmpr_colorPicker" />
-									<?php _e( "Button text color", 'contact_form' ); ?>
-								</div>
-								<div>
-									<input disabled='disabled' type="button" class="cntctfrmpr_default button-small button" value="<?php _e('Default', 'contact_form'); ?>" />
-									<input disabled='disabled' type="text" name="cntctfrmpr_border_button_color" value="" class="cntctfrmpr_colorPicker" />
-									 <?php _e( 'Border color', 'contact_form' ); ?>
-								</div>
-							</td>
-						</tr>				
-					</table>    
-					<input type="hidden" name="cntctfrmpr_form_submit" value="submit" />
-					<p class="submit">
-						<input disabled='disabled' type="button" class="button-primary" value="<?php _e('Save Changes') ?>" />
-					</p>
-				</div>
-				<div id="cntctfrmpr_right_table">
-					<h3><?php _e( "Contact Form Pro | Preview", 'contact_form' ); ?></h3>
-					<div id="cntctfrmpr_contact_form">
-						<div id="cntctfrmpr_show_errors_block">
-							<input disabled="" type="checkbox" id="cntctfrmpr_show_errors" name="cntctfrmpr_show_errors" /> <?php _e( "Show with errors", 'contact_form' ); ?>
-						</div>
-						<div class="cntctfrmpr_error_text hidden" style="text-align: left;"><?php echo $cntctfrm_options['cntctfrm_form_error']['en']; ?></div>
-						<div style="text-align: left; padding-top: 5px;">
-							<label for="cntctfrmpr_contact_name"><?php echo $cntctfrm_options['cntctfrm_name_label']['en']; if ( $cntctfrm_options['cntctfrm_required_name_field'] == 1 ) echo '<span class="required"> *</span>'; ?></label>
-						</div>
-						<div class="cntctfrmpr_error_text hidden" style="text-align: left;"><?php echo $cntctfrm_options['cntctfrm_name_error']['en']; ?></div>
-						<div style="text-align: left;">
-							<input placeholder="<?php _e( "Please enter your full name...", 'contact_form' ); ?>" class="text" type="text" size="40" value="" name="cntctfrmpr_contact_name" id="cntctfrmpr_contact_name" style="text-align: left; margin: 0;" />
-							<div class="cntctfrmpr_help_box">
-								<div class="cntctfrmpr_hidden_help_text" style="font-size: 12px; display: none;"><?php _e( "Please enter your full name...", 'contact_form' ); ?></div>
-							</div>
-						</div>
-						<?php if ( $cntctfrm_options['cntctfrm_display_address_field'] == 1 ) { ?>
-							<div style="text-align: left;">
-								<label for="cntctfrmpr_contact_address"><?php echo $cntctfrm_options['cntctfrm_address_label']['en']; if ( $cntctfrm_options['cntctfrm_required_address_field'] == 1 ) echo '<span class="required"> *</span>'; ?></label>
-							</div>
-							<?php if ( $cntctfrm_options['cntctfrm_required_address_field'] == 1 ) { ?>
-								<div class="cntctfrmpr_error_text hidden" style="text-align: left;"><?php echo $cntctfrm_options['cntctfrm_address_error']['en']; ?></div>
-							<?php } ?>
-							<div style="text-align: left;">
-								<input placeholder="<?php _e( "Please enter your address...", 'contact_form' ); ?>" class="text" type="text" size="40" value="" name="cntctfrmpr_contact_address" id="cntctfrmpr_contact_address" style="text-align: left; margin: 0;" />
-								<div class="cntctfrmpr_help_box">
-									<div class="cntctfrmpr_hidden_help_text" style="font-size: 12px; display: none;"><?php _e( "Please enter your address...", 'contact_form' ); ?></div>
-								</div>
-							</div>
-						<?php } ?>
-						<div style="text-align: left;">
-							<label for="cntctfrmpr_contact_email"><?php echo $cntctfrm_options['cntctfrm_email_label']['en']; if ( $cntctfrm_options['cntctfrm_required_email_field'] == 1 ) echo '<span class="required"> *</span>'; ?></label>
-						</div>
-						<div class="cntctfrmpr_error_text hidden" style="text-align: left;"><?php echo $cntctfrm_options['cntctfrm_email_error']['en']; ?></div>
-						<div style="text-align: left;">
-							<input placeholder="<?php _e( "Please enter your email address...", 'contact_form' ); ?>" class="text" type="text" size="40" value="" name="cntctfrmpr_contact_email" id="cntctfrmpr_contact_email" style="text-align: left; margin: 0;" />
-							<div class="cntctfrmpr_help_box">
-								<div class="cntctfrmpr_hidden_help_text" style="font-size: 12px; display: none;"><?php _e( "Please enter your email address...", 'contact_form' ); ?></div>
-							</div>
-						</div>
-						<?php if ( $cntctfrm_options['cntctfrm_display_phone_field'] == 1 ) { ?>
-							<div style="text-align: left;">
-								<label for="cntctfrmpr_contact_phone"><?php echo $cntctfrm_options['cntctfrm_phone_label']['en']; if ( $cntctfrm_options['cntctfrm_required_phone_field'] == 1 ) echo '<span class="required"> *</span>'; ?></label>
-							</div>
-							<div class="cntctfrmpr_error_text hidden" style="text-align: left;"><?php echo $cntctfrm_options['phone_error']['en']; ?></div>
-							<div style="text-align: left;">
-								<input placeholder="<?php _e( "Please enter your phone number...", 'contact_form' ); ?>" class="text" type="text" size="40" value="" name="cntctfrmpr_contact_phone" id="cntctfrmpr_contact_phone" style="text-align: left; margin: 0;" />
-								<div class="cntctfrmpr_help_box">
-									<div class="cntctfrmpr_hidden_help_text" style="font-size: 12px; display: none;"><?php _e( "Please enter your phone number...", 'contact_form' ); ?></div>
-								</div>
-							</div>
-						<?php } ?>
-						<div style="text-align: left;">
-							<label for="cntctfrmpr_contact_subject"><?php echo $cntctfrm_options['cntctfrm_subject_label']['en']; if ( $cntctfrm_options['cntctfrm_required_subject_field'] == 1 ) echo '<span class="required"> *</span>'; ?></label>
-						</div>
-						<div class="cntctfrmpr_error_text hidden" style="text-align: left;"><?php echo $cntctfrm_options['cntctfrm_subject_error']['en']; ?></div>
-						<div style="text-align: left;">
-							<input placeholder="<?php _e( "Please enter subject...", 'contact_form' ); ?>" class="text" type="text" size="40" value="" name="cntctfrmpr_contact_subject" id="cntctfrmpr_contact_subject" style="text-align: left; margin: 0;" />
-							<div class="cntctfrmpr_help_box">
-								<div class="cntctfrmpr_hidden_help_text" style="font-size: 12px; display: none;"><?php _e( "Please enter subject...", 'contact_form' ); ?></div>
-							</div>
-						</div>
-						<div style="text-align: left;">
-							<label for="cntctfrmpr_contact_message"><?php echo $cntctfrm_options['cntctfrm_message_label']['en']; if ( $cntctfrm_options['cntctfrm_required_message_field'] == 1 ) echo '<span class="required"> *</span>'; ?></label>
-						</div>
-						<div class="cntctfrmpr_error_text hidden" style="text-align: left;"><?php echo $cntctfrm_options['cntctfrm_message_error']['en']; ?></div>
-						<div style="text-align: left;">
-							<textarea placeholder="<?php _e( "Please enter your message...", 'contact_form' ); ?>" rows="5" cols="30" name="cntctfrmpr_contact_message" id="cntctfrmpr_contact_message"></textarea>
-							<div class="cntctfrmpr_help_box">
-								<div class="cntctfrmpr_hidden_help_text" style="font-size: 12px; display: none;"><?php _e( "Please enter your message...", 'contact_form' ); ?></div>
-							</div>
-						</div>
-						<?php if ( $cntctfrm_options['cntctfrm_attachment'] == 1 ) { ?>
-							<div style="text-align: left;">
-								<label for="cntctfrmpr_contact_attachment"><?php echo $cntctfrm_options['cntctfrm_attachment_label']['en']; ?></label>
-							</div>					
-							<div class="cntctfrmpr_error_text hidden" style="text-align: left;"><?php echo $cntctfrm_options['cntctfrm_attachment_error']['en']; ?></div>
-							<div style="text-align: left;">
-							<input type="file" name="cntctfrmpr_contact_attachment" id="cntctfrmpr_contact_attachment" style="float:left;" />
-							<?php if ( $cntctfrm_options['cntctfrm_attachment_explanations'] == 1 ) { ?>
-								<div class="cntctfrmpr_help_box cntctfrmpr_hidden_help_text_attach"><div class="cntctfrmpr_hidden_help_text" style="font-size: 12px; display: none;"><?php echo $cntctfrm_options['cntctfrm_attachment_tooltip']['en']; ?></div></div>
-							<?php } ?>
-							</div>
-						<?php } ?>
-						<?php if ( $cntctfrm_options['cntctfrm_send_copy'] == 1 ) { ?>
-							<div style="text-align: left;">
-								<input type="checkbox" value="1" name="cntctfrmpr_contact_send_copy" id="cntctfrmpr_contact_send_copy" style="text-align: left; margin: 0;" />
-								<label for="cntctfrmpr_contact_send_copy"><?php echo $cntctfrm_options['cntctfrm_send_copy_label']['en']; ?></label>
-							</div>
-						<?php } ?>					
-						<div style="text-align: left; padding-top: 8px;">
-							<input type="submit" value="<?php echo $cntctfrm_options['cntctfrm_submit_label']['en']; ?>" style="cursor: pointer; margin: 0pt; text-align: center;margin-bottom:10px;" /> 
-						</div>				
+			<div id="cntctfrmpr_right_table">
+				<h3><?php _e( "Contact Form Pro | Preview", 'contact_form' ); ?></h3>
+				<div id="cntctfrmpr_contact_form">
+					<div id="cntctfrmpr_show_errors_block">
+						<input disabled="" type="checkbox" id="cntctfrmpr_show_errors" name="cntctfrmpr_show_errors" /> <?php _e( "Show with errors", 'contact_form' ); ?>
 					</div>
-					<div id="cntctfrmpr_shortcode">
-						<?php _e( "If you would like to add the Contact Form to your website, just copy and paste this shortcode to your post or page or widget:", 'contact_form' ); ?><br/>
-						<div>
-							<code id="cntctfrmpr_shortcode_code">
-								[bestwebsoft_contact_form]
-							</code>					
+					<div class="cntctfrmpr_error_text hidden" style="text-align: left;"><?php echo $cntctfrm_options['cntctfrm_form_error']['en']; ?></div>
+					<div style="text-align: left; padding-top: 5px;">
+						<label for="cntctfrmpr_contact_name"><?php echo $cntctfrm_options['cntctfrm_name_label']['en']; if ( $cntctfrm_options['cntctfrm_required_name_field'] == 1 ) echo '<span class="required"> *</span>'; ?></label>
+					</div>
+					<div class="cntctfrmpr_error_text hidden" style="text-align: left;"><?php echo $cntctfrm_options['cntctfrm_name_error']['en']; ?></div>
+					<div style="text-align: left;">
+						<input placeholder="<?php _e( "Please enter your full name...", 'contact_form' ); ?>" class="text" type="text" size="40" value="" name="cntctfrmpr_contact_name" id="cntctfrmpr_contact_name" style="text-align: left; margin: 0;" />
+						<div class="cntctfrmpr_help_box">
+							<div class="cntctfrmpr_hidden_help_text" style="font-size: 12px; display: none;"><?php _e( "Please enter your full name...", 'contact_form' ); ?></div>
 						</div>
 					</div>
+					<?php if ( $cntctfrm_options['cntctfrm_display_address_field'] == 1 ) { ?>
+						<div style="text-align: left;">
+							<label for="cntctfrmpr_contact_address"><?php echo $cntctfrm_options['cntctfrm_address_label']['en']; if ( $cntctfrm_options['cntctfrm_required_address_field'] == 1 ) echo '<span class="required"> *</span>'; ?></label>
+						</div>
+						<?php if ( $cntctfrm_options['cntctfrm_required_address_field'] == 1 ) { ?>
+							<div class="cntctfrmpr_error_text hidden" style="text-align: left;"><?php echo $cntctfrm_options['cntctfrm_address_error']['en']; ?></div>
+						<?php } ?>
+						<div style="text-align: left;">
+							<input placeholder="<?php _e( "Please enter your address...", 'contact_form' ); ?>" class="text" type="text" size="40" value="" name="cntctfrmpr_contact_address" id="cntctfrmpr_contact_address" style="text-align: left; margin: 0;" />
+							<div class="cntctfrmpr_help_box">
+								<div class="cntctfrmpr_hidden_help_text" style="font-size: 12px; display: none;"><?php _e( "Please enter your address...", 'contact_form' ); ?></div>
+							</div>
+						</div>
+					<?php } ?>
+					<div style="text-align: left;">
+						<label for="cntctfrmpr_contact_email"><?php echo $cntctfrm_options['cntctfrm_email_label']['en']; if ( $cntctfrm_options['cntctfrm_required_email_field'] == 1 ) echo '<span class="required"> *</span>'; ?></label>
+					</div>
+					<div class="cntctfrmpr_error_text hidden" style="text-align: left;"><?php echo $cntctfrm_options['cntctfrm_email_error']['en']; ?></div>
+					<div style="text-align: left;">
+						<input placeholder="<?php _e( "Please enter your email address...", 'contact_form' ); ?>" class="text" type="text" size="40" value="" name="cntctfrmpr_contact_email" id="cntctfrmpr_contact_email" style="text-align: left; margin: 0;" />
+						<div class="cntctfrmpr_help_box">
+							<div class="cntctfrmpr_hidden_help_text" style="font-size: 12px; display: none;"><?php _e( "Please enter your email address...", 'contact_form' ); ?></div>
+						</div>
+					</div>
+					<?php if ( $cntctfrm_options['cntctfrm_display_phone_field'] == 1 ) { ?>
+						<div style="text-align: left;">
+							<label for="cntctfrmpr_contact_phone"><?php echo $cntctfrm_options['cntctfrm_phone_label']['en']; if ( $cntctfrm_options['cntctfrm_required_phone_field'] == 1 ) echo '<span class="required"> *</span>'; ?></label>
+						</div>
+						<div class="cntctfrmpr_error_text hidden" style="text-align: left;"><?php echo $cntctfrm_options['phone_error']['en']; ?></div>
+						<div style="text-align: left;">
+							<input placeholder="<?php _e( "Please enter your phone number...", 'contact_form' ); ?>" class="text" type="text" size="40" value="" name="cntctfrmpr_contact_phone" id="cntctfrmpr_contact_phone" style="text-align: left; margin: 0;" />
+							<div class="cntctfrmpr_help_box">
+								<div class="cntctfrmpr_hidden_help_text" style="font-size: 12px; display: none;"><?php _e( "Please enter your phone number...", 'contact_form' ); ?></div>
+							</div>
+						</div>
+					<?php } ?>
+					<div style="text-align: left;">
+						<label for="cntctfrmpr_contact_subject"><?php echo $cntctfrm_options['cntctfrm_subject_label']['en']; if ( $cntctfrm_options['cntctfrm_required_subject_field'] == 1 ) echo '<span class="required"> *</span>'; ?></label>
+					</div>
+					<div class="cntctfrmpr_error_text hidden" style="text-align: left;"><?php echo $cntctfrm_options['cntctfrm_subject_error']['en']; ?></div>
+					<div style="text-align: left;">
+						<input placeholder="<?php _e( "Please enter subject...", 'contact_form' ); ?>" class="text" type="text" size="40" value="" name="cntctfrmpr_contact_subject" id="cntctfrmpr_contact_subject" style="text-align: left; margin: 0;" />
+						<div class="cntctfrmpr_help_box">
+							<div class="cntctfrmpr_hidden_help_text" style="font-size: 12px; display: none;"><?php _e( "Please enter subject...", 'contact_form' ); ?></div>
+						</div>
+					</div>
+					<div style="text-align: left;">
+						<label for="cntctfrmpr_contact_message"><?php echo $cntctfrm_options['cntctfrm_message_label']['en']; if ( $cntctfrm_options['cntctfrm_required_message_field'] == 1 ) echo '<span class="required"> *</span>'; ?></label>
+					</div>
+					<div class="cntctfrmpr_error_text hidden" style="text-align: left;"><?php echo $cntctfrm_options['cntctfrm_message_error']['en']; ?></div>
+					<div style="text-align: left;">
+						<textarea placeholder="<?php _e( "Please enter your message...", 'contact_form' ); ?>" rows="5" cols="30" name="cntctfrmpr_contact_message" id="cntctfrmpr_contact_message"></textarea>
+						<div class="cntctfrmpr_help_box">
+							<div class="cntctfrmpr_hidden_help_text" style="font-size: 12px; display: none;"><?php _e( "Please enter your message...", 'contact_form' ); ?></div>
+						</div>
+					</div>
+					<?php if ( $cntctfrm_options['cntctfrm_attachment'] == 1 ) { ?>
+						<div style="text-align: left;">
+							<label for="cntctfrmpr_contact_attachment"><?php echo $cntctfrm_options['cntctfrm_attachment_label']['en']; ?></label>
+						</div>					
+						<div class="cntctfrmpr_error_text hidden" style="text-align: left;"><?php echo $cntctfrm_options['cntctfrm_attachment_error']['en']; ?></div>
+						<div style="text-align: left;">
+						<input type="file" name="cntctfrmpr_contact_attachment" id="cntctfrmpr_contact_attachment" style="float:left;" />
+						<?php if ( $cntctfrm_options['cntctfrm_attachment_explanations'] == 1 ) { ?>
+							<div class="cntctfrmpr_help_box cntctfrmpr_hidden_help_text_attach"><div class="cntctfrmpr_hidden_help_text" style="font-size: 12px; display: none;"><?php echo $cntctfrm_options['cntctfrm_attachment_tooltip']['en']; ?></div></div>
+						<?php } ?>
+						</div>
+					<?php } ?>
+					<?php if ( $cntctfrm_options['cntctfrm_send_copy'] == 1 ) { ?>
+						<div style="text-align: left;">
+							<input type="checkbox" value="1" name="cntctfrmpr_contact_send_copy" id="cntctfrmpr_contact_send_copy" style="text-align: left; margin: 0;" />
+							<label for="cntctfrmpr_contact_send_copy"><?php echo $cntctfrm_options['cntctfrm_send_copy_label']['en']; ?></label>
+						</div>
+					<?php } ?>					
+					<div style="text-align: left; padding-top: 8px;">
+						<input type="submit" value="<?php echo $cntctfrm_options['cntctfrm_submit_label']['en']; ?>" style="cursor: pointer; margin: 0pt; text-align: center;margin-bottom:10px;" /> 
+					</div>				
 				</div>
-				<div class="clear"></div>	
-			</div>			
-		</div>
+				<div id="cntctfrmpr_shortcode">
+					<?php _e( "If you would like to add the Contact Form to your website, just copy and paste this shortcode to your post or page or widget:", 'contact_form' ); ?><br/>
+					<div>
+						<code id="cntctfrmpr_shortcode_code">
+							[bestwebsoft_contact_form]
+						</code>					
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>	
+		</div>			
 	<?php }
 }
 
@@ -1863,8 +1896,10 @@ if ( ! function_exists ( 'cntctfrm_plugin_init' ) ) {
 if ( ! function_exists ( 'cntctfrm_admin_head' ) ) {
 	function cntctfrm_admin_head() {
 		global $wp_version;
-
-		wp_enqueue_style( 'cntctfrmStylesheet', plugins_url( 'css/style.css', __FILE__ ) );
+		if ( $wp_version < 3.8 )
+			wp_enqueue_style( 'cntctfrmStylesheet', plugins_url( 'css/style_wp_before_3.8.css', __FILE__ ) );	
+		else
+			wp_enqueue_style( 'cntctfrmStylesheet', plugins_url( 'css/style.css', __FILE__ ) );
 
 		if ( isset( $_REQUEST['page'] ) && ( $_REQUEST['page'] == 'contact_form.php' || $_REQUEST['page'] == 'contact_form_pro_extra.php' ) ) {
 			if ( $wp_version < 3.5 ) {
