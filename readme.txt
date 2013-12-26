@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 3.0
 Tested up to: 3.8
-Stable tag: 3.68
+Stable tag: 3.69
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,6 +49,7 @@ There is also a premium version of the plugin <a href="http://bestwebsoft.com/pl
 * European Portuguese (pt_PT) (thanks to <a href="mailto:cesarbsilva@gmail.com">César Silva</a>, www.clubetelemoveis.com )
 * Brazilian Portuguese (pt_BR) (thanks to <a href="mailto:brenojac@gmail.com">Breno Jacinto</a>, www.iconis.org.br, <a href="mailto:wordpress@djio.com.br">DJIO</a>, www.djio.com.br)
 * Catalan (ca) (thanks to <a href="mailto:kenneth@snollocer.net">Kenneth</a>)
+* Chinese (zh_CN) (thanks to <a href="mailto:kplam@qq.com">kplam</a>)
 * Dutch (nl_NL) (thanks  to <a href="mailto:ronald@hostingu.nl">HostingU, Ronald Verheul</a>, Jan Boeijink, <a href="mailto:info@katchy.nl">Dorine Kat-Stronck</a>)
 * Finnish (fi) (thanks to <a href="mailto:mikrotuki@sisuaxles.com">Mikrotuki</a>)
 * French (fr_FR) (thanks to Alain Thomas and Vincent Cibelli and Capronnier Luc)
@@ -138,6 +139,10 @@ Note: If the Contact Form sends letters, but you don't receive them, you can ins
 6. Plugin extra settings in WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.69 - 26.12.2013 =
+* Update : The French language file is updated.
+* NEW : The Chinese language file is added.
 
 = V3.68 - 17.12.2013 =
 * Update : We updated all functionality for wordpress 3.8.
@@ -445,6 +450,9 @@ Note: If the Contact Form sends letters, but you don't receive them, you can ins
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.69 =
+The French language file is updated. The Chinese language file is added.
 
 = V3.68 =
 We updated all functionality for wordpress 3.8. We changed capability to 'manage_options' for the plugins settings pages.

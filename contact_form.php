@@ -4,7 +4,7 @@ Plugin Name: Contact Form
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: Plugin for Contact Form.
 Author: BestWebSoft
-Version: 3.68
+Version: 3.69
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: contact_form\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-17 16:52+0300\n"
-"PO-Revision-Date: 2013-12-17 16:52+0300\n"
+"POT-Creation-Date: 2013-12-26 10:53+0300\n"
+"PO-Revision-Date: 2013-12-26 10:54+0300\n"
 "Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
 "Language-Team: Luc Capronnier <lcapronnier@yahoo.com>\n"
 "Language: fr_FR\n"
@@ -15,6 +15,8 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2;plural=n>2;\n"
 "X-Generator: Poedit 1.5.7\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: contact_form.php:32
@@ -24,7 +26,7 @@ msgstr "Options du formulaire de Contact"
 
 #: contact_form.php:32
 msgid "Contact Form"
-msgstr "Formulaire de Contact"
+msgstr "Formulaire de contact"
 
 #: contact_form.php:33
 msgid "Contact Form Pro Extra Settings"
@@ -78,7 +80,7 @@ msgstr "Message:"
 #: contact_form.php:860
 #: contact_form.php:890
 msgid "Attachment:"
-msgstr "Pièce-jointe:"
+msgstr "Pièce jointe:"
 
 #: contact_form.php:87
 msgid "Supported file types: HTML, TXT, CSS, GIF, PNG, JPEG, JPG, TIFF, BMP, AI, EPS, PS, RTF, PDF, DOC, DOCX, XLS, ZIP, RAR, WAV, MP3, PPT. Max file size: 2MB"
@@ -122,7 +124,7 @@ msgstr "Un message est obligatoire."
 
 #: contact_form.php:96
 msgid "File format is not valid."
-msgstr "Le type de pièce-jointe n'est pas valide."
+msgstr "Le type de pièce jointe n'est pas valide."
 
 #: contact_form.php:97
 msgid "File upload error."
@@ -162,7 +164,7 @@ msgstr "Retourner à WordPress"
 
 #: contact_form.php:203
 msgid "Plugins page"
-msgstr "Page du plugins"
+msgstr "Page des extensions"
 
 #: contact_form.php:494
 msgid "If the 'Redirect to page' option is selected then the URL field should be in the following format"
@@ -183,11 +185,11 @@ msgstr "Options enregistrées."
 
 #: contact_form.php:540
 msgid "Notice:"
-msgstr ""
+msgstr "Avertissement :"
 
 #: contact_form.php:540
 msgid "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button."
-msgstr ""
+msgstr "Les paramètres de l'extension ont été changés. Afin de pouvoir les enregistrer, merci de cliquer sur le bouton 'Enregistrer les modifications'."
 
 #: contact_form.php:543
 #: contact_form.php:973
@@ -252,7 +254,7 @@ msgstr "Ajouter la liste déroulante pour le département dans le formulaire de 
 #: contact_form.php:586
 #: contact_form.php:1131
 msgid "If you upgrade to Pro version all your settings will be saved."
-msgstr ""
+msgstr "Si vous passez à la version Pro, tous ces paramètres seront enregistrés."
 
 #: contact_form.php:591
 #: contact_form.php:728
@@ -349,28 +351,27 @@ msgstr "Symbol obligatoire"
 
 #: contact_form.php:666
 msgid "Fields"
-msgstr ""
+msgstr "Champs"
 
 #: contact_form.php:667
 msgid "Used"
-msgstr ""
+msgstr "Utilisé"
 
 #: contact_form.php:668
-#, fuzzy
 msgid "Required"
-msgstr "obligatoire"
+msgstr "Obligatoire"
 
 #: contact_form.php:669
 msgid "Visible"
-msgstr ""
+msgstr "Visible"
 
 #: contact_form.php:670
 msgid "Disabled for editing"
-msgstr ""
+msgstr "Non actif pour l'édition"
 
 #: contact_form.php:671
 msgid "Field's default value"
-msgstr ""
+msgstr "Valeur par défaut du champ"
 
 #: contact_form.php:676
 #: contact_form.php:1006
@@ -391,9 +392,8 @@ msgid "Email Address"
 msgstr "Adresse e-mail"
 
 #: contact_form.php:700
-#, fuzzy
 msgid "Phone number"
-msgstr "Téléphone:"
+msgstr "Téléphone"
 
 #: contact_form.php:708
 #: contact_form.php:1026
@@ -411,7 +411,7 @@ msgstr "Message"
 
 #: contact_form.php:734
 msgid "Attachment block"
-msgstr "Bloc pièce-jointe"
+msgstr "Bloc pièce jointe"
 
 #: contact_form.php:736
 msgid "Users can attach the following file formats"
@@ -419,15 +419,13 @@ msgstr "Les utilisateurs peuvent joindre des documents des types suivants"
 
 #: contact_form.php:750
 msgid "Add to the form"
-msgstr ""
+msgstr "Ajouter au formulaire"
 
 #: contact_form.php:755
-#, fuzzy
 msgid "Tips below the Attachment"
 msgstr "Afficher les explications en-dessous du bloc des pièces jointes"
 
 #: contact_form.php:764
-#, fuzzy
 msgid "'Send me a copy' block"
 msgstr "Afficher le bloc \"M'envoyer une copie\""
 
@@ -454,19 +452,19 @@ msgstr "Télécharger le captcha"
 
 #: contact_form.php:792
 msgid "Agreement checkbox"
-msgstr ""
+msgstr "Case à cocher pour valider le formulaire"
 
 #: contact_form.php:792
 msgid "Required checkbox for submitting the form"
-msgstr ""
+msgstr "Boite à cocher obligatoire pour la validation du formulaire."
 
 #: contact_form.php:793
 msgid "Optional checkbox"
-msgstr ""
+msgstr "Boite à cocher optionnelle"
 
 #: contact_form.php:793
 msgid "Optional checkbox, the results of which will be displayed in email"
-msgstr ""
+msgstr "Boite à cocher optionnelle, le résultat sera affiché dans l'e-mail"
 
 #: contact_form.php:804
 msgid "Delete an attachment file from the server after the email is sent"
@@ -474,7 +472,7 @@ msgstr "Supprimer le fichier joint sur le serveur après l'envoie de l'e-mail"
 
 #: contact_form.php:810
 msgid "Email in HTML format sending"
-msgstr ""
+msgstr "E-mail au format HTML"
 
 #: contact_form.php:814
 msgid "Display additional info in the email"
@@ -644,17 +642,15 @@ msgstr "Enregistrer les modifications"
 
 #: contact_form.php:950
 msgid "If you enjoy our plugin, please give it 5 stars on WordPress"
-msgstr ""
+msgstr "Si notre extension vous satisfait, merci de la notée avec 5 étoiles dans Wordpress"
 
 #: contact_form.php:951
-#, fuzzy
 msgid "Rate the plugin"
-msgstr "Plugins gratuits"
+msgstr "Noter l'extension"
 
 #: contact_form.php:954
-#, fuzzy
 msgid "If there is something wrong about it, please contact us"
-msgstr "Si vous avez des questions, merci de contacter via "
+msgstr "Si quelque chose ne fonctionne pas correctement, merci de nous contacter"
 
 #: contact_form.php:971
 msgid "Contact Form Pro | Extra Settings"
@@ -694,7 +690,7 @@ msgstr "Téléphone"
 
 #: contact_form.php:1035
 msgid "Attachment"
-msgstr "Pièce-jointe"
+msgstr "Pièce jointe"
 
 #: contact_form.php:1040
 msgid "(powered by bestwebsoft.com)"
@@ -865,15 +861,6 @@ msgstr "Support"
 msgid "Are you sure that you want to delete this language data?"
 msgstr "Etes vous sûr de vouloir supprimer cette langue ?"
 
-#~ msgid "Display fields"
-#~ msgstr "Afficher le texte"
-
-#~ msgid "Display tips below the Attachment block"
-#~ msgstr "Afficher les explications après le bloc des pièces jointes"
-
-#~ msgid "Required fields"
-#~ msgstr "Champs obligatoires"
-
 #~ msgid "Not set"
 #~ msgstr "Not set"
 
@@ -965,22 +952,25 @@ msgstr "Etes vous sûr de vouloir supprimer cette langue ?"
 #~ msgstr "Le courriel avec les informations système est envoyé à"
 
 #~ msgid "Pro plugins"
-#~ msgstr "Plugins Pro"
+#~ msgstr "Extensions Pro"
 
 #~ msgid "Activated plugins"
-#~ msgstr "Plugin activé"
+#~ msgstr "Extensions activées"
 
 #~ msgid "Read more"
 #~ msgstr "Lire la suite"
 
 #~ msgid "Installed plugins"
-#~ msgstr "Plugin installé"
+#~ msgstr "Extension installée"
 
 #~ msgid "Recommended plugins"
-#~ msgstr "Plugin recommandé"
+#~ msgstr "Extensions recommandées"
 
 #~ msgid "Purchase"
 #~ msgstr "Achetez"
+
+#~ msgid "Free plugins"
+#~ msgstr "Extensions gratuites"
 
 #~ msgid "Download"
 #~ msgstr "Téléchargement"
@@ -991,6 +981,27 @@ msgstr "Etes vous sûr de vouloir supprimer cette langue ?"
 #~ msgid "Install now from wordpress.org"
 #~ msgstr "Installer maintenant depuis wordpress.org"
 
+#~ msgid "Free themes"
+#~ msgstr "Thèmes gratuits"
+
+#~ msgid "Activated theme"
+#~ msgstr "Theme actif"
+
+#~ msgid "Customize &#8220;%s&#8221;"
+#~ msgstr "Personnaliser &#8220;%s&#8221;"
+
+#~ msgid "Customize"
+#~ msgstr "Personnaliser"
+
+#~ msgid "Installed themes"
+#~ msgstr "Thèmes installés"
+
+#~ msgid "Recommended themes"
+#~ msgstr "Thèmes recommandés"
+
+#~ msgid "If you have any questions, please contact us via"
+#~ msgstr "Si vous avez des questions, merci de contacter via "
+
 #~ msgid "System status"
 #~ msgstr "System status"
 
@@ -998,16 +1009,25 @@ msgstr "Etes vous sûr de vouloir supprimer cette langue ?"
 #~ msgstr "Environment"
 
 #~ msgid "Active Plugins"
-#~ msgstr "Plugin actifs"
+#~ msgstr "Extensions actives"
 
 #~ msgid "Inactive Plugins"
-#~ msgstr "Plugin inactifs"
+#~ msgstr "Extensions inactives"
 
 #~ msgid "Send to support"
 #~ msgstr "Envoyé au support"
 
 #~ msgid "Send to custom email &#187;"
 #~ msgstr "Envoyer un e-mail spécifique &#187;"
+
+#~ msgid "Display fields"
+#~ msgstr "Afficher le texte"
+
+#~ msgid "Display tips below the Attachment block"
+#~ msgstr "Afficher les explications après le bloc des pièces jointes"
+
+#~ msgid "Required fields"
+#~ msgstr "Champs obligatoires"
 
 #~ msgid "Display the asterisk near required fields"
 #~ msgstr "Afficher une étoile à côté des champs obligatoires"
