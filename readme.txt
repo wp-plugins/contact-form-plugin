@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: Contact Form, text, contact, form, contacts, contact form, request, contact me, feedback form, feedback, contact button, contact form plugin, contacts form plugin, attachment, send, copy, attachment, send copy
 Requires at least: 3.0
-Tested up to: 3.8
-Stable tag: 3.70
+Tested up to: 3.8.1
+Stable tag: 3.71
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,7 +60,9 @@ There is also a premium version of the plugin <a href="http://bestwebsoft.com/pl
 * Serbian (sr_RS) (thanks to Georgijevic Team, www.georgijevic.info)
 * Slovak (sk_SK) (thanks to <a href="mailto:book.ing@zoznam.sk">Book Ing</a>)
 * Swedish (sv_SE) (thanks to Martin Tonek, <a href="mailto:joakim@limewoodmedia.com">Joakim Lindskog</a>, <a href="mailto:maarten@vandendriest.com">Maarten van den Driest</a> - www.crossanddot.nl)
+* Turkish (tr) (thanks to <a href="mailto:webmaster@candanblog.com">Can Atasever</a>)
 * Ukrainian (uk) (thanks to <a href="mailto:xxxxAndyxxxx@gmail.com">Andrew Yaschuk</a>)
+* Vietnamese (vi) (thanks to <a href="mailto:bizover@gmail.com">Biz.O</a>)
 
 If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
@@ -129,6 +131,14 @@ Please follow the instructions below:
 3. Perhaps email sending is not set. You should install an extra plugin called WP-mail-SMTP and configure it. Afterwards you should send a test email from this plugin and you will see if the plugin logs have errors.
 Note: If the Contact Form sends letters, but you don't receive them, you can install our plugin Contact Form to DB in order not to lose the sent letters for the time the problem is being solved.
 
+= I have some problems with the plugin's work. What Information should I provide to receive proper support? =
+
+Please make sure that the problem hasn't been discussed yet on our forum (<a href="http://support.bestwebsoft.com" target="_blank">http://support.bestwebsoft.com</a>). If no, please provide the following data along with your problem's description:
+1. the link to the page where the problem occurs
+2. the name of the plugin and its version. If you are using a pro version - your order number.
+3. the version of your WordPress installation
+4. copy and paste into the message your system status report. Please read more here: <a href="http://bestwebsoft.com/wp-content/uploads/manual/wp_plugin/general/System_Status.pdf" target="_blank">System_Status.pdf</a>
+
 == Screenshots ==
 
 1. Contact Form display.
@@ -139,6 +149,10 @@ Note: If the Contact Form sends letters, but you don't receive them, you can ins
 6. Plugin extra settings in WordPress admin panel with additional fields.
 
 == Changelog ==
+
+= V3.71 - 03.02.2014 =
+* Update : We updated all functionality for wordpress 3.8.1.
+* NEW : The Turkish and Vietnamese language file are added.
 
 = V3.70 - 16.01.2014 =
 * Update : BWS plugins section was updated.
@@ -453,6 +467,9 @@ Note: If the Contact Form sends letters, but you don't receive them, you can ins
 * Ability to add Contact Form into a post. Ability to adjust displaying of the form via shortcode is added.
 
 == Upgrade Notice ==
+
+= V3.71 =
+We updated all functionality for wordpress 3.8.1. The Turkish and Vietnamese language file are added.
 
 = V3.70 =
 BWS plugins section was updated.
