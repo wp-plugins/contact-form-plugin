@@ -17,6 +17,18 @@
 #toplevel_page_bws_plugins .wp-submenu .wp-first-item, .cntctfrm_hidden {
 	display: none;
 }
+.bws_go_pro_tab {
+    background-color: #2A95C5;
+    border-color: #11688F;
+    color: #FFFFFF;
+    font-weight: normal !important;
+    text-shadow: none;
+}
+.bws_go_pro_tab:hover {
+    background-color: #2080AB;
+    color: #FFFFFF;
+    border-color: #11688F;
+}
 /*
 * styles for rate-support div on the settings page
 */
@@ -105,11 +117,13 @@
 	right: -3px;
 }
 .cntctfrm_language_tab_block_mini {
-	background: url("../images/toggle-arrow.png") no-repeat scroll 1px -26px transparent;
-	border-bottom: 1px solid #DFDFDF;
-	border-right: 1px solid #DFDFDF;
-	height: 15px;
-	width: 20px;
+    background: url("../images/toggle-arrow.png") no-repeat scroll 1px -26px transparent;
+    border-bottom: 1px solid #DFDFDF;
+    border-right: 1px solid #DFDFDF;
+    line-height: 18px;
+    padding-left: 22px;
+    color: #888888;
+    font-size: 10px;
 }
 .cntctfrm_language_tab_block_mini:hover {
 	opacity: 0.7;

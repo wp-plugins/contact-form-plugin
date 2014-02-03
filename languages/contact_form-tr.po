@@ -5,175 +5,168 @@ msgstr ""
 "POT-Creation-Date: 2014-01-31 18:15+0300\n"
 "PO-Revision-Date: 2014-01-31 18:15+0300\n"
 "Last-Translator: bestwebsoft.com <plugins@bestwebsoft.com>\n"
-"Language-Team: Thomas Hartung, Dorine Kat-Stronck <thartung@adipositas-mm.de, info@katchy.nl>\n"
-"Language: nl_NL\n"
+"Language-Team: Can Atasever <webmaster@candanblog.com>\n"
+"Language: ca_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: contact_form.php:33
 #: contact_form.php:659
-#, fuzzy
 msgid "Contact Form Settings"
-msgstr "Contact Form Opties"
+msgstr "İletişim Formu Ayarları"
 
 #: contact_form.php:33
 msgid "Contact Form"
-msgstr "Contact Form"
+msgstr "İletişim Formu"
 
 #: contact_form.php:80
 #: contact_form.php:977
 #: contact_form.php:1007
 msgid "Name:"
-msgstr "Naam:"
+msgstr "İsim:"
 
 #: contact_form.php:81
 #: contact_form.php:978
 #: contact_form.php:1008
-#, fuzzy
 msgid "Address:"
-msgstr "Email adres:"
+msgstr "Adres:"
 
 #: contact_form.php:82
 #: contact_form.php:979
 #: contact_form.php:1009
 msgid "Email Address:"
-msgstr "Email adres:"
+msgstr "E-posta Adresi:"
 
 #: contact_form.php:83
 #: contact_form.php:980
 #: contact_form.php:1010
 msgid "Phone number:"
-msgstr "Telefoonnummer:"
+msgstr "Telefon Numarası:"
 
 #: contact_form.php:84
 #: contact_form.php:981
 #: contact_form.php:1011
 msgid "Subject:"
-msgstr "Onderwerp:"
+msgstr "Başlık:"
 
 #: contact_form.php:85
 #: contact_form.php:982
 #: contact_form.php:1012
 msgid "Message:"
-msgstr "Bericht:"
+msgstr "Mesaj:"
 
 #: contact_form.php:86
 #: contact_form.php:983
 #: contact_form.php:1013
 msgid "Attachment:"
-msgstr "Bijlage:"
+msgstr "Eklenecek Dosya:"
 
 #: contact_form.php:87
 msgid "Supported file types: HTML, TXT, CSS, GIF, PNG, JPEG, JPG, TIFF, BMP, AI, EPS, PS, RTF, PDF, DOC, DOCX, XLS, ZIP, RAR, WAV, MP3, PPT. Max file size: 2MB"
-msgstr ""
+msgstr "Desteklenen dosya uzantıları: HTML, TXT, CSS, GIF, PNG, JPEG, JPG, TIFF, BMP, AI, EPS, PS, RTF, PDF, DOC, DOCX, XLS, ZIP, RAR, WAV, MP3, PPT. En büyük dosya boyutu: 2MB"
 
 #: contact_form.php:88
 #: contact_form.php:985
 #: contact_form.php:1015
 msgid "Send me a copy"
-msgstr "Kopie aan mij sturen"
+msgstr "Bana bir kopyasını gönder"
 
 #: contact_form.php:89
 #: contact_form.php:986
 #: contact_form.php:1016
 msgid "Submit"
-msgstr "Versturen"
+msgstr "Gönder"
 
 #: contact_form.php:90
 msgid "Your name is required."
-msgstr "Uw naam is verplicht."
+msgstr "İsminizi yazmanız gerekiyor."
 
 #: contact_form.php:91
-#, fuzzy
 msgid "Address is required."
-msgstr "Een correct email adres is vereist."
+msgstr "Adresinizi yazmanız gerekiyor."
 
 #: contact_form.php:92
-#, fuzzy
 msgid "A valid email address is required."
-msgstr "Een correct email adres is vereist."
+msgstr "Geçerli bir e-posta adresi yazmanız gerekiyor."
 
 #: contact_form.php:93
 msgid "Phone number is required."
-msgstr "Telefoonnummer verplicht"
+msgstr "Telefon numaranızı yazmanız gerekiyor."
 
 #: contact_form.php:94
 msgid "Subject is required."
-msgstr "Onderwerp tekst is verplicht."
+msgstr "Başlık kısmını doldurmanız gerekiyor."
 
 #: contact_form.php:95
 msgid "Message text is required."
-msgstr "Bericht tekst is verplicht."
+msgstr "Mesaj kısmını doldurmanız gerekiyor."
 
 #: contact_form.php:96
 msgid "File format is not valid."
-msgstr "Bijlage is beschadigd."
+msgstr "Dosya uzantısı uygun değil."
 
 #: contact_form.php:97
 msgid "File upload error."
-msgstr ""
+msgstr "Dosya yükleme hatası."
 
 #: contact_form.php:98
 msgid "The file could not be uploaded."
-msgstr ""
+msgstr "Dosya yüklenemedi."
 
 #: contact_form.php:99
 msgid "This file is too large."
-msgstr ""
+msgstr "Dosyanın boyutu çok büyük."
 
 #: contact_form.php:100
 msgid "Please fill out the CAPTCHA."
-msgstr "Vul de CAPTCHA in."
+msgstr "Lütfen CAPTCHA kısmını doldurun."
 
 #: contact_form.php:101
 msgid "Please make corrections below and try again."
-msgstr "Vul alle vereiste informatie in en probeer het opnieuw."
+msgstr "Lütfen aşağıdaki düzeltmeleri yapın ve yeniden deneyin."
 
 #: contact_form.php:103
 msgid "Thank you for contacting us."
-msgstr "Bedankt voor uw bericht."
+msgstr "İletişime geçtiğiniz için teşekkürler."
 
 #: contact_form.php:202
-#, fuzzy
 msgid "requires"
-msgstr "Verplicht veld"
+msgstr "Gerekli"
 
 #: contact_form.php:202
 msgid "or higher, that is why it has been deactivated! Please upgrade WordPress and try again."
-msgstr ""
+msgstr "ya da daha üstü, pasifleştirilmesinin sebebi bu! Lütfen Wordpress'i güncelleyin ve yeniden deneyin."
 
 #: contact_form.php:202
 msgid "Back to the WordPress"
-msgstr ""
+msgstr "Wordpress'e geri dön"
 
 #: contact_form.php:202
-#, fuzzy
 msgid "Plugins page"
-msgstr "BWS Plugins"
+msgstr "Eklenti Sayfası"
 
 #: contact_form.php:493
 msgid "If the 'Redirect to page' option is selected then the URL field should be in the following format"
-msgstr "Als de optie 'Doorsturen naar pagina' is geselecteerd, dient u het url veld in te vullen in de volgende format"
+msgstr "Eğer 'Sayfaya Yönlendir' seçeneği seçilmişse, URL alanı şu formatta olmalı:"
 
 #: contact_form.php:502
 msgid "Such user does not exist. Settings are not saved."
-msgstr "Deze gebruiker bestaat niet. Instellingen zijn niet opgeslagen."
+msgstr "Böyle bir kullanıcı adı bulunamadı. Ayarlar kaydedilmedi."
 
 #: contact_form.php:506
 #: contact_form.php:512
 msgid "Please enter a valid email address in the 'FROM' field. Settings are not saved."
-msgstr "Geef een geldig email adres op. Instellingen zijn niet opgeslagen."
+msgstr "Lütfen 'GÖNDERİCİ' alanına geçerli bir e-posta adresi girin. Ayarlar kaydedilmedi."
 
 #: contact_form.php:517
-#, fuzzy
 msgid "Settings saved."
-msgstr "Instellingen opgeslagen."
+msgstr "Ayarlar  kaydedildi."
 
 #: contact_form.php:553
 #: contact_form.php:592
@@ -213,26 +206,25 @@ msgstr ""
 #: contact_form.php:652
 #, fuzzy
 msgid "Please, enter Your license key"
-msgstr "Gebruik dit email adres:"
+msgstr "Lütfen mesajınızı yazın"
 
 #: contact_form.php:661
 msgid "Notice:"
-msgstr ""
+msgstr "Bilgi Notu:"
 
 #: contact_form.php:661
 msgid "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button."
-msgstr ""
+msgstr "Eklentinin ayarları değiştirildi. Değişiklikleri kaydetmek için 'Değişiklikleri Kaydet' butonuna basmayı unutmayın."
 
 #: contact_form.php:664
 #: contact_form.php:1990
 #: contact_form.php:2001
 msgid "Settings"
-msgstr "Instellingen"
+msgstr "Ayarlar"
 
 #: contact_form.php:665
-#, fuzzy
 msgid "Extra settings"
-msgstr "Instellingen"
+msgstr "Ekstra ayarlar"
 
 #: contact_form.php:666
 msgid "Go PRO"
@@ -241,74 +233,73 @@ msgstr ""
 #: contact_form.php:672
 #: contact_form.php:1341
 msgid "If you would like to add the Contact Form to your website, just copy and paste this shortcode to your post or page or widget:"
-msgstr "Als je een Contact Form aan je website wil toevoegen, kopieer dan deze code in je bericht, op je pagina of widget:"
+msgstr "Eğer sitenize iletişim formu eklemek istiyorsanız, şu kısa kodu yazınıza, sayfanıza ya da bileşen alanınıza eklemeniz yeterli."
 
 #: contact_form.php:672
 #: contact_form.php:673
 #: contact_form.php:1000
 #: contact_form.php:1049
 msgid "or"
-msgstr ""
+msgstr "ya da"
 
 #: contact_form.php:673
 msgid "If have any problems with the standard shortcode [contact_form], you should use the shortcode"
-msgstr ""
+msgstr "Eğer standart [contact_form] kısa koduyla ilgili bir sorun yaşarsanız, şunlardan birini kullanmalısınız"
 
 #: contact_form.php:674
 msgid "They work the same way."
-msgstr ""
+msgstr "Aynı şekilde çalışırlar."
 
 #: contact_form.php:675
 msgid "If you leave the fields empty, the messages will be sent to the email address specified during registration."
-msgstr "Als onderstaande velden leeg blijven, zal het bericht gestuurd worden aan het adres dat is gespecificeerd tijdens de registratie."
+msgstr "Eğer aşağıdaki alanları boş bırakırsanız, kullanıcının mesajı kayıt sırasında girilen e-posta adresine gönderilecek."
 
 #: contact_form.php:679
 msgid "The user's email address:"
-msgstr "Gebruik het email adres van de Wordpress gebruiker:"
+msgstr "Kullanıcının e-posta adresine:"
 
 #: contact_form.php:683
 msgid "Create a username"
-msgstr "Kies gebruikersnaam"
+msgstr "Kullanıcı oluştur"
 
 #: contact_form.php:688
 msgid "Enter a username of the person who should get the messages from the contact form."
-msgstr "Voer de naam in van de gebruiker die berichten van dit contact formulier moet ontvangen."
+msgstr "İletişim Formu ile gönderilen mesajı almasını istediğiniz kullanıcının adını girin."
 
 #: contact_form.php:692
 msgid "Use this email address:"
-msgstr "Gebruik dit email adres:"
+msgstr "Mesaj bu e-posta adresine gönderilsin:"
 
 #: contact_form.php:695
 msgid "Enter the email address you want the messages forwarded to."
-msgstr "Geef een email adres op waar de berichten naar verstuurd moeten worden."
+msgstr "Mesajın gönderilmesini istediğiniz e-posta adresini girin."
 
 #: contact_form.php:701
 msgid "Add department selectbox to the contact form:"
-msgstr ""
+msgstr "İletişim Formu'na departman seçenekleri ekleyin"
 
 #: contact_form.php:709
 #: contact_form.php:1236
 msgid "If you upgrade to Pro version all your settings will be saved."
-msgstr ""
+msgstr "Ücretli sürümü satın alırsanız tüm değişiklikler kaydedilecek."
 
 #: contact_form.php:714
 #: contact_form.php:851
 #: contact_form.php:922
 #: contact_form.php:1086
 msgid "This functionality is available in the Pro version of the plugin. For more details, please follow the link"
-msgstr ""
+msgstr "Bu seçenek sadece PRO versiyonunda kullanılabilir. Detaylı bilgi için, "
 
 #: contact_form.php:715
 #: contact_form.php:852
 #: contact_form.php:923
 #: contact_form.php:1087
-#, fuzzy
 msgid "Contact Form Pro"
-msgstr "Contact Form"
+msgstr "İletişim Formu PRO"
 
 #: contact_form.php:721
 msgid "Save emails to the database"
-msgstr ""
+msgstr "E-postaları veritabanına kaydet"
 
 #: contact_form.php:731
 msgid "Using"
@@ -319,46 +310,44 @@ msgstr ""
 #: contact_form.php:903
 #: contact_form.php:907
 msgid "powered by"
-msgstr ""
+msgstr "geliştirici: "
 
 #: contact_form.php:734
 #: contact_form.php:738
 msgid "Using Contact Form to DB powered by"
-msgstr ""
+msgstr "Contact Form to DB eklentisi ile,"
 
 #: contact_form.php:734
-#, fuzzy
 msgid "Activate Contact Form to DB"
-msgstr "Contact Form"
+msgstr "Contact Form to DB eklentisini aktifleştir"
 
 #: contact_form.php:738
-#, fuzzy
 msgid "Download Contact Form to DB"
-msgstr "Contact Form"
+msgstr "Contact Form to DB eklentisini yükle"
 
 #: contact_form.php:743
 msgid "Additional options"
-msgstr "Extra opties"
+msgstr "Ek seçenekler"
 
 #: contact_form.php:745
 msgid "Show"
-msgstr ""
+msgstr "Göster"
 
 #: contact_form.php:746
 msgid "Hide"
-msgstr ""
+msgstr "Gizle"
 
 #: contact_form.php:750
 msgid "What to use?"
-msgstr "Voor welk gebruik?"
+msgstr "Hangi yöntem?"
 
 #: contact_form.php:753
 msgid "Wp-mail"
-msgstr "Wp-mail"
+msgstr "Wp-Mail"
 
 #: contact_form.php:753
 msgid "You can use the wp_mail function for mailing"
-msgstr "Om emails te verzenden kunt u the wordpress wp-mail functie gebruiken"
+msgstr "E-postanın gönderimi için wp_mail fonksiyonunu kullanabilirsiniz."
 
 #: contact_form.php:755
 msgid "Mail"
@@ -366,241 +355,223 @@ msgstr "Mail"
 
 #: contact_form.php:755
 msgid "To send mail you can use the php mail function"
-msgstr "Om emails te verzenden kunt e de php mail functie gebruiken"
+msgstr "E-postanın gönderimi için PHP Mail fonksiyonunu kullanabilirsiniz."
 
 #: contact_form.php:759
-#, fuzzy
 msgid "The text in the 'From' field"
-msgstr "Verander de tekst voor 'VAN' veld van het email adres"
+msgstr "'Gönderici' alanındaki metin"
 
 #: contact_form.php:761
 msgid "User name"
-msgstr ""
+msgstr "Kullanıcı adı"
 
 #: contact_form.php:762
-#, fuzzy
 msgid "The name of the user who fills the form will be used in the field 'From'."
-msgstr "In het veld 'Van' in de email zal het email adres van degene die het formulier invult gebruikt worden."
+msgstr "'Gönderici' alanında formu dolduran ziyaretçinin adı kullanılacak."
 
 #: contact_form.php:765
-#, fuzzy
 msgid "This text will be used in the 'FROM' field"
-msgstr "In het veld 'Van' dit email adres zal worden gebruikt."
+msgstr "'GÖNDERİCİ' alanında bu metin kullanılacak"
 
 #: contact_form.php:769
-#, fuzzy
 msgid "The email address in the 'From' field"
-msgstr "Kies het email adres voor 'Van' veld voor het versturen van de mail"
+msgstr "'Gönderen' alanındaki e-posta adresi"
 
 #: contact_form.php:771
 msgid "User email"
-msgstr ""
+msgstr "Kullanıcı e-postası"
 
 #: contact_form.php:772
-#, fuzzy
 msgid "The email address of the user who fills the form will be used in the field 'From'."
-msgstr "In het veld 'Van' in de email zal het email adres van degene die het formulier invult gebruikt worden."
+msgstr "'Gönderici' alanında formu dolduran kullanıcının e-posta adresi gösterilecek."
 
 #: contact_form.php:775
 msgid "This email address will be used in the 'From' field."
-msgstr "In het veld 'Van' dit email adres zal worden gebruikt."
+msgstr "'Gönderici' alanında bu e-posta adresi gösterilecek."
 
 #: contact_form.php:779
-#, fuzzy
 msgid "Required symbol"
-msgstr "Verplicht veld"
+msgstr "Zorunlu işareti"
 
 #: contact_form.php:789
 msgid "Fields"
-msgstr ""
+msgstr "Alanlar"
 
 #: contact_form.php:790
 msgid "Used"
-msgstr ""
+msgstr "Kullanılsın mı?"
 
 #: contact_form.php:791
-#, fuzzy
 msgid "Required"
-msgstr "Verplicht veld"
+msgstr "Zorunlu"
 
 #: contact_form.php:792
 msgid "Visible"
-msgstr ""
+msgstr "Görünür"
 
 #: contact_form.php:793
 msgid "Disabled for editing"
-msgstr ""
+msgstr "Düzenlemeye kapatılmış"
 
 #: contact_form.php:794
 msgid "Field's default value"
-msgstr ""
+msgstr "Alanın varsayılan değeri"
 
 #: contact_form.php:799
 #: contact_form.php:1111
 #: contact_form.php:1831
 #: contact_form.php:1861
 msgid "Name"
-msgstr "Naam"
+msgstr "İsim"
 
 #: contact_form.php:807
 #: contact_form.php:1116
 #: contact_form.php:1835
 #: contact_form.php:1863
-#, fuzzy
 msgid "Address"
-msgstr "Email adres:"
+msgstr "Adres:"
 
 #: contact_form.php:815
-#, fuzzy
 msgid "Email Address"
-msgstr "Email adres:"
+msgstr "E-posta Adresi"
 
 #: contact_form.php:823
-#, fuzzy
 msgid "Phone number"
-msgstr "Telefoonnummer:"
+msgstr "Telefon numarası"
 
 #: contact_form.php:831
 #: contact_form.php:1131
 #: contact_form.php:1845
 #: contact_form.php:1867
 msgid "Subject"
-msgstr "Onderwerp"
+msgstr "Başlık"
 
 #: contact_form.php:839
 #: contact_form.php:1135
 #: contact_form.php:1848
 #: contact_form.php:1868
 msgid "Message"
-msgstr "Bericht"
+msgstr "Mesaj"
 
 #: contact_form.php:857
-#, fuzzy
 msgid "Attachment block"
-msgstr "Toon de bijlage knop"
+msgstr "Dosya Yükleme"
 
 #: contact_form.php:859
 msgid "Users can attach the following file formats"
-msgstr "Gebruikers kunnen de volgende bestandtypen toevoegen"
+msgstr "Kullanıcılar şu uzantılardaki dosyaları yükleyebilirler"
 
 #: contact_form.php:873
 msgid "Add to the form"
-msgstr ""
+msgstr "Forma ekle"
 
 #: contact_form.php:878
-#, fuzzy
 msgid "Tips below the Attachment"
-msgstr "Toon uitleg na Bijlage knop"
+msgstr "Dosya yükleme alanı altında açıklama"
 
 #: contact_form.php:887
-#, fuzzy
 msgid "'Send me a copy' block"
-msgstr "Geef 'Kopie aan mij sturen' weer"
+msgstr "'Mesajın bir kopyasını e-posta adresime gönder' seçeneği"
 
 #: contact_form.php:900
 #: contact_form.php:903
 #: contact_form.php:907
 #: contact_form.php:1145
 msgid "Captcha"
-msgstr ""
+msgstr "CAPTCHA"
 
 #: contact_form.php:903
-#, fuzzy
 msgid "Activate captcha"
-msgstr "Geactiveerde plugins"
+msgstr "CAPTCHA'yı etkinleştir"
 
 #: contact_form.php:907
-#, fuzzy
 msgid "Download captcha"
-msgstr "Download"
+msgstr "CAPTCHA'yı yükle"
 
 #: contact_form.php:915
 msgid "Agreement checkbox"
-msgstr ""
+msgstr "Onay kutusu"
 
 #: contact_form.php:915
 msgid "Required checkbox for submitting the form"
-msgstr ""
+msgstr "Formu göndermek için işaretlenmesi gereken onay kutusu"
 
 #: contact_form.php:916
 msgid "Optional checkbox"
-msgstr ""
+msgstr "İsteğe bağlı onay kutusu"
 
 #: contact_form.php:916
 msgid "Optional checkbox, the results of which will be displayed in email"
-msgstr ""
+msgstr "E-posta'da gösterilecek, isteğe bağlı onay kutusu"
 
 #: contact_form.php:927
 msgid "Delete an attachment file from the server after the email is sent"
-msgstr ""
+msgstr "E-posta gönderildikten sonra eklenen dosyayı sunucudan sil"
 
 #: contact_form.php:933
 msgid "Email in HTML format sending"
-msgstr ""
+msgstr "E-postayı HTML formatında gönder"
 
 #: contact_form.php:937
-#, fuzzy
 msgid "Display additional info in the email"
-msgstr "Toon aanvullende informatie in de email"
+msgstr "E-postanın içerisinde ek bilgiler göster"
 
 #: contact_form.php:942
 #: contact_form.php:1798
 #: contact_form.php:1800
 msgid "Sent from (ip address)"
-msgstr "Verstuurd van (IP-adres)"
+msgstr "Gönderilen (IP Adresi)"
 
 #: contact_form.php:942
-#, fuzzy
 msgid "Example: Sent from (IP address):\t127.0.0.1"
-msgstr "Verstuurd van (IP-adres)"
+msgstr "Örnek: Şu IP adresinden gönderildi:\t127.0.0.1"
 
 #: contact_form.php:943
 #: contact_form.php:1804
 #: contact_form.php:1806
 msgid "Date/Time"
-msgstr "Datum/Tijd"
+msgstr "Tarih/Zaman"
 
 #: contact_form.php:943
 msgid "Example: Date/Time:\tAugust 19, 2013 8:50 pm"
-msgstr ""
+msgstr "Örnek: Tarih/Saat:\t19 Ağustos, 2013 - 8:50 ÖS"
 
 #: contact_form.php:944
 #: contact_form.php:1810
 #: contact_form.php:1812
 msgid "Sent from (referer)"
-msgstr "Verstuurd vanaf (referer)"
+msgstr "Gönderilen (referer)"
 
 #: contact_form.php:944
 msgid "Example: Sent from (referer):\thttp://bestwebsoft.com/contacts/contact-us/"
-msgstr ""
+msgstr "Örnek: Gönderici:\thttp://bestwebsoft.com/contacts/contact-us/"
 
 #: contact_form.php:945
 #: contact_form.php:1816
 #: contact_form.php:1818
 msgid "Using (user agent)"
-msgstr "Met  (user agent)"
+msgstr "Şununla: "
 
 #: contact_form.php:945
 msgid "Example: Using (user agent):\tMozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.95 Safari/537.36"
-msgstr ""
+msgstr "Örnek: Şunu kullanarak:\tMozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.95 Safari/537.36"
 
 #: contact_form.php:949
 msgid "Language settings for the field names in the form"
-msgstr "Taal instellingen voor velden met een label"
+msgstr "Formdaki alan adları için dil ayarları 8aşağıdaki iki seçenek için)"
 
 #: contact_form.php:958
-#, fuzzy
 msgid "Add a language"
-msgstr "Voeg een taal toe"
+msgstr "Bir dil ekle"
 
 #: contact_form.php:962
 msgid "Change the names of the contact form fields and error messages"
-msgstr "Verander de namen van de labels en de foutmeldingen"
+msgstr "Yukarıdan eklenen dile göre İletişim Formu alanlarının isimlerini ve hata mesajlarını değiştir"
 
 #: contact_form.php:967
 #: contact_form.php:1040
 msgid "English"
-msgstr "Engels"
+msgstr "İngilizce"
 
 #: contact_form.php:975
 #: contact_form.php:1005
@@ -609,182 +580,168 @@ msgstr ""
 
 #: contact_form.php:984
 #: contact_form.php:1014
-#, fuzzy
 msgid "Tips below the Attachment block"
-msgstr "Toon uitleg na Bijlage knop"
+msgstr "Dosya yükleme alanı altında gösterilecek açıklamalar"
 
 #: contact_form.php:987
 #: contact_form.php:1017
 msgid "Error message for the Name field"
-msgstr "Foutmelding voor naam veld"
+msgstr "'İsim' alanı için hata mesajı"
 
 #: contact_form.php:988
 #: contact_form.php:1018
-#, fuzzy
 msgid "Error message for the Address field"
-msgstr "Foutmelding voor bericht veld"
+msgstr "'Adres' alanı için hata mesajı"
 
 #: contact_form.php:989
 #: contact_form.php:1019
 msgid "Error message for the Email field"
-msgstr "Foutmelding voor email veld"
+msgstr "'E-posta adresş' alanı için hata mesajı"
 
 #: contact_form.php:990
 #: contact_form.php:1020
 msgid "Error message for the Phone field"
-msgstr "Foutmelding voor telefoonnummer veld"
+msgstr "'Telefon numarası' alanı için hata mesajı"
 
 #: contact_form.php:991
 #: contact_form.php:1021
 msgid "Error message for the Subject field"
-msgstr "Foutmelding voor onderwerp veld"
+msgstr "'Başlık' alanı için hata mesajı"
 
 #: contact_form.php:992
 #: contact_form.php:1022
 msgid "Error message for the Message field"
-msgstr "Foutmelding voor bericht veld"
+msgstr "'Mesaj' alanı için hata mesajı"
 
 #: contact_form.php:993
 #: contact_form.php:1023
-#, fuzzy
 msgid "Error message about the file type for the Attachment field"
-msgstr "Foutmelding voor bijlage veld"
+msgstr "Yüklenen dosyanın uzantısıyla ilgili hata mesajı"
 
 #: contact_form.php:994
 #: contact_form.php:1024
-#, fuzzy
 msgid "Error message while uploading a file for the Attachment field to the server"
-msgstr "Foutmelding voor bijlage veld"
+msgstr "Dosya yüklenirken oluşan hata için hata mesajı"
 
 #: contact_form.php:995
 #: contact_form.php:1025
-#, fuzzy
 msgid "Error message while moving the file for the Attachment field"
-msgstr "Foutmelding voor bijlage veld"
+msgstr "Yüklenecek dosya seçilirken oluşan hata için hata mesajı"
 
 #: contact_form.php:996
 #: contact_form.php:1026
-#, fuzzy
 msgid "Error message when file size limit for the Attachment field is exceeded"
-msgstr "Foutmelding voor bijlage veld"
+msgstr "En fazla dosya yükleme boyutu sınırı açıldığında oluşan hata mesajı"
 
 #: contact_form.php:997
 #: contact_form.php:1027
 msgid "Error message for the Captcha field"
-msgstr "Foutmelding voor captcha"
+msgstr "CAPTCHA alanı için hata mesajı"
 
 #: contact_form.php:998
 #: contact_form.php:1028
 msgid "Error message for the whole form"
-msgstr "Foutmelding voor het gehele formulier"
+msgstr "Formun geneli için hata mesajı"
 
 #: contact_form.php:1000
 #: contact_form.php:1030
 #: contact_form.php:1049
 #: contact_form.php:1055
 msgid "Use shortcode"
-msgstr "Gebruik shortcode"
+msgstr "Kısa kodu kullan"
 
 #: contact_form.php:1000
 #: contact_form.php:1030
 #: contact_form.php:1049
 #: contact_form.php:1055
 msgid "for this language"
-msgstr "voor deze taal"
+msgstr "bu dil için"
 
 #: contact_form.php:1037
 msgid "Action after email is sent"
-msgstr "Actie na het verzenden van de email"
+msgstr "E-posta gönderildikten sonra ne yapılsın?"
 
 #: contact_form.php:1039
 msgid "Display text"
-msgstr "Toon tekst"
+msgstr "Metin göster"
 
 #: contact_form.php:1048
 #: contact_form.php:1054
 msgid "Text"
-msgstr "Tekst"
+msgstr "Metin"
 
 #: contact_form.php:1061
 msgid "Redirect to the page"
-msgstr "Dooorsturen naar pagina"
+msgstr "Sayfaya yönlendir"
 
 #: contact_form.php:1062
 msgid "Url"
-msgstr "Url"
+msgstr "URL"
 
 #: contact_form.php:1067
 #: contact_form.php:1242
 msgid "Save Changes"
-msgstr "Bewaar veranderingen"
+msgstr "Değişiklikleri Kaydet"
 
 #: contact_form.php:1072
 msgid "If you enjoy our plugin, please give it 5 stars on WordPress"
-msgstr ""
+msgstr "Eğer eklentiyi beğenerek kullanıyorsanız, lütfen Wordpress'te eklentiye 5 yıldız verin"
 
 #: contact_form.php:1073
-#, fuzzy
 msgid "Rate the plugin"
-msgstr "Aanbevolen Plugins"
+msgstr "Eklentiyi değerlendir"
 
 #: contact_form.php:1076
-#, fuzzy
 msgid "If there is something wrong about it, please contact us"
-msgstr "Mocht u nog vragen hebben, stuur dan een email naar plugin@bestwebsoft.com of vul het contactformulier op onze website in."
+msgstr "Eğer eklenti hakkında problem tespit ederseniz lütfen bizimle iletişime geçin"
 
 #: contact_form.php:1091
 msgid "Errors output"
-msgstr ""
+msgstr "Hata çıktısı"
 
 #: contact_form.php:1094
 msgid "Display error messages"
-msgstr ""
+msgstr "Hata mesajlarını göster"
 
 #: contact_form.php:1095
 msgid "Color of the input field errors."
-msgstr ""
+msgstr "Giriş alanlarının hata rengi"
 
 #: contact_form.php:1096
-#, fuzzy
 msgid "Display error messages & color of the input field errors"
-msgstr "Foutmelding voor onderwerp veld"
+msgstr "Hata mesajlarını ve giriş alanı hata rengini göster"
 
 #: contact_form.php:1101
 msgid "Add placeholder to the input blocks"
-msgstr ""
+msgstr "Giriş alanlarına bilgilendirme notu ekle"
 
 #: contact_form.php:1107
-#, fuzzy
 msgid "Add tooltips"
-msgstr "Extra opties"
+msgstr "Şunları ekle:"
 
 #: contact_form.php:1121
-#, fuzzy
 msgid "Email address"
-msgstr "Email adres:"
+msgstr "E-posta adresi"
 
 #: contact_form.php:1126
-#, fuzzy
 msgid "Phone Number"
-msgstr "Telefoonnummer:"
+msgstr "Telefon Numarası"
 
 #: contact_form.php:1140
-#, fuzzy
 msgid "Attachment"
-msgstr "Bijlage:"
+msgstr "Dosya Yükleme"
 
 #: contact_form.php:1145
 msgid "(powered by bestwebsoft.com)"
-msgstr ""
+msgstr "(Geliştirici bestwebsoft.com)"
 
 #: contact_form.php:1150
-#, fuzzy
 msgid "Style options"
-msgstr "Extra opties"
+msgstr "Tasarım ayarları"
 
 #: contact_form.php:1153
 msgid "Text color"
-msgstr ""
+msgstr "Metin rengi"
 
 #: contact_form.php:1156
 #: contact_form.php:1161
@@ -799,114 +756,111 @@ msgstr ""
 #: contact_form.php:1223
 #: contact_form.php:1228
 msgid "Default"
-msgstr ""
+msgstr "Varsayılan"
 
 #: contact_form.php:1158
 msgid "Label text color"
-msgstr ""
+msgstr "Etiket metninin rengi"
 
 #: contact_form.php:1163
 msgid "Placeholder color"
-msgstr ""
+msgstr "Bilgilendirme notu rengi"
 
 #: contact_form.php:1168
 msgid "Errors color"
-msgstr ""
+msgstr "Hataların renkleri"
 
 #: contact_form.php:1173
 msgid "Error text color"
-msgstr ""
+msgstr "Hata metni rengi"
 
 #: contact_form.php:1178
 msgid "Background color of the input field errors"
-msgstr ""
+msgstr "giriş alanı hataları için arka plan rengi"
 
 #: contact_form.php:1183
 msgid "Border color of the input field errors"
-msgstr ""
+msgstr "Giriş alanı hataları için border rengi"
 
 #: contact_form.php:1188
 msgid "Placeholder color of the input field errors"
-msgstr ""
+msgstr "Giriş alanı hataları için bilgilendirme notu rengi"
 
 #: contact_form.php:1193
-#, fuzzy
 msgid "Input fields"
-msgstr "Toon tekst"
+msgstr "Giriş alanları"
 
 #: contact_form.php:1198
 msgid "Input fields background color"
-msgstr ""
+msgstr "Giriş alanları arka plan rengi"
 
 #: contact_form.php:1203
 msgid "Text fields color"
-msgstr ""
+msgstr "Metin alanlarının rengi"
 
 #: contact_form.php:1205
 msgid "Border width in px, numbers only"
-msgstr ""
+msgstr "Bırder genişliği, piksel cinsinden, sadece sayı"
 
 #: contact_form.php:1209
 #: contact_form.php:1230
 msgid "Border color"
-msgstr ""
+msgstr "Border rengi"
 
 #: contact_form.php:1214
-#, fuzzy
 msgid "Submit button"
-msgstr "Versturen"
+msgstr "Gönderme butonu"
 
+# #: contact_form.php:928
 #: contact_form.php:1216
 msgid "Width in px, numbers only"
-msgstr ""
+msgstr "Piksel cinsinden genişlik, sadece sayı"
 
 #: contact_form.php:1220
 msgid "Button color"
-msgstr ""
+msgstr "Buton rengi"
 
 #: contact_form.php:1225
 msgid "Button text color"
-msgstr ""
+msgstr "Buton yazı rengi"
 
 #: contact_form.php:1246
-#, fuzzy
 msgid "Contact Form Pro | Preview"
-msgstr "Contact Form"
+msgstr "İletişim Formu PRO | Ön İzleme"
 
 #: contact_form.php:1249
 msgid "Show with errors"
-msgstr ""
+msgstr "Hatalarla göster"
 
 #: contact_form.php:1257
 #: contact_form.php:1259
 msgid "Please enter your full name..."
-msgstr ""
+msgstr "Lütfen tam adınızı yazın"
 
 #: contact_form.php:1270
 #: contact_form.php:1272
 msgid "Please enter your address..."
-msgstr ""
+msgstr "Lütfen adresinizi yazın"
 
 #: contact_form.php:1281
 #: contact_form.php:1283
-#, fuzzy
 msgid "Please enter your email address..."
-msgstr "Gebruik dit email adres:"
+msgstr "Lütfen e-posta adresinizi yazın"
 
 #: contact_form.php:1292
 #: contact_form.php:1294
 msgid "Please enter your phone number..."
-msgstr ""
+msgstr "Lütfen telefon numaranızı yazın"
 
 #: contact_form.php:1303
 #: contact_form.php:1305
 msgid "Please enter subject..."
-msgstr ""
+msgstr "Lütfen başlık yazın"
 
 #: contact_form.php:1313
 #: contact_form.php:1315
 msgid "Please enter your message..."
-msgstr ""
+msgstr "Lütfen mesajınızı yazın"
 
 #: contact_form.php:1357
 msgid "Congratulations! The PRO version of the plugin is successfully download and activated."
@@ -919,7 +873,7 @@ msgstr ""
 #: contact_form.php:1359
 #, fuzzy
 msgid "the setting page"
-msgstr "Instellingen"
+msgstr "Ekstra ayarlar"
 
 #: contact_form.php:1360
 msgid "You will be redirected automatically in 5 seconds."
@@ -948,21 +902,21 @@ msgstr ""
 
 #: contact_form.php:1439
 msgid "Sorry, email message could not be delivered."
-msgstr "Sorry, uw bericht kon niet worden verstuurd."
+msgstr "Üzgünüz, e-posta mesajınız gönderilemedi."
 
 #: contact_form.php:1825
 msgid "Contact from"
-msgstr "Contact van"
+msgstr "İletişim Formu"
 
 #: contact_form.php:1838
 #: contact_form.php:1864
 msgid "Email"
-msgstr "Email"
+msgstr "E-Posta Adresi"
 
 #: contact_form.php:1842
 #: contact_form.php:1866
 msgid "Phone"
-msgstr "Telefoonnummer"
+msgstr "Telefon"
 
 #: contact_form.php:1851
 #: contact_form.php:1869
@@ -971,102 +925,97 @@ msgstr "Website"
 
 #: contact_form.php:1932
 msgid "If you can see this MIME, it means that the MIME type is not supported by your email client!"
-msgstr "Als u deze MIME ziet, dan ondersteunt uw client geen MIME-Typen!"
+msgstr "Eğer bu MIME'ı görüyorsanız, bu e-posta sunucunuzun MIME'ı desteklemediği anlamına gelir!"
 
 #: contact_form.php:2002
 msgid "FAQ"
-msgstr "Veel gestelde vragen (FAQ)"
+msgstr "SSS"
 
 #: contact_form.php:2003
 msgid "Support"
-msgstr "Ondersteuning"
+msgstr "Destek"
 
 #: contact_form.php:2061
 msgid "Are you sure that you want to delete this language data?"
-msgstr "Weet u zeker dat u deze taal wilt verwijderen?"
+msgstr "Bu dile ait verileri silmek istediğinize emin misiniz?"
 
-#, fuzzy
 #~ msgid "Contact Form Pro Extra Settings"
-#~ msgstr "Contact Form Opties"
+#~ msgstr "İletişim Formu PRO Ekstra Ayarları"
 
-#, fuzzy
 #~ msgid "Contact Form Pro | Extra Settings"
-#~ msgstr "Contact Form Opties"
+#~ msgstr "İletişim Formu PRO | Ekstra Ayarlar"
 
-#, fuzzy
 #~ msgid "Display fields"
-#~ msgstr "Toon tekst"
+#~ msgstr "Mostra els camps"
 
 #, fuzzy
 #~ msgid "Display tips below the Attachment block"
-#~ msgstr "Toon uitleg na Bijlage knop"
+#~ msgstr "Consells del blocatge de l'adjunt"
 
 #~ msgid "Required fields"
-#~ msgstr "Verplicht veld"
-
-#, fuzzy
-#~ msgid "Display the asterisk near required fields"
-#~ msgstr "Toon telefoonnummer veld"
+#~ msgstr "Camps requerits"
 
 #~ msgid "You can attach the following file formats"
-#~ msgstr "Bestanden van de volgende formaten kunnen worden bijgevoegd"
+#~ msgstr "Pot adjuntar els següents formats d'arxiu"
 
 #, fuzzy
 #~ msgid "Memory usage"
-#~ msgstr "Bericht"
+#~ msgstr "MIssatge"
 
 #, fuzzy
 #~ msgid "Site URL"
-#~ msgstr "Website"
+#~ msgstr "Lloc"
 
 #, fuzzy
 #~ msgid "Please enter a valid email address."
-#~ msgstr "Gebruik dit email adres:"
+#~ msgstr "Si us plau introdueixi el seu e-mail"
 
 #~ msgid "Activated plugins"
-#~ msgstr "Geactiveerde plugins"
+#~ msgstr "Plugin activat"
 
 #~ msgid "Read more"
-#~ msgstr "Lees verder"
+#~ msgstr "Llegir més"
 
 #~ msgid "Installed plugins"
-#~ msgstr "Geïnstalleerde Plugins"
+#~ msgstr "Plugins instal·lats"
 
 #~ msgid "Recommended plugins"
-#~ msgstr "Aanbevolen Plugins"
+#~ msgstr "Plugins recomanants"
+
+#~ msgid "Purchase"
+#~ msgstr "Comprar"
 
 #~ msgid "Download"
-#~ msgstr "Download"
+#~ msgstr "Descarregar"
 
 #~ msgid "Install %s"
-#~ msgstr "Installeer %s"
+#~ msgstr "Instal·la %s"
 
 #~ msgid "Install now from wordpress.org"
-#~ msgstr "Installeer nu via wordpress.org"
+#~ msgstr "Instal·la ara des de wordpress.org"
 
 #, fuzzy
 #~ msgid "Active Plugins"
-#~ msgstr "Geactiveerde plugins"
+#~ msgstr "Plugin activat"
 
 #, fuzzy
 #~ msgid "Inactive Plugins"
-#~ msgstr "Geactiveerde plugins"
+#~ msgstr "Plugin activat"
 
 #, fuzzy
 #~ msgid "Send to support"
-#~ msgstr "Ondersteuning"
+#~ msgstr "Suport"
 
 #~ msgid "Contact Form Options"
-#~ msgstr "Contact Form Opties"
-
-#~ msgid "Display Attachment tips"
-#~ msgstr "Toon Bijlage uitleg"
+#~ msgstr "Opciones Contact Form"
 
 #~ msgid "Please enter a valid email address. Settings are not saved."
-#~ msgstr "Geef een geldig email adres op. Instellingen zijn niet opgeslagen."
+#~ msgstr ""
+#~ "Por favor introduzca un e-mail correcto. Los cambios no se han guardado."
 
+#, fuzzy
 #~ msgid "E-Mail Address"
-#~ msgstr "Email adres:"
+#~ msgstr "Dirección e-mail:"
 
 #~ msgid "E-Mail Addresse:"
 #~ msgstr "Indirizzo e-mail:"
